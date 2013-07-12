@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=Mugshot
+_Comment=Mugshot application
+Categories=GNOME;Utility;
+Exec=mugshot
+Icon=mugshot
+Terminal=false
+Type=Application
