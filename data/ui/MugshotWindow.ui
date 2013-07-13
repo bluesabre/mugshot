@@ -131,6 +131,7 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
+                                <property name="activates_default">True</property>
                                 <property name="input_purpose">name</property>
                               </object>
                             </child>
@@ -167,6 +168,7 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
+                                <property name="activates_default">True</property>
                                 <property name="input_purpose">name</property>
                               </object>
                             </child>
@@ -204,6 +206,7 @@
                                 <property name="can_focus">True</property>
                                 <property name="max_length">4</property>
                                 <property name="invisible_char">•</property>
+                                <property name="activates_default">True</property>
                                 <property name="width_chars">4</property>
                                 <property name="input_purpose">alpha</property>
                               </object>
@@ -253,6 +256,7 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
+                                <property name="activates_default">True</property>
                                 <property name="input_purpose">phone</property>
                               </object>
                             </child>
@@ -289,6 +293,7 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
+                                <property name="activates_default">True</property>
                                 <property name="input_purpose">phone</property>
                               </object>
                             </child>
@@ -390,6 +395,8 @@
                 <property name="label">gtk-apply</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="has_default">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
                 <signal name="clicked" handler="on_apply_button_clicked" swapped="no"/>
@@ -612,6 +619,7 @@ to your personal information.</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="model">liststore1</property>
+                <signal name="item-activated" handler="on_stock_iconview_item_activated" swapped="no"/>
                 <child>
                   <object class="GtkCellRendererPixbuf" id="cellrendererpixbuf"/>
                   <attributes>

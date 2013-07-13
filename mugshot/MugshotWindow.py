@@ -139,7 +139,8 @@ class MugshotWindow(Window):
         self.initials_entry.set_text(self.initials)
         self.office_phone_entry.set_text(self.office_phone)
         self.home_phone_entry.set_text(self.home_phone)
-        
+            
+    # = Mugshot Window ======================================================= #
     def set_user_image(self, filename=None):
         """Scale and set the user profile image."""
         logger.debug("Setting user profile image to %s" % str(filename))
@@ -149,6 +150,132 @@ class MugshotWindow(Window):
             self.user_image.set_from_pixbuf(scaled)
         else:
             self.user_image.set_from_icon_name('avatar-default', 128)
+    
+    def on_apply_button_clicked(self, widget):
+        """When the window Apply button is clicked, commit any relevant 
+        changes."""
+        if self.get_chfn_details_updated():
+            returns = self.save_chfn_details()
+                
+        if self.updated_image:
+            self.save_image()
+            
+    def on_cancel_button_clicked(self, widget):
+        """When the window cancel button is clicked, close the program."""
+        self.destroy()
+        
+    # = Image Button and Menu ================================================ #
+    def on_image_button_clicked(self, widget):
+        """When the menu button is clicked, display the appmenu."""
+        if widget.get_active():
+            self.image_menu.popup(None, None, menu_position, 
+                                        self.image_menu, 3, 
+                                        Gtk.get_current_event_time())
+                                                  
+    def on_image_menu_hide(self, widget):
+        """Untoggle the image button when the menu is hidden."""
+        self.image_button.set_active(False)
+        
+    def save_image(self):
+        """Copy the updated image filename to ~/.face"""
+        # Check if the image has been updated.
+        if not self.updated_image:
+            return False
+            
+        face = os.path.expanduser('~/.face')
+        
+        # If the .face file already exists, remove it first.
+        if os.path.isfile(face):
+            os.remove(face)
+            
+        # Copy the new file to ~/.face
+        shutil.copyfile(self.updated_image, face)
+        self.updated_image = None
+        return True
+        
+    # = chfn functions ============================================ #
+    def get_chfn_details_updated(self):
+        """Return True if chfn-related details have been modified."""
+        if self.first_name != self.first_name_entry.get_text().strip() or \
+            self.last_name != self.last_name_entry.get_text().strip() or \
+            self.home_phone != self.home_phone_entry.get_text().strip() or \
+            self.office_phone != self.office_phone_entry.get_text().strip():
+            return True
+        return False
+    
+    def save_chfn_details(self):
+        """Commit changes to chfn-related details.  For full name, changes must
+        be performed as root.  Other changes are done with the user password.
+        
+        Return exit codes for 1) full name changes and 2) home/work phone
+        changes.
+        
+        e.g. [0, 0] (both passed)"""
+        return_codes = []
+        
+        # Get the user's password
+        password = self.get_password()
+        if not password:
+            return return_codes
+            
+        username = os.getenv('USER')
+        chfn = which('chfn')
+            
+        # Get each of the updated values.
+        first_name = get_entry_value(self.first_name_entry)
+        last_name = get_entry_value(self.last_name_entry)
+        full_name = "%s %s" % (first_name, last_name)
+        full_name = full_name.strip()
+        office_phone = get_entry_value(self.office_phone_entry)
+        if office_phone == '':
+            office_phone = 'none'
+        home_phone = get_entry_value(self.home_phone_entry)
+        if home_phone == '':
+            home_phone = 'none'
+        
+        # Full name can only be modified by root.  Try using sudo to modify.
+        logger.debug('Attempting to set fullname with sudo chfn')
+        child = pexpect.spawn('sudo %s %s' % (chfn, username))
+        child.timeout = 5
+        try:
+            child.expect([".*ssword.*", pexpect.EOF])
+            child.sendline(password)
+            child.expect("Full Name.*:")
+            child.sendline(full_name)
+            for i in range(5):
+                child.sendline('')
+        except pexpect.TIMEOUT:
+            # Password was incorrect, or sudo rights not granted
+            logger.debug('Timeout reached, password was incorrect or sudo ' \
+                         'right not granted.')
+            pass 
+        child.close()
+        if child.exitstatus == 0:
+            self.first_name = first_name
+            self.last_name = last_name
+        return_codes.append(child.exitstatus)
+
+        logger.debug('Attempting to set user details with chfn')
+        child = pexpect.spawn('chfn')
+        child.timeout = 5
+        try:
+            child.expect(['Password: ', pexpect.EOF])
+            child.sendline(password)
+            child.expect('Room Number.*:')
+            child.sendline('')
+            child.expect('Work Phone.*:')
+            child.sendline(office_phone)
+            child.expect('Home Phone.*:')
+            child.sendline(home_phone)
+            child.sendline(home_phone)
+        except pexpect.TIMEOUT:
+            logger.debug('Timeout reached, password was likely incorrect.')
+        child.close(True)
+        if child.exitstatus == 0:
+            self.office_phone = office_phone
+            self.home_phone = home_phone
+        return_codes.append(child.exitstatus)
+        return return_codes
             
     # = Stock Browser ======================================================== #
     def on_image_from_stock_activate(self, widget):
@@ -197,6 +324,9 @@ class MugshotWindow(Window):
             self.set_user_image(filename)
             self.updated_image = filename
             self.stock_browser.hide()
+            
+    def on_stock_iconview_item_activated(self, widget, path):
+        self.on_stock_ok_clicked(widget)
         
     # = Image Browser ======================================================== #
     def on_image_from_browse_activate(self, widget):
@@ -241,132 +371,4 @@ class MugshotWindow(Window):
     def on_password_entry_activate(self, widget):
         """On Password Entry activate, click OK."""
         self.builder.get_object('password_ok').activate()
-        
     
-    # = Image Button and Menu ================================================ #
-    def on_image_button_clicked(self, widget):
-        """When the menu button is clicked, display the appmenu."""
-        if widget.get_active():
-            self.image_menu.popup(None, None, menu_position, 
-                                        self.image_menu, 3, 
-                                        Gtk.get_current_event_time())
-                                                  
-    def on_image_menu_hide(self, widget):
-        """Untoggle the image button when the menu is hidden."""
-        self.image_button.set_active(False)
-        
-    # = Mugshot Window ======================================================= #
-    def on_apply_button_clicked(self, widget):
-        """When the window Apply button is clicked, commit any relevant 
-        changes."""
-        if self.get_finger_details_updated():
-            returns = self.save_finger()
-            if len(returns) == 1:
-                # Cancelled, password not entered
-                pass
-            else:
-                if returns[0] == 0:
-                    self.first_name, self.last_name, self.initials
-                
-        if self.updated_image:
-            self.save_image()
-            
-    def on_cancel_button_clicked(self, widget):
-        """When the window cancel button is clicked, close the program."""
-        self.destroy()
-        
-    
-                
-    
-            
-        
-
-    def get_finger_details_updated(self):
-        if self.first_name != self.first_name_entry.get_text().strip() or \
-            self.last_name != self.last_name_entry.get_text().strip() or \
-            self.home_phone != self.home_phone_entry.get_text().strip() or \
-            self.office_phone != self.office_phone_entry.get_text().strip():
-            return True
-        return False
-    
-        
-
-        
-    def save_finger(self):
-        return_codes = []
-        
-        # Get the user's password
-        password = self.get_password()
-        if not password:
-            return return_codes
-            
-        username = os.getenv('USER')
-        chfn = which('chfn')
-            
-        # Get each of the updated values.
-        first_name = get_entry_value(self.first_name_entry)
-        last_name = get_entry_value(self.last_name_entry)
-        full_name = "%s %s" % (first_name, last_name)
-        full_name = full_name.strip()
-        office_phone = get_entry_value(self.office_phone_entry)
-        if office_phone == '':
-            office_phone = 'none'
-        home_phone = get_entry_value(self.home_phone_entry)
-        if home_phone == '':
-            home_phone = 'none'
-        
-        # Full name can only be modified by root.  Try using sudo to modify.
-        logger.debug('Attempting to set fullname with sudo chfn')
-        child = pexpect.spawn('sudo %s %s' % (chfn, username))
-        child.timeout = 5
-        try:
-            child.expect([".*ssword.*", pexpect.EOF])
-            child.sendline(password)
-            child.expect("Full Name.*:")
-            child.sendline(full_name)
-            for i in range(5):
-                child.sendline('')
-        except pexpect.TIMEOUT:
-            # Password was incorrect, or sudo rights not granted
-            logger.debug('Timeout reached, password was incorrect or sudo right not granted.')
-            pass 
-        child.close()
-        if child.exitstatus == 0:
-            self.first_name = first_name
-            self.last_name = last_name
-        return_codes.append(child.exitstatus)
-
-        logger.debug('Attempting to set user details with chfn')
-        child = pexpect.spawn('chfn')
-        child.timeout = 5
-        try:
-            child.expect(['Password: ', pexpect.EOF])
-            child.sendline(password)
-            child.expect('Room Number.*:')
-            child.sendline('')
-            child.expect('Work Phone.*:')
-            child.sendline(office_phone)
-            child.expect('Home Phone.*:')
-            child.sendline(home_phone)
-            child.sendline(home_phone)
-        except pexpect.TIMEOUT:
-            logger.debug('Timeout reached, password was likely incorrect.')
-        child.close(True)
-        if child.exitstatus == 0:
-            self.office_phone = office_phone
-            self.home_phone = home_phone
-        return_codes.append(child.exitstatus)
-        return return_codes
-        
-    def save_image(self):
-        # Copy the updated image to .face
-        if not self.updated_image:
-            return False
-        face = os.path.expanduser('~/.face')
-        if os.path.isfile(face):
-            os.remove(face)
-        shutil.copyfile(self.updated_image, face)
-        self.updated_image = None
-        return True
-            
-
