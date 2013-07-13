@@ -430,10 +430,10 @@
             <property name="margin_top">12</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="button1">
+              <object class="GtkButton" id="password_cancel">
                 <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
               </object>
@@ -444,10 +444,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button2">
+              <object class="GtkButton" id="password_ok">
                 <property name="label">gtk-ok</property>
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="has_default">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
               </object>
@@ -544,6 +546,7 @@ to your personal information.</property>
                 <property name="visibility">False</property>
                 <property name="invisible_char">•</property>
                 <property name="input_purpose">password</property>
+                <signal name="activate" handler="on_password_entry_activate" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">2</property>
@@ -577,8 +580,8 @@ to your personal information.</property>
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-6">button1</action-widget>
-      <action-widget response="-5">button2</action-widget>
+      <action-widget response="-6">password_cancel</action-widget>
+      <action-widget response="-5">password_ok</action-widget>
     </action-widgets>
   </object>
   <object class="GtkWindow" id="stock_browser">
