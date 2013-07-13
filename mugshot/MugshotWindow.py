@@ -20,6 +20,7 @@ import os
 import pexpect
 import shutil
 import subprocess
+import dbus
 
 from gi.repository import Gtk, Gdk, GdkPixbuf # pylint: disable=E0611
 import logging
@@ -38,6 +39,11 @@ def which(command):
     command.'''
     return subprocess.Popen(['which', command], \
                             stdout=subprocess.PIPE).stdout.read().strip()
+                            
+def has_running_process(name):
+    command = 'ps -ef | grep " %s" | grep -v "grep"  | wc -l' % name
+    n = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True).stdout.read().strip()
+    return int(n) > 0
 
 def detach_cb(menu, widget):
     '''Detach a widget from its attached widget.'''
@@ -190,8 +196,54 @@ class MugshotWindow(Window):
             
         # Copy the new file to ~/.face
         shutil.copyfile(self.updated_image, face)
+        self.set_pidgin_buddyicon(face)
         self.updated_image = None
         return True
+        
+    def set_pidgin_buddyicon(self, filename=None):
+        """Sets the pidgin buddyicon to filename (usually ~/.face).
+        
+        If pidgin is running, use the dbus interface, otherwise directly modify
+        the XML file."""
+        prefs_file = os.path.expanduser('~/.purple/prefs.xml')
+        if not os.path.exists(prefs_file):
+            return
+        if has_running_process('pidgin'):
+            self.set_pidgin_buddyicon_dbus(filename)
+        else:
+            self.set_pidgin_buddyicon_xml(filename)
+            
+    def set_pidgin_buddyicon_dbus(self, filename=None):
+        """Set the pidgin buddy icon via dbus."""
+        bus = dbus.SessionBus()
+        obj = bus.get_object("im.pidgin.purple.PurpleService", 
+                             "/im/pidgin/purple/PurpleObject")
+        purple = dbus.Interface(obj, "im.pidgin.purple.PurpleInterface")
+        # To make the change instantly visible, set the icon to none first.
+        purple.PurplePrefsSetPath('/pidgin/accounts/buddyicon', '')
+        if filename:
+            purple.PurplePrefsSetPath('/pidgin/accounts/buddyicon', filename)
+        
+    def set_pidgin_buddyicon_xml(self, filename=None):
+        """Set the buddyicon used by pidgin to filename (via the xml file)."""
+        # This is hacky, but a working implementation for now...
+        prefs_file = os.path.expanduser('~/.purple/prefs.xml')
+        tmp_buffer = []
+        if os.path.isfile(prefs_file):
+            for line in open(prefs_file):
+                if '<pref name=\'buddyicon\'' in line:
+                    new = line.split('value=')[0] 
+                    if filename:
+                        new = new + 'value=\'%s\'/>\n' % filename 
+                    else:
+                        new = new + 'value=\'\'/>\n'
+                    tmp_buffer.append(new)
+                else:
+                    tmp_buffer.append(line)
+            write_prefs = open(prefs_file, 'w')
+            for line in tmp_buffer:
+                write_prefs.write(line)
+            write_prefs.close()
         
     # = chfn functions ============================================ #
     def get_chfn_details_updated(self):
