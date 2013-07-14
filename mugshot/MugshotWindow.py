@@ -154,6 +154,7 @@ class MugshotWindow(Window):
         if office_phone == 'none': office_phone = ''
         
         # Get dconf settings
+        logger.debug('Getting initials, email, and fax from dconf')
         if self.settings['initials'] != '':
             initials = self.settings['initials']
         email = self.settings['email']
@@ -167,6 +168,7 @@ class MugshotWindow(Window):
         self.office_phone = office_phone
                     
         # Populate the GtkEntries.
+        logger.debug('Populating entries')
         self.first_name_entry.set_text(self.first_name)
         self.last_name_entry.set_text(self.last_name)
         self.initials_entry.set_text(self.initials)
@@ -194,6 +196,7 @@ class MugshotWindow(Window):
     def on_apply_button_clicked(self, widget):
         """When the window Apply button is clicked, commit any relevant 
         changes."""
+        logger.debug('Applying changes...')
         if self.get_chfn_details_updated():
             returns = self.save_chfn_details()
             
@@ -207,6 +210,7 @@ class MugshotWindow(Window):
             
     def save_gsettings(self):
         """Save details to dconf (the ones not tracked by /etc/passwd)"""
+        logger.debug('Saving details to dconf: /apps/mugshot')
         self.settings.set_string('initials', 
                                  get_entry_value(self.initials_entry))
         self.settings.set_string('email', get_entry_value(self.email_entry))
@@ -214,16 +218,19 @@ class MugshotWindow(Window):
         
     def entry_focus_next(self, widget):
         """Focus the next available entry when pressing Enter."""
+        logger.debug('Entry activated, focusing next widget.')
         vbox = widget.get_parent().get_parent().get_parent().get_parent()
         vbox.child_focus(Gtk.DirectionType.TAB_FORWARD)
             
     def on_cancel_button_clicked(self, widget):
         """When the window cancel button is clicked, close the program."""
+        logger.debug('Cancel clicked, goodbye.')
         self.destroy()
         
     # = Image Button and Menu ================================================ #
     def on_image_button_clicked(self, widget):
-        """When the menu button is clicked, display the appmenu."""
+        """When the menu button is clicked, display the photo menu."""
+        logger.debug('Show photo menu')
         if widget.get_active():
             self.image_menu.popup(None, None, menu_position, 
                                         self.image_menu, 3, 
@@ -237,11 +244,13 @@ class MugshotWindow(Window):
         """Copy the updated image filename to ~/.face"""
         # Check if the image has been updated.
         if not self.updated_image:
+            logger.debug('Photo not updated, not saving changes.')
             return False
             
         face = os.path.expanduser('~/.face')
         
         # If the .face file already exists, remove it first.
+        logger.debug('Photo updated, saving changes.')
         if os.path.isfile(face):
             os.remove(face)
             
@@ -257,7 +266,9 @@ class MugshotWindow(Window):
         If pidgin is running, use the dbus interface, otherwise directly modify
         the XML file."""
         if not os.path.exists(pidgin_prefs):
+            logger.debug('Pidgin not installed or never opened, not updating.')
             return
+        logger.debug('Prompting user to update pidgin buddy icon')
         update_pidgin = get_confirmation_dialog(self,
                     _("Update Pidgin Buddy Icon?"),
                     _("Would you also like to update your Pidgin buddy icon?"),
@@ -267,9 +278,12 @@ class MugshotWindow(Window):
                 self.set_pidgin_buddyicon_dbus(filename)
             else:
                 self.set_pidgin_buddyicon_xml(filename)
+        else:
+            logger.debug('Reject: Not updating pidgin buddy icon')
             
     def set_pidgin_buddyicon_dbus(self, filename=None):
         """Set the pidgin buddy icon via dbus."""
+        logger.debug('Updating pidgin buddy icon via dbus')
         bus = dbus.SessionBus()
         obj = bus.get_object("im.pidgin.purple.PurpleService", 
                              "/im/pidgin/purple/PurpleObject")
@@ -282,6 +296,7 @@ class MugshotWindow(Window):
     def set_pidgin_buddyicon_xml(self, filename=None):
         """Set the buddyicon used by pidgin to filename (via the xml file)."""
         # This is hacky, but a working implementation for now...
+        logger.debug('Updating pidgin buddy icon via xml')
         prefs_file = pidgin_prefs
         tmp_buffer = []
         if os.path.isfile(prefs_file):
@@ -303,11 +318,14 @@ class MugshotWindow(Window):
     # = chfn functions ============================================ #
     def get_chfn_details_updated(self):
         """Return True if chfn-related details have been modified."""
+        logger.debug('Checking if chfn details have been modified.')
         if self.first_name != self.first_name_entry.get_text().strip() or \
             self.last_name != self.last_name_entry.get_text().strip() or \
             self.home_phone != self.home_phone_entry.get_text().strip() or \
             self.office_phone != self.office_phone_entry.get_text().strip():
+            logger.debug('chfn details have been modified.')
             return True
+        logger.debug('chfn details have NOT been modified.')
         return False
     
     def save_chfn_details(self):
@@ -389,6 +407,8 @@ class MugshotWindow(Window):
         """Return True if LibreOffice settings need to be updated."""
         # Return False if there is no preferences file.
         if not os.path.isfile(libreoffice_prefs):
+            logger.debug('LibreOffice is not installed or has not been opened.'
+                         ' Not updating.')
             return False
         # Compare the current entries to the existing LibreOffice data.
         data = self.get_libreoffice_data()
@@ -406,6 +426,7 @@ class MugshotWindow(Window):
             return True
         if data['fax'] != get_entry_value(self.fax_entry):
             return True
+        logger.debug('LibreOffice details do not need to be updated.')
         return False
     
     def get_libreoffice_data(self):
@@ -417,6 +438,7 @@ class MugshotWindow(Window):
         data = {'first_name': '', 'last_name': '', 'initials': '', 'email': '', 
                 'home_phone': '', 'office_phone': '', 'fax': ''}
         if os.path.isfile(prefs_file):
+            logger.debug('Getting settings from %s' % prefs_file)
             for line in open(prefs_file):
                 if "UserProfile/Data" in line:
                     value = line.split('<value>')[1].split('</value>')[0]
@@ -450,53 +472,58 @@ class MugshotWindow(Window):
         """Update the LibreOffice registymodifications preferences file."""
         prefs_file = libreoffice_prefs
         if os.path.isfile(prefs_file):
+            logger.debug('Prompting user to update LibreOffice details.')
             update_libreoffice = get_confirmation_dialog(self,
                                 _("Update LibreOffice User Details?"),
                                 _("Would you also like to update your user "
                                   "details in LibreOffice?"),
                                 'libreoffice-startcenter')
-            tmp_buffer = []
-            for line in open(prefs_file):
-                new = None
-                if "UserProfile/Data" in line:
-                    new = line.split('<value>')[0]
-                    # First Name
-                    if 'name="givenname"' in line:
-                        new = new + '<value>%s</value></prop></item>\n' % \
-                                    get_entry_value(self.first_name_entry)
-                    # Last Name
-                    elif 'name="sn"' in line:
-                        new = new + '<value>%s</value></prop></item>\n' % \
-                                    get_entry_value(self.last_name_entry)
-                    # Initials
-                    elif 'name="initials"' in line:
-                        new = new + '<value>%s</value></prop></item>\n' % \
-                                    get_entry_value(self.initials_entry)
-                    # Email
-                    elif 'name="mail"' in line:
-                        new = new + '<value>%s</value></prop></item>\n' % \
-                                    get_entry_value(self.email_entry)
-                    # Home Phone
-                    elif 'name="homephone"' in line:
-                        new = new + '<value>%s</value></prop></item>\n' % \
-                                    get_entry_value(self.home_phone_entry)
-                    # Office Phone
-                    elif 'name="telephonenumber"' in line:
-                        new = new + '<value>%s</value></prop></item>\n' % \
-                                    get_entry_value(self.office_phone_entry)
-                    # Fax Number
-                    elif 'name="facsimiletelephonenumber"' in line:
-                        new = new + '<value>%s</value></prop></item>\n' % \
-                                    get_entry_value(self.fax_entry)
+            if update_libreoffice:
+                logger.debug('Confirm: Updating details.')
+                tmp_buffer = []
+                for line in open(prefs_file):
+                    new = None
+                    if "UserProfile/Data" in line:
+                        new = line.split('<value>')[0]
+                        # First Name
+                        if 'name="givenname"' in line:
+                            new = new + '<value>%s</value></prop></item>\n' % \
+                                        get_entry_value(self.first_name_entry)
+                        # Last Name
+                        elif 'name="sn"' in line:
+                            new = new + '<value>%s</value></prop></item>\n' % \
+                                        get_entry_value(self.last_name_entry)
+                        # Initials
+                        elif 'name="initials"' in line:
+                            new = new + '<value>%s</value></prop></item>\n' % \
+                                        get_entry_value(self.initials_entry)
+                        # Email
+                        elif 'name="mail"' in line:
+                            new = new + '<value>%s</value></prop></item>\n' % \
+                                        get_entry_value(self.email_entry)
+                        # Home Phone
+                        elif 'name="homephone"' in line:
+                            new = new + '<value>%s</value></prop></item>\n' % \
+                                        get_entry_value(self.home_phone_entry)
+                        # Office Phone
+                        elif 'name="telephonenumber"' in line:
+                            new = new + '<value>%s</value></prop></item>\n' % \
+                                        get_entry_value(self.office_phone_entry)
+                        # Fax Number
+                        elif 'name="facsimiletelephonenumber"' in line:
+                            new = new + '<value>%s</value></prop></item>\n' % \
+                                        get_entry_value(self.fax_entry)
+                        else:
+                            new = line
+                        tmp_buffer.append(new)
                     else:
-                        new = line
-                    tmp_buffer.append(new)
-                else:
-                    tmp_buffer.append(line)
-            open_prefs = open(prefs_file, 'w')
-            for line in tmp_buffer:
-                open_prefs.write(line)
-            open_prefs.close()
+                        tmp_buffer.append(line)
+                open_prefs = open(prefs_file, 'w')
+                for line in tmp_buffer:
+                    open_prefs.write(line)
+                open_prefs.close()
+            else:
+                logger.debug('Reject: Not updating.')
                     
     # = Stock Browser ======================================================== #
     def on_image_from_stock_activate(self, widget):
