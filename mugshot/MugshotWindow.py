@@ -91,6 +91,8 @@ class MugshotWindow(Window):
         self.initials_entry = builder.get_object('initials')
         self.office_phone_entry = builder.get_object('office_phone')
         self.home_phone_entry = builder.get_object('home_phone')
+        self.email_entry = builder.get_object('email')
+        self.fax_entry = builder.get_object('fax')
         
         # Stock photo browser
         self.stock_browser = builder.get_object('stock_browser')
@@ -98,6 +100,7 @@ class MugshotWindow(Window):
 
         # Populate all of the widgets.
         self.init_user_details()
+        print self.get_libreoffice_data()
         
     def init_user_details(self):
         """Initialize the user details entries and variables."""
@@ -156,12 +159,20 @@ class MugshotWindow(Window):
             self.user_image.set_from_pixbuf(scaled)
         else:
             self.user_image.set_from_icon_name('avatar-default', 128)
+
+    def filter_numbers(self, entry, *args):
+        """Allow only numbers and + in phone entry fields."""
+        text = entry.get_text().strip()
+        entry.set_text(''.join([i for i in text if i in '+0123456789']))
     
     def on_apply_button_clicked(self, widget):
         """When the window Apply button is clicked, commit any relevant 
         changes."""
         if self.get_chfn_details_updated():
             returns = self.save_chfn_details()
+            
+        if self.get_libreoffice_details_updated():
+            self.set_libreoffice_data()
                 
         if self.updated_image:
             self.save_image()
@@ -328,7 +339,116 @@ class MugshotWindow(Window):
             self.home_phone = home_phone
         return_codes.append(child.exitstatus)
         return return_codes
-            
+        
+    # = LibreOffice ========================================================== #
+    def get_libreoffice_details_updated(self):
+        """Return True if LibreOffice settings need to be updated."""
+        # Return False if there is no preferences file.
+        prefs_file = os.path.expanduser('~/.config/libreoffice/4/user/registrymodifications.xcu')
+        if not os.path.isfile(prefs_file):
+            return False
+        # Compare the current entries to the existing LibreOffice data.
+        data = self.get_libreoffice_data()
+        if data['first_name'] != get_entry_value(self.first_name_entry):
+            return True
+        if data['last_name'] != get_entry_value(self.last_name_entry):
+            return True
+        if data['initials'] != get_entry_value(self.initials_entry):
+            return True
+        if data['email'] != get_entry_value(self.email_entry):
+            return True
+        if data['home_phone'] != get_entry_value(self.home_phone_entry):
+            return True
+        if data['office_phone'] != get_entry_value(self.office_phone_entry):
+            return True
+        if data['fax'] != get_entry_value(self.fax_entry):
+            return True
+        return False
+    
+    def get_libreoffice_data(self):
+        """Get each of the preferences from the LibreOffice registymodifications
+        preferences file.
+        
+        Return a dict with the details."""
+        prefs_file = os.path.expanduser('~/.config/libreoffice/4/user/registrymodifications.xcu')
+        data = {'first_name': '', 'last_name': '', 'initials': '', 'email': '', 
+                'home_phone': '', 'office_phone': '', 'fax': ''}
+        if os.path.isfile(prefs_file):
+            for line in open(prefs_file):
+                if "UserProfile/Data" in line:
+                    value = line.split('<value>')[1].split('</value>')[0].strip()
+                    # First Name
+                    if 'name="givenname"' in line:
+                        data['first_name'] = value
+                    # Last Name
+                    elif 'name="sn"' in line:
+                        data['last_name'] = value
+                    # Initials
+                    elif 'name="initials"' in line:
+                        data['initials'] = value
+                    # Email
+                    elif 'name="mail"' in line:
+                        data['email'] = value
+                    # Home Phone
+                    elif 'name="homephone"' in line:
+                        data['home_phone'] = value
+                    # Office Phone
+                    elif 'name="telephonenumber"' in line:
+                        data['office_phone'] = value
+                    # Fax Number
+                    elif 'name="facsimiletelephonenumber"' in line:
+                        data['fax'] = value
+                    else:
+                        pass
+        return data
+        
+    def set_libreoffice_data(self):
+        """Update the LibreOffice registymodifications preferences file."""
+        prefs_file = os.path.expanduser('~/.config/libreoffice/4/user/registrymodifications.xcu')
+        if os.path.isfile(prefs_file):
+            tmp_buffer = []
+            for line in open(prefs_file):
+                new = None
+                if "UserProfile/Data" in line:
+                    new = line.split('<value>')[0]
+                    # First Name
+                    if 'name="givenname"' in line:
+                        new = new + '<value>%s</value></prop></item>\n' % \
+                                    get_entry_value(self.first_name_entry)
+                    # Last Name
+                    elif 'name="sn"' in line:
+                        new = new + '<value>%s</value></prop></item>\n' % \
+                                    get_entry_value(self.last_name_entry)
+                    # Initials
+                    elif 'name="initials"' in line:
+                        new = new + '<value>%s</value></prop></item>\n' % \
+                                    get_entry_value(self.initials_entry)
+                    # Email
+                    elif 'name="mail"' in line:
+                        new = new + '<value>%s</value></prop></item>\n' % \
+                                    get_entry_value(self.email_entry)
+                    # Home Phone
+                    elif 'name="homephone"' in line:
+                        new = new + '<value>%s</value></prop></item>\n' % \
+                                    get_entry_value(self.home_phone_entry)
+                    # Office Phone
+                    elif 'name="telephonenumber"' in line:
+                        new = new + '<value>%s</value></prop></item>\n' % \
+                                    get_entry_value(self.office_phone_entry)
+                    # Fax Number
+                    elif 'name="facsimiletelephonenumber"' in line:
+                        new = new + '<value>%s</value></prop></item>\n' % \
+                                    get_entry_value(self.fax_entry)
+                    else:
+                        new = line
+                    tmp_buffer.append(new)
+                else:
+                    tmp_buffer.append(line)
+            open_prefs = open(prefs_file, 'w')
+            for line in tmp_buffer:
+                open_prefs.write(line)
+            open_prefs.close()
+                    
     # = Stock Browser ======================================================== #
     def on_image_from_stock_activate(self, widget):
         """When the 'Select image from stock' menu item is clicked, load and 
