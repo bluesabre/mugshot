@@ -58,8 +58,6 @@ class Window(Gtk.Window):
         # Get a reference to the builder and set up the signals.
         self.builder = builder
         self.ui = builder.get_ui(self, True)
-        self.PreferencesDialog = None # class
-        self.preferences_dialog = None # instance
         self.AboutDialog = None # class
 
         self.settings = Gio.Settings("apps.mugshot")
@@ -88,24 +86,6 @@ class Window(Gtk.Window):
             response = about.run()
             about.destroy()
 
-    def on_mnu_preferences_activate(self, widget, data=None):
-        """Display the preferences window for mugshot."""
-
-        """ From the PyGTK Reference manual
-           Say for example the preferences dialog is currently open,
-           and the user chooses Preferences from the menu a second time;
-           use the present() method to move the already-open dialog
-           where the user can see it."""
-        if self.preferences_dialog is not None:
-            logger.debug('show existing preferences_dialog')
-            self.preferences_dialog.present()
-        elif self.PreferencesDialog is not None:
-            logger.debug('create new preferences_dialog')
-            self.preferences_dialog = self.PreferencesDialog() # pylint: disable=E1102
-            self.preferences_dialog.connect('destroy', self.on_preferences_dialog_destroyed)
-            self.preferences_dialog.show()
-        # destroy command moved into dialog to allow for a help button
-
     def on_mnu_close_activate(self, widget, data=None):
         """Signal handler for closing the MugshotWindow."""
         self.destroy()
@@ -117,13 +97,4 @@ class Window(Gtk.Window):
 
     def on_preferences_changed(self, settings, key, data=None):
         logger.debug('preference changed: %s = %s' % (key, str(settings.get_value(key))))
-
-    def on_preferences_dialog_destroyed(self, widget, data=None):
-        '''only affects gui
-        
-        logically there is no difference between the user closing,
-        minimising or ignoring the preferences dialog'''
-        logger.debug('on_preferences_dialog_destroyed')
-        # to determine whether to create or present preferences_dialog
-        self.preferences_dialog = None
 

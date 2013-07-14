@@ -28,7 +28,6 @@ logger = logging.getLogger('mugshot')
 
 from mugshot_lib import Window
 from mugshot.AboutMugshotDialog import AboutMugshotDialog
-from mugshot.PreferencesMugshotDialog import PreferencesMugshotDialog
 
 username = os.getenv('USER')
 if not username:
@@ -77,7 +76,6 @@ class MugshotWindow(Window):
         super(MugshotWindow, self).finish_initializing(builder)
 
         self.AboutDialog = AboutMugshotDialog
-        self.PreferencesDialog = PreferencesMugshotDialog
         
         # User Image widgets
         self.image_button = builder.get_object('image_button')
