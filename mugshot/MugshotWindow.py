@@ -100,7 +100,6 @@ class MugshotWindow(Window):
 
         # Populate all of the widgets.
         self.init_user_details()
-        print self.get_libreoffice_data()
         
     def init_user_details(self):
         """Initialize the user details entries and variables."""
@@ -134,6 +133,12 @@ class MugshotWindow(Window):
         # If the variables are defined as 'none', use blank for cleanliness.
         if home_phone == 'none': home_phone = ''
         if office_phone == 'none': office_phone = ''
+        
+        # Get dconf settings
+        if self.settings['initials'] != '':
+            initials = self.settings['initials']
+        email = self.settings['email']
+        fax = self.settings['fax']
                     
         # Set the class variables
         self.first_name = first_name
@@ -148,6 +153,8 @@ class MugshotWindow(Window):
         self.initials_entry.set_text(self.initials)
         self.office_phone_entry.set_text(self.office_phone)
         self.home_phone_entry.set_text(self.home_phone)
+        self.email_entry.set_text(email)
+        self.fax_entry.set_text(fax)
             
     # = Mugshot Window ======================================================= #
     def set_user_image(self, filename=None):
@@ -176,6 +183,14 @@ class MugshotWindow(Window):
                 
         if self.updated_image:
             self.save_image()
+            
+        self.save_gsettings()
+            
+    def save_gsettings(self):
+        """Save details to dconf (the ones not tracked by /etc/passwd)"""
+        self.settings.set_string('initials', get_entry_value(self.initials_entry))
+        self.settings.set_string('email', get_entry_value(self.email_entry))
+        self.settings.set_string('fax', get_entry_value(self.fax_entry))
             
     def on_cancel_button_clicked(self, widget):
         """When the window cancel button is clicked, close the program."""

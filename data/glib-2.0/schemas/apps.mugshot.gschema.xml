@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="mugshot">
+  <schema id="apps.mugshot" path="/apps/mugshot/">
+    <key name="initials" type="s">
+      <default>''</default>
+      <summary>Initials</summary>
+      <description>Initials representing the user's name.</description>
+    </key>
+    <key name="email" type="s">
+      <default>''</default>
+      <summary>Email Address</summary>
+      <description>The user's email address.</description>
+    </key>
+    <key name="fax" type="s">
+      <default>''</default>
+      <summary>Fax</summary>
+      <description>The user's fax number.</description>
+    </key>
+  </schema>
+</schemalist>
