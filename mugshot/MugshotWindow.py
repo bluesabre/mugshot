@@ -56,6 +56,19 @@ def get_entry_value(entry_widget):
         value = ''
     return value
     
+def get_confirmation_dialog(parent, primary_message, secondary_message, icon_name=None):
+    dialog = Gtk.MessageDialog(parent, flags=0, type=Gtk.MessageType.QUESTION,
+                               buttons=Gtk.ButtonsType.YES_NO,
+                               message_format=primary_message)
+    dialog.format_secondary_text(secondary_message)
+    if icon_name:
+        image = Gtk.Image.new_from_icon_name(icon_name, Gtk.IconSize.DIALOG)
+        dialog.set_image(image)
+    dialog.show_all()
+    response = dialog.run()
+    dialog.destroy()
+    return response == Gtk.ResponseType.YES
+    
 def menu_position(self, menu, data=None, something_else=None):
     '''Position a menu at the bottom of its attached widget'''
     widget = menu.get_attach_widget()
@@ -232,10 +245,15 @@ class MugshotWindow(Window):
         prefs_file = os.path.expanduser('~/.purple/prefs.xml')
         if not os.path.exists(prefs_file):
             return
-        if has_running_process('pidgin'):
-            self.set_pidgin_buddyicon_dbus(filename)
-        else:
-            self.set_pidgin_buddyicon_xml(filename)
+        update_pidgin = get_confirmation_dialog(self,
+                        _("Update Pidgin Buddy Icon?"),
+                        _("Would you also like to update your Pidgin buddy icon?"),
+                        'pidgin')
+        if update_pidgin:
+            if has_running_process('pidgin'):
+                self.set_pidgin_buddyicon_dbus(filename)
+            else:
+                self.set_pidgin_buddyicon_xml(filename)
             
     def set_pidgin_buddyicon_dbus(self, filename=None):
         """Set the pidgin buddy icon via dbus."""
@@ -419,6 +437,10 @@ class MugshotWindow(Window):
         """Update the LibreOffice registymodifications preferences file."""
         prefs_file = os.path.expanduser('~/.config/libreoffice/4/user/registrymodifications.xcu')
         if os.path.isfile(prefs_file):
+            update_libreoffice = get_confirmation_dialog(self,
+                        _("Update LibreOffice User Details?"),
+                        _("Would you also like to update your user details in LibreOffice?"),
+                        'libreoffice-startcenter')
             tmp_buffer = []
             for line in open(prefs_file):
                 new = None
