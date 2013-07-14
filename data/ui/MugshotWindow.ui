@@ -131,8 +131,8 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
-                                <property name="activates_default">True</property>
                                 <property name="input_purpose">name</property>
+                                <signal name="activate" handler="entry_focus_next" swapped="no"/>
                               </object>
                             </child>
                           </object>
@@ -168,8 +168,8 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
-                                <property name="activates_default">True</property>
                                 <property name="input_purpose">name</property>
+                                <signal name="activate" handler="entry_focus_next" swapped="no"/>
                               </object>
                             </child>
                           </object>
@@ -206,9 +206,9 @@
                                 <property name="can_focus">True</property>
                                 <property name="max_length">4</property>
                                 <property name="invisible_char">•</property>
-                                <property name="activates_default">True</property>
                                 <property name="width_chars">4</property>
                                 <property name="input_purpose">alpha</property>
+                                <signal name="activate" handler="entry_focus_next" swapped="no"/>
                               </object>
                             </child>
                           </object>
@@ -257,9 +257,9 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
-                                <property name="activates_default">True</property>
                                 <property name="input_purpose">phone</property>
                                 <signal name="changed" handler="filter_numbers" swapped="no"/>
+                                <signal name="activate" handler="entry_focus_next" swapped="no"/>
                               </object>
                             </child>
                           </object>
@@ -295,8 +295,8 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
-                                <property name="activates_default">True</property>
                                 <property name="input_purpose">email</property>
+                                <signal name="activate" handler="entry_focus_next" swapped="no"/>
                               </object>
                             </child>
                           </object>
@@ -345,10 +345,10 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
-                                <property name="activates_default">True</property>
                                 <property name="invisible_char_set">True</property>
                                 <property name="input_purpose">phone</property>
                                 <signal name="changed" handler="filter_numbers" swapped="no"/>
+                                <signal name="activate" handler="entry_focus_next" swapped="no"/>
                               </object>
                             </child>
                           </object>
@@ -528,6 +528,7 @@
               <object class="GtkButton" id="password_ok">
                 <property name="label">gtk-ok</property>
                 <property name="visible">True</property>
+                <property name="sensitive">False</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="has_default">True</property>
@@ -626,8 +627,9 @@ to your personal information.</property>
                 <property name="hexpand">True</property>
                 <property name="visibility">False</property>
                 <property name="invisible_char">•</property>
+                <property name="activates_default">True</property>
                 <property name="input_purpose">password</property>
-                <signal name="activate" handler="on_password_entry_activate" swapped="no"/>
+                <signal name="changed" handler="on_password_entry_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">2</property>
@@ -693,6 +695,7 @@ to your personal information.</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="model">liststore1</property>
+                <signal name="selection-changed" handler="on_stock_iconview_selection_changed" swapped="no"/>
                 <signal name="item-activated" handler="on_stock_iconview_item_activated" swapped="no"/>
                 <child>
                   <object class="GtkCellRendererPixbuf" id="cellrendererpixbuf"/>
@@ -732,6 +735,7 @@ to your personal information.</property>
               <object class="GtkButton" id="stock_ok">
                 <property name="label">gtk-ok</property>
                 <property name="visible">True</property>
+                <property name="sensitive">False</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>

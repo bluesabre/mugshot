@@ -17,9 +17,13 @@
 from locale import gettext as _
 
 import os
+# Used for automating chfn
 import pexpect
+# Used for copying files to ~/.face
 import shutil
+# Used for which command and checking for running processes.
 import subprocess
+# DBUS interface is used to update pidgin buddyicon when pidgin is running.
 import dbus
 
 from gi.repository import Gtk, Gdk, GdkPixbuf # pylint: disable=E0611
@@ -29,9 +33,11 @@ logger = logging.getLogger('mugshot')
 from mugshot_lib import Window
 from mugshot.AboutMugshotDialog import AboutMugshotDialog
 
-username = os.getenv('USER')
-if not username:
-    username = os.getenv('USERNAME')
+username = os.getlogin()
+home = os.path.expanduser('~')
+libreoffice_prefs = os.path.join(home, '.config', 'libreoffice', '4', 'user',
+                                 'registrymodifications.xcu')
+pidgin_prefs = os.path.join(home, '.purple', 'prefs.xml')
 
 def which(command):
     '''Use the system command which to get the absolute path for the given
@@ -40,8 +46,10 @@ def which(command):
                             stdout=subprocess.PIPE).stdout.read().strip()
                             
 def has_running_process(name):
+    """Check for a running process, return True if any listings are found."""
     command = 'ps -ef | grep " %s" | grep -v "grep"  | wc -l' % name
-    n = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True).stdout.read().strip()
+    n = subprocess.Popen(command, stdout=subprocess.PIPE, 
+                                            shell=True).stdout.read().strip()
     return int(n) > 0
 
 def detach_cb(menu, widget):
@@ -56,7 +64,10 @@ def get_entry_value(entry_widget):
         value = ''
     return value
     
-def get_confirmation_dialog(parent, primary_message, secondary_message, icon_name=None):
+def get_confirmation_dialog(parent, primary_message, secondary_message, 
+                                                                icon_name=None):
+    """Display a confirmation (yes/no) dialog configured with primary and 
+    secondary messages, as well as a custom icon if requested."""
     dialog = Gtk.MessageDialog(parent, flags=0, type=Gtk.MessageType.QUESTION,
                                buttons=Gtk.ButtonsType.YES_NO,
                                message_format=primary_message)
@@ -199,9 +210,15 @@ class MugshotWindow(Window):
             
     def save_gsettings(self):
         """Save details to dconf (the ones not tracked by /etc/passwd)"""
-        self.settings.set_string('initials', get_entry_value(self.initials_entry))
+        self.settings.set_string('initials', 
+                                 get_entry_value(self.initials_entry))
         self.settings.set_string('email', get_entry_value(self.email_entry))
         self.settings.set_string('fax', get_entry_value(self.fax_entry))
+        
+    def entry_focus_next(self, widget):
+        """Focus the next available entry when pressing Enter."""
+        vbox = widget.get_parent().get_parent().get_parent().get_parent()
+        vbox.child_focus(Gtk.DirectionType.TAB_FORWARD)
             
     def on_cancel_button_clicked(self, widget):
         """When the window cancel button is clicked, close the program."""
@@ -242,13 +259,12 @@ class MugshotWindow(Window):
         
         If pidgin is running, use the dbus interface, otherwise directly modify
         the XML file."""
-        prefs_file = os.path.expanduser('~/.purple/prefs.xml')
-        if not os.path.exists(prefs_file):
+        if not os.path.exists(pidgin_prefs):
             return
         update_pidgin = get_confirmation_dialog(self,
-                        _("Update Pidgin Buddy Icon?"),
-                        _("Would you also like to update your Pidgin buddy icon?"),
-                        'pidgin')
+                    _("Update Pidgin Buddy Icon?"),
+                    _("Would you also like to update your Pidgin buddy icon?"),
+                    'pidgin')
         if update_pidgin:
             if has_running_process('pidgin'):
                 self.set_pidgin_buddyicon_dbus(filename)
@@ -269,7 +285,7 @@ class MugshotWindow(Window):
     def set_pidgin_buddyicon_xml(self, filename=None):
         """Set the buddyicon used by pidgin to filename (via the xml file)."""
         # This is hacky, but a working implementation for now...
-        prefs_file = os.path.expanduser('~/.purple/prefs.xml')
+        prefs_file = pidgin_prefs
         tmp_buffer = []
         if os.path.isfile(prefs_file):
             for line in open(prefs_file):
@@ -341,7 +357,7 @@ class MugshotWindow(Window):
         except pexpect.TIMEOUT:
             # Password was incorrect, or sudo rights not granted
             logger.debug('Timeout reached, password was incorrect or sudo ' \
-                         'right not granted.')
+                         'rights not granted.')
             pass 
         child.close()
         if child.exitstatus == 0:
@@ -375,8 +391,7 @@ class MugshotWindow(Window):
     def get_libreoffice_details_updated(self):
         """Return True if LibreOffice settings need to be updated."""
         # Return False if there is no preferences file.
-        prefs_file = os.path.expanduser('~/.config/libreoffice/4/user/registrymodifications.xcu')
-        if not os.path.isfile(prefs_file):
+        if not os.path.isfile(libreoffice_prefs):
             return False
         # Compare the current entries to the existing LibreOffice data.
         data = self.get_libreoffice_data()
@@ -401,13 +416,14 @@ class MugshotWindow(Window):
         preferences file.
         
         Return a dict with the details."""
-        prefs_file = os.path.expanduser('~/.config/libreoffice/4/user/registrymodifications.xcu')
+        prefs_file = libreoffice_prefs
         data = {'first_name': '', 'last_name': '', 'initials': '', 'email': '', 
                 'home_phone': '', 'office_phone': '', 'fax': ''}
         if os.path.isfile(prefs_file):
             for line in open(prefs_file):
                 if "UserProfile/Data" in line:
-                    value = line.split('<value>')[1].split('</value>')[0].strip()
+                    value = line.split('<value>')[1].split('</value>')[0]
+                    value = value.strip()
                     # First Name
                     if 'name="givenname"' in line:
                         data['first_name'] = value
@@ -435,12 +451,13 @@ class MugshotWindow(Window):
         
     def set_libreoffice_data(self):
         """Update the LibreOffice registymodifications preferences file."""
-        prefs_file = os.path.expanduser('~/.config/libreoffice/4/user/registrymodifications.xcu')
+        prefs_file = libreoffice_prefs
         if os.path.isfile(prefs_file):
             update_libreoffice = get_confirmation_dialog(self,
-                        _("Update LibreOffice User Details?"),
-                        _("Would you also like to update your user details in LibreOffice?"),
-                        'libreoffice-startcenter')
+                                _("Update LibreOffice User Details?"),
+                                _("Would you also like to update your user "
+                                  "details in LibreOffice?"),
+                                'libreoffice-startcenter')
             tmp_buffer = []
             for line in open(prefs_file):
                 new = None
@@ -508,6 +525,12 @@ class MugshotWindow(Window):
                 scaled = pixbuf.scale_simple(90, 90, GdkPixbuf.InterpType.HYPER)
                 model.append([full_path, scaled])
                 
+    def on_stock_iconview_selection_changed(self, widget):
+        """Enable stock submission only when an item is selected."""
+        selected_items = self.iconview.get_selected_items()
+        self.builder.get_object('stock_ok').set_sensitive(
+                                                    len(selected_items) > 0)
+                
     def on_stock_browser_delete_event(self, widget, event):
         """Hide the stock browser instead of deleting it."""
         widget.hide()
@@ -533,6 +556,7 @@ class MugshotWindow(Window):
             self.stock_browser.hide()
             
     def on_stock_iconview_item_activated(self, widget, path):
+        """Allow selecting a stock photo with Enter."""
         self.on_stock_ok_clicked(widget)
         
     # = Image Browser ======================================================== #
@@ -575,7 +599,8 @@ class MugshotWindow(Window):
         logger.debug("Cancelled")
         return None
         
-    def on_password_entry_activate(self, widget):
-        """On Password Entry activate, click OK."""
-        self.builder.get_object('password_ok').activate()
+    def on_password_entry_changed(self, widget):
+        """Enable password submission only when password is not blank."""
+        self.builder.get_object('password_ok').set_sensitive(
+                                                    len(widget.get_text()) > 0)
     
