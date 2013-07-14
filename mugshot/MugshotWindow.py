@@ -32,7 +32,9 @@ logger = logging.getLogger('mugshot')
 
 from mugshot_lib import Window
 
-username = os.getlogin()
+username = os.getenv('USER')
+if not username:
+    username = os.getenv('USERNAME')
 home = os.path.expanduser('~')
 libreoffice_prefs = os.path.join(home, '.config', 'libreoffice', '4', 'user',
                                  'registrymodifications.xcu')
