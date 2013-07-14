@@ -31,7 +31,6 @@ import logging
 logger = logging.getLogger('mugshot')
 
 from mugshot_lib import Window
-from mugshot.AboutMugshotDialog import AboutMugshotDialog
 
 username = os.getlogin()
 home = os.path.expanduser('~')
@@ -99,8 +98,6 @@ class MugshotWindow(Window):
         """Set up the main window"""
         super(MugshotWindow, self).finish_initializing(builder)
 
-        self.AboutDialog = AboutMugshotDialog
-        
         # User Image widgets
         self.image_button = builder.get_object('image_button')
         self.user_image = builder.get_object('user_image')

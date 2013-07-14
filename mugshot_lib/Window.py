@@ -58,24 +58,12 @@ class Window(Gtk.Window):
         # Get a reference to the builder and set up the signals.
         self.builder = builder
         self.ui = builder.get_ui(self, True)
-        self.AboutDialog = None # class
 
         self.settings = Gio.Settings("apps.mugshot")
         self.settings.connect('changed', self.on_preferences_changed)
 
-    def on_mnu_contents_activate(self, widget, data=None):
+    def on_help_activate(self, widget, data=None):
         show_uri(self, "ghelp:%s" % get_help_uri())
-
-    def on_mnu_about_activate(self, widget, data=None):
-        """Display the about box for mugshot."""
-        if self.AboutDialog is not None:
-            about = self.AboutDialog() # pylint: disable=E1102
-            response = about.run()
-            about.destroy()
-
-    def on_mnu_close_activate(self, widget, data=None):
-        """Signal handler for closing the MugshotWindow."""
-        self.destroy()
 
     def on_destroy(self, widget, data=None):
         """Called when the MugshotWindow is closed."""
