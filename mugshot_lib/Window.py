@@ -58,12 +58,37 @@ class Window(Gtk.Window):
         # Get a reference to the builder and set up the signals.
         self.builder = builder
         self.ui = builder.get_ui(self, True)
+        self.CameraDialog = None # class
+        self.camera_dialog = None # instance
 
         self.settings = Gio.Settings("apps.mugshot")
         self.settings.connect('changed', self.on_preferences_changed)
 
     def on_help_activate(self, widget, data=None):
         show_uri(self, "ghelp:%s" % get_help_uri())
+        
+    def on_menu_camera_activate(self, widget, data=None):
+        """Display the camera window for mugshot."""
+        if self.camera_dialog is not None:
+            logger.debug('show existing camera_dialog')
+            self.camera_dialog.show()
+        elif self.CameraDialog is not None:
+            logger.debug('create new camera_dialog')
+            self.camera_dialog = self.CameraDialog() # pylint: disable=E1102
+            #self.camera_dialog.connect('destroy', self.on_camera_dialog_destroyed)
+            self.camera_dialog.show()
+            
+    
+            
+    #def on_camera_dialog_destroyed(self, widget, data=None):
+    #    '''only affects gui
+    #    
+    #    logically there is no difference between the user closing,
+    #    minimising or ignoring the camera dialog'''
+    #    logger.debug('on_camera_dialog_destroyed')
+    #    # to determine whether to create or present camera_dialog
+    #    self.camera_dialog.hide()
+    #    #self.camera_dialog = None
 
     def on_destroy(self, widget, data=None):
         """Called when the MugshotWindow is closed."""

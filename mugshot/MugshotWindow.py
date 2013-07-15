@@ -31,6 +31,7 @@ import logging
 logger = logging.getLogger('mugshot')
 
 from mugshot_lib import Window
+from mugshot.CameraMugshotDialog import CameraMugshotDialog
 
 username = os.getenv('USER')
 if not username:
@@ -99,6 +100,8 @@ class MugshotWindow(Window):
     def finish_initializing(self, builder): # pylint: disable=E1002
         """Set up the main window"""
         super(MugshotWindow, self).finish_initializing(builder)
+        
+        self.CameraDialog = CameraMugshotDialog
 
         # User Image widgets
         self.image_button = builder.get_object('image_button')
