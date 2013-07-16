@@ -39,19 +39,24 @@ class CameraMugshotDialog(CameraDialog):
         # Pack the video widget into the dialog.
         vbox = builder.get_object('camera_box')
         self.video_window = Gtk.DrawingArea()
-        self.draw_handler = self.video_window.connect('draw', self.on_draw)
         self.video_window.connect("realize",self.__on_video_window_realized)
         vbox.pack_start(self.video_window, True, True, 0)
         self.video_window.show()
         
         # Prepare the camerabin element.
         self.camerabin = Gst.ElementFactory.make("camerabin", "camera-source")
-        bus = self.camerabin.get_bus()
-        bus.add_signal_watch()
-        bus.enable_sync_message_emission()
-        bus.connect("message", self._on_message)
-        bus.connect("sync-message::element", self._on_sync_message)
-        self.realized = False
+        if self.camerabin:
+            bus = self.camerabin.get_bus()
+            bus.add_signal_watch()
+            bus.enable_sync_message_emission()
+            bus.connect("message", self._on_message)
+            bus.connect("sync-message::element", self._on_sync_message)
+            self.realized = False
+            self.draw_handler = self.video_window.connect('draw', self.on_draw)
+        # If the camera fails to load, show an error on the screen.
+        else:
+            self.draw_handler = self.video_window.connect('draw', self.on_failed_draw)
+            self.realized = True
         
         # Essential widgets
         self.record_button = builder.get_object('camera_record')
@@ -61,6 +66,34 @@ class CameraMugshotDialog(CameraDialog):
         self.filename = None
         
         self.show_all()
+        
+    def on_failed_draw(self, widget, ctx):
+        """Display a message that the camera failed to load."""
+        # Get the height and width of the drawing area.
+        alloc = widget.get_allocation()
+        height = alloc.height
+        width = alloc.width
+        
+        # Make the background black.
+        ctx.set_source_rgb(0,0,0)
+        ctx.paint()
+        
+        # Set the font details.
+        font_size = 20
+        font_color = (255,255,255)
+        font_name = "Sans"
+        
+        # Draw the message to the drawing area.
+        ctx.set_source_rgb(*font_color)
+        ctx.select_font_face(font_name, cairo.FONT_SLANT_NORMAL,
+                                        cairo.FONT_WEIGHT_NORMAL)
+        ctx.set_font_size(font_size)
+        ctx.move_to(10,(height-font_size)/2)
+        # Translators: This string is split for use with cairo.  The complete string is "Sorry, but your camera failed to initialize."
+        ctx.show_text(_("Sorry, but your camera"))
+        ctx.move_to(10,(height-font_size)/2+font_size)
+        # Translators: This string is split for use with cairo.  The complete string is "Sorry, but your camera failed to initialize."
+        ctx.show_text(_("failed to initialize."))
         
     def on_draw(self, widget, ctx):
         """Display a message that the camera is initializing on first draw.
@@ -103,13 +136,15 @@ class CameraMugshotDialog(CameraDialog):
         if not self.realized:
             print _("Cannot display web cam output. Ignoring play command")
         else:
-            self.camerabin.set_state(Gst.State.PLAYING)
+            if self.camerabin:
+                self.camerabin.set_state(Gst.State.PLAYING)
 
     def pause(self):
         """Pause the camera output. It will cause the image to "freeze". 
         Use play() to start the camera playing again. Note that calling pause 
         before play may cause errors on certain camera."""
-        self.camerabin.set_state(Gst.State.PAUSED)
+        if self.camerabin:
+            self.camerabin.set_state(Gst.State.PAUSED)
 
     def take_picture(self, filename):
         """take_picture - grab a frame from the webcam and save it to

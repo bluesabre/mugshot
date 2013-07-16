@@ -40,6 +40,7 @@ home = os.path.expanduser('~')
 libreoffice_prefs = os.path.join(home, '.config', 'libreoffice', '4', 'user',
                                  'registrymodifications.xcu')
 pidgin_prefs = os.path.join(home, '.purple', 'prefs.xml')
+faces_dir = '/usr/share/pixmaps/faces/'
 
 def which(command):
     '''Use the system command which to get the absolute path for the given
@@ -109,6 +110,9 @@ class MugshotWindow(Window):
         self.image_menu = builder.get_object('image_menu')
         self.image_menu.attach_to_widget(self.image_button, detach_cb)
         self.image_from_camera = builder.get_object('image_from_camera')
+        image_from_browse = builder.get_object('image_from_browse')
+        image_from_browse.set_visible( os.path.exists(faces_dir) and \
+                                       len(os.listdir(faces_dir)) > 0 )
         
         # Entry widgets (chfn)
         self.first_name_entry = builder.get_object('first_name')
