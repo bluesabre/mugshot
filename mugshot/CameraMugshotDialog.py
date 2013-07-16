@@ -19,7 +19,10 @@ from locale import gettext as _
 import logging
 logger = logging.getLogger('mugshot')
 
-from gi.repository import Gtk, GdkX11, GObject, Gst, GstVideo
+from gi.repository import Gtk, GdkX11, GObject, Gst, GstVideo, GdkPixbuf
+import cairo
+
+import tempfile, os
 
 from mugshot_lib.CameraDialog import CameraDialog
 
@@ -35,6 +38,7 @@ class CameraMugshotDialog(CameraDialog):
         # Code for other initialization actions should be added here.
         vbox = builder.get_object('camera_box')
         self.video_window = Gtk.DrawingArea()
+        self.draw_handler = self.video_window.connect('draw', self.on_draw)
         self.video_window.connect("realize",self.__on_video_window_realized)
         vbox.pack_start(self.video_window, True, True, 0)
         self.video_window.show()
@@ -46,8 +50,33 @@ class CameraMugshotDialog(CameraDialog):
         bus.connect("message", self._on_message)
         bus.connect("sync-message::element", self._on_sync_message)
         self.realized = False
+        
+        self.record_button = builder.get_object('camera_record')
+        self.apply_button = builder.get_object('camera_apply')
+        
         self.show_all()
-        ##self.play()
+        
+        self.filename = None
+        
+    def on_draw(self, widget, ctx):
+        alloc = widget.get_allocation()
+        height = alloc.height
+        width = alloc.width
+        font_size = 20
+        ctx.set_source_rgb(255,255,255)
+        ctx.select_font_face("Sans", cairo.FONT_SLANT_NORMAL,
+            cairo.FONT_WEIGHT_NORMAL)
+        ctx.set_font_size(20)
+        ctx.move_to(10,(height-font_size)/2)
+        ctx.show_text(_("Please wait while your"))
+        ctx.move_to(10,(height-font_size)/2+20)
+        ctx.show_text(_("camera is initialized."))
+        widget.disconnect(self.draw_handler)
+        self.draw_handler = widget.connect('draw', self.on_blank)
+        
+    def on_blank(self, widget, ctx):
+        ctx.set_source_rgb(0,0,0)
+        ctx.paint()
         
     def play(self):
         """play - Start the camera streaming and display the output. It is
@@ -95,6 +124,7 @@ class CameraMugshotDialog(CameraDialog):
         """
         self.camerabin.set_property("location", filename)
         self.camerabin.emit("start-capture")
+        #self.pause()
         return filename
 
     def stop(self):
@@ -122,16 +152,19 @@ class CameraMugshotDialog(CameraDialog):
             return
 
         t = message.type
-        #if t == Gst.MessageType.ASYNC_DONE:
-        #    print 'finally'
+        if t == Gst.MessageType.ASYNC_DONE:
+            self.record_button.set_sensitive(True)
         if t == Gst.MessageType.ELEMENT:
             if message.get_structure().get_name() == "image-captured":
                 #work around to keep the camera working after lots
                 #of pictures are taken
                 self.camerabin.set_state(Gst.Sate.NULL)
                 self.camerabin.set_state(Gst.State.PLAYING)
-
                 self.emit("image-captured", self.filename)
+            elif message.get_structure().get_name() == "image-done":
+                self.apply_button.set_sensitive(True)
+                self.record_button.set_sensitive(True)
+                self.pause()
 
         if t == Gst.MessageType.EOS:
             self.camerabin.set_state(Gst.State.NULL)
@@ -171,6 +204,30 @@ class CameraMugshotDialog(CameraDialog):
         if not self.realized and self.video_window.get_window() is not None:
             x = self.video_window.get_window().get_xid()
             self.realized = True
+            
+    def on_camera_record_clicked(self, widget):
+        if self.filename: os.remove(self.filename)
+        if self.apply_button.get_sensitive():
+            # Retry mode
+            self.record_button.set_label(Gtk.STOCK_MEDIA_RECORD)
+            self.apply_button.set_sensitive(False)
+            self.play()
+        else:
+            tmpfile = tempfile.NamedTemporaryFile(delete=False)
+            tmpfile.close()
+            self.filename = tmpfile.name
+            self.take_picture(self.filename)
+            self.record_button.set_label(_("Retry"))
+            self.record_button.set_sensitive(False)
+            #self.apply_button.set_sensitive(True)
+            
+    def on_camera_apply_clicked(self, widget):
+        self.center_crop(self.filename)
+        self.emit( "apply", self.filename )
+        self.hide()
+        
+    def on_camera_cancel_clicked(self, widget):
+        self.hide()
 
     def on_camera_mugshot_dialog_destroy(self, widget, data=None):
         #clean up the camera before exiting
@@ -180,8 +237,25 @@ class CameraMugshotDialog(CameraDialog):
         self.pause()
         
     def on_camera_mugshot_dialog_show(self, widget, data=None):
+        self.record_button.set_label(Gtk.STOCK_MEDIA_RECORD)
+        self.apply_button.set_sensitive(False)
         self.show_all()
         self.play()
+        
+    def center_crop(self, filename):
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
+        height = pixbuf.get_height()
+        width = pixbuf.get_width()
+        start_x = 0
+        start_y = 0
+        if width > height:
+            start_x = (width-height)/2
+            width = height
+        else:
+            start_y = (height-width)/2
+            height = width
+        new_pixbuf = pixbuf.new_subpixbuf(start_x, start_y, width, height)
+        new_pixbuf.savev(filename, "png", [], [])
         
     def on_camera_mugshot_dialog_delete_event(self, widget, data=None):
         self.hide()
@@ -189,5 +263,6 @@ class CameraMugshotDialog(CameraDialog):
         
     __gsignals__ = {'image-captured' : (GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE,
 		(GObject.TYPE_PYOBJECT,)),
+		'apply' : (GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE, (GObject.TYPE_STRING,))
 		} 
 

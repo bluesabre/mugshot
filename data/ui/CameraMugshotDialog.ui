@@ -3,8 +3,12 @@
   <!-- interface-requires gtk+ 3.0 -->
   <!-- interface-requires camera_mugshot_dialog 1.0 -->
   <object class="CameraMugshotDialog" id="camera_mugshot_dialog">
+    <property name="width_request">230</property>
+    <property name="height_request">300</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Capture - Mugshot</property>
+    <property name="resizable">False</property>
+    <property name="default_width">230</property>
     <property name="default_height">300</property>
     <property name="icon">../media/mugshot.svg</property>
     <property name="type_hint">normal</property>
@@ -26,12 +30,13 @@
             <property name="homogeneous">True</property>
             <property name="layout_style">center</property>
             <child>
-              <object class="GtkButton" id="button1">
+              <object class="GtkButton" id="camera_cancel">
                 <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_camera_cancel_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -40,12 +45,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button2">
+              <object class="GtkButton" id="camera_record">
                 <property name="label">gtk-media-record</property>
                 <property name="visible">True</property>
+                <property name="sensitive">False</property>
                 <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_camera_record_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -55,12 +62,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button3">
+              <object class="GtkButton" id="camera_apply">
                 <property name="label">gtk-apply</property>
                 <property name="visible">True</property>
+                <property name="sensitive">False</property>
                 <property name="can_focus">False</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_camera_apply_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -94,9 +103,9 @@
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-6">button1</action-widget>
-      <action-widget response="0">button2</action-widget>
-      <action-widget response="-10">button3</action-widget>
+      <action-widget response="-6">camera_cancel</action-widget>
+      <action-widget response="0">camera_record</action-widget>
+      <action-widget response="-10">camera_apply</action-widget>
     </action-widgets>
   </object>
 </interface>

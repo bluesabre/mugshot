@@ -245,6 +245,10 @@ class MugshotWindow(Window):
         """Untoggle the image button when the menu is hidden."""
         self.image_button.set_active(False)
         
+    def on_camera_dialog_apply(self, widget, data=None):
+        self.updated_image = data
+        self.set_user_image(data)
+        
     def save_image(self):
         """Copy the updated image filename to ~/.face"""
         # Check if the image has been updated.

@@ -76,19 +76,8 @@ class Window(Gtk.Window):
             logger.debug('create new camera_dialog')
             self.camera_dialog = self.CameraDialog() # pylint: disable=E1102
             #self.camera_dialog.connect('destroy', self.on_camera_dialog_destroyed)
+            self.camera_dialog.connect('apply', self.on_camera_dialog_apply)
             self.camera_dialog.show()
-            
-    
-            
-    #def on_camera_dialog_destroyed(self, widget, data=None):
-    #    '''only affects gui
-    #    
-    #    logically there is no difference between the user closing,
-    #    minimising or ignoring the camera dialog'''
-    #    logger.debug('on_camera_dialog_destroyed')
-    #    # to determine whether to create or present camera_dialog
-    #    self.camera_dialog.hide()
-    #    #self.camera_dialog = None
 
     def on_destroy(self, widget, data=None):
         """Called when the MugshotWindow is closed."""
