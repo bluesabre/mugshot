@@ -12,11 +12,14 @@ Package: mugshot
 Architecture: all
 Depends: ${misc:Depends},
  ${python:Depends},
- gir1.2-glib-2.0,
+ python-pexpect,
  gir1.2-gtk-3.0,
  python-dbus,
- python-pexpect,
+ gir1.2-glib-2.0,
+ python-cairo,
+ gir1.2-gstreamer-1.0,
  gir1.2-gdkpixbuf-2.0,
+ gir1.2-gst-plugins-base-1.0,
  yelp
 Description: UNKNOWN
  UNKNOWN

@@ -27,7 +27,7 @@
     <signal name="hide" handler="on_image_menu_hide" swapped="no"/>
     <child>
       <object class="GtkImageMenuItem" id="image_from_stock">
-        <property name="label" translatable="yes">Select from stock...</property>
+        <property name="label" translatable="yes">Select from stock…</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="image">image1</property>
@@ -37,7 +37,7 @@
     </child>
     <child>
       <object class="GtkImageMenuItem" id="image_from_camera">
-        <property name="label" translatable="yes">Capture from camera...</property>
+        <property name="label" translatable="yes">Capture from camera…</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="image">image2</property>
@@ -47,7 +47,7 @@
     </child>
     <child>
       <object class="GtkImageMenuItem" id="image_from_browse">
-        <property name="label" translatable="yes">Browse...</property>
+        <property name="label" translatable="yes">Browse…</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="image">image3</property>

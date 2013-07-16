@@ -58,7 +58,7 @@ class CameraMugshotDialog(CameraDialog):
             devices = []
             for device in os.listdir('/dev/'):
                 if device.startswith('video'): devices.append(device)
-            logger.error('Camera failed to load. Devices: %s' % '; '.join(devices))
+            logger.error(_('Camera failed to load. Devices: %s') % '; '.join(devices))
             self.draw_handler = self.video_window.connect('draw', self.on_failed_draw)
             self.realized = True
         
@@ -87,17 +87,18 @@ class CameraMugshotDialog(CameraDialog):
         font_color = (255,255,255)
         font_name = "Sans"
         
+        # Translators: Please include the newline, required to fit the message.
+        message = _("Sorry, but your camera\nfailed to initialize.")
+        
         # Draw the message to the drawing area.
         ctx.set_source_rgb(*font_color)
         ctx.select_font_face(font_name, cairo.FONT_SLANT_NORMAL,
                                         cairo.FONT_WEIGHT_NORMAL)
         ctx.set_font_size(font_size)
         ctx.move_to(10,(height-font_size)/2)
-        # Translators: This string is split for use with cairo.  The complete string is "Sorry, but your camera failed to initialize."
-        ctx.show_text(_("Sorry, but your camera"))
+        ctx.show_text(message.split('\n')[0])
         ctx.move_to(10,(height-font_size)/2+font_size)
-        # Translators: This string is split for use with cairo.  The complete string is "Sorry, but your camera failed to initialize."
-        ctx.show_text(_("failed to initialize."))
+        ctx.show_text(message.split('\n')[1])
         
     def on_draw(self, widget, ctx):
         """Display a message that the camera is initializing on first draw.
@@ -112,17 +113,18 @@ class CameraMugshotDialog(CameraDialog):
         font_color = (255,255,255)
         font_name = "Sans"
         
+        # Translators: Please include the newline, required to fit the message.
+        message = _("Please wait while your\ncamera is initialized.")
+        
         # Draw the message to the drawing area.
         ctx.set_source_rgb(*font_color)
         ctx.select_font_face(font_name, cairo.FONT_SLANT_NORMAL,
                                         cairo.FONT_WEIGHT_NORMAL)
         ctx.set_font_size(font_size)
         ctx.move_to(10,(height-font_size)/2)
-        # Translators: This string is split for use with cairo.  The complete string is "Please wait while your camera is initialized."
-        ctx.show_text(_("Please wait while your"))
+        ctx.show_text(message.split('\n')[0])
         ctx.move_to(10,(height-font_size)/2+font_size)
-        # Translators: This string is split for use with cairo.  The complete string is "Please wait while your camera is initialized."
-        ctx.show_text(_("camera is initialized."))
+        ctx.show_text(message.split('\n')[1])
         
         # Redefine on_draw to blank the drawing area next time.
         def on_draw(self, widget, ctx):
@@ -138,7 +140,7 @@ class CameraMugshotDialog(CameraDialog):
         if not self.realized:
             self._set_video_window_id()
         if not self.realized:
-            print _("Cannot display web cam output. Ignoring play command")
+            logger.error(_("Cannot display camera output. Ignoring play command"))
         else:
             if self.camerabin:
                 self.camerabin.set_state(Gst.State.PLAYING)
