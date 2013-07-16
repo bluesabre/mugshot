@@ -55,6 +55,10 @@ class CameraMugshotDialog(CameraDialog):
             self.draw_handler = self.video_window.connect('draw', self.on_draw)
         # If the camera fails to load, show an error on the screen.
         else:
+            devices = []
+            for device in os.listdir('/dev/'):
+                if device.startswith('video'): devices.append(device)
+            logger.error('Camera failed to load. Devices: %s' % '; '.join(devices))
             self.draw_handler = self.video_window.connect('draw', self.on_failed_draw)
             self.realized = True
         
