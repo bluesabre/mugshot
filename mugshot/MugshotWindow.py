@@ -108,6 +108,7 @@ class MugshotWindow(Window):
         self.user_image = builder.get_object('user_image')
         self.image_menu = builder.get_object('image_menu')
         self.image_menu.attach_to_widget(self.image_button, detach_cb)
+        self.image_from_camera = builder.get_object('image_from_camera')
         
         # Entry widgets (chfn)
         self.first_name_entry = builder.get_object('first_name')
@@ -236,6 +237,7 @@ class MugshotWindow(Window):
     def on_image_button_clicked(self, widget):
         """When the menu button is clicked, display the photo menu."""
         logger.debug('Show photo menu')
+        self.image_from_camera.set_visible(os.path.exists('/dev/video0'))
         if widget.get_active():
             self.image_menu.popup(None, None, menu_position, 
                                         self.image_menu, 3, 

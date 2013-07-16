@@ -230,6 +230,8 @@ class CameraMugshotDialog(CameraDialog):
         self.hide()
 
     def on_camera_mugshot_dialog_destroy(self, widget, data=None):
+        # Clear away the temp file.
+        os.remove(self.filename)
         #clean up the camera before exiting
         self.camerabin.set_state(Gst.State.NULL)
     
