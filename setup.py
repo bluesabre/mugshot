@@ -53,17 +53,21 @@ def update_config(libdir, values = {}):
     
 def move_icon_file(root, target_data, prefix):
     old_icon_path = os.path.normpath(root + target_data + '/share/mugshot/media')
-    old_icon_file = old_icon_path + '/mugshot.svg'
-    icon_path = os.path.normpath(root + prefix + '/share/icons/hicolor/scalable/apps')
-    icon_file = icon_path + '/mugshot.svg'
-    
-    if not os.path.exists(old_icon_file):
-        print ("ERROR: Can't find", old_icon_file)
-        sys.exit(1)
-    if not os.path.exists(icon_path):
-        os.makedirs(icon_path)
-    if old_icon_file != icon_file:
-        os.rename(old_icon_file, icon_file)
+    for icon_size in ['24x24', '48x48', '64x64', 'scalable']:
+        if icon_size == 'scalable':
+            old_icon_file = old_icon_path + '/mugshot.svg'
+        else:
+            old_icon_file = old_icon_path + '/mugshot_%s.svg' % icon_size.split('x')[0]
+        icon_path = os.path.normpath(root + prefix + '/share/icons/hicolor/%s/apps' % icon_size)
+        icon_file = icon_path + '/mugshot.svg'
+        
+        if not os.path.exists(old_icon_file):
+            print ("ERROR: Can't find", old_icon_file)
+            sys.exit(1)
+        if not os.path.exists(icon_path):
+            os.makedirs(icon_path)
+        if old_icon_file != icon_file:
+            os.rename(old_icon_file, icon_file)
         
     return icon_file
 
