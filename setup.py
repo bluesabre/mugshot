@@ -143,13 +143,13 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 
 DistUtilsExtra.auto.setup(
     name='mugshot',
-    version='0.1',
+    version='13.07',
     license='GPL-3',
-    #author='Your Name',
-    #author_email='email@ubuntu.com',
+    author='Sean Davis',
+    author_email='smd.seandavis@gmail.com',
     #description='UI for managing …',
     #long_description='Here a longer description',
-    #url='https://launchpad.net/mugshot',
+    url='https://launchpad.net/mugshot',
     cmdclass={'install': InstallAndUpdateDataDirectory}
     )
 
