@@ -45,8 +45,12 @@ faces_dir = '/usr/share/pixmaps/faces/'
 def which(command):
     '''Use the system command which to get the absolute path for the given
     command.'''
-    return subprocess.Popen(['which', command], \
+    command = subprocess.Popen(['which', command], \
                             stdout=subprocess.PIPE).stdout.read().strip()
+    if command == '': 
+        logger.debug('Command "%s" could not be found.' % command)
+        return None
+    return command
                             
 def has_running_process(name):
     """Check for a running process, return True if any listings are found."""
@@ -54,6 +58,47 @@ def has_running_process(name):
     n = subprocess.Popen(command, stdout=subprocess.PIPE, 
                                             shell=True).stdout.read().strip()
     return int(n) > 0
+    
+def has_gstreamer_camerabin_support():
+    """Return True if gstreamer1.0 camerabin element is available."""
+    process = subprocess.Popen(["gst-inspect-1.0", "camerabin"], 
+                            stdout=subprocess.PIPE, 
+                            stderr=subprocess.PIPE)
+    process.communicate()
+    has_support = process.returncode == 0
+    if not has_support:
+        logger.debug('camerabin element unavailable. Do you have gstreamer1.0-plugins-good installed?')
+    return has_support
+
+def has_gstreamer_camerasrc_support():
+    """Return True if gstreamer1.0 v4l2src element is available."""
+    process = subprocess.Popen(["gst-inspect-1.0", "v4l2src"], 
+                            stdout=subprocess.PIPE, 
+                            stderr=subprocess.PIPE)
+    process.communicate()
+    has_support = process.returncode == 0
+    if not has_support:
+        logger.debug('v4l2src element unavailable. Do you have gstreamer1.0-plugins-good installed?')
+    return has_support
+    
+def get_camera_installed():
+    """Return True if /dev/video0 exists."""
+    if not os.path.exists('/dev/video0'):
+        logger.debug('Camera not detected at /dev/video0')
+        return False
+    return True
+        
+def get_has_camera_support():
+    """Return True if cameras are fully supported by this application."""
+    if not get_camera_installed():
+        return False
+    if not which('gst-inspect-1.0'):
+        return False
+    if not has_gstreamer_camerabin_support():
+        return False
+    if not has_gstreamer_camerasrc_support():
+        return False
+    return True
 
 def detach_cb(menu, widget):
     '''Detach a widget from its attached widget.'''
@@ -240,9 +285,9 @@ class MugshotWindow(Window):
     # = Image Button and Menu ================================================ #
     def on_image_button_clicked(self, widget):
         """When the menu button is clicked, display the photo menu."""
-        logger.debug('Show photo menu')
-        self.image_from_camera.set_visible(os.path.exists('/dev/video0'))
         if widget.get_active():
+            logger.debug('Show photo menu')
+            self.image_from_camera.set_visible(get_has_camera_support())
             self.image_menu.popup(None, None, menu_position, 
                                         self.image_menu, 3, 
                                         Gtk.get_current_event_time())
@@ -285,7 +330,7 @@ class MugshotWindow(Window):
             return
         logger.debug('Prompting user to update pidgin buddy icon')
         update_pidgin = get_confirmation_dialog(self,
-                    _("Update Pidgin Buddy Icon?"),
+                    _("Update Pidgin buddy icon?"),
                     _("Would you also like to update your Pidgin buddy icon?"),
                     'pidgin')
         if update_pidgin:
@@ -489,7 +534,7 @@ class MugshotWindow(Window):
         if os.path.isfile(prefs_file):
             logger.debug('Prompting user to update LibreOffice details.')
             update_libreoffice = get_confirmation_dialog(self,
-                                _("Update LibreOffice User Details?"),
+                                _("Update LibreOffice user details?"),
                                 _("Would you also like to update your user "
                                   "details in LibreOffice?"),
                                 'libreoffice-startcenter')
