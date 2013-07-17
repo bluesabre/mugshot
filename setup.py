@@ -71,8 +71,12 @@ def move_desktop_file(root, target_data, prefix):
         # This is an /opt install, so rename desktop file to use extras-
         desktop_file = desktop_path + '/extras-mugshot.desktop'
         try:
-            os.makedirs(desktop_path)
-            os.rename(old_desktop_file, desktop_file)
+            if not os.path.exists(desktop_path):
+                os.makedirs(desktop_path)
+            if old_desktop_file != desktop_file:
+                os.rename(old_desktop_file, desktop_file)
+            for filename in os.listdir(old_desktop_path):
+                os.remove( os.path.join(old_desktop_path, filename) )
             os.rmdir(old_desktop_path)
         except OSError as e:
             print ("ERROR: Can't rename", old_desktop_file, ":", e)
@@ -116,6 +120,9 @@ def compile_schemas(root, target_data):
 class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
     def run(self):
         DistUtilsExtra.auto.install_auto.run(self)
+        
+        if not self.root:
+            self.root = ''
 
         target_data = '/' + os.path.relpath(self.install_data, self.root) + '/'
         target_pkgdata = target_data + 'share/mugshot/'
