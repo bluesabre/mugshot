@@ -380,7 +380,7 @@ class MugshotWindow(Window):
         try:
             child.expect([".*ssword.*", pexpect.EOF])
             child.sendline(password)
-            child.expect("Full Name.*:")
+            child.expect(".*ame.*:")
             child.sendline(full_name)
             for i in range(5):
                 child.sendline('')
@@ -399,11 +399,11 @@ class MugshotWindow(Window):
         child = pexpect.spawn('chfn')
         child.timeout = 5
         try:
-            child.expect(['Password: ', pexpect.EOF])
+            child.expect([".*ssword.*", pexpect.EOF])
             child.sendline(password)
-            child.expect('Room Number.*:')
+            child.expect(['Room Number.*:', 'Office.*:'])
             child.sendline('')
-            child.expect('Work Phone.*:')
+            child.expect(['Work Phone.*:', 'Office Phone.*:'])
             child.sendline(office_phone)
             child.expect('Home Phone.*:')
             child.sendline(home_phone)
@@ -495,6 +495,20 @@ class MugshotWindow(Window):
                                 'libreoffice-startcenter')
             if update_libreoffice:
                 logger.debug('Confirm: Updating details.')
+                first_name = get_entry_value(self.first_name_entry)
+                first_name_updated = False
+                last_name = get_entry_value(self.last_name_entry)
+                last_name_updated = False
+                initials = get_entry_value(self.initials_entry)
+                initials_updated = False
+                email = get_entry_value(self.email_entry)
+                email_updated = False
+                home_phone = get_entry_value(self.home_phone_entry)
+                home_phone_updated = False
+                office_phone = get_entry_value(self.office_phone_entry)
+                office_phone_updated = False
+                fax = get_entry_value(self.fax_entry)
+                fax_updated = False
                 tmp_buffer = []
                 for line in open(prefs_file):
                     new = None
@@ -503,39 +517,71 @@ class MugshotWindow(Window):
                         # First Name
                         if 'name="givenname"' in line:
                             new = new + '<value>%s</value></prop></item>\n' % \
-                                        get_entry_value(self.first_name_entry)
+                                        first_name
+                            first_name_updated = True
                         # Last Name
                         elif 'name="sn"' in line:
                             new = new + '<value>%s</value></prop></item>\n' % \
-                                        get_entry_value(self.last_name_entry)
+                                        last_name
+                            last_name_updated = True
                         # Initials
                         elif 'name="initials"' in line:
                             new = new + '<value>%s</value></prop></item>\n' % \
-                                        get_entry_value(self.initials_entry)
+                                        initials
+                            initials_updated = True
                         # Email
                         elif 'name="mail"' in line:
                             new = new + '<value>%s</value></prop></item>\n' % \
-                                        get_entry_value(self.email_entry)
+                                        email
+                            email_updated = True
                         # Home Phone
                         elif 'name="homephone"' in line:
                             new = new + '<value>%s</value></prop></item>\n' % \
-                                        get_entry_value(self.home_phone_entry)
+                                        home_phone
+                            home_phone_updated = True
                         # Office Phone
                         elif 'name="telephonenumber"' in line:
                             new = new + '<value>%s</value></prop></item>\n' % \
-                                        get_entry_value(self.office_phone_entry)
+                                        office_phone
+                            office_phone_updated = True
                         # Fax Number
                         elif 'name="facsimiletelephonenumber"' in line:
                             new = new + '<value>%s</value></prop></item>\n' % \
-                                        get_entry_value(self.fax_entry)
+                                        fax
+                            fax_updated = True
                         else:
                             new = line
                         tmp_buffer.append(new)
+                    elif '</oor:items>' in line:
+                        pass
                     else:
                         tmp_buffer.append(line)
                 open_prefs = open(prefs_file, 'w')
                 for line in tmp_buffer:
                     open_prefs.write(line)
+                    
+                if not first_name_updated:
+                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="givenname" oor:op="fuse"><value>%s</value></prop></item>\n' % first_name
+                    open_prefs.write(string)
+                if not last_name_updated:
+                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="sn" oor:op="fuse"><value>%s</value></prop></item>\n' % last_name
+                    open_prefs.write(string)
+                if not initials_updated:
+                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="initials" oor:op="fuse"><value>%s</value></prop></item>\n' % initials
+                    open_prefs.write(string)
+                if not email_updated:
+                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="mail" oor:op="fuse"><value>%s</value></prop></item>\n' % email
+                    open_prefs.write(string)
+                if not home_phone_updated:
+                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="homephone" oor:op="fuse"><value>%s</value></prop></item>\n' % home_phone
+                    open_prefs.write(string)
+                if not office_phone_updated:
+                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="telephonenumber" oor:op="fuse"><value>%s</value></prop></item>\n' % office_phone
+                    open_prefs.write(string)
+                if not fax_updated:
+                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="facsimiletelephonenumber" oor:op="fuse"><value>%s</value></prop></item>\n' % fax
+                    open_prefs.write(string)
+                open_prefs.write('</oor:items>')
                 open_prefs.close()
             else:
                 logger.debug('Reject: Not updating.')
