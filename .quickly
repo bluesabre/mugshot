@@ -1,6 +1,0 @@
-project = mugshot
-version = 12.08.1
-template = ubuntu-application
-dependencies = 
-lp_id = mugshot
-ppa = mugshot-ppa
