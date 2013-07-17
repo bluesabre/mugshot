@@ -10,7 +10,7 @@
     <property name="resizable">False</property>
     <property name="default_width">230</property>
     <property name="default_height">300</property>
-    <property name="icon">../media/mugshot.svg</property>
+    <property name="icon_name">mugshot</property>
     <property name="type_hint">normal</property>
     <signal name="destroy" handler="on_camera_mugshot_dialog_destroy" swapped="no"/>
     <signal name="show" handler="on_camera_mugshot_dialog_show" swapped="no"/>

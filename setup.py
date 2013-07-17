@@ -50,7 +50,22 @@ def update_config(libdir, values = {}):
         print ("ERROR: Can't find %s" % filename)
         sys.exit(1)
     return oldvalues
-
+    
+def move_icon_file(root, target_data, prefix):
+    old_icon_path = os.path.normpath(root + target_data + '/share/mugshot/media')
+    old_icon_file = old_icon_path + '/mugshot.svg'
+    icon_path = os.path.normpath(root + prefix + '/share/icons/hicolor/scalable/apps')
+    icon_file = icon_path + '/mugshot.svg'
+    
+    if not os.path.exists(old_icon_file):
+        print ("ERROR: Can't find", old_icon_file)
+        sys.exit(1)
+    if not os.path.exists(icon_path):
+        os.makedirs(icon_path)
+    if old_icon_file != icon_file:
+        os.rename(old_icon_file, icon_file)
+        
+    return icon_file
 
 def move_desktop_file(root, target_data, prefix):
     # The desktop file is rightly installed into install_data.  But it should
@@ -131,6 +146,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
         update_config(self.install_lib, values)
 
         desktop_file = move_desktop_file(self.root, target_data, self.prefix)
+        icon_file = move_icon_file(self.root, target_data, self.prefix)
         update_desktop_file(desktop_file, target_pkgdata, target_scripts)
         compile_schemas(self.root, target_data)
 
@@ -141,7 +157,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 
 DistUtilsExtra.auto.setup(
     name='mugshot',
-    version='13.07',
+    version='0.1',
     license='GPL-3',
     author='Sean Davis',
     author_email='smd.seandavis@gmail.com',

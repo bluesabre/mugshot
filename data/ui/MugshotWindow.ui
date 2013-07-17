@@ -68,7 +68,7 @@
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Mugshot</property>
     <property name="resizable">False</property>
-    <property name="icon">../media/mugshot.svg</property>
+    <property name="icon_name">mugshot</property>
     <child>
       <object class="GtkBox" id="box1">
         <property name="visible">True</property>
@@ -498,6 +498,7 @@
     <property name="border_width">5</property>
     <property name="modal">True</property>
     <property name="window_position">center-always</property>
+    <property name="icon_name">mugshot</property>
     <property name="type_hint">dialog</property>
     <property name="urgency_hint">True</property>
     <property name="transient_for">mugshot_window</property>
@@ -676,6 +677,7 @@ to your personal information.</property>
     <property name="default_width">600</property>
     <property name="default_height">480</property>
     <property name="destroy_with_parent">True</property>
+    <property name="icon_name">mugshot</property>
     <property name="type_hint">dialog</property>
     <property name="transient_for">mugshot_window</property>
     <signal name="delete-event" handler="on_stock_browser_delete_event" swapped="no"/>
