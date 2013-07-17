@@ -1,7 +1,7 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: mugshot
 Upstream-Contact: Sean Davis <smd.seandavis@gmail.com>
-Source: UNKNOWN
+Source: https://launchpad.net/mugshot
 
 Files: *
 Copyright: (C) 2013 Sean Davis <smd.seandavis@gmail.com>

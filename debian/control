@@ -23,10 +23,5 @@ Depends: ${misc:Depends},
  yelp
 Suggests:
  gstreamer1.0-plugins-good
-Description: a lightweight user-configuration application
- Mugshot allows you to easily update personal user details. This includes:
- .
- Linux profile image: ~/.face
- User details stored in /etc/passwd (used by finger)
- Pidgin buddy icon
- LibreOffice user details
+Description: UNKNOWN
+ UNKNOWN
