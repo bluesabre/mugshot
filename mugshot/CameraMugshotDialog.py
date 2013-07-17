@@ -26,6 +26,41 @@ import tempfile, os
 
 from mugshot_lib.CameraDialog import CameraDialog
 
+def draw_message(widget, message, ctx):
+    """Draw a message (including newlines) vertically centered on a cairo context."""
+    split_msg = message.split('\n')
+    
+    # Get the height and width of the drawing area.
+    alloc = widget.get_allocation()
+    height = alloc.height
+    width = alloc.width
+    
+    # Make the background black.
+    ctx.set_source_rgb(0,0,0)
+    ctx.paint()
+    
+    # Set the font details.
+    font_size = 20
+    font_color = (255,255,255)
+    font_name = "Sans"
+    row_spacing = 6
+    left_spacing = 10
+    
+    # Get start position
+    message_height = (len(split_msg)*font_size)+len(split_msg)-1-14
+    current_pos = (height-message_height)/2
+
+    # Draw the message to the drawing area.
+    ctx.set_source_rgb(*font_color)
+    ctx.select_font_face(font_name, cairo.FONT_SLANT_NORMAL,
+                                    cairo.FONT_WEIGHT_NORMAL)
+    ctx.set_font_size(font_size)
+    
+    for line in split_msg:
+        ctx.move_to(left_spacing,current_pos)
+        ctx.show_text(line)
+        current_pos = current_pos + font_size + row_spacing
+
 class CameraMugshotDialog(CameraDialog):
     __gtype_name__ = "CameraMugshotDialog"
 
@@ -73,58 +108,16 @@ class CameraMugshotDialog(CameraDialog):
         
     def on_failed_draw(self, widget, ctx):
         """Display a message that the camera failed to load."""
-        # Get the height and width of the drawing area.
-        alloc = widget.get_allocation()
-        height = alloc.height
-        width = alloc.width
-        
-        # Make the background black.
-        ctx.set_source_rgb(0,0,0)
-        ctx.paint()
-        
-        # Set the font details.
-        font_size = 20
-        font_color = (255,255,255)
-        font_name = "Sans"
-        
-        # Translators: Please include the newline, required to fit the message.
+        # Translators: Please include newlines, as required to fit the message.
         message = _("Sorry, but your camera\nfailed to initialize.")
-        
-        # Draw the message to the drawing area.
-        ctx.set_source_rgb(*font_color)
-        ctx.select_font_face(font_name, cairo.FONT_SLANT_NORMAL,
-                                        cairo.FONT_WEIGHT_NORMAL)
-        ctx.set_font_size(font_size)
-        ctx.move_to(10,(height-font_size)/2)
-        ctx.show_text(message.split('\n')[0])
-        ctx.move_to(10,(height-font_size)/2+font_size)
-        ctx.show_text(message.split('\n')[1])
+        draw_message(widget, message, ctx)
         
     def on_draw(self, widget, ctx):
         """Display a message that the camera is initializing on first draw.
         Afterwards, blank the drawing area to clear the message."""
-        # Get the height and width of the drawing area.
-        alloc = widget.get_allocation()
-        height = alloc.height
-        width = alloc.width
-        
-        # Set the font details.
-        font_size = 20
-        font_color = (255,255,255)
-        font_name = "Sans"
-        
-        # Translators: Please include the newline, required to fit the message.
+        # Translators: Please include newlines, as required to fit the message.
         message = _("Please wait while your\ncamera is initialized.")
-        
-        # Draw the message to the drawing area.
-        ctx.set_source_rgb(*font_color)
-        ctx.select_font_face(font_name, cairo.FONT_SLANT_NORMAL,
-                                        cairo.FONT_WEIGHT_NORMAL)
-        ctx.set_font_size(font_size)
-        ctx.move_to(10,(height-font_size)/2)
-        ctx.show_text(message.split('\n')[0])
-        ctx.move_to(10,(height-font_size)/2+font_size)
-        ctx.show_text(message.split('\n')[1])
+        draw_message(widget, message, ctx)
         
         # Redefine on_draw to blank the drawing area next time.
         def on_draw(self, widget, ctx):
