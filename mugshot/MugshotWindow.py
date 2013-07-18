@@ -148,6 +148,7 @@ class MugshotWindow(Window):
     def finish_initializing(self, builder): # pylint: disable=E1002
         """Set up the main window"""
         super(MugshotWindow, self).finish_initializing(builder)
+        self.set_wmclass("Mugshot", "Mugshot")
         
         self.CameraDialog = CameraMugshotDialog
 
