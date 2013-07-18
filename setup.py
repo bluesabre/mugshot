@@ -53,7 +53,7 @@ def update_config(libdir, values = {}):
     
 def move_icon_file(root, target_data, prefix):
     old_icon_path = os.path.normpath(root + target_data + '/share/mugshot/media')
-    for icon_size in ['24x24', '48x48', '64x64', 'scalable']:
+    for icon_size in ['16x16', '22x22', '24x24', '48x48', '64x64', 'scalable']:
         if icon_size == 'scalable':
             old_icon_file = old_icon_path + '/mugshot.svg'
         else:

@@ -7,9 +7,9 @@
   <title type="text">Mugshot</title>
   <desc>The <app>Mugshot</app> help.</desc>
   <credit type="author">
-    <name>Your Name</name>
-    <email>Your E-mail</email>
-    <years>2010</years>
+    <name>Sean Davis</name>
+    <email>smd.seandavis@gmail.com</email>
+    <years>2013</years>
   </credit>
   <license href="http://creativecommons.org/licenses/by-sa/3.0/">
   <p>Creative Commons Attribution-Share Alike 3.0 Unported License</p>
@@ -23,7 +23,9 @@
 <app>Mugshot</app> Help
 </title>
 
-<p>This is an example guide page. It's main function is to link together the help topics.</p>
+<p>Welcome to the <app>Mugshot</app> help guide.  For a quick introduction into <app>Mugshot's</app> most basic features, visit the <link xref="mugshot-quickstart">Getting Started with Mugshot</link> page.</p>
+
+<p>Other help topics are grouped together into sections below.  Enjoy using <app>Mugshot</app>!</p>
 
 <!-- This is the visible index -->
 <section id="contents" style="2column">
