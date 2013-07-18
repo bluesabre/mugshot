@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-17 11:31-0400\n"
+"POT-Creation-Date: 2013-07-17 22:19-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,97 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../mugshot/MugshotWindow.py:288
-msgid "Update Pidgin Buddy Icon?"
-msgstr ""
-
-#: ../mugshot/MugshotWindow.py:289
-msgid "Would you also like to update your Pidgin buddy icon?"
-msgstr ""
-
-#: ../mugshot/MugshotWindow.py:492
-msgid "Update LibreOffice User Details?"
-msgstr ""
-
-#: ../mugshot/MugshotWindow.py:493
-msgid "Would you also like to update your user details in LibreOffice?"
-msgstr ""
-
-#. Initialize a GtkFileChooserDialog.
-#: ../mugshot/MugshotWindow.py:605
-msgid "Select an image"
-msgstr ""
-
-#: ../data/ui/CameraMugshotDialog.ui.h:1
-msgid "Capture - Mugshot"
-msgstr ""
-
-#: ../mugshot/__init__.py:32
-msgid "Show debug messages (-vv debugs mugshot_lib also)"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:1
-msgid "Select from stock…"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:2
-msgid "Capture from camera…"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:3
-msgid "Browse…"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:4
-msgid "Mugshot"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:5
-msgid "<b>First Name</b>"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:6
-msgid "<b>Last Name</b>"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:7
-msgid "<b>Initials</b>"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:8
-msgid "<b>Home Phone</b>"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:9
-msgid "<b>Email Address</b>"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:10
-msgid "<b>Office Phone</b>"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:11
-msgid "<b>Fax</b>"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:12
-msgid "<big><b>Enter your password to change user details.</b></big>"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:13
-msgid ""
-"This is a security measure to prevent unwanted updates\n"
-"to your personal information."
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:15
-msgid "Password:"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:16
-msgid "Stock Browser"
-msgstr ""
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -116,31 +25,141 @@ msgstr ""
 msgid "Configure your profile image and contact details"
 msgstr ""
 
-#: ../mugshot/CameraMugshotDialog.py:61
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select a photo…"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Select from stock…"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Capture from camera…"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:9
+msgid "Browse…"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "Mugshot"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>First Name</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Last Name</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Initials</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Home Phone</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Email Address</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Office Phone</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "<b>Fax</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:18
+msgid "<big><b>Enter your password to change user details.</b></big>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:19
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:21
+msgid "Password:"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:22
+msgid "Stock Browser"
+msgstr ""
+
+#: ../mugshot/__init__.py:32
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr ""
+
+#: ../mugshot/CameraMugshotDialog.py:96
 #, python-format
 msgid "Camera failed to load. Devices: %s"
 msgstr ""
 
-#. Translators: Please include the newline, required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:91
+#. Translators: Please include newlines, as required to fit the message.
+#: ../mugshot/CameraMugshotDialog.py:112
 msgid ""
 "Sorry, but your camera\n"
 "failed to initialize."
 msgstr ""
 
-#. Translators: Please include the newline, required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:117
+#. Translators: Please include newlines, as required to fit the message.
+#: ../mugshot/CameraMugshotDialog.py:119
 msgid ""
 "Please wait while your\n"
 "camera is initialized."
 msgstr ""
 
-#: ../mugshot/CameraMugshotDialog.py:143
+#: ../mugshot/CameraMugshotDialog.py:136
 msgid "Cannot display camera output. Ignoring play command"
 msgstr ""
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:270
+#: ../mugshot/CameraMugshotDialog.py:263
 msgid "Retry"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:350
+msgid "Update Pidgin buddy icon?"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:351
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:554
+msgid "Update LibreOffice user details?"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:555
+msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""

@@ -1,0 +1,32 @@
+### BEGIN LICENSE
+# Copyright (C) 2013 Sean Davis <smd.seandavis@gmail.com>
+# This program is free software: you can redistribute it and/or modify it 
+# under the terms of the GNU General Public License version 3, as published 
+# by the Free Software Foundation.
+# 
+# This program is distributed in the hope that it will be useful, but 
+# WITHOUT ANY WARRANTY; without even the implied warranties of 
+# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR 
+# PURPOSE.  See the GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License along 
+# with this program.  If not, see <http://www.gnu.org/licenses/>.
+### END LICENSE
+
+# Desktop File
+mugshot.desktop.in
+
+# Glade Files
+[type: gettext/glade]data/ui/CameraMugshotDialog.ui
+[type: gettext/glade]data/ui/MugshotWindow.ui
+
+# Python Files
+mugshot/__init__.py
+mugshot/CameraMugshotDialog.py
+mugshot/MugshotWindow.py
+mugshot_lib/Builder.py
+mugshot_lib/CameraDialog.py
+mugshot_lib/mugshotconfig.py
+mugshot_lib/__init__.py
+mugshot_lib/helpers.py
+mugshot_lib/Window.py
