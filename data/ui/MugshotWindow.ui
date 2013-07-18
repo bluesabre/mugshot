@@ -140,6 +140,7 @@
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Select a photo…</property>
     <property name="role">GtkFileChooserDialog</property>
+    <property name="modal">True</property>
     <property name="icon_name">mugshot</property>
     <property name="type_hint">dialog</property>
     <property name="transient_for">mugshot_window</property>
@@ -698,6 +699,7 @@
   <object class="GtkDialog" id="password_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
+    <property name="title" translatable="yes">Password Required</property>
     <property name="modal">True</property>
     <property name="window_position">center-always</property>
     <property name="icon_name">mugshot</property>
@@ -873,7 +875,7 @@ to your personal information.</property>
   </object>
   <object class="GtkWindow" id="stock_browser">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">Stock Browser</property>
+    <property name="title" translatable="yes">Select a photo…</property>
     <property name="modal">True</property>
     <property name="window_position">center-on-parent</property>
     <property name="default_width">600</property>
