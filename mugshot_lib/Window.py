@@ -20,6 +20,8 @@ from gi.repository import Gio, Gtk # pylint: disable=E0611
 import logging
 logger = logging.getLogger('mugshot_lib')
 
+import os
+
 from . helpers import get_builder, show_uri, get_help_uri
 
 # This class is meant to be subclassed by MugshotWindow.  It provides
@@ -82,6 +84,8 @@ class Window(Gtk.Window):
     def on_destroy(self, widget, data=None):
         """Called when the MugshotWindow is closed."""
         # Clean up code for saving application state should be added here.
+        if self.tmpfile and os.path.isfile(self.tmpfile.name):
+            os.remove(self.tmpfile.name)
         Gtk.main_quit()
 
     def on_preferences_changed(self, settings, key, data=None):

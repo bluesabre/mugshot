@@ -26,6 +26,8 @@ import subprocess
 # DBUS interface is used to update pidgin buddyicon when pidgin is running.
 import dbus
 
+import tempfile
+
 from gi.repository import Gtk, Gdk, GdkPixbuf # pylint: disable=E0611
 import logging
 logger = logging.getLogger('mugshot')
@@ -171,6 +173,20 @@ class MugshotWindow(Window):
         # Stock photo browser
         self.stock_browser = builder.get_object('stock_browser')
         self.iconview = builder.get_object('stock_iconview')
+        
+        # File Chooser Dialog
+        self.chooser = builder.get_object('filechooserdialog')
+        self.crop_center = builder.get_object('crop_center')
+        self.crop_left = builder.get_object('crop_left')
+        self.crop_right = builder.get_object('crop_right')
+        self.file_chooser_preview = builder.get_object('file_chooser_preview')
+        # Add a filter for only image files.
+        image_filter = Gtk.FileFilter()
+        image_filter.set_name('Images')
+        image_filter.add_mime_type('image/*')
+        self.chooser.add_filter(image_filter)
+        
+        self.tmpfile = None
 
         # Populate all of the widgets.
         self.init_user_details()
@@ -692,26 +708,69 @@ class MugshotWindow(Window):
     # = Image Browser ======================================================== #
     def on_image_from_browse_activate(self, widget):
         """Browse for a user profile image."""
-        # Initialize a GtkFileChooserDialog.
-        chooser = Gtk.FileChooserDialog(_("Select an image"), self, 
-                                    Gtk.FileChooserAction.OPEN, 
-                                    (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, 
-                                    Gtk.STOCK_OK, Gtk.ResponseType.OK))
-                                    
-        # Add a filter for only image files.
-        image_filter = Gtk.FileFilter()
-        image_filter.set_name('Images')
-        image_filter.add_mime_type('image/*')
-        chooser.add_filter(image_filter)
-        
         # Run the dialog, grab the filename if confirmed, then hide the dialog.
-        response = chooser.run()
-        if response == Gtk.ResponseType.OK:
+        response = self.chooser.run()
+        if response == Gtk.ResponseType.APPLY:
             # Update the user image, store the path for committing later.
-            self.updated_image = chooser.get_filename()
+            if self.tmpfile and os.path.isfile(self.tmpfile.name):
+                os.remove(self.tmpfile.name)
+            self.tmpfile = tempfile.NamedTemporaryFile(delete=False)
+            self.tmpfile.close()
+            self.updated_image = self.tmpfile.name
+            self.filechooser_preview_pixbuf.savev(self.updated_image, "png", [], [])
             logger.debug("Selected %s" % self.updated_image)
             self.set_user_image(self.updated_image)
-        chooser.hide()
+        self.chooser.hide()
+        
+    def on_filechooserdialog_update_preview(self, widget):
+        filename = widget.get_filename()
+        if not filename:
+            self.file_chooser_preview.set_from_icon_name('folder', 128)
+            return
+        if not os.path.isfile(filename):
+            self.file_chooser_preview.set_from_icon_name('folder', 128)
+            return
+        filechooser_pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
+        
+        # Get the image dimensions.
+        height = filechooser_pixbuf.get_height()
+        width = filechooser_pixbuf.get_width()
+        start_x = 0
+        start_y = 0
+        
+        if self.crop_center.get_active():
+            # Calculate a balanced center.
+            if width > height:
+                start_x = (width-height)/2
+                width = height
+            else:
+                start_y = (height-width)/2
+                height = width
+                
+        elif self.crop_left.get_active():
+            start_x = 0
+            if width > height:
+                width = height
+            else:
+                start_y = (height-width)/2
+                height = width
+        elif self.crop_right.get_active():
+            if width > height:
+                start_x = width-height
+                width = height
+            else:
+                start_y = (height-width)/2
+                height = width
+            
+        # Create a new cropped pixbuf.
+        self.filechooser_preview_pixbuf = filechooser_pixbuf.new_subpixbuf(start_x, start_y, width, height)
+        
+        scaled = self.filechooser_preview_pixbuf.scale_simple(128, 128, GdkPixbuf.InterpType.HYPER)
+        self.file_chooser_preview.set_from_pixbuf(scaled)
+        
+    def on_crop_changed(self, widget, data=None):
+        if widget.get_active():
+            self.on_filechooserdialog_update_preview(self.chooser)
         
     # = Password Entry ======================================================= #
     def get_password(self):
