@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-17 22:19-0400\n"
+"POT-Creation-Date: 2013-07-17 23:02-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,21 +98,21 @@ msgid "<b>Fax</b>"
 msgstr ""
 
 #: ../data/ui/MugshotWindow.ui.h:18
-msgid "<big><b>Enter your password to change user details.</b></big>"
+msgid "Password Required"
 msgstr ""
 
 #: ../data/ui/MugshotWindow.ui.h:19
+msgid "<big><b>Enter your password to change user details.</b></big>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:20
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
 
-#: ../data/ui/MugshotWindow.ui.h:21
-msgid "Password:"
-msgstr ""
-
 #: ../data/ui/MugshotWindow.ui.h:22
-msgid "Stock Browser"
+msgid "Password:"
 msgstr ""
 
 #: ../mugshot/__init__.py:32
