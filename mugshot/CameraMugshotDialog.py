@@ -1,6 +1,8 @@
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 ### BEGIN LICENSE
 # Copyright (C) 2013 Sean Davis <smd.seandavis@gmail.com>
+# Copyright (C) 2010 Rick Spencer <rick.spencer@canonical.com>
+# Portions of this code are inspired by web_cam_box by Rick Spencer.
 # This program is free software: you can redistribute it and/or modify it 
 # under the terms of the GNU General Public License version 3, as published 
 # by the Free Software Foundation.
