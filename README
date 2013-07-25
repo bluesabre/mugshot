@@ -1,0 +1,14 @@
+Mugshot is a lightweight user configuration utility that allows you to easily update personal user details. This includes:
+  - Linux profile image: ~/.face
+  - User details stored in /etc/passwd (used by finger)
+  - Pidgin buddy icon
+  - LibreOffice user details
+  
+Dependencies: chfn, python-gi, python-pexpect, python-dbus, python-cairo, yelp
+Optional: gstreamer1.0-plugins-good (for webcam support), gnome-control-center-data (provides a healthy list of stock user profile images)
+
+Please report comments, suggestions and bugs to:
+    Sean Davis <smd.seandavis@gmail.com>
+    
+Check for new versions at:
+    https://launchpad.net/mugshot
