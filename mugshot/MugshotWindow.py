@@ -279,6 +279,7 @@ class MugshotWindow(Window):
             self.save_image()
             
         self.save_gsettings()
+        self.destroy()
             
     def save_gsettings(self):
         """Save details to dconf (the ones not tracked by /etc/passwd)"""
