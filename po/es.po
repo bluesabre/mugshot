@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-07-17 23:02-0400\n"
-"PO-Revision-Date: 2013-07-26 10:01+0000\n"
+"PO-Revision-Date: 2013-08-04 10:14+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-07-27 05:44+0000\n"
-"X-Generator: Launchpad (build 16700)\n"
+"X-Launchpad-Export-Date: 2013-08-05 07:00+0000\n"
+"X-Generator: Launchpad (build 16718)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -23,7 +23,7 @@ msgstr "Acerca de mí"
 
 #: ../mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
-msgstr "Configura tu imagen de perfil y tus datos de contacto"
+msgstr "Configure su imagen de perfil y datos de contacto"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
@@ -51,15 +51,15 @@ msgstr "<b>Cortar</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:6
 msgid "Select a photo…"
-msgstr "Seleccionar una imagen..."
+msgstr "Seleccionar una foto…"
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Select from stock…"
-msgstr "Seleccionar desde stock..."
+msgstr "Seleccionar prediseñadas…"
 
 #: ../data/ui/MugshotWindow.ui.h:8
 msgid "Capture from camera…"
-msgstr "Capturar desde la cámara..."
+msgstr "Capturar con la cámara…"
 
 #: ../data/ui/MugshotWindow.ui.h:9
 msgid "Browse…"
@@ -99,12 +99,12 @@ msgstr "<b>Fax</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:18
 msgid "Password Required"
-msgstr "Necesita contraseña"
+msgstr "Se necesita la contraseña"
 
 #: ../data/ui/MugshotWindow.ui.h:19
 msgid "<big><b>Enter your password to change user details.</b></big>"
 msgstr ""
-"<big><b>Debe ingresar su contraseña para cambiar los detalles de "
+"<big><b>Escriba su contraseña para modificar los detalles del "
 "usuario.</b></big>"
 
 #: ../data/ui/MugshotWindow.ui.h:20
@@ -121,12 +121,12 @@ msgstr "Contraseña:"
 
 #: ../mugshot/__init__.py:32
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
-msgstr "Mostrar mensajes de depurado (-vv depura mugshot_lib tambien)"
+msgstr "Mostrar mensajes de depuración (-vv depura mugshot_lib también)"
 
 #: ../mugshot/CameraMugshotDialog.py:96
 #, python-format
 msgid "Camera failed to load. Devices: %s"
-msgstr "La cámara falló al cargar. Dispositivos: %s"
+msgstr "Falló la carga de la cámara. Dispositivos: %s"
 
 #. Translators: Please include newlines, as required to fit the message.
 #: ../mugshot/CameraMugshotDialog.py:112
@@ -134,8 +134,8 @@ msgid ""
 "Sorry, but your camera\n"
 "failed to initialize."
 msgstr ""
-"Lo lamentamos, pero su camera\n"
-"falló al inicializar."
+"Falló la inicialización\n"
+"de la cámara."
 
 #. Translators: Please include newlines, as required to fit the message.
 #: ../mugshot/CameraMugshotDialog.py:119
@@ -143,8 +143,8 @@ msgid ""
 "Please wait while your\n"
 "camera is initialized."
 msgstr ""
-"Por favor espere mientras\n"
-"su cámara se inicializa."
+"Espere mientras se\n"
+"inicializa la cámara."
 
 #: ../mugshot/CameraMugshotDialog.py:136
 msgid "Cannot display camera output. Ignoring play command"
@@ -156,7 +156,7 @@ msgstr ""
 #. finishes.
 #: ../mugshot/CameraMugshotDialog.py:263
 msgid "Retry"
-msgstr "Volver a Intentar"
+msgstr "Reintentar"
 
 #: ../mugshot/MugshotWindow.py:350
 msgid "Update Pidgin buddy icon?"
