@@ -1,0 +1,169 @@
+# Italian translation for mugshot
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the mugshot package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mugshot\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-07-17 23:02-0400\n"
+"PO-Revision-Date: 2013-08-14 22:31+0000\n"
+"Last-Translator: Edoardo Maria Elidoro <Unknown>\n"
+"Language-Team: Italian <it@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-08-15 06:05+0000\n"
+"X-Generator: Launchpad (build 16723)\n"
+
+#: ../mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "Informazioni personali"
+
+#: ../mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "Configura l'immagine del profilo e i dettagli del contatto"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "Cattura - Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>Anteprima</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "Centra"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "Sinistra"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "Destra"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>Ritaglia</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select a photo…"
+msgstr "Seleziona una foto..."
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Select from stock…"
+msgstr "Seleziona tra le immagini stock..."
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Capture from camera…"
+msgstr "Cattura dalla webcam..."
+
+#: ../data/ui/MugshotWindow.ui.h:9
+msgid "Browse…"
+msgstr "Esplora..."
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "Mugshot"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>First Name</b>"
+msgstr "<b>Nome</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Last Name</b>"
+msgstr "<b>Cognome</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Initials</b>"
+msgstr "<b>Iniziali</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Home Phone</b>"
+msgstr "<b>Telefono di casa</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Email Address</b>"
+msgstr "<b>Indirizzo Email</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Office Phone</b>"
+msgstr "<b>Telefono dell'ufficio</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "<b>Fax</b>"
+msgstr "<b>Fax</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:18
+msgid "Password Required"
+msgstr "Password Richiesta"
+
+#: ../data/ui/MugshotWindow.ui.h:19
+msgid "<big><b>Enter your password to change user details.</b></big>"
+msgstr ""
+"<big><b>Inserisci la tua password per cambiare le informazioni "
+"dell'utente.</b></big>"
+
+#: ../data/ui/MugshotWindow.ui.h:20
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+"Questa è una misura di sicurezza per evitare aggiornamenti\n"
+"indesiderati alle tue informazioni."
+
+#: ../data/ui/MugshotWindow.ui.h:22
+msgid "Password:"
+msgstr "Password:"
+
+#: ../mugshot/__init__.py:32
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr ""
+
+#: ../mugshot/CameraMugshotDialog.py:96
+#, python-format
+msgid "Camera failed to load. Devices: %s"
+msgstr ""
+
+#. Translators: Please include newlines, as required to fit the message.
+#: ../mugshot/CameraMugshotDialog.py:112
+msgid ""
+"Sorry, but your camera\n"
+"failed to initialize."
+msgstr ""
+
+#. Translators: Please include newlines, as required to fit the message.
+#: ../mugshot/CameraMugshotDialog.py:119
+msgid ""
+"Please wait while your\n"
+"camera is initialized."
+msgstr ""
+
+#: ../mugshot/CameraMugshotDialog.py:136
+msgid "Cannot display camera output. Ignoring play command"
+msgstr ""
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:263
+msgid "Retry"
+msgstr "Riprova"
+
+#: ../mugshot/MugshotWindow.py:350
+msgid "Update Pidgin buddy icon?"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:351
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:554
+msgid "Update LibreOffice user details?"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:555
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr ""
