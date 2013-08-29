@@ -1,5 +1,5 @@
-mugshot (0.1) raring; urgency=low
+mugshot (0.1-6) unstable; urgency=low
 
-  * Initial release.
+  * Initial release (closes: #721006)
 
- -- Sean Davis <smd.seandavis@gmail.com>  Sun, 14 Jul 2013 12:01:53 -0400
+ -- Sean Davis <smd.seandavis@gmail.com>  Mon, 26 Aug 2013 21:46:32 -0400

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-17 23:02-0400\n"
+"POT-Creation-Date: 2013-08-27 21:43-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,47 +119,47 @@ msgstr ""
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
 msgstr ""
 
-#: ../mugshot/CameraMugshotDialog.py:96
+#: ../mugshot/CameraMugshotDialog.py:98
 #, python-format
 msgid "Camera failed to load. Devices: %s"
 msgstr ""
 
 #. Translators: Please include newlines, as required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:112
+#: ../mugshot/CameraMugshotDialog.py:114
 msgid ""
 "Sorry, but your camera\n"
 "failed to initialize."
 msgstr ""
 
 #. Translators: Please include newlines, as required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:119
+#: ../mugshot/CameraMugshotDialog.py:121
 msgid ""
 "Please wait while your\n"
 "camera is initialized."
 msgstr ""
 
-#: ../mugshot/CameraMugshotDialog.py:136
+#: ../mugshot/CameraMugshotDialog.py:138
 msgid "Cannot display camera output. Ignoring play command"
 msgstr ""
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:263
+#: ../mugshot/CameraMugshotDialog.py:265
 msgid "Retry"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:350
+#: ../mugshot/MugshotWindow.py:351
 msgid "Update Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:351
+#: ../mugshot/MugshotWindow.py:352
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:554
+#: ../mugshot/MugshotWindow.py:555
 msgid "Update LibreOffice user details?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:555
+#: ../mugshot/MugshotWindow.py:556
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
