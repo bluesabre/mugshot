@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-07-17 23:02-0400\n"
+"POT-Creation-Date: 2013-08-27 21:43-0400\n"
 "PO-Revision-Date: 2013-07-22 19:12+0000\n"
 "Last-Translator: Sergio Baldoví <serbalgi@gmail.com>\n"
 "Language-Team: Catalan (Valencian) <ca@valencia@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-07-23 05:58+0000\n"
-"X-Generator: Launchpad (build 16700)\n"
+"X-Launchpad-Export-Date: 2013-08-30 05:37+0000\n"
+"X-Generator: Launchpad (build 16750)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -123,13 +123,13 @@ msgstr "Contrasenya:"
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
 msgstr "Mostra missatges de depuració (-vv també depura mugshot_lib)"
 
-#: ../mugshot/CameraMugshotDialog.py:96
+#: ../mugshot/CameraMugshotDialog.py:98
 #, python-format
 msgid "Camera failed to load. Devices: %s"
 msgstr "S'ha produït un error en carregar la càmera. Dispositius: %s"
 
 #. Translators: Please include newlines, as required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:112
+#: ../mugshot/CameraMugshotDialog.py:114
 msgid ""
 "Sorry, but your camera\n"
 "failed to initialize."
@@ -138,7 +138,7 @@ msgstr ""
 "inicialitzar la càmera."
 
 #. Translators: Please include newlines, as required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:119
+#: ../mugshot/CameraMugshotDialog.py:121
 msgid ""
 "Please wait while your\n"
 "camera is initialized."
@@ -146,29 +146,29 @@ msgstr ""
 "Espereu mentre la\n"
 "càmera és inicialitzada."
 
-#: ../mugshot/CameraMugshotDialog.py:136
+#: ../mugshot/CameraMugshotDialog.py:138
 msgid "Cannot display camera output. Ignoring play command"
 msgstr ""
 "No es pot mostrar l'eixida de la càmera. S'ha ignorat l'ordre de reproducció"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:263
+#: ../mugshot/CameraMugshotDialog.py:265
 msgid "Retry"
 msgstr "Reintenta"
 
-#: ../mugshot/MugshotWindow.py:350
+#: ../mugshot/MugshotWindow.py:351
 msgid "Update Pidgin buddy icon?"
 msgstr "Actualitzar la icona de l'amic en Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:351
+#: ../mugshot/MugshotWindow.py:352
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Desitgeu també actualitzar la icona de l'amic en Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:554
+#: ../mugshot/MugshotWindow.py:555
 msgid "Update LibreOffice user details?"
 msgstr "Actualitzar les dades d'usuari en LibreOffice?"
 
-#: ../mugshot/MugshotWindow.py:555
+#: ../mugshot/MugshotWindow.py:556
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr "Desitgeu també actualitzar les dades d'usuari en LibreOffice?"
