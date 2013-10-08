@@ -1,0 +1,172 @@
+# English (Australia) translation for mugshot
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the mugshot package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mugshot\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-08-27 21:43-0400\n"
+"PO-Revision-Date: 2013-10-07 14:17+0000\n"
+"Last-Translator: Michał Olber <michal.olber@osworld.pl>\n"
+"Language-Team: English (Australia) <en_AU@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-10-08 07:02+0000\n"
+"X-Generator: Launchpad (build 16799)\n"
+
+#: ../mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "Informacje o mnie"
+
+#: ../mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "Ustawia Twój obrazek profilowy i szczegóły kontaktu"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "Capture - Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>Podgląd</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "Wyśrodkowane"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "Do lewej"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "Do prawej"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>Położenie</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select a photo…"
+msgstr "Wybierz zdjęcie …"
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Select from stock…"
+msgstr "Wybierz obrazek z galerii…"
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Capture from camera…"
+msgstr "Przechwyć obraz z kamery…"
+
+#: ../data/ui/MugshotWindow.ui.h:9
+msgid "Browse…"
+msgstr "Przeglądaj…"
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "Mugshot"
+msgstr "Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>First Name</b>"
+msgstr "<b>Imię</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Last Name</b>"
+msgstr "<b>Nazwisko</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Initials</b>"
+msgstr "<b>Inicjały</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Home Phone</b>"
+msgstr "<b>Telefon domowy</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Email Address</b>"
+msgstr "<b>Adres pocztowy</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Office Phone</b>"
+msgstr "<b>Telefon służbowy</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "<b>Fax</b>"
+msgstr "<b>Faks</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:18
+msgid "Password Required"
+msgstr "Wymagane hasło"
+
+#: ../data/ui/MugshotWindow.ui.h:19
+msgid "<big><b>Enter your password to change user details.</b></big>"
+msgstr ""
+"<big><b>Należy wpisać hasło do zmiany ustawień użytkownika.</b></big>"
+
+#: ../data/ui/MugshotWindow.ui.h:20
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+"Jest to krok zabezpieczający przed niechcianymi aktualizacjami\n"
+"Twojej osobistej bazy danych."
+
+#: ../data/ui/MugshotWindow.ui.h:22
+msgid "Password:"
+msgstr "Hasło:"
+
+#: ../mugshot/__init__.py:32
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr "Pokazuje informacje debugujące (-vv debuguje także mugshot_lib)"
+
+#: ../mugshot/CameraMugshotDialog.py:98
+#, python-format
+msgid "Camera failed to load. Devices: %s"
+msgstr "Nie udało się uruchomić kamery. Urządzenie: %s"
+
+#. Translators: Please include newlines, as required to fit the message.
+#: ../mugshot/CameraMugshotDialog.py:114
+msgid ""
+"Sorry, but your camera\n"
+"failed to initialize."
+msgstr ""
+"Przykro nam, ale twoja kamera\n"
+"nie została uruchomiona."
+
+#. Translators: Please include newlines, as required to fit the message.
+#: ../mugshot/CameraMugshotDialog.py:121
+msgid ""
+"Please wait while your\n"
+"camera is initialized."
+msgstr ""
+"Nalezy poczekać do czasu\n"
+"zakończenia uruchamiania kamery."
+
+#: ../mugshot/CameraMugshotDialog.py:138
+msgid "Cannot display camera output. Ignoring play command"
+msgstr "Nie można zapisać obrazu z kamery. Porzucanie komendy odtwarzania."
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:265
+msgid "Retry"
+msgstr "Powtórz"
+
+#: ../mugshot/MugshotWindow.py:351
+msgid "Update Pidgin buddy icon?"
+msgstr "Zaktualizować ikonę przyjaciela w Pidginie?"
+
+#: ../mugshot/MugshotWindow.py:352
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr "Czy można zaktualizować także ikonę przyjaciela w Pidginie?"
+
+#: ../mugshot/MugshotWindow.py:555
+msgid "Update LibreOffice user details?"
+msgstr "Zaktualizować ikonę przyjaciela w LibreOffice?"
+
+#: ../mugshot/MugshotWindow.py:556
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr "Czy można zaktualizować także ikonę przyjaciela w LibreOffice?"
