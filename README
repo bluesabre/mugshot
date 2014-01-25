@@ -4,8 +4,8 @@ Mugshot is a lightweight user configuration utility that allows you to easily up
   - Pidgin buddy icon
   - LibreOffice user details
   
-Dependencies: chfn, python-gi, python-pexpect, python-dbus, python-cairo, yelp
-Optional: gstreamer1.0-plugins-good (for webcam support), gnome-control-center-data (provides a healthy list of stock user profile images)
+Dependencies: chfn, python3-gi, python3-pexpect, python3-dbus, python3-cairo
+Optional: gstreamer1.0-plugins-good and gstreamer1.0-tools (for webcam support), gnome-control-center-data (provides a healthy list of stock user profile images)
 
 Please report comments, suggestions and bugs to:
     Sean Davis <smd.seandavis@gmail.com>
