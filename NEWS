@@ -1,0 +1,12 @@
+Mugshot                                                                    NEWS
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+25 Jan 2014, Mugshot 0.2
+
+- General:
+  . Mugshot is now designed for use with only Python 3.
+  . Dependency on yelp/ghelp has been removed.
+  . Packaging has been simplified.
+  
+27 Jul 2013, Mugshot 0.1
+
+- Initial release.

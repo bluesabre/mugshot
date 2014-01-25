@@ -57,7 +57,7 @@ def move_icon_file(root, target_data, prefix):
     """Move the icon files to their installation prefix."""
     old_icon_path = os.path.normpath(
             os.path.join(root, target_data, 'share', 'mugshot', 'media'))
-    for icon_size in ['16x16', '24x24', '32x32', '48x48', '64x64', 'scalable']:
+    for icon_size in ['16x16', '22x22', '24x24', '48x48', '64x64', 'scalable']:
         if icon_size == 'scalable':
             old_icon_file = os.path.join(old_icon_path, 'mugshot.svg')
         else:
@@ -171,7 +171,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 
 DistUtilsExtra.auto.setup(
     name='mugshot',
-    version='2.0',
+    version='0.2',
     license='GPL-3',
     author='Sean Davis',
     author_email='smd.seandavis@gmail.com',
