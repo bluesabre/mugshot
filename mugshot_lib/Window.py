@@ -21,7 +21,7 @@ logger = logging.getLogger('mugshot_lib')
 
 import os
 
-from . helpers import get_builder, show_uri, get_help_uri
+from . helpers import get_builder, show_uri
 
 
 class Window(Gtk.Window):
@@ -68,7 +68,7 @@ class Window(Gtk.Window):
 
     def on_help_activate(self, widget, data=None):
         """Show the Help documentation when Help is clicked."""
-        show_uri(self, "ghelp:%s" % get_help_uri())
+        show_uri(self, "http://wiki.smdavis.us/doku.php?id=mugshot-docs")
 
     def on_menu_camera_activate(self, widget, data=None):
         """Display the camera window for mugshot."""

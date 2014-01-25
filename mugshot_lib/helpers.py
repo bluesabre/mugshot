@@ -85,23 +85,6 @@ def set_up_logging(opts):
             lib_logger.setLevel(logging.DEBUG)
 
 
-def get_help_uri(page=None):
-    """Get the URI to be used for Help."""
-    # help_uri from source tree - default language
-    here = os.path.dirname(__file__)
-    help_uri = os.path.abspath(os.path.join(here, '..', 'help', 'C'))
-
-    if not os.path.exists(help_uri):
-        # installed so use gnome help tree - user's language
-        help_uri = 'mugshot'
-
-    # unspecified page is the index.page
-    if page is not None:
-        help_uri = '%s#%s' % (help_uri, page)
-
-    return help_uri
-
-
 def show_uri(parent, link):
     """Open the URI."""
     from gi.repository import Gtk  # pylint: disable=E0611

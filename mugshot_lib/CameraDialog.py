@@ -19,7 +19,7 @@ from gi.repository import Gtk  # pylint: disable=E0611
 import logging
 logger = logging.getLogger('mugshot_lib')
 
-from . helpers import get_builder, show_uri, get_help_uri
+from . helpers import get_builder
 
 
 class CameraDialog(Gtk.Dialog):
@@ -57,7 +57,3 @@ class CameraDialog(Gtk.Dialog):
     def on_btn_close_clicked(self, widget, data=None):
         """Destroy the dialog when closed."""
         self.destroy()
-
-    def on_btn_help_clicked(self, widget, data=None):
-        """Show the help dialog when Help is clicked."""
-        show_uri(self, "ghelp:%s" % get_help_uri('preferences'))
