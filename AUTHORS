@@ -1,2 +1,5 @@
-Copyright (C) 2013 Sean Davis <smd.seandavis@gmail.com>
-Artwork Copyright (C) 2013 Simon Steinbeiß <simon@xfce.org>
+Copyright (C) 2013-2014 Sean Davis <smd.seandavis@gmail.com>
+Artwork Copyright (C) 2013-2014 Simon Steinbeiß <simon@xfce.org>
+
+Camera functionality based on web_cam_box
+Copyright (C) 2010 Rick Spencer <rick.spencer@canonical.com>
