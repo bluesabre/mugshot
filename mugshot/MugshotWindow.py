@@ -133,7 +133,8 @@ def get_confirmation_dialog(parent, primary_message, secondary_message,
                                                                 icon_name=None):
     """Display a confirmation (yes/no) dialog configured with primary and
     secondary messages, as well as a custom icon if requested."""
-    dialog = Gtk.MessageDialog(parent, flags=0, type=Gtk.MessageType.QUESTION,
+    dialog = Gtk.MessageDialog(transient_for=parent, flags=0,
+                               type=Gtk.MessageType.QUESTION,
                                buttons=Gtk.ButtonsType.YES_NO,
                                message_format=primary_message)
     dialog.format_secondary_text(secondary_message)

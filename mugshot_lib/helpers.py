@@ -82,8 +82,8 @@ def set_up_logging(opts):
     if opts.verbose:
         logger.setLevel(logging.DEBUG)
         logger.debug('logging enabled')
-    if opts.verbose > 1:
-        lib_logger.setLevel(logging.DEBUG)
+        if opts.verbose > 1:
+            lib_logger.setLevel(logging.DEBUG)
 
 
 def get_help_uri(page=None):

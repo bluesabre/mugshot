@@ -64,7 +64,7 @@ class Window(Gtk.Window):
         self.CameraDialog = None  # class
         self.camera_dialog = None  # instance
 
-        self.settings = Gio.Settings("apps.mugshot")
+        self.settings = Gio.Settings.new("apps.mugshot")
         self.settings.connect('changed', self.on_preferences_changed)
 
     def on_help_activate(self, widget, data=None):

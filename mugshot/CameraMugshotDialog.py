@@ -22,6 +22,7 @@ import logging
 logger = logging.getLogger('mugshot')
 
 from gi.repository import Gtk, GObject, Gst, GdkPixbuf
+from gi.repository import GdkX11, GstVideo  # lint:ok
 import cairo
 
 import tempfile
