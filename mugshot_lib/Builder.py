@@ -1,16 +1,16 @@
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 ### BEGIN LICENSE
 # Copyright (C) 2013 Sean Davis <smd.seandavis@gmail.com>
-# This program is free software: you can redistribute it and/or modify it 
-# under the terms of the GNU General Public License version 3, as published 
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 3, as published
 # by the Free Software Foundation.
-# 
-# This program is distributed in the hope that it will be useful, but 
-# WITHOUT ANY WARRANTY; without even the implied warranties of 
-# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR 
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranties of
+# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
 # PURPOSE.  See the GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License along 
+#
+# You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
@@ -18,7 +18,7 @@
 
 '''Enhances builder connections, provides object to access glade objects'''
 
-from gi.repository import GObject, Gtk # pylint: disable=E0611
+from gi.repository import GObject, Gtk  # pylint: disable=E0611
 
 import inspect
 import functools
@@ -46,6 +46,7 @@ class Builder(Gtk.Builder):
     '''
 
     def __init__(self):
+        """Initialize the builder."""
         Gtk.Builder.__init__(self)
         self.widgets = {}
         self.glade_handler_dict = {}
@@ -120,7 +121,7 @@ class Builder(Gtk.Builder):
         connection_dict = {}
         connection_dict.update(self.glade_handler_dict)
         connection_dict.update(callback_handler_dict)
-        for item in connection_dict.items():
+        for item in list(connection_dict.items()):
             if item[1] is None:
                 # the handler is missing so reroute to default_handler
                 handler = functools.partial(
@@ -166,17 +167,19 @@ class Builder(Gtk.Builder):
 class UiFactory():
     ''' provides an object with attributes as glade widgets'''
     def __init__(self, widget_dict):
+        """Initialize the UiFactory."""
         self._widget_dict = widget_dict
-        for (widget_name, widget) in widget_dict.items():
+        for (widget_name, widget) in list(widget_dict.items()):
             setattr(self, widget_name, widget)
 
         # Mangle any non-usable names (like with spaces or dashes)
         # into pythonic ones
         cannot_message = """cannot bind ui.%s, name already exists
         consider using a pythonic name instead of design name '%s'"""
-        consider_message = """consider using a pythonic name instead of design name '%s'"""
-        
-        for (widget_name, widget) in widget_dict.items():
+        consider_message = """consider using a pythonic name instead of
+        design name '%s'"""
+
+        for (widget_name, widget) in list(widget_dict.items()):
             pyname = make_pyname(widget_name)
             if pyname != widget_name:
                 if hasattr(self, pyname):
@@ -187,7 +190,7 @@ class UiFactory():
 
         def iterator():
             '''Support 'for o in self' '''
-            return iter(widget_dict.values())
+            return iter(list(widget_dict.values()))
         setattr(self, '__iter__', iterator)
 
     def __getitem__(self, name):
@@ -208,10 +211,11 @@ def make_pyname(name):
     return pyname
 
 
-# Until bug https://bugzilla.gnome.org/show_bug.cgi?id=652127 is fixed, we 
+# Until bug https://bugzilla.gnome.org/show_bug.cgi?id=652127 is fixed, we
 # need to reimplement inspect.getmembers.  GObject introspection doesn't
 # play nice with it.
 def getmembers(obj, check):
+    """Reimplementation of getmembers"""
     members = []
     for k in dir(obj):
         try:
@@ -260,7 +264,7 @@ def auto_connect_by_name(callback_obj, builder):
 
     callback_handler_dict = dict_from_callback_obj(callback_obj)
 
-    for item in builder.widgets.items():
+    for item in list(builder.widgets.items()):
         (widget_name, widget) = item
         signal_ids = []
         try:
@@ -296,7 +300,7 @@ def do_connect(item, signal_name, handler_names,
     widget_name, widget = item
 
     for handler_name in handler_names:
-        target = handler_name in callback_handler_dict.keys()
+        target = handler_name in list(callback_handler_dict.keys())
         connection = (widget_name, signal_name, handler_name)
         duplicate = connection in connections
         if target and not duplicate:
@@ -312,7 +316,7 @@ def log_unconnected_functions(callback_handler_dict, connections):
 
     connected_functions = [x[2] for x in connections]
 
-    handler_names = callback_handler_dict.keys()
+    handler_names = list(callback_handler_dict.keys())
     unconnected = [x for x in handler_names if x.startswith('on_')]
 
     for handler_name in connected_functions:

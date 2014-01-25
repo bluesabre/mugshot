@@ -1,16 +1,16 @@
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 ### BEGIN LICENSE
 # Copyright (C) 2013 Sean Davis <smd.seandavis@gmail.com>
-# This program is free software: you can redistribute it and/or modify it 
-# under the terms of the GNU General Public License version 3, as published 
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 3, as published
 # by the Free Software Foundation.
-# 
-# This program is distributed in the hope that it will be useful, but 
-# WITHOUT ANY WARRANTY; without even the implied warranties of 
-# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR 
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranties of
+# MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
 # PURPOSE.  See the GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License along 
+#
+# You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 ### END LICENSE
 
@@ -28,7 +28,7 @@ import dbus
 
 import tempfile
 
-from gi.repository import Gtk, Gdk, GdkPixbuf # pylint: disable=E0611
+from gi.repository import Gtk, GdkPixbuf  # pylint: disable=E0611
 import logging
 logger = logging.getLogger('mugshot')
 
@@ -44,52 +44,64 @@ libreoffice_prefs = os.path.join(home, '.config', 'libreoffice', '4', 'user',
 pidgin_prefs = os.path.join(home, '.purple', 'prefs.xml')
 faces_dir = '/usr/share/pixmaps/faces/'
 
+
 def which(command):
     '''Use the system command which to get the absolute path for the given
     command.'''
-    command = subprocess.Popen(['which', command], \
+    command = subprocess.Popen(['which', command],
                             stdout=subprocess.PIPE).stdout.read().strip()
-    if command == '': 
+    if command == '':
         logger.debug('Command "%s" could not be found.' % command)
         return None
     return command
-                            
+
+
 def has_running_process(name):
     """Check for a running process, return True if any listings are found."""
     command = 'ps -ef | grep " %s" | grep -v "grep"  | wc -l' % name
-    n = subprocess.Popen(command, stdout=subprocess.PIPE, 
+    n = subprocess.Popen(command, stdout=subprocess.PIPE,
                                             shell=True).stdout.read().strip()
     return int(n) > 0
-    
+
+
 def has_gstreamer_camerabin_support():
     """Return True if gstreamer1.0 camerabin element is available."""
-    process = subprocess.Popen(["gst-inspect-1.0", "camerabin"], 
-                            stdout=subprocess.PIPE, 
+    process = subprocess.Popen(["gst-inspect-1.0", "camerabin"],
+                            stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE)
     process.communicate()
     has_support = process.returncode == 0
     if not has_support:
-        logger.debug('camerabin element unavailable. Do you have gstreamer1.0-plugins-good installed?')
+        element = 'camerabin'
+        plugin = 'gstreamer1.0-plugins-good'
+        logger.debug('%s element unavailable. '
+                     'Do you have %s installed?' % (element, plugin))
     return has_support
+
 
 def has_gstreamer_camerasrc_support():
     """Return True if gstreamer1.0 v4l2src element is available."""
-    process = subprocess.Popen(["gst-inspect-1.0", "v4l2src"], 
-                            stdout=subprocess.PIPE, 
+    process = subprocess.Popen(["gst-inspect-1.0", "v4l2src"],
+                            stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE)
     process.communicate()
     has_support = process.returncode == 0
     if not has_support:
-        logger.debug('v4l2src element unavailable. Do you have gstreamer1.0-plugins-good installed?')
+        element = 'v4l2src'
+        plugin = 'gstreamer1.0-plugins-good'
+        logger.debug('%s element unavailable. '
+                     'Do you have %s installed?' % (element, plugin))
     return has_support
-    
+
+
 def get_camera_installed():
     """Return True if /dev/video0 exists."""
     if not os.path.exists('/dev/video0'):
         logger.debug('Camera not detected at /dev/video0')
         return False
     return True
-        
+
+
 def get_has_camera_support():
     """Return True if cameras are fully supported by this application."""
     if not get_camera_installed():
@@ -102,10 +114,12 @@ def get_has_camera_support():
         return False
     return True
 
+
 def detach_cb(menu, widget):
     '''Detach a widget from its attached widget.'''
     menu.detach()
-    
+
+
 def get_entry_value(entry_widget):
     """Get the value from one of the Mugshot entries."""
     # Get the text from an entry, changing none to ''
@@ -113,10 +127,11 @@ def get_entry_value(entry_widget):
     if value.lower() == 'none':
         value = ''
     return value
-    
-def get_confirmation_dialog(parent, primary_message, secondary_message, 
+
+
+def get_confirmation_dialog(parent, primary_message, secondary_message,
                                                                 icon_name=None):
-    """Display a confirmation (yes/no) dialog configured with primary and 
+    """Display a confirmation (yes/no) dialog configured with primary and
     secondary messages, as well as a custom icon if requested."""
     dialog = Gtk.MessageDialog(parent, flags=0, type=Gtk.MessageType.QUESTION,
                                buttons=Gtk.ButtonsType.YES_NO,
@@ -129,7 +144,8 @@ def get_confirmation_dialog(parent, primary_message, secondary_message,
     response = dialog.run()
     dialog.destroy()
     return response == Gtk.ResponseType.YES
-    
+
+
 def menu_position(self, menu, data=None, something_else=None):
     '''Position a menu at the bottom of its attached widget'''
     widget = menu.get_attach_widget()
@@ -141,15 +157,17 @@ def menu_position(self, menu, data=None, something_else=None):
     y = window_pos[1] + allocation.y + allocation.height
     return (x, y, True)
 
+
 # See mugshot_lib.Window.py for more details about how this class works
 class MugshotWindow(Window):
+    """Mugshot GtkWindow"""
     __gtype_name__ = "MugshotWindow"
-    
-    def finish_initializing(self, builder): # pylint: disable=E1002
+
+    def finish_initializing(self, builder):  # pylint: disable=E1002
         """Set up the main window"""
         super(MugshotWindow, self).finish_initializing(builder)
         self.set_wmclass("Mugshot", "Mugshot")
-        
+
         self.CameraDialog = CameraMugshotDialog
 
         # User Image widgets
@@ -159,9 +177,9 @@ class MugshotWindow(Window):
         self.image_menu.attach_to_widget(self.image_button, detach_cb)
         self.image_from_camera = builder.get_object('image_from_camera')
         image_from_browse = builder.get_object('image_from_browse')
-        image_from_browse.set_visible( os.path.exists(faces_dir) and \
-                                       len(os.listdir(faces_dir)) > 0 )
-        
+        image_from_browse.set_visible(os.path.exists(faces_dir) and
+                                       len(os.listdir(faces_dir)) > 0)
+
         # Entry widgets (chfn)
         self.first_name_entry = builder.get_object('first_name')
         self.last_name_entry = builder.get_object('last_name')
@@ -170,11 +188,11 @@ class MugshotWindow(Window):
         self.home_phone_entry = builder.get_object('home_phone')
         self.email_entry = builder.get_object('email')
         self.fax_entry = builder.get_object('fax')
-        
+
         # Stock photo browser
         self.stock_browser = builder.get_object('stock_browser')
         self.iconview = builder.get_object('stock_iconview')
-        
+
         # File Chooser Dialog
         self.chooser = builder.get_object('filechooserdialog')
         self.crop_center = builder.get_object('crop_center')
@@ -186,12 +204,12 @@ class MugshotWindow(Window):
         image_filter.set_name('Images')
         image_filter.add_mime_type('image/*')
         self.chooser.add_filter(image_filter)
-        
+
         self.tmpfile = None
 
         # Populate all of the widgets.
         self.init_user_details()
-        
+
     def init_user_details(self):
         """Initialize the user details entries and variables."""
         # Check for .face and set profile image.
@@ -202,7 +220,7 @@ class MugshotWindow(Window):
         else:
             self.set_user_image(None)
         self.updated_image = None
-        
+
         # Search /etc/passwd for the current user's details.
         logger.debug('Getting user details from /etc/passwd')
         for line in open('/etc/passwd', 'r'):
@@ -211,7 +229,7 @@ class MugshotWindow(Window):
                 details = line.split(':')[4]
                 name, office, office_phone, home_phone = details.split(',', 3)
                 break
-                
+
         # Expand the user's fullname into first, last, and initials.
         try:
             first_name, last_name = name.split(' ', 1)
@@ -220,25 +238,27 @@ class MugshotWindow(Window):
             first_name = name
             last_name = ''
             initials = first_name[0]
-            
+
         # If the variables are defined as 'none', use blank for cleanliness.
-        if home_phone == 'none': home_phone = ''
-        if office_phone == 'none': office_phone = ''
-        
+        if home_phone == 'none':
+            home_phone = ''
+        if office_phone == 'none':
+            office_phone = ''
+
         # Get dconf settings
         logger.debug('Getting initials, email, and fax from dconf')
         if self.settings['initials'] != '':
             initials = self.settings['initials']
         email = self.settings['email']
         fax = self.settings['fax']
-                    
+
         # Set the class variables
         self.first_name = first_name
         self.last_name = last_name
         self.initials = initials
         self.home_phone = home_phone
         self.office_phone = office_phone
-                    
+
         # Populate the GtkEntries.
         logger.debug('Populating entries')
         self.first_name_entry.set_text(self.first_name)
@@ -248,7 +268,7 @@ class MugshotWindow(Window):
         self.home_phone_entry.set_text(self.home_phone)
         self.email_entry.set_text(email)
         self.fax_entry.set_text(fax)
-            
+
     # = Mugshot Window ======================================================= #
     def set_user_image(self, filename=None):
         """Scale and set the user profile image."""
@@ -264,83 +284,84 @@ class MugshotWindow(Window):
         """Allow only numbers and + in phone entry fields."""
         text = entry.get_text().strip()
         entry.set_text(''.join([i for i in text if i in '+0123456789']))
-    
+
     def on_apply_button_clicked(self, widget):
-        """When the window Apply button is clicked, commit any relevant 
+        """When the window Apply button is clicked, commit any relevant
         changes."""
         logger.debug('Applying changes...')
         if self.get_chfn_details_updated():
-            returns = self.save_chfn_details()
-            
+            self.save_chfn_details()
+
         if self.get_libreoffice_details_updated():
             self.set_libreoffice_data()
-                
+
         if self.updated_image:
             self.save_image()
-            
+
         self.save_gsettings()
         self.destroy()
-            
+
     def save_gsettings(self):
         """Save details to dconf (the ones not tracked by /etc/passwd)"""
         logger.debug('Saving details to dconf: /apps/mugshot')
-        self.settings.set_string('initials', 
+        self.settings.set_string('initials',
                                  get_entry_value(self.initials_entry))
         self.settings.set_string('email', get_entry_value(self.email_entry))
         self.settings.set_string('fax', get_entry_value(self.fax_entry))
-        
+
     def entry_focus_next(self, widget):
         """Focus the next available entry when pressing Enter."""
         logger.debug('Entry activated, focusing next widget.')
         vbox = widget.get_parent().get_parent().get_parent().get_parent()
         vbox.child_focus(Gtk.DirectionType.TAB_FORWARD)
-            
+
     def on_cancel_button_clicked(self, widget):
         """When the window cancel button is clicked, close the program."""
         logger.debug('Cancel clicked, goodbye.')
         self.destroy()
-        
+
     # = Image Button and Menu ================================================ #
     def on_image_button_clicked(self, widget):
         """When the menu button is clicked, display the photo menu."""
         if widget.get_active():
             logger.debug('Show photo menu')
             self.image_from_camera.set_visible(get_has_camera_support())
-            self.image_menu.popup(None, None, menu_position, 
-                                        self.image_menu, 3, 
+            self.image_menu.popup(None, None, menu_position,
+                                        self.image_menu, 3,
                                         Gtk.get_current_event_time())
-                                                  
+
     def on_image_menu_hide(self, widget):
         """Untoggle the image button when the menu is hidden."""
         self.image_button.set_active(False)
-        
+
     def on_camera_dialog_apply(self, widget, data=None):
+        """Commit changes when apply is clicked."""
         self.updated_image = data
         self.set_user_image(data)
-        
+
     def save_image(self):
         """Copy the updated image filename to ~/.face"""
         # Check if the image has been updated.
         if not self.updated_image:
             logger.debug('Photo not updated, not saving changes.')
             return False
-            
+
         face = os.path.expanduser('~/.face')
-        
+
         # If the .face file already exists, remove it first.
         logger.debug('Photo updated, saving changes.')
         if os.path.isfile(face):
             os.remove(face)
-            
+
         # Copy the new file to ~/.face
         shutil.copyfile(self.updated_image, face)
         self.set_pidgin_buddyicon(face)
         self.updated_image = None
         return True
-        
+
     def set_pidgin_buddyicon(self, filename=None):
         """Sets the pidgin buddyicon to filename (usually ~/.face).
-        
+
         If pidgin is running, use the dbus interface, otherwise directly modify
         the XML file."""
         if not os.path.exists(pidgin_prefs):
@@ -358,19 +379,19 @@ class MugshotWindow(Window):
                 self.set_pidgin_buddyicon_xml(filename)
         else:
             logger.debug('Reject: Not updating pidgin buddy icon')
-            
+
     def set_pidgin_buddyicon_dbus(self, filename=None):
         """Set the pidgin buddy icon via dbus."""
         logger.debug('Updating pidgin buddy icon via dbus')
         bus = dbus.SessionBus()
-        obj = bus.get_object("im.pidgin.purple.PurpleService", 
+        obj = bus.get_object("im.pidgin.purple.PurpleService",
                              "/im/pidgin/purple/PurpleObject")
         purple = dbus.Interface(obj, "im.pidgin.purple.PurpleInterface")
         # To make the change instantly visible, set the icon to none first.
         purple.PurplePrefsSetPath('/pidgin/accounts/buddyicon', '')
         if filename:
             purple.PurplePrefsSetPath('/pidgin/accounts/buddyicon', filename)
-        
+
     def set_pidgin_buddyicon_xml(self, filename=None):
         """Set the buddyicon used by pidgin to filename (via the xml file)."""
         # This is hacky, but a working implementation for now...
@@ -380,9 +401,9 @@ class MugshotWindow(Window):
         if os.path.isfile(prefs_file):
             for line in open(prefs_file):
                 if '<pref name=\'buddyicon\'' in line:
-                    new = line.split('value=')[0] 
+                    new = line.split('value=')[0]
                     if filename:
-                        new = new + 'value=\'%s\'/>\n' % filename 
+                        new = new + 'value=\'%s\'/>\n' % filename
                     else:
                         new = new + 'value=\'\'/>\n'
                     tmp_buffer.append(new)
@@ -392,7 +413,7 @@ class MugshotWindow(Window):
             for line in tmp_buffer:
                 write_prefs.write(line)
             write_prefs.close()
-        
+
     # = chfn functions ============================================ #
     def get_chfn_details_updated(self):
         """Return True if chfn-related details have been modified."""
@@ -405,25 +426,25 @@ class MugshotWindow(Window):
             return True
         logger.debug('chfn details have NOT been modified.')
         return False
-    
+
     def save_chfn_details(self):
         """Commit changes to chfn-related details.  For full name, changes must
         be performed as root.  Other changes are done with the user password.
-        
+
         Return exit codes for 1) full name changes and 2) home/work phone
         changes.
-        
+
         e.g. [0, 0] (both passed)"""
         return_codes = []
-        
+
         # Get the user's password
         password = self.get_password()
         if not password:
             return return_codes
-            
+
         username = os.getenv('USER')
         chfn = which('chfn')
-            
+
         # Get each of the updated values.
         first_name = get_entry_value(self.first_name_entry)
         last_name = get_entry_value(self.last_name_entry)
@@ -435,7 +456,7 @@ class MugshotWindow(Window):
         home_phone = get_entry_value(self.home_phone_entry)
         if home_phone == '':
             home_phone = 'none'
-        
+
         # Full name can only be modified by root.  Try using sudo to modify.
         logger.debug('Attempting to set fullname with sudo chfn')
         child = pexpect.spawn('sudo %s %s' % (chfn, username))
@@ -449,9 +470,9 @@ class MugshotWindow(Window):
                 child.sendline('')
         except pexpect.TIMEOUT:
             # Password was incorrect, or sudo rights not granted
-            logger.debug('Timeout reached, password was incorrect or sudo ' \
+            logger.debug('Timeout reached, password was incorrect or sudo '
                          'rights not granted.')
-            pass 
+            pass
         child.close()
         if child.exitstatus == 0:
             self.first_name = first_name
@@ -479,7 +500,7 @@ class MugshotWindow(Window):
             self.home_phone = home_phone
         return_codes.append(child.exitstatus)
         return return_codes
-        
+
     # = LibreOffice ========================================================== #
     def get_libreoffice_details_updated(self):
         """Return True if LibreOffice settings need to be updated."""
@@ -506,14 +527,14 @@ class MugshotWindow(Window):
             return True
         logger.debug('LibreOffice details do not need to be updated.')
         return False
-    
+
     def get_libreoffice_data(self):
         """Get each of the preferences from the LibreOffice registymodifications
         preferences file.
-        
+
         Return a dict with the details."""
         prefs_file = libreoffice_prefs
-        data = {'first_name': '', 'last_name': '', 'initials': '', 'email': '', 
+        data = {'first_name': '', 'last_name': '', 'initials': '', 'email': '',
                 'home_phone': '', 'office_phone': '', 'fax': ''}
         if os.path.isfile(prefs_file):
             logger.debug('Getting settings from %s' % prefs_file)
@@ -545,7 +566,7 @@ class MugshotWindow(Window):
                     else:
                         pass
         return data
-        
+
     def set_libreoffice_data(self):
         """Update the LibreOffice registymodifications preferences file."""
         prefs_file = libreoffice_prefs
@@ -622,40 +643,61 @@ class MugshotWindow(Window):
                 open_prefs = open(prefs_file, 'w')
                 for line in tmp_buffer:
                     open_prefs.write(line)
-                    
+
                 if not first_name_updated:
-                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="givenname" oor:op="fuse"><value>%s</value></prop></item>\n' % first_name
+                    string = \
+                    '<item oor:path="/org.openoffice.UserProfile/Data">'
+                    '<prop oor:name="givenname" oor:op="fuse">'
+                    '<value>%s</value></prop></item>\n' % first_name
                     open_prefs.write(string)
                 if not last_name_updated:
-                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="sn" oor:op="fuse"><value>%s</value></prop></item>\n' % last_name
+                    string = \
+                    '<item oor:path="/org.openoffice.UserProfile/Data">'
+                    '<prop oor:name="sn" oor:op="fuse">'
+                    '<value>%s</value></prop></item>\n' % last_name
                     open_prefs.write(string)
                 if not initials_updated:
-                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="initials" oor:op="fuse"><value>%s</value></prop></item>\n' % initials
+                    string = \
+                    '<item oor:path="/org.openoffice.UserProfile/Data">'
+                    '<prop oor:name="initials" oor:op="fuse">'
+                    '<value>%s</value></prop></item>\n' % initials
                     open_prefs.write(string)
                 if not email_updated:
-                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="mail" oor:op="fuse"><value>%s</value></prop></item>\n' % email
+                    string = \
+                    '<item oor:path="/org.openoffice.UserProfile/Data">'
+                    '<prop oor:name="mail" oor:op="fuse">'
+                    '<value>%s</value></prop></item>\n' % email
                     open_prefs.write(string)
                 if not home_phone_updated:
-                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="homephone" oor:op="fuse"><value>%s</value></prop></item>\n' % home_phone
+                    string = \
+                    '<item oor:path="/org.openoffice.UserProfile/Data">'
+                    '<prop oor:name="homephone" oor:op="fuse">'
+                    '<value>%s</value></prop></item>\n' % home_phone
                     open_prefs.write(string)
                 if not office_phone_updated:
-                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="telephonenumber" oor:op="fuse"><value>%s</value></prop></item>\n' % office_phone
+                    string = \
+                    '<item oor:path="/org.openoffice.UserProfile/Data">'
+                    '<prop oor:name="telephonenumber" oor:op="fuse">'
+                    '<value>%s</value></prop></item>\n' % office_phone
                     open_prefs.write(string)
                 if not fax_updated:
-                    string = '<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="facsimiletelephonenumber" oor:op="fuse"><value>%s</value></prop></item>\n' % fax
+                    string = \
+                    '<item oor:path="/org.openoffice.UserProfile/Data">'
+                    '<prop oor:name="facsimiletelephonenumber" oor:op="fuse">'
+                    '<value>%s</value></prop></item>\n' % fax
                     open_prefs.write(string)
                 open_prefs.write('</oor:items>')
                 open_prefs.close()
             else:
                 logger.debug('Reject: Not updating.')
-                    
+
     # = Stock Browser ======================================================== #
     def on_image_from_stock_activate(self, widget):
-        """When the 'Select image from stock' menu item is clicked, load and 
+        """When the 'Select image from stock' menu item is clicked, load and
         display the stock photo browser."""
         self.load_stock_browser()
         self.stock_browser.show_all()
-        
+
     def load_stock_browser(self):
         """Load the stock photo browser."""
         # Check if the photos have already been loaded.
@@ -663,7 +705,7 @@ class MugshotWindow(Window):
         if len(model) != 0:
             logger.debug("Stock browser already loaded.")
             return
-            
+
         # If they have not, load each photo from /usr/share/pixmaps/faces.
         logger.debug("Loading stock browser photos.")
         for filename in os.listdir('/usr/share/pixmaps/faces'):
@@ -672,24 +714,24 @@ class MugshotWindow(Window):
                 pixbuf = GdkPixbuf.Pixbuf.new_from_file(full_path)
                 scaled = pixbuf.scale_simple(90, 90, GdkPixbuf.InterpType.HYPER)
                 model.append([full_path, scaled])
-                
+
     def on_stock_iconview_selection_changed(self, widget):
         """Enable stock submission only when an item is selected."""
         selected_items = self.iconview.get_selected_items()
         self.builder.get_object('stock_ok').set_sensitive(
                                                     len(selected_items) > 0)
-                
+
     def on_stock_browser_delete_event(self, widget, event):
         """Hide the stock browser instead of deleting it."""
         widget.hide()
         return True
-        
+
     def on_stock_cancel_clicked(self, widget):
         """Hide the stock browser when Cancel is clicked."""
         self.stock_browser.hide()
-        
+
     def on_stock_ok_clicked(self, widget):
-        """When the stock browser OK button is clicked, get the currently 
+        """When the stock browser OK button is clicked, get the currently
         selected photo and set it to the user profile image."""
         selected_items = self.iconview.get_selected_items()
         if len(selected_items) != 0:
@@ -697,16 +739,16 @@ class MugshotWindow(Window):
             path = int(selected_items[0].to_string())
             filename = self.iconview.get_model()[path][0]
             logger.debug("Selected %s" % filename)
-            
+
             # Update variables and widgets, then hide.
             self.set_user_image(filename)
             self.updated_image = filename
             self.stock_browser.hide()
-            
+
     def on_stock_iconview_item_activated(self, widget, path):
         """Allow selecting a stock photo with Enter."""
         self.on_stock_ok_clicked(widget)
-        
+
     # = Image Browser ======================================================== #
     def on_image_from_browse_activate(self, widget):
         """Browse for a user profile image."""
@@ -719,12 +761,14 @@ class MugshotWindow(Window):
             self.tmpfile = tempfile.NamedTemporaryFile(delete=False)
             self.tmpfile.close()
             self.updated_image = self.tmpfile.name
-            self.filechooser_preview_pixbuf.savev(self.updated_image, "png", [], [])
+            self.filechooser_preview_pixbuf.savev(self.updated_image, "png",
+                                                                        [], [])
             logger.debug("Selected %s" % self.updated_image)
             self.set_user_image(self.updated_image)
         self.chooser.hide()
-        
+
     def on_filechooserdialog_update_preview(self, widget):
+        """Update the preview image used in the file chooser."""
         filename = widget.get_filename()
         if not filename:
             self.file_chooser_preview.set_from_icon_name('folder', 128)
@@ -733,47 +777,50 @@ class MugshotWindow(Window):
             self.file_chooser_preview.set_from_icon_name('folder', 128)
             return
         filechooser_pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
-        
+
         # Get the image dimensions.
         height = filechooser_pixbuf.get_height()
         width = filechooser_pixbuf.get_width()
         start_x = 0
         start_y = 0
-        
+
         if self.crop_center.get_active():
             # Calculate a balanced center.
             if width > height:
-                start_x = (width-height)/2
+                start_x = (width - height) / 2
                 width = height
             else:
-                start_y = (height-width)/2
+                start_y = (height - width) / 2
                 height = width
-                
+
         elif self.crop_left.get_active():
             start_x = 0
             if width > height:
                 width = height
             else:
-                start_y = (height-width)/2
+                start_y = (height - width) / 2
                 height = width
         elif self.crop_right.get_active():
             if width > height:
-                start_x = width-height
+                start_x = width - height
                 width = height
             else:
-                start_y = (height-width)/2
+                start_y = (height - width) / 2
                 height = width
-            
+
         # Create a new cropped pixbuf.
-        self.filechooser_preview_pixbuf = filechooser_pixbuf.new_subpixbuf(start_x, start_y, width, height)
-        
-        scaled = self.filechooser_preview_pixbuf.scale_simple(128, 128, GdkPixbuf.InterpType.HYPER)
+        self.filechooser_preview_pixbuf = \
+            filechooser_pixbuf.new_subpixbuf(start_x, start_y, width, height)
+
+        scaled = self.filechooser_preview_pixbuf.scale_simple(128, 128,
+                                                GdkPixbuf.InterpType.HYPER)
         self.file_chooser_preview.set_from_pixbuf(scaled)
-        
+
     def on_crop_changed(self, widget, data=None):
+        """Update the preview image when crop style is modified."""
         if widget.get_active():
             self.on_filechooserdialog_update_preview(self.chooser)
-        
+
     # = Password Entry ======================================================= #
     def get_password(self):
         """Display a password dialog for authenticating to sudo and chfn."""
@@ -789,9 +836,8 @@ class MugshotWindow(Window):
             return pw
         logger.debug("Cancelled")
         return None
-        
+
     def on_password_entry_changed(self, widget):
         """Enable password submission only when password is not blank."""
         self.builder.get_object('password_ok').set_sensitive(
                                                     len(widget.get_text()) > 0)
-    
