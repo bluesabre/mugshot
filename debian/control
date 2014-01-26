@@ -20,19 +20,10 @@ Depends: ${shlibs:Depends},
  gir1.2-gstreamer-1.0,
  gir1.2-gst-plugins-base-1.0,
  gir1.2-gtk-3.0,
- python-cairo,
- python-dbus,
- python-pexpect,
- yelp
+ python3-cairo,
+ python3-dbus,
+ python3-pexpect
 Suggests:
  gstreamer1.0-plugins-good, gstreamer1.0-tools
 Description: lightweight user-configuration application
- Mugshot allows you to easily update personal user details. This includes:
- .
- Linux Profile image: ~/.face
- .
- User details stored in /etc/passwd
- .
- Pidgin buddy icon
- .
- LibreOffice user details
+ Mugshot allows you to easily update personal user details, including your profile image, buddy icon, and contact details.
