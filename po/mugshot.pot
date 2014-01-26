@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-25 18:39-0500\n"
+"POT-Creation-Date: 2014-01-25 19:41-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -148,18 +148,18 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:374
+#: ../mugshot/MugshotWindow.py:375
 msgid "Update Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:375
+#: ../mugshot/MugshotWindow.py:376
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:578
+#: ../mugshot/MugshotWindow.py:583
 msgid "Update LibreOffice user details?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:579
+#: ../mugshot/MugshotWindow.py:584
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""

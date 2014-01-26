@@ -51,6 +51,7 @@ def which(command):
     command.'''
     command = subprocess.Popen(['which', command],
                             stdout=subprocess.PIPE).stdout.read().strip()
+    command = command.decode('utf-8')
     if command == '':
         logger.debug('Command "%s" could not be found.' % command)
         return None
@@ -445,6 +446,7 @@ class MugshotWindow(Window):
             return return_codes
 
         username = os.getenv('USER')
+        sudo = which('sudo')
         chfn = which('chfn')
 
         # Get each of the updated values.
@@ -461,7 +463,7 @@ class MugshotWindow(Window):
 
         # Full name can only be modified by root.  Try using sudo to modify.
         logger.debug('Attempting to set fullname with sudo chfn')
-        child = pexpect.spawn('sudo %s %s' % (chfn, username))
+        child = pexpect.spawn('%s %s %s' % (sudo, chfn, username))
         child.timeout = 5
         try:
             child.expect([".*ssword.*", pexpect.EOF])
@@ -482,7 +484,7 @@ class MugshotWindow(Window):
         return_codes.append(child.exitstatus)
 
         logger.debug('Attempting to set user details with chfn')
-        child = pexpect.spawn('chfn')
+        child = pexpect.spawn(chfn)
         child.timeout = 5
         try:
             child.expect([".*ssword.*", pexpect.EOF])
@@ -542,7 +544,10 @@ class MugshotWindow(Window):
             logger.debug('Getting settings from %s' % prefs_file)
             for line in open(prefs_file):
                 if "UserProfile/Data" in line:
-                    value = line.split('<value>')[1].split('</value>')[0]
+                    try:
+                        value = line.split('<value>')[1].split('</value>')[0]
+                    except IndexError:
+                        continue
                     value = value.strip()
                     # First Name
                     if 'name="givenname"' in line:
