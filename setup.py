@@ -180,8 +180,6 @@ DistUtilsExtra.auto.setup(
                      'to easily set profile image and user details for your '
                      'user profile and any supported applications.',
     url='https://launchpad.net/mugshot',
-    data_files=[('share/man/man1', ['mugshot.1']),
-                ('share/glib-2.0/schemas', ['data/glib-2.0/schemas/'
-                                            'apps.mugshot.gschema.xml'])],
+    data_files=[('share/man/man1', ['mugshot.1'])],
     cmdclass={'install': InstallAndUpdateDataDirectory}
     )
