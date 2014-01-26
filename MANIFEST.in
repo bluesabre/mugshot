@@ -1,0 +1,6 @@
+include AUTHORS COPYING mugshot.1 mugshot.desktop.in README
+include bin/*
+recursive-include data *.svg *.ui *.xml
+recursive-include mugshot *.py
+recursive-include mugshot_lib *.py
+recursive-include po *.po *.in
