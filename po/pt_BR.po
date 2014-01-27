@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-26 05:18+0000\n"
+"X-Launchpad-Export-Date: 2014-01-27 05:49+0000\n"
 "X-Generator: Launchpad (build 16914)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -169,6 +169,3 @@ msgstr "Atualizar dados de usuário do LibreOffice?"
 #: ../mugshot/MugshotWindow.py:584
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr "Gostaria também de atualizar seus dados de usuário no LibreOffice?"
-
-#~ msgid "Cannot display camera output. Ignoring play command"
-#~ msgstr "Impossível mostrar imagem da câmera. Ignorando comando play"
