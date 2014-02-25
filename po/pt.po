@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-01-25 20:37-0500\n"
-"PO-Revision-Date: 2013-07-19 15:02+0000\n"
+"PO-Revision-Date: 2014-02-24 18:23+0000\n"
 "Last-Translator: David Pires <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-27 05:49+0000\n"
-"X-Generator: Launchpad (build 16914)\n"
+"X-Launchpad-Export-Date: 2014-02-25 06:28+0000\n"
+"X-Generator: Launchpad (build 16926)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -59,7 +59,7 @@ msgstr "Selecione a partir do stock..."
 
 #: ../data/ui/MugshotWindow.ui.h:8
 msgid "Capture from camera…"
-msgstr "Capturar a partir da câmera ..."
+msgstr "Capturar a partir da câmera..."
 
 #: ../data/ui/MugshotWindow.ui.h:9
 msgid "Browse…"
@@ -71,11 +71,11 @@ msgstr "Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:11
 msgid "<b>First Name</b>"
-msgstr "<b>Primeiro Nome</b>"
+msgstr "<b>Nome</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:12
 msgid "<b>Last Name</b>"
-msgstr "<b>Último Nome</b>"
+msgstr "<b>Apelido</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:13
 msgid "<b>Initials</b>"
@@ -148,6 +148,7 @@ msgstr ""
 #: ../mugshot/CameraMugshotDialog.py:151
 msgid "Cannot display camera output.Ignoring play command"
 msgstr ""
+"Não é possível exibir o comando de reprodução output.Ignoring da câmera"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
