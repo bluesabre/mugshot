@@ -108,7 +108,7 @@ class SudoDialog(Gtk.MessageDialog):
         self.password_entry = Gtk.Entry()
         self.password_entry.set_visibility(False)
         self.password_entry.set_activates_default(True)
-        self.password_entry.connect("changed", self._on_password_changed,
+        self.password_entry.connect("changed", self.on_password_changed,
                                                                     ok_button)
 
         # Pack all the widgets.
@@ -124,7 +124,7 @@ class SudoDialog(Gtk.MessageDialog):
         self.attempted_logins = 0
         self.max_attempted_logins = retries
 
-    def _on_password_changed(self, widget, button):
+    def on_password_changed(self, widget, button):
         """Set the apply button sensitivity based on password input."""
         button.set_sensitive(len(widget.get_text()) > 0)
 
