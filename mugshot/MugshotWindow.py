@@ -33,7 +33,7 @@ from gi.repository import Gtk, GdkPixbuf, GLib, Gio  # pylint: disable=E0611
 import logging
 logger = logging.getLogger('mugshot')
 
-from mugshot_lib import Window
+from mugshot_lib import Window, SudoDialog
 from mugshot.CameraMugshotDialog import CameraMugshotDialog
 
 username = GLib.get_user_name()
@@ -471,8 +471,18 @@ class MugshotWindow(Window):
         e.g. [0, 0] (both passed)"""
         return_codes = []
 
-        # Get the user's password
-        password = self.get_password()
+        # Get the password for sudo
+        sudo_dialog = SudoDialog.SudoDialog(
+            icon=None, name=_("Mugshot"), retries=3)
+        sudo_dialog.format_primary_text(_("Enter your password to change user "
+                                        "details."))
+        sudo_dialog.format_secondary_text(_("This is a security measure to "
+                                          "prevent unwanted updates\n"
+                                          "to your personal information."))
+        sudo_dialog.run()
+        sudo_dialog.hide()
+        password = sudo_dialog.get_password()
+
         if not password:
             return return_codes
 
@@ -504,7 +514,7 @@ class MugshotWindow(Window):
                 child.sendline('')
         except pexpect.TIMEOUT:
             # Password was incorrect, or sudo rights not granted
-            logger.debug('Timeout reached, password was incorrect or sudo '
+            logger.warning('Timeout reached, password was incorrect or sudo '
                          'rights not granted.')
             pass
         child.close()
@@ -527,7 +537,7 @@ class MugshotWindow(Window):
             child.sendline(home_phone)
             child.sendline(home_phone)
         except pexpect.TIMEOUT:
-            logger.debug('Timeout reached, password was likely incorrect.')
+            logger.warning('Timeout reached, password was likely incorrect.')
         child.close(True)
         if child.exitstatus == 0:
             self.office_phone = office_phone
@@ -857,24 +867,3 @@ class MugshotWindow(Window):
         """Update the preview image when crop style is modified."""
         if widget.get_active():
             self.on_filechooserdialog_update_preview(self.chooser)
-
-    # = Password Entry ======================================================= #
-    def get_password(self):
-        """Display a password dialog for authenticating to sudo and chfn."""
-        logger.debug("Prompting user for password")
-        dialog = self.builder.get_object('password_dialog')
-        entry = self.builder.get_object('password_entry')
-        response = dialog.run()
-        dialog.hide()
-        if response == Gtk.ResponseType.OK:
-            logger.debug("Password entered")
-            pw = entry.get_text()
-            entry.set_text('')
-            return pw
-        logger.debug("Cancelled")
-        return None
-
-    def on_password_entry_changed(self, widget):
-        """Enable password submission only when password is not blank."""
-        self.builder.get_object('password_ok').set_sensitive(
-                                                    len(widget.get_text()) > 0)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-02 14:35-0500\n"
+"POT-Creation-Date: 2014-03-02 15:23-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Browse…"
 msgstr ""
 
-#: ../data/ui/MugshotWindow.ui.h:9
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:476
 msgid "Mugshot"
 msgstr ""
 
@@ -95,24 +95,6 @@ msgstr ""
 
 #: ../data/ui/MugshotWindow.ui.h:17
 msgid "Select a photo…"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:18
-msgid "Password Required"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:19
-msgid "<big><b>Enter your password to change user details.</b></big>"
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:20
-msgid ""
-"This is a security measure to prevent unwanted updates\n"
-"to your personal information."
-msgstr ""
-
-#: ../data/ui/MugshotWindow.ui.h:22
-msgid "Password:"
 msgstr ""
 
 #: ../mugshot/__init__.py:34
@@ -156,10 +138,49 @@ msgstr ""
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:613
+#: ../mugshot/MugshotWindow.py:477
+msgid "Enter your password to change user details."
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:479
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:623
 msgid "Update LibreOffice user details?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:614
+#: ../mugshot/MugshotWindow.py:624
 msgid "Would you also like to update your user details in LibreOffice?"
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:65
+msgid "Cancel"
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:66
+msgid "OK"
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:78
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:80
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:101
+msgid "Incorrect password... try again."
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:106
+msgid "Password:"
 msgstr ""

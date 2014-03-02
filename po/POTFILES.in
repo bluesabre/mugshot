@@ -29,4 +29,5 @@ mugshot_lib/CameraDialog.py
 mugshot_lib/mugshotconfig.py
 mugshot_lib/__init__.py
 mugshot_lib/helpers.py
+mugshot_lib/SudoDialog.py
 mugshot_lib/Window.py
