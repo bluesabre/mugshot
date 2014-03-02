@@ -1,11 +1,25 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+02 Mar 2014, Mugshot 0.2.1
+
+- General:
+  . Fixed typo that incorrectly hid the manual photo browser instead of stock
+  . Use GLib for better environment and user settings detection
+  . Use the SudoDialog developed for Catfish to better receive password
+  . Correctly stop processing updates if password was incorrectly entered
+- Bugs fixed:
+  . Add option to remove current profile picture (LP: #1286897)
+  . Add AccountsService support to set profile picture (LP: #1273896)
+  . mugshot fails at attempt to change avatar (LP: #1284720)
+
+
 25 Jan 2014, Mugshot 0.2
 
 - General:
   . Mugshot is now designed for use with only Python 3.
   . Dependency on yelp/ghelp has been removed.
   . Packaging has been simplified.
+
   
 27 Jul 2013, Mugshot 0.1
 
