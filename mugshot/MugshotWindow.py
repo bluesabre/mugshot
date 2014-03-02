@@ -296,7 +296,7 @@ class MugshotWindow(Window):
         if self.get_libreoffice_details_updated():
             self.set_libreoffice_data()
 
-        if self.updated_image:
+        if self.updated_image is not None:
             self.save_image()
 
         self.save_gsettings()
@@ -335,6 +335,11 @@ class MugshotWindow(Window):
         """Untoggle the image button when the menu is hidden."""
         self.image_button.set_active(False)
 
+    def on_image_remove_activate(self, widget):
+        """Remove the user's profile image."""
+        self.updated_image = ""
+        self.set_user_image(None)
+
     def on_camera_dialog_apply(self, widget, data=None):
         """Commit changes when apply is clicked."""
         self.updated_image = data
@@ -343,7 +348,7 @@ class MugshotWindow(Window):
     def save_image(self):
         """Copy the updated image filename to ~/.face"""
         # Check if the image has been updated.
-        if not self.updated_image:
+        if self.updated_image is None:
             logger.debug('Photo not updated, not saving changes.')
             return False
 
@@ -355,7 +360,10 @@ class MugshotWindow(Window):
             os.remove(face)
 
         # Copy the new file to ~/.face
-        shutil.copyfile(self.updated_image, face)
+        if os.path.isfile(self.updated_image):
+            shutil.copyfile(self.updated_image, face)
+        else:
+            face = ""
         self.accounts_service_set_user_image(face)
         self.set_pidgin_buddyicon(face)
         self.updated_image = None

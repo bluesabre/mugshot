@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.16.1 -->
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
+  <requires lib="gtk+" version="3.6"/>
   <!-- interface-requires mugshot_window 1.0 -->
   <!-- interface-local-resource-path ../media -->
   <object class="GtkBox" id="box8">
@@ -135,77 +136,6 @@
       </packing>
     </child>
   </object>
-  <object class="GtkFileChooserDialog" id="filechooserdialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
-    <property name="title" translatable="yes">Select a photo…</property>
-    <property name="role">GtkFileChooserDialog</property>
-    <property name="modal">True</property>
-    <property name="icon_name">mugshot</property>
-    <property name="type_hint">dialog</property>
-    <property name="transient_for">mugshot_window</property>
-    <property name="create_folders">False</property>
-    <property name="local_only">False</property>
-    <property name="preview_widget">box8</property>
-    <property name="use_preview_label">False</property>
-    <signal name="update-preview" handler="on_filechooserdialog_update_preview" swapped="no"/>
-    <child internal-child="vbox">
-      <object class="GtkBox" id="filechooserdialog-vbox1">
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox" id="filechooserdialog-action_area1">
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
-            <child>
-              <object class="GtkButton" id="button1">
-                <property name="label">gtk-cancel</property>
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="button2">
-                <property name="label">gtk-apply</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="has_default">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="pack_type">end</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-      </object>
-    </child>
-    <action-widgets>
-      <action-widget response="-6">button1</action-widget>
-      <action-widget response="-10">button2</action-widget>
-    </action-widgets>
-  </object>
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -256,6 +186,22 @@
         <property name="image">image3</property>
         <property name="use_stock">False</property>
         <signal name="activate" handler="on_image_from_browse_activate" swapped="no"/>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem" id="menuitem1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkImageMenuItem" id="image_remove">
+        <property name="label">gtk-remove</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="use_underline">True</property>
+        <property name="use_stock">True</property>
+        <signal name="activate" handler="on_image_remove_activate" swapped="no"/>
       </object>
     </child>
   </object>
@@ -461,8 +407,8 @@
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
                                 <property name="input_purpose">phone</property>
-                                <signal name="changed" handler="filter_numbers" swapped="no"/>
                                 <signal name="activate" handler="entry_focus_next" swapped="no"/>
+                                <signal name="changed" handler="filter_numbers" swapped="no"/>
                               </object>
                             </child>
                           </object>
@@ -548,10 +494,9 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">•</property>
-                                <property name="invisible_char_set">True</property>
                                 <property name="input_purpose">phone</property>
-                                <signal name="changed" handler="filter_numbers" swapped="no"/>
                                 <signal name="activate" handler="entry_focus_next" swapped="no"/>
+                                <signal name="changed" handler="filter_numbers" swapped="no"/>
                               </object>
                             </child>
                           </object>
@@ -695,6 +640,77 @@
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkFileChooserDialog" id="filechooserdialog">
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Select a photo…</property>
+    <property name="role">GtkFileChooserDialog</property>
+    <property name="modal">True</property>
+    <property name="icon_name">mugshot</property>
+    <property name="type_hint">dialog</property>
+    <property name="transient_for">mugshot_window</property>
+    <property name="create_folders">False</property>
+    <property name="local_only">False</property>
+    <property name="preview_widget">box8</property>
+    <property name="use_preview_label">False</property>
+    <signal name="update-preview" handler="on_filechooserdialog_update_preview" swapped="no"/>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="filechooserdialog-vbox1">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="filechooserdialog-action_area1">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="button1">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button2">
+                <property name="label">gtk-apply</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="has_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="-6">button1</action-widget>
+      <action-widget response="-10">button2</action-widget>
+    </action-widgets>
   </object>
   <object class="GtkDialog" id="password_dialog">
     <property name="can_focus">False</property>
@@ -901,9 +917,10 @@ to your personal information.</property>
               <object class="GtkIconView" id="stock_iconview">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="margin">0</property>
                 <property name="model">liststore1</property>
-                <signal name="selection-changed" handler="on_stock_iconview_selection_changed" swapped="no"/>
                 <signal name="item-activated" handler="on_stock_iconview_item_activated" swapped="no"/>
+                <signal name="selection-changed" handler="on_stock_iconview_selection_changed" swapped="no"/>
                 <child>
                   <object class="GtkCellRendererPixbuf" id="cellrendererpixbuf"/>
                   <attributes>
