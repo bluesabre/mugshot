@@ -67,6 +67,7 @@ class SudoDialog(Gtk.MessageDialog):
         ok_button.connect("clicked", self.on_ok_clicked)
         ok_button.set_receives_default(True)
         ok_button.set_can_default(True)
+        ok_button.set_sensitive(False)
         self.set_default(ok_button)
         button_box.pack_start(ok_button, False, False, 0)
 
@@ -107,6 +108,8 @@ class SudoDialog(Gtk.MessageDialog):
         self.password_entry = Gtk.Entry()
         self.password_entry.set_visibility(False)
         self.password_entry.set_activates_default(True)
+        self.password_entry.connect("changed", self._on_password_changed,
+                                                                    ok_button)
 
         # Pack all the widgets.
         password_box.pack_start(password_label, False, False, 0)
@@ -120,6 +123,10 @@ class SudoDialog(Gtk.MessageDialog):
 
         self.attempted_logins = 0
         self.max_attempted_logins = retries
+
+    def _on_password_changed(self, widget, button):
+        """Set the apply button sensitivity based on password input."""
+        button.set_sensitive(len(widget.get_text()) > 0)
 
     def format_primary_text(self, message_format):
         '''
