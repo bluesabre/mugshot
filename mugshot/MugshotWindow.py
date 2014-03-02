@@ -291,7 +291,19 @@ class MugshotWindow(Window):
         changes."""
         logger.debug('Applying changes...')
         if self.get_chfn_details_updated():
-            self.save_chfn_details()
+            result = self.save_chfn_details()
+            if result != [0, 0]:
+                # Password was incorrect, complain.
+                primary = _("Authentication Failed")
+                secondary = _("User details were not updated.")
+                dialog = Gtk.MessageDialog(transient_for=self, flags=0,
+                               message_type=Gtk.MessageType.WARNING,
+                               buttons=Gtk.ButtonsType.OK,
+                               text=primary)
+                dialog.format_secondary_text(secondary)
+                dialog.run()
+                dialog.destroy()
+                return
 
         if self.get_libreoffice_details_updated():
             self.set_libreoffice_data()
@@ -482,6 +494,7 @@ class MugshotWindow(Window):
         sudo_dialog.run()
         sudo_dialog.hide()
         password = sudo_dialog.get_password()
+        sudo_dialog.destroy()
 
         if not password:
             return return_codes
