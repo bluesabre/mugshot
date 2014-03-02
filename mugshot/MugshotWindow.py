@@ -179,8 +179,8 @@ class MugshotWindow(Window):
         self.image_menu = builder.get_object('image_menu')
         self.image_menu.attach_to_widget(self.image_button, detach_cb)
         self.image_from_camera = builder.get_object('image_from_camera')
-        image_from_browse = builder.get_object('image_from_browse')
-        image_from_browse.set_visible(os.path.exists(faces_dir) and
+        image_from_stock = builder.get_object('image_from_stock')
+        image_from_stock.set_visible(os.path.exists(faces_dir) and
                                        len(os.listdir(faces_dir)) > 0)
 
         # Entry widgets (chfn)
@@ -713,10 +713,10 @@ class MugshotWindow(Window):
             logger.debug("Stock browser already loaded.")
             return
 
-        # If they have not, load each photo from /usr/share/pixmaps/faces.
+        # If they have not, load each photo from faces_dir.
         logger.debug("Loading stock browser photos.")
-        for filename in os.listdir('/usr/share/pixmaps/faces'):
-            full_path = os.path.join('/usr/share/pixmaps/faces/', filename)
+        for filename in os.listdir(faces_dir):
+            full_path = os.path.join(faces_dir, filename)
             if os.path.isfile(full_path):
                 pixbuf = GdkPixbuf.Pixbuf.new_from_file(full_path)
                 scaled = pixbuf.scale_simple(90, 90, GdkPixbuf.InterpType.HYPER)
