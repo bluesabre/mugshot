@@ -29,19 +29,17 @@ import dbus
 
 import tempfile
 
-from gi.repository import Gtk, GdkPixbuf  # pylint: disable=E0611
+from gi.repository import Gtk, GdkPixbuf, GLib  # pylint: disable=E0611
 import logging
 logger = logging.getLogger('mugshot')
 
 from mugshot_lib import Window
 from mugshot.CameraMugshotDialog import CameraMugshotDialog
 
-username = os.getenv('USER')
-if not username:
-    username = os.getenv('USERNAME')
-home = os.path.expanduser('~')
-libreoffice_prefs = os.path.join(home, '.config', 'libreoffice', '4', 'user',
-                                 'registrymodifications.xcu')
+username = GLib.get_user_name()
+home = GLib.get_home_dir()
+libreoffice_prefs = os.path.join(GLib.get_user_config_dir(), 'libreoffice',
+                            '4', 'user', 'registrymodifications.xcu')
 pidgin_prefs = os.path.join(home, '.purple', 'prefs.xml')
 faces_dir = '/usr/share/pixmaps/faces/'
 
@@ -217,7 +215,7 @@ class MugshotWindow(Window):
         """Initialize the user details entries and variables."""
         # Check for .face and set profile image.
         logger.debug('Checking for ~/.face profile image')
-        face = os.path.expanduser('~/.face')
+        face = os.path.join(home, '.face')
         if os.path.isfile(face):
             self.set_user_image(face)
         else:
@@ -349,7 +347,7 @@ class MugshotWindow(Window):
             logger.debug('Photo not updated, not saving changes.')
             return False
 
-        face = os.path.expanduser('~/.face')
+        face = os.path.join(home, '.face')
 
         # If the .face file already exists, remove it first.
         logger.debug('Photo updated, saving changes.')
@@ -445,7 +443,6 @@ class MugshotWindow(Window):
         if not password:
             return return_codes
 
-        username = os.getenv('USER')
         sudo = which('sudo')
         chfn = which('chfn')
 
