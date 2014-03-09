@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-03-02 17:24-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-08 23:21-0500\n"
 "PO-Revision-Date: 2013-07-26 17:22+0000\n"
 "Last-Translator: Raphael David François <raphaeldavidf@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,7 +62,7 @@ msgstr "Câmera..."
 msgid "Browse…"
 msgstr "Procurar nos arquivos..."
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:488
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:491
 msgid "Mugshot"
 msgstr "Mugshot"
 
@@ -135,27 +136,27 @@ msgid "Retry"
 msgstr "Repetir"
 
 #. Password was incorrect, complain.
-#: ../mugshot/MugshotWindow.py:297
+#: ../mugshot/MugshotWindow.py:300
 msgid "Authentication Failed"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:298
+#: ../mugshot/MugshotWindow.py:301
 msgid "User details were not updated."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:418
+#: ../mugshot/MugshotWindow.py:421
 msgid "Update Pidgin buddy icon?"
 msgstr "Atualizar imagem do Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:419
+#: ../mugshot/MugshotWindow.py:422
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Gostaria também de atualizar sua imagem do Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:489
+#: ../mugshot/MugshotWindow.py:492
 msgid "Enter your password to change user details."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:491
+#: ../mugshot/MugshotWindow.py:494
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
@@ -163,11 +164,11 @@ msgstr ""
 "Essa é uma medida de segurança para prevenir mudanças indesejadas\n"
 "em suas informações pessoais."
 
-#: ../mugshot/MugshotWindow.py:636
+#: ../mugshot/MugshotWindow.py:641
 msgid "Update LibreOffice user details?"
 msgstr "Atualizar dados de usuário do LibreOffice?"
 
-#: ../mugshot/MugshotWindow.py:637
+#: ../mugshot/MugshotWindow.py:642
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr "Gostaria também de atualizar seus dados de usuário no LibreOffice?"
 

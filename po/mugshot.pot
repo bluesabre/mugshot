@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-02 17:24-0500\n"
+"POT-Creation-Date: 2014-03-08 23:21-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Browse…"
 msgstr ""
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:488
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:491
 msgid "Mugshot"
 msgstr ""
 
@@ -131,37 +131,37 @@ msgid "Retry"
 msgstr ""
 
 #. Password was incorrect, complain.
-#: ../mugshot/MugshotWindow.py:297
+#: ../mugshot/MugshotWindow.py:300
 msgid "Authentication Failed"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:298
+#: ../mugshot/MugshotWindow.py:301
 msgid "User details were not updated."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:418
+#: ../mugshot/MugshotWindow.py:421
 msgid "Update Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:419
+#: ../mugshot/MugshotWindow.py:422
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:489
+#: ../mugshot/MugshotWindow.py:492
 msgid "Enter your password to change user details."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:491
+#: ../mugshot/MugshotWindow.py:494
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:636
+#: ../mugshot/MugshotWindow.py:641
 msgid "Update LibreOffice user details?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:637
+#: ../mugshot/MugshotWindow.py:642
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
 
