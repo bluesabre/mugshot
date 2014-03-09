@@ -238,7 +238,10 @@ class MugshotWindow(Window):
         except:
             first_name = name
             last_name = ''
-            initials = first_name[0]
+            if first_name:
+                initials = first_name[0]
+            else:
+                initials = ''
 
         # If the variables are defined as 'none', use blank for cleanliness.
         if home_phone == 'none':
