@@ -1,5 +1,15 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+09 Mar 2014, Mugshot 0.2.2
+
+- General:
+  . Fixed crash when saving user details with a non-English locale
+  . Fixed apparently untranslated dialog
+  . Updated translations
+- Bugs fixed:
+  . Fix crash with IndexError in init_user_details (LP: #1287468)
+
+
 02 Mar 2014, Mugshot 0.2.1
 
 - General:
