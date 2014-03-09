@@ -1,0 +1,11 @@
+mugshot (0.2.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jackson Doak <noskcaj@ubuntu.com>  Tue, 04 Mar 2014 16:58:55 +1100
+
+mugshot (0.2-1) unstable; urgency=low
+
+  * Initial release (closes: #721006)
+
+ -- Jackson Doak <noskcaj@ubuntu.com>  Mon, 27 Jan 2014 07:57:13 +1100

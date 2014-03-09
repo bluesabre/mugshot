@@ -1,0 +1,35 @@
+Source: mugshot
+Section: python
+Priority: optional
+Maintainer: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
+Uploaders: Jackson Doak <noskcaj@ubuntu.com>, Sean Davis <smd.seandavis@gmail.com>
+Build-Depends: debhelper (>= 9),
+ python3,
+ python3-distutils-extra
+Standards-Version: 3.9.5
+Homepage: https://launchpad.net/mugshot
+Vcs-Svn: svn://anonscm.debian.org/python-apps/packages/mugshot/trunk/
+Vcs-Browser: http://anonscm.debian.org/viewvc/python-apps/packages/mugshot/trunk/
+
+Package: mugshot
+Architecture: all
+Depends: ${shlibs:Depends}, 
+ ${misc:Depends},
+ ${python3:Depends},
+ gir1.2-gdkpixbuf-2.0,
+ gir1.2-glib-2.0,
+ gir1.2-gstreamer-1.0,
+ gir1.2-gst-plugins-base-1.0,
+ gir1.2-gtk-3.0,
+ python3-cairo,
+ python3-dbus,
+ python3-pexpect
+Suggests:
+ gstreamer1.0-plugins-good, gstreamer1.0-tools
+Description: lightweight user-configuration application
+ Mugshot is a lightweight user configuration utility that allows you to
+ easily update personal user details. This includes:
+  - Linux profile image: ~/.face
+  - User details stored in /etc/passwd (used by finger)
+  - Pidgin buddy icon
+  - LibreOffice user details
