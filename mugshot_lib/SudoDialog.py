@@ -216,7 +216,7 @@ class SudoDialog(Gtk.MessageDialog):
         Return True if successful.
         '''
         # Set the pexpect variables and spawn the process.
-        child = pexpect.spawn('sudo /bin/true')
+        child = pexpect.spawn('LANG=C sudo /bin/true')
         child.timeout = 1
         try:
             # Check for password prompt or program exit.

@@ -516,7 +516,8 @@ class MugshotWindow(Window):
 
         # Full name can only be modified by root.  Try using sudo to modify.
         logger.debug('Attempting to set fullname with sudo chfn')
-        child = pexpect.spawn('%s %s %s' % (sudo, chfn, username))
+        # Force the C language for guaranteed english strings in the script.
+        child = pexpect.spawn('LANG=C %s %s %s' % (sudo, chfn, username))
         child.timeout = 5
         try:
             child.expect([".*ssword.*", pexpect.EOF])
@@ -537,7 +538,7 @@ class MugshotWindow(Window):
         return_codes.append(child.exitstatus)
 
         logger.debug('Attempting to set user details with chfn')
-        child = pexpect.spawn(chfn)
+        child = pexpect.spawn('LANG=C %s' % chfn)
         child.timeout = 5
         try:
             child.expect([".*ssword.*", pexpect.EOF])
