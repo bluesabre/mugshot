@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-03-08 23:21-0500\n"
-"PO-Revision-Date: 2013-07-26 17:22+0000\n"
+"PO-Revision-Date: 2014-03-25 21:36+0000\n"
 "Last-Translator: Raphael David François <raphaeldavidf@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-03-10 06:11+0000\n"
-"X-Generator: Launchpad (build 16948)\n"
+"X-Launchpad-Export-Date: 2014-03-26 07:16+0000\n"
+"X-Generator: Launchpad (build 16967)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -126,7 +126,7 @@ msgstr ""
 
 #: ../mugshot/CameraMugshotDialog.py:151
 msgid "Cannot display camera output.Ignoring play command"
-msgstr ""
+msgstr "Não é possível mostrar saída da câmera. Ignorando comando play"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
@@ -137,11 +137,11 @@ msgstr "Repetir"
 #. Password was incorrect, complain.
 #: ../mugshot/MugshotWindow.py:300
 msgid "Authentication Failed"
-msgstr ""
+msgstr "Autenticação Falhou"
 
 #: ../mugshot/MugshotWindow.py:301
 msgid "User details were not updated."
-msgstr ""
+msgstr "Informações do usuário não foram atualizadas."
 
 #: ../mugshot/MugshotWindow.py:421
 msgid "Update Pidgin buddy icon?"
@@ -153,7 +153,7 @@ msgstr "Gostaria também de atualizar sua imagem do Pidgin?"
 
 #: ../mugshot/MugshotWindow.py:492
 msgid "Enter your password to change user details."
-msgstr ""
+msgstr "Insira sua senha para alterar as informações de usuário."
 
 #: ../mugshot/MugshotWindow.py:494
 msgid ""
@@ -173,17 +173,19 @@ msgstr "Gostaria também de atualizar seus dados de usuário no LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:65
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../mugshot_lib/SudoDialog.py:66
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: ../mugshot_lib/SudoDialog.py:79
 msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
+"Insira sua senha para\n"
+"realizar tarefas administrativas."
 
 #: ../mugshot_lib/SudoDialog.py:81
 #, python-format
@@ -191,10 +193,12 @@ msgid ""
 "The application '%s' lets you\n"
 "modify essential parts of your system."
 msgstr ""
+"A aplicação '%s' permite que você\n"
+"modifique partes essenciais do sistema."
 
 #: ../mugshot_lib/SudoDialog.py:102
 msgid "Incorrect password... try again."
-msgstr ""
+msgstr "Senha incorreta... tente novamente."
 
 #: ../mugshot_lib/SudoDialog.py:107
 msgid "Password:"
