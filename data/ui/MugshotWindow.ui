@@ -358,6 +358,7 @@
                                 <property name="width_chars">4</property>
                                 <property name="input_purpose">alpha</property>
                                 <signal name="activate" handler="entry_focus_next" swapped="no"/>
+                                <signal name="grab-focus" handler="initials_entry_focused" swapped="no"/>
                               </object>
                             </child>
                           </object>

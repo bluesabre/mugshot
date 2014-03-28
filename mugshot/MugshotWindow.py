@@ -234,14 +234,14 @@ class MugshotWindow(Window):
         # Expand the user's fullname into first, last, and initials.
         try:
             first_name, last_name = name.split(' ', 1)
-            initials = first_name[0] + last_name[0]
+            self.initials_suggestion = first_name[0] + last_name[0]
         except:
             first_name = name
             last_name = ''
             if first_name:
-                initials = first_name[0]
+                self.initials_suggestion = first_name[0]
             else:
-                initials = ''
+                self.initials_suggestion = ''
 
         # If the variables are defined as 'none', use blank for cleanliness.
         if home_phone == 'none':
@@ -251,8 +251,7 @@ class MugshotWindow(Window):
 
         # Get dconf settings
         logger.debug('Getting initials, email, and fax from dconf')
-        if self.settings['initials'] != '':
-            initials = self.settings['initials']
+        initials = self.settings['initials']
         email = self.settings['email']
         fax = self.settings['fax']
 
@@ -330,6 +329,12 @@ class MugshotWindow(Window):
         logger.debug('Entry activated, focusing next widget.')
         vbox = widget.get_parent().get_parent().get_parent().get_parent()
         vbox.child_focus(Gtk.DirectionType.TAB_FORWARD)
+        
+    def initials_entry_focused(self, widget):
+        """Paste initials into empty field."""
+        logger.debug('Initials field focused.')
+        if get_entry_value(self.initials_entry) == '':
+            self.initials_entry.set_text(self.initials_suggestion)
 
     def on_cancel_button_clicked(self, widget):
         """When the window cancel button is clicked, close the program."""
