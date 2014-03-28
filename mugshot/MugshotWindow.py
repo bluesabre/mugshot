@@ -177,9 +177,11 @@ class MugshotWindow(Window):
         self.image_menu = builder.get_object('image_menu')
         self.image_menu.attach_to_widget(self.image_button, detach_cb)
         self.image_from_camera = builder.get_object('image_from_camera')
-        image_from_stock = builder.get_object('image_from_stock')
-        image_from_stock.set_visible(os.path.exists(faces_dir) and
+        self.image_from_stock = builder.get_object('image_from_stock')
+        self.image_from_stock.set_visible(os.path.exists(faces_dir) and
                                        len(os.listdir(faces_dir)) > 0)
+        self.menuitem1 = builder.get_object('menuitem1')
+        self.image_remove = builder.get_object('image_remove')
 
         # Entry widgets (chfn)
         self.first_name_entry = builder.get_object('first_name')
@@ -281,8 +283,14 @@ class MugshotWindow(Window):
             pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
             scaled = pixbuf.scale_simple(128, 128, GdkPixbuf.InterpType.HYPER)
             self.user_image.set_from_pixbuf(scaled)
+            # Show "Remove" menu item.
+            self.menuitem1.set_visible(True)
+            self.image_remove.set_visible(True)
         else:
             self.user_image.set_from_icon_name('avatar-default', 128)
+            # Hide "Remove" menu item.
+            self.menuitem1.set_visible(False)
+            self.image_remove.set_visible(False)
 
     def filter_numbers(self, entry, *args):
         """Allow only numbers and + in phone entry fields."""
