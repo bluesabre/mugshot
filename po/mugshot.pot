@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-08 23:21-0500\n"
+"POT-Creation-Date: 2014-03-29 11:56-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Browse…"
 msgstr ""
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:491
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:499
 msgid "Mugshot"
 msgstr ""
 
@@ -126,42 +126,42 @@ msgstr ""
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:280
+#: ../mugshot/CameraMugshotDialog.py:278
 msgid "Retry"
 msgstr ""
 
 #. Password was incorrect, complain.
-#: ../mugshot/MugshotWindow.py:300
+#: ../mugshot/MugshotWindow.py:298
 msgid "Authentication Failed"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:301
+#: ../mugshot/MugshotWindow.py:299
 msgid "User details were not updated."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:421
+#: ../mugshot/MugshotWindow.py:429
 msgid "Update Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:422
+#: ../mugshot/MugshotWindow.py:430
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:492
+#: ../mugshot/MugshotWindow.py:500
 msgid "Enter your password to change user details."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:494
+#: ../mugshot/MugshotWindow.py:502
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:641
+#: ../mugshot/MugshotWindow.py:649
 msgid "Update LibreOffice user details?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:642
+#: ../mugshot/MugshotWindow.py:650
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
 

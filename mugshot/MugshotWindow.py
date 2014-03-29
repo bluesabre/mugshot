@@ -381,7 +381,7 @@ class MugshotWindow(Window):
                 scaled = pixbuf.scale_simple(512, 512,
                                              GdkPixbuf.InterpType.HYPER)
                 scaled.savev(scaled_filename, "png", [], [])
-                self.updated_filename = scaled_filename
+                self.updated_image = scaled_filename
 
             # Copy the file to ~/.face
             shutil.copyfile(self.updated_image, face)
