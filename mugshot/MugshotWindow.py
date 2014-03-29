@@ -27,13 +27,11 @@ import subprocess
 # DBUS interface is used to update pidgin buddyicon when pidgin is running.
 import dbus
 
-import tempfile
-
 from gi.repository import Gtk, GdkPixbuf, GLib, Gio  # pylint: disable=E0611
 import logging
 logger = logging.getLogger('mugshot')
 
-from mugshot_lib import Window, SudoDialog
+from mugshot_lib import Window, SudoDialog, helpers
 from mugshot.CameraMugshotDialog import CameraMugshotDialog
 
 username = GLib.get_user_name()
@@ -376,6 +374,16 @@ class MugshotWindow(Window):
 
         # Copy the new file to ~/.face
         if os.path.isfile(self.updated_image):
+            # Scale the image as necessary (lp: #1298665)
+            pixbuf = GdkPixbuf.Pixbuf.new_from_file(self.updated_image)
+            if pixbuf.get_height() > 512 or pixbuf.get_width() > 512:
+                scaled_filename = helpers.new_tempfile('scaled')
+                scaled = pixbuf.scale_simple(512, 512,
+                                             GdkPixbuf.InterpType.HYPER)
+                scaled.savev(scaled_filename, "png", [], [])
+                self.updated_filename = scaled_filename
+
+            # Copy the file to ~/.face
             shutil.copyfile(self.updated_image, face)
         else:
             face = ""
@@ -821,11 +829,7 @@ class MugshotWindow(Window):
         response = self.chooser.run()
         if response == Gtk.ResponseType.APPLY:
             # Update the user image, store the path for committing later.
-            if self.tmpfile and os.path.isfile(self.tmpfile.name):
-                os.remove(self.tmpfile.name)
-            self.tmpfile = tempfile.NamedTemporaryFile(delete=False)
-            self.tmpfile.close()
-            self.updated_image = self.tmpfile.name
+            self.updated_image = helpers.new_tempfile('browse')
             self.filechooser_preview_pixbuf.savev(self.updated_image, "png",
                                                                         [], [])
             logger.debug("Selected %s" % self.updated_image)

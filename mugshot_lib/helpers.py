@@ -19,6 +19,8 @@
 import logging
 import os
 
+import tempfile
+
 from . mugshotconfig import get_data_file
 from . Builder import Builder
 
@@ -101,3 +103,39 @@ def alias(alternative_function_name):
         function.aliases.append(alternative_function_name)
         return function
     return decorator
+
+
+# = Temporary File Management ============================================ #
+temporary_files = {}
+
+
+def new_tempfile(identifier):
+    """Create a new temporary file, register it, and return the filename."""
+    remove_tempfile(identifier)
+    temporary_file = tempfile.NamedTemporaryFile(delete=False)
+    temporary_file.close()
+    filename = temporary_file.name
+    temporary_files[identifier] = filename
+    return filename
+
+
+def get_tempfile(identifier):
+    """Retrieve the specified temporary filename."""
+    if identifier in list(temporary_files.keys()):
+        return temporary_files[identifier]
+    return None
+
+
+def remove_tempfile(identifier):
+    """Remove the specified temporary file from the system."""
+    if identifier in list(temporary_files.keys()):
+        filename = temporary_files[identifier]
+        if os.path.isfile(filename):
+            os.remove(filename)
+        temporary_files.pop(identifier)
+
+
+def clear_tempfiles():
+    """Remove all temporary files registered to Mugshot."""
+    for identifier in list(temporary_files.keys()):
+        remove_tempfile(identifier)

@@ -23,7 +23,7 @@ from gi.repository import Gtk  # pylint: disable=E0611
 
 from mugshot import MugshotWindow
 
-from mugshot_lib import set_up_logging, get_version
+from mugshot_lib import set_up_logging, get_version, helpers
 
 
 def parse_options():
@@ -45,3 +45,6 @@ def main():
     window = MugshotWindow.MugshotWindow()
     window.show()
     Gtk.main()
+
+    # Cleanup temporary files
+    helpers.clear_tempfiles()

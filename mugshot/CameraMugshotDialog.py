@@ -27,9 +27,9 @@ from gi.repository import Gtk, GObject, Gst, GdkPixbuf
 from gi.repository import GdkX11, GstVideo  # lint:ok
 import cairo
 
-import tempfile
 import os
 
+from mugshot_lib import helpers
 from mugshot_lib.CameraDialog import CameraDialog
 
 
@@ -268,9 +268,7 @@ class CameraMugshotDialog(CameraDialog):
         # Record (Capture) action.
         else:
             # Create a new temporary file.
-            tmpfile = tempfile.NamedTemporaryFile(delete=False)
-            tmpfile.close()
-            self.filename = tmpfile.name
+            self.filename = helpers.new_tempfile('camera')
 
             # Capture the current image.
             self.take_picture(self.filename)
