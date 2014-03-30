@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-03-08 23:21-0500\n"
+"POT-Creation-Date: 2014-03-29 11:56-0400\n"
 "PO-Revision-Date: 2014-03-04 18:28+0000\n"
 "Last-Translator: Sergey Shlyapugin <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-03-10 06:11+0000\n"
-"X-Generator: Launchpad (build 16948)\n"
+"X-Launchpad-Export-Date: 2014-03-30 06:19+0000\n"
+"X-Generator: Launchpad (build 16967)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -61,7 +61,7 @@ msgstr "Захватить с камеры..."
 msgid "Browse…"
 msgstr "Обзор…"
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:491
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:499
 msgid "Mugshot"
 msgstr "Mugshot"
 
@@ -129,32 +129,32 @@ msgstr "Невозможно показать вывод камеры. Игно�
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:280
+#: ../mugshot/CameraMugshotDialog.py:278
 msgid "Retry"
 msgstr "Повторить"
 
 #. Password was incorrect, complain.
-#: ../mugshot/MugshotWindow.py:300
+#: ../mugshot/MugshotWindow.py:298
 msgid "Authentication Failed"
 msgstr "Ошибка аутентификации"
 
-#: ../mugshot/MugshotWindow.py:301
+#: ../mugshot/MugshotWindow.py:299
 msgid "User details were not updated."
 msgstr "Данные пользователя не были обновлены."
 
-#: ../mugshot/MugshotWindow.py:421
+#: ../mugshot/MugshotWindow.py:429
 msgid "Update Pidgin buddy icon?"
 msgstr "Обновить аватар в Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:422
+#: ../mugshot/MugshotWindow.py:430
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Обновить также ваш аватар в Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:492
+#: ../mugshot/MugshotWindow.py:500
 msgid "Enter your password to change user details."
 msgstr "Введите ваг пароль для изменения данных пользователя."
 
-#: ../mugshot/MugshotWindow.py:494
+#: ../mugshot/MugshotWindow.py:502
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
@@ -162,11 +162,11 @@ msgstr ""
 "Это мера безопасности для предотвращения нежелательных\n"
 "обновлений вашей персональной информации."
 
-#: ../mugshot/MugshotWindow.py:641
+#: ../mugshot/MugshotWindow.py:649
 msgid "Update LibreOffice user details?"
 msgstr "Обновить данные пользователя в LibreOffice?"
 
-#: ../mugshot/MugshotWindow.py:642
+#: ../mugshot/MugshotWindow.py:650
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr "Обновить также ваши данные пользователя в LibreOffice?"
 

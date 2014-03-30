@@ -1,16 +1,16 @@
-# English (Australia) translation for mugshot
-# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# Japanese translation for mugshot
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
 # This file is distributed under the same license as the mugshot package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-03-29 11:56-0400\n"
-"PO-Revision-Date: 2013-07-19 10:01+0000\n"
-"Last-Translator: Jackson Doak <Doak.jackson@gmail.com>\n"
-"Language-Team: English (Australia) <en_AU@li.org>\n"
+"PO-Revision-Date: 2014-03-30 02:53+0000\n"
+"Last-Translator: Ikuya Awashiro <ikuya@fruitsbasket.info>\n"
+"Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,47 +19,47 @@ msgstr ""
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
-msgstr "About Me"
+msgstr "個人情報"
 
 #: ../mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
-msgstr "Configure your profile image and contact details"
+msgstr "プロファイルの画像と連絡先の詳細を設定"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
-msgstr "Capture - Mugshot"
+msgstr "キャプチャ - Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
-msgstr "<b>Preview</b>"
+msgstr "<b>プレビュー</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
-msgstr "Centre"
+msgstr "中央"
 
 #: ../data/ui/MugshotWindow.ui.h:3
 msgid "Left"
-msgstr "Left"
+msgstr "左"
 
 #: ../data/ui/MugshotWindow.ui.h:4
 msgid "Right"
-msgstr "Right"
+msgstr "右"
 
 #: ../data/ui/MugshotWindow.ui.h:5
 msgid "<b>Crop</b>"
-msgstr "<b>Crop</b>"
+msgstr "<b>切り抜き</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:6
 msgid "Select from stock…"
-msgstr "Select from stock…"
+msgstr "ストックから選択..."
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
-msgstr "Capture from camera…"
+msgstr "カメラでキャプチャ..."
 
 #: ../data/ui/MugshotWindow.ui.h:8
 msgid "Browse…"
-msgstr "Browse…"
+msgstr "参照…"
 
 #: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:499
 msgid "Mugshot"
@@ -67,44 +67,44 @@ msgstr "Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:10
 msgid "<b>First Name</b>"
-msgstr "<b>First Name</b>"
+msgstr "<b>名</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:11
 msgid "<b>Last Name</b>"
-msgstr "<b>Last Name</b>"
+msgstr "<b>姓</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:12
 msgid "<b>Initials</b>"
-msgstr "<b>Initials</b>"
+msgstr "<b>イニシャル</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:13
 msgid "<b>Home Phone</b>"
-msgstr "<b>Home Phone</b>"
+msgstr "<b>電話番号</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:14
 msgid "<b>Email Address</b>"
-msgstr "<b>Email Address</b>"
+msgstr "<b>メールアドレス</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:15
 msgid "<b>Office Phone</b>"
-msgstr "<b>Office Phone</b>"
+msgstr "<b>勤務先の電話番号</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:16
 msgid "<b>Fax</b>"
-msgstr "<b>Fax</b>"
+msgstr "<b>FAX</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:17
 msgid "Select a photo…"
-msgstr "Select a photo…"
+msgstr "写真の選択..."
 
 #: ../mugshot/__init__.py:34
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
-msgstr "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr "デバッグメッセージの表示 (-vv debugs mugshot_lib でも可)"
 
 #: ../mugshot/CameraMugshotDialog.py:106
 #, python-format
 msgid "Camera failed to load. Devices: %s"
-msgstr "Camera failed to load. Devices: %s"
+msgstr "%s のカメラのロードに失敗しました。"
 
 #. Translators: Please include newlines, as required to fit the message.
 #: ../mugshot/CameraMugshotDialog.py:124
@@ -112,8 +112,8 @@ msgid ""
 "Sorry, but your camera\n"
 "failed to initialize."
 msgstr ""
-"Sorry, but your camera\n"
-"failed to initialise."
+"申し訳ございません、カメラ\n"
+"の読み込みに失敗しました。"
 
 #. Translators: Please include newlines, as required to fit the message.
 #: ../mugshot/CameraMugshotDialog.py:131
@@ -121,69 +121,71 @@ msgid ""
 "Please wait while your\n"
 "camera is initialized."
 msgstr ""
-"Please wait while your\n"
-"camera is initialised."
+"カメラの初期化が終わるまで\n"
+"お待ちください。"
 
 #: ../mugshot/CameraMugshotDialog.py:151
 msgid "Cannot display camera output.Ignoring play command"
-msgstr ""
+msgstr "カメラの出力を表示できませんでした。再生コマンドが無視されました。"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
 #: ../mugshot/CameraMugshotDialog.py:278
 msgid "Retry"
-msgstr "Retry"
+msgstr "再試行"
 
 #. Password was incorrect, complain.
 #: ../mugshot/MugshotWindow.py:298
 msgid "Authentication Failed"
-msgstr ""
+msgstr "認証に失敗しました"
 
 #: ../mugshot/MugshotWindow.py:299
 msgid "User details were not updated."
-msgstr ""
+msgstr "ユーザーの詳細はアップデートされませんでした。"
 
 #: ../mugshot/MugshotWindow.py:429
 msgid "Update Pidgin buddy icon?"
-msgstr "Update Pidgin buddy icon?"
+msgstr "Pigdinの仲間アイコン"
 
 #: ../mugshot/MugshotWindow.py:430
 msgid "Would you also like to update your Pidgin buddy icon?"
-msgstr "Would you also like to update your Pidgin buddy icon?"
+msgstr "Pigdinの仲間アイコンもアップデートしますか？"
 
 #: ../mugshot/MugshotWindow.py:500
 msgid "Enter your password to change user details."
-msgstr ""
+msgstr "ユーザーの詳細を変更するためにパスワードを入力してください。"
 
 #: ../mugshot/MugshotWindow.py:502
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
-"This is a security measure to prevent unwanted updates\n"
-"to your personal information."
+"個人情報を希望していないのにアップデート\n"
+"されないようにするセキュリティの方針です。"
 
 #: ../mugshot/MugshotWindow.py:649
 msgid "Update LibreOffice user details?"
-msgstr "Update LibreOffice user details?"
+msgstr "LibreOfficeのユーザー詳細"
 
 #: ../mugshot/MugshotWindow.py:650
 msgid "Would you also like to update your user details in LibreOffice?"
-msgstr "Would you also like to update your user details in LibreOffice?"
+msgstr "LibreOfficeのユーザー詳細もアップデートしますか？"
 
 #: ../mugshot_lib/SudoDialog.py:65
 msgid "Cancel"
-msgstr ""
+msgstr "キャンセル"
 
 #: ../mugshot_lib/SudoDialog.py:66
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: ../mugshot_lib/SudoDialog.py:79
 msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
+"管理者権限が必要な操作を実行するため\n"
+"パスワードを入力してください。"
 
 #: ../mugshot_lib/SudoDialog.py:81
 #, python-format
@@ -191,11 +193,13 @@ msgid ""
 "The application '%s' lets you\n"
 "modify essential parts of your system."
 msgstr ""
+"アプリケーション '%s' はシステムの\n"
+"主要な部分を修正しました。"
 
 #: ../mugshot_lib/SudoDialog.py:102
 msgid "Incorrect password... try again."
-msgstr ""
+msgstr "パスワードが正しくありません... 再入力してください。"
 
 #: ../mugshot_lib/SudoDialog.py:107
 msgid "Password:"
-msgstr "Password:"
+msgstr "パスワード:"
