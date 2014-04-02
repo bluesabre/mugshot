@@ -40,7 +40,6 @@ libreoffice_prefs = os.path.join(GLib.get_user_config_dir(), 'libreoffice',
                             '4', 'user', 'registrymodifications.xcu')
 pidgin_prefs = os.path.join(home, '.purple', 'prefs.xml')
 faces_dir = '/usr/share/pixmaps/faces/'
-icons_dir = '/var/lib/AccountsService/icons/'
 
 
 def which(command):
@@ -217,17 +216,22 @@ class MugshotWindow(Window):
         # Check for .face and set profile image.
         logger.debug('Checking for ~/.face profile image')
         face = os.path.join(home, '.face')
+        logger.debug('Checking AccountsService for profile image')
+        image = self.accounts_service_get_user_image()
+        logger.debug('Found profile image: %s' % str(image))
+
         if os.path.isfile(face):
-            self.set_user_image(face)
-        else:
-            logger.debug('Checking AccountsService for profile image')
-            face = os.path.join(icons_dir, username)
-            logger.debug("%s" % face)
-            if os.path.isfile(face):
-                self.set_user_image(face)
+            if os.path.samefile(image, face):
+                self.updated_image = face
             else:
-                self.set_user_image(None)
-        self.updated_image = None
+                self.updated_image = None
+            self.set_user_image(face)
+        elif os.path.isfile(image):
+            self.updated_image = image
+            self.set_user_image(image)
+        else:
+            self.updated_image = None
+            self.set_user_image(None)
 
         # Search /etc/passwd for the current user's details.
         logger.debug('Getting user details from /etc/passwd')
@@ -394,32 +398,56 @@ class MugshotWindow(Window):
             logger.debug('Photo not updated, not saving changes.')
             return False
 
+        if not os.path.isfile(self.updated_image):
+            self.updated_image = ""
+
         face = os.path.join(home, '.face')
 
-        # If the .face file already exists, remove it first.
-        logger.debug('Photo updated, saving changes.')
-        if os.path.isfile(face):
-            os.remove(face)
+        if os.path.normpath(face) != os.path.normpath(self.updated_image):
+            # If the .face file already exists, remove it first.
+            logger.debug('Photo updated, saving ~/.face profile image.')
+            if os.path.isfile(face):
+                os.remove(face)
+            # Copy the new file to ~/.face
+            if os.path.isfile(self.updated_image):
+                shutil.copyfile(self.updated_image, face)
 
-        # Copy the new file to ~/.face
-        if os.path.isfile(self.updated_image):
-            # Scale the image as necessary (lp: #1298665)
-            pixbuf = GdkPixbuf.Pixbuf.new_from_file(self.updated_image)
-            if pixbuf.get_height() > 512 or pixbuf.get_width() > 512:
-                scaled_filename = helpers.new_tempfile('scaled')
-                scaled = pixbuf.scale_simple(512, 512,
-                                             GdkPixbuf.InterpType.HYPER)
-                scaled.savev(scaled_filename, "png", [], [])
-                self.updated_image = scaled_filename
+        # Update AccountsService profile image
+        logger.debug('Photo updated, saving AccountsService profile image.')
+        self.accounts_service_set_user_image(self.updated_image)
 
-            # Copy the file to ~/.face
-            shutil.copyfile(self.updated_image, face)
-        else:
-            face = ""
-        self.accounts_service_set_user_image(face)
-        self.set_pidgin_buddyicon(face)
+        # Update Pidgin buddy icon
+        self.set_pidgin_buddyicon(self.updated_image)
+
         self.updated_image = None
         return True
+
+    def accounts_service_get_user_image(self):
+        """Get user profile image using AccountsService."""
+        bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
+        result = bus.call_sync('org.freedesktop.Accounts',
+                                '/org/freedesktop/Accounts',
+                                'org.freedesktop.Accounts',
+                                'FindUserByName',
+                                GLib.Variant('(s)', (username,)),
+                                GLib.VariantType.new('(o)'),
+                                Gio.DBusCallFlags.NONE,
+                                -1,
+                                None)
+        (path,) = result.unpack()
+
+        result = bus.call_sync('org.freedesktop.Accounts',
+                               path,
+                               'org.freedesktop.DBus.Properties',
+                               'GetAll',
+                               GLib.Variant('(s)',
+                                            ('org.freedesktop.Accounts.User',)),
+                               GLib.VariantType.new('(a{sv})'),
+                               Gio.DBusCallFlags.NONE,
+                               -1,
+                               None)
+        (props,) = result.unpack()
+        return props['IconFile']
 
     def accounts_service_set_user_image(self, filename):
         """Set user profile image using AccountsService."""
