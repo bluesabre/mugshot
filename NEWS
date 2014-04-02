@@ -1,5 +1,21 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+02 Apr 2014, Mugshot 0.2.3
+
+- General:
+  . Check if user has sudo rights, disable first/last name change if not
+  . Populate the Initials field based on first/last name fields
+  . Hide "Remove" when there is no profile image set
+  . Cleanup temporary files when closed
+  . Package is now 100% PEP8-compliant
+- AccountsService:
+  . Scale images on save to accomodate AccountsService max size
+  . Use AccountsService profile image if ~/.face does not exist
+  . Sync AccountsService profile image to ~/.face
+- Bugs fixed:
+  . mugshot is unable to store profile picture (LP: #1298665)
+
+
 09 Mar 2014, Mugshot 0.2.2
 
 - General:
