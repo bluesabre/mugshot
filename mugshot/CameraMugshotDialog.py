@@ -60,7 +60,7 @@ def draw_message(widget, message, ctx):
     # Draw the message to the drawing area.
     ctx.set_source_rgb(*font_color)
     ctx.select_font_face(font_name, cairo.FONT_SLANT_NORMAL,
-                                    cairo.FONT_WEIGHT_NORMAL)
+                         cairo.FONT_WEIGHT_NORMAL)
     ctx.set_font_size(font_size)
 
     for line in split_msg:
@@ -104,9 +104,9 @@ class CameraMugshotDialog(CameraDialog):
                 if device.startswith('video'):
                     devices.append(device)
             logger.error(_('Camera failed to load. Devices: %s') %
-                                                            '; '.join(devices))
+                         '; '.join(devices))
             self.draw_handler = self.video_window.connect('draw',
-                                                            self.on_failed_draw)
+                                                          self.on_failed_draw)
             self.realized = True
 
         # Essential widgets
@@ -149,7 +149,7 @@ class CameraMugshotDialog(CameraDialog):
             self._set_video_window_id()
         if not self.realized:
             logger.error(_("Cannot display camera output."
-                            "Ignoring play command"))
+                         "Ignoring play command"))
         else:
             if self.camerabin:
                 self.camerabin.set_state(Gst.State.PLAYING)
@@ -237,8 +237,8 @@ class CameraMugshotDialog(CameraDialog):
         if message_name == "prepare-window-handle":
             imagesink = message.src
             imagesink.set_property("force-aspect-ratio", True)
-            imagesink.set_window_handle(
-                                    self.video_window.get_window().get_xid())
+            imagesink.set_window_handle(self.video_window.get_window()
+                                        .get_xid())
 
     def __on_video_window_realized(self, widget, data=None):
         """Internal signal handler, used to set up the xid for the drawing area
@@ -346,8 +346,9 @@ class CameraMugshotDialog(CameraDialog):
     # apply: emitted when the apply button has been pressed and there is a
     # new file saved for use.
     __gsignals__ = {'image-captured': (GObject.SIGNAL_RUN_LAST,
-                                        GObject.TYPE_NONE,
-                                        (GObject.TYPE_PYOBJECT,)),
-                    'apply': (GObject.SIGNAL_RUN_LAST, GObject.TYPE_NONE,
-                                        (GObject.TYPE_STRING,))
-    }
+                                       GObject.TYPE_NONE,
+                                       (GObject.TYPE_PYOBJECT,)),
+                    'apply': (GObject.SIGNAL_RUN_LAST,
+                              GObject.TYPE_NONE,
+                              (GObject.TYPE_STRING,))
+                    }
