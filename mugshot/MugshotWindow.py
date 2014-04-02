@@ -190,6 +190,11 @@ class MugshotWindow(Window):
         self.email_entry = builder.get_object('email')
         self.fax_entry = builder.get_object('fax')
 
+        # Users without sudo rights cannot change their name.
+        if not SudoDialog.check_sudo():
+            self.first_name_entry.set_sensitive(False)
+            self.last_name_entry.set_sensitive(False)
+
         # Stock photo browser
         self.stock_browser = builder.get_object('stock_browser')
         self.iconview = builder.get_object('stock_iconview')
@@ -534,15 +539,15 @@ class MugshotWindow(Window):
     def get_chfn_details_updated(self):
         """Return True if chfn-related details have been modified."""
         logger.debug('Checking if chfn details have been modified.')
-        modified = True
+        modified = False
         if self.first_name != self.first_name_entry.get_text().strip():
-            modified = False
+            modified = True
         if self.last_name != self.last_name_entry.get_text().strip():
-            modified = False
+            modified = True
         if self.home_phone != self.home_phone_entry.get_text().strip():
-            modified = False
+            modified = True
         if self.office_phone != self.office_phone_entry.get_text().strip():
-            modified = False
+            modified = True
         if modified:
             logger.debug('chfn details have been modified.')
             return True
@@ -592,28 +597,31 @@ class MugshotWindow(Window):
             home_phone = 'none'
 
         # Full name can only be modified by root.  Try using sudo to modify.
-        logger.debug('Attempting to set fullname with sudo chfn')
-        # Force the C language for guaranteed english strings in the script.
-        child = pexpect.spawn('%s %s %s' % (sudo, chfn, username),
-                              env={"LANG": "C"})
-        child.timeout = 5
-        try:
-            child.expect([".*ssword.*", pexpect.EOF])
-            child.sendline(password)
-            child.expect(".*ame.*:")
-            child.sendline(full_name)
-            for i in range(5):
-                child.sendline('')
-        except pexpect.TIMEOUT:
-            # Password was incorrect, or sudo rights not granted
-            logger.warning('Timeout reached, password was incorrect or sudo '
-                           'rights not granted.')
-            pass
-        child.close()
-        if child.exitstatus == 0:
-            self.first_name = first_name
-            self.last_name = last_name
-        return_codes.append(child.exitstatus)
+        if SudoDialog.check_sudo():
+            logger.debug('Attempting to set fullname with sudo chfn')
+            # Force the C language for guaranteed english strings in the script.
+            child = pexpect.spawn('%s %s %s' % (sudo, chfn, username),
+                                  env={"LANG": "C"})
+            child.timeout = 5
+            try:
+                child.expect([".*ssword.*", pexpect.EOF])
+                child.sendline(password)
+                child.expect(".*ame.*:")
+                child.sendline(full_name)
+                for i in range(5):
+                    child.sendline('')
+            except pexpect.TIMEOUT:
+                # Password was incorrect, or sudo rights not granted
+                logger.warning('Timeout reached, password was incorrect or '
+                               'sudo rights not granted.')
+                pass
+            child.close()
+            if child.exitstatus == 0:
+                self.first_name = first_name
+                self.last_name = last_name
+            return_codes.append(child.exitstatus)
+        else:
+            return_codes.append(0)
 
         logger.debug('Attempting to set user details with chfn')
         child = pexpect.spawn(chfn, env={"LANG": "C"})

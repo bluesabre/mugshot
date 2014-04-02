@@ -23,6 +23,21 @@ from locale import gettext as _
 import pexpect
 
 
+def check_sudo():
+    """Return True if user has permission to use sudo."""
+    child = pexpect.spawn('sudo -v', env={"LANG": "C"})
+    child.timeout = 1
+    # Check for failure message.
+    try:
+        child.expect(["Sorry", pexpect.EOF])
+        child.close()
+        return False
+    except:
+        child.close()
+        print("Sudoer")
+        return True
+
+
 class SudoDialog(Gtk.MessageDialog):
     '''
     Creates a new SudoDialog. This is a replacement for using gksudo which
@@ -179,7 +194,8 @@ class SudoDialog(Gtk.MessageDialog):
         then emit the response signal with REJECT.
         '''
         top, bottom, left, right = self.password_alignment.get_padding()
-        if self.attempt_login():
+        # Password cannot be validated without sudo
+        if (not check_sudo()) or self.attempt_login():
             self.password_valid = True
             # Adjust the dialog for attactiveness.
             self.password_alignment.set_padding(12, bottom, left, right)
