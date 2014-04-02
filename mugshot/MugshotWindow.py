@@ -40,6 +40,7 @@ libreoffice_prefs = os.path.join(GLib.get_user_config_dir(), 'libreoffice',
                             '4', 'user', 'registrymodifications.xcu')
 pidgin_prefs = os.path.join(home, '.purple', 'prefs.xml')
 faces_dir = '/usr/share/pixmaps/faces/'
+icons_dir = '/var/lib/AccountsService/icons/'
 
 
 def which(command):
@@ -219,7 +220,13 @@ class MugshotWindow(Window):
         if os.path.isfile(face):
             self.set_user_image(face)
         else:
-            self.set_user_image(None)
+            logger.debug('Checking AccountsService for profile image')
+            face = os.path.join(icons_dir, username)
+            logger.debug("%s" % face)
+            if os.path.isfile(face):
+                self.set_user_image(face)
+            else:
+                self.set_user_image(None)
         self.updated_image = None
 
         # Search /etc/passwd for the current user's details.
@@ -348,7 +355,8 @@ class MugshotWindow(Window):
         first_name = get_entry_value(self.first_name_entry)
         last_name = get_entry_value(self.last_name_entry)
         if get_entry_value(self.initials_entry) == '':
-            self.initials_entry.set_text(self.suggest_initials(first_name, last_name))
+            self.initials_entry.set_text(self.suggest_initials(first_name,
+                                                               last_name))
 
     def on_cancel_button_clicked(self, widget):
         """When the window cancel button is clicked, close the program."""
