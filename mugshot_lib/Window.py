@@ -91,4 +91,4 @@ class Window(Gtk.Window):
     def on_preferences_changed(self, settings, key, data=None):
         """Log preference updates."""
         logger.debug('preference changed: %s = %s' %
-                                            (key, str(settings.get_value(key))))
+                     (key, str(settings.get_value(key))))
