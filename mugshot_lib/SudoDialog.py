@@ -52,11 +52,11 @@ class SudoDialog(Gtk.MessageDialog):
 
         # initialize the dialog
         super(SudoDialog, self).__init__(transient_for=parent,
-                                        modal=True,
-                                        destroy_with_parent=True,
-                                        message_type=message_type,
-                                        buttons=buttons,
-                                        text='')
+                                         modal=True,
+                                         destroy_with_parent=True,
+                                         message_type=message_type,
+                                         buttons=buttons,
+                                         text='')
         self.set_dialog_icon(icon)
         self.connect("show", self.on_show)
 
@@ -94,7 +94,7 @@ class SudoDialog(Gtk.MessageDialog):
 
         # Outer password box for incorrect password label and inner widgets.
         password_outer = Gtk.Box(orientation=Gtk.Orientation.VERTICAL,
-                                    spacing=12)
+                                 spacing=12)
         password_outer.set_orientation(Gtk.Orientation.VERTICAL)
         # Password error label, only displayed when unsuccessful.
         self.password_info = Gtk.Label(label="")
@@ -103,13 +103,13 @@ class SudoDialog(Gtk.MessageDialog):
 
         # Inner password box for Password: label and password entry.
         password_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,
-                                    spacing=12)
+                               spacing=12)
         password_label = Gtk.Label(label=_("Password:"))
         self.password_entry = Gtk.Entry()
         self.password_entry.set_visibility(False)
         self.password_entry.set_activates_default(True)
         self.password_entry.connect("changed", self.on_password_changed,
-                                                                    ok_button)
+                                    ok_button)
 
         # Pack all the widgets.
         password_box.pack_start(password_label, False, False, 0)
