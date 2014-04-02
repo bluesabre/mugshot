@@ -67,7 +67,7 @@ def set_up_logging(opts):
     root.addHandler(null_handler)
 
     formatter = logging.Formatter("%(levelname)s:%(name)s:"
-                                    " %(funcName)s() '%(message)s'")
+                                  " %(funcName)s() '%(message)s'")
 
     logger = logging.getLogger('mugshot')
     logger_sh = logging.StreamHandler()
