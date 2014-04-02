@@ -231,17 +231,12 @@ class MugshotWindow(Window):
                 name, office, office_phone, home_phone = details.split(',', 3)
                 break
 
-        # Expand the user's fullname into first, last, and initials.
+        # Expand the user's fullname into first and last.
         try:
             first_name, last_name = name.split(' ', 1)
-            initials = first_name[0] + last_name[0]
         except:
             first_name = name
             last_name = ''
-            if first_name:
-                initials = first_name[0]
-            else:
-                initials = ''
 
         # If the variables are defined as 'none', use blank for cleanliness.
         if home_phone == 'none':
@@ -251,8 +246,7 @@ class MugshotWindow(Window):
 
         # Get dconf settings
         logger.debug('Getting initials, email, and fax from dconf')
-        if self.settings['initials'] != '':
-            initials = self.settings['initials']
+        initials = self.settings['initials']
         email = self.settings['email']
         fax = self.settings['fax']
 
@@ -289,6 +283,17 @@ class MugshotWindow(Window):
             # Hide "Remove" menu item.
             self.menuitem1.set_visible(False)
             self.image_remove.set_visible(False)
+
+    def suggest_initials(self, first_name, last_name):
+        """Generate initials from first and last name."""
+        try:
+            initials = first_name[0] + last_name[0]
+        except:
+            if first_name:
+                initials = first_name[0]
+            else:
+                initials = ''
+        return initials
 
     def filter_numbers(self, entry, *args):
         """Allow only numbers and + in phone entry fields."""
@@ -336,6 +341,14 @@ class MugshotWindow(Window):
         logger.debug('Entry activated, focusing next widget.')
         vbox = widget.get_parent().get_parent().get_parent().get_parent()
         vbox.child_focus(Gtk.DirectionType.TAB_FORWARD)
+
+    def initials_entry_focused(self, widget):
+        """Paste initials into empty field."""
+        logger.debug('Initials field focused.')
+        first_name = get_entry_value(self.first_name_entry)
+        last_name = get_entry_value(self.last_name_entry)
+        if get_entry_value(self.initials_entry) == '':
+            self.initials_entry.set_text(self.suggest_initials(first_name, last_name))
 
     def on_cancel_button_clicked(self, widget):
         """When the window cancel button is clicked, close the program."""
