@@ -22,10 +22,10 @@ try:
     import DistUtilsExtra.auto
 except ImportError:
     sys.stderr.write("To build mugshot you need "
-          "https://launchpad.net/python-distutils-extra\n")
+                     "https://launchpad.net/python-distutils-extra\n")
     sys.exit(1)
 assert DistUtilsExtra.auto.__version__ >= '2.18', \
-        'needs DistUtilsExtra.auto >= 2.18'
+    'needs DistUtilsExtra.auto >= 2.18'
 
 
 def update_config(libdir, values={}):
@@ -55,17 +55,17 @@ def update_config(libdir, values={}):
 
 def move_icon_file(root, target_data, prefix):
     """Move the icon files to their installation prefix."""
-    old_icon_path = os.path.normpath(
-            os.path.join(root, target_data, 'share', 'mugshot', 'media'))
+    old_icon_path = os.path.normpath(os.path.join(root, target_data, 'share',
+                                                  'mugshot', 'media'))
     for icon_size in ['16x16', '22x22', '24x24', '48x48', '64x64', 'scalable']:
         if icon_size == 'scalable':
             old_icon_file = os.path.join(old_icon_path, 'mugshot.svg')
         else:
             old_icon_file = os.path.join(old_icon_path,
-                            'mugshot_%s.svg' % icon_size.split('x')[0])
-        icon_path = os.path.normpath(
-                os.path.join(root, target_data, 'share', 'icons', 'hicolor',
-                        icon_size, 'apps'))
+                                         'mugshot_%s.svg' %
+                                         icon_size.split('x')[0])
+        icon_path = os.path.normpath(os.path.join(root, target_data, 'share',
+                                     'icons', 'hicolor', icon_size, 'apps'))
         icon_file = os.path.join(icon_path, 'mugshot.svg')
         old_icon_file = os.path.realpath(old_icon_file)
         icon_file = os.path.realpath(icon_file)
@@ -89,8 +89,8 @@ def move_icon_file(root, target_data, prefix):
 
 def get_desktop_file(root, target_data, prefix):
     """Move the desktop file to its installation prefix."""
-    desktop_path = os.path.realpath(
-            os.path.join(root, target_data, 'share', 'applications'))
+    desktop_path = os.path.realpath(os.path.join(root, target_data, 'share',
+                                                 'applications'))
     desktop_file = os.path.join(desktop_path, 'mugshot.desktop')
     return desktop_file
 
@@ -125,13 +125,14 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
         DistUtilsExtra.auto.install_auto.run(self)
 
         print(("=== Installing %s, version %s ===" %
-            (self.distribution.get_name(), self.distribution.get_version())))
+              (self.distribution.get_name(), self.distribution.get_version())))
 
         if not self.prefix:
             self.prefix = ''
 
         if self.root:
-            target_data = os.path.relpath(self.install_data, self.root) + os.sep
+            target_data = os.path.relpath(self.install_data, self.root) + \
+                os.sep
             target_pkgdata = os.path.join(target_data, 'share', 'mugshot', '')
             target_scripts = os.path.join(self.install_scripts, '')
 
