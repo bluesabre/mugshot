@@ -34,7 +34,6 @@ def check_sudo():
         return False
     except:
         child.close()
-        print("Sudoer")
         return True
 
 

@@ -458,27 +458,30 @@ class MugshotWindow(Window):
 
     def accounts_service_set_user_image(self, filename):
         """Set user profile image using AccountsService."""
-        bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
-        result = bus.call_sync('org.freedesktop.Accounts',
-                               '/org/freedesktop/Accounts',
-                               'org.freedesktop.Accounts',
-                               'FindUserByName',
-                               GLib.Variant('(s)', (username,)),
-                               GLib.VariantType.new('(o)'),
-                               Gio.DBusCallFlags.NONE,
-                               -1,
-                               None)
-        (path,) = result.unpack()
+        try:
+            bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
+            result = bus.call_sync('org.freedesktop.Accounts',
+                                   '/org/freedesktop/Accounts',
+                                   'org.freedesktop.Accounts',
+                                   'FindUserByName',
+                                   GLib.Variant('(s)', (username,)),
+                                   GLib.VariantType.new('(o)'),
+                                   Gio.DBusCallFlags.NONE,
+                                   -1,
+                                   None)
+            (path,) = result.unpack()
 
-        bus.call_sync('org.freedesktop.Accounts',
-                      path,
-                      'org.freedesktop.Accounts.User',
-                      'SetIconFile',
-                      GLib.Variant('(s)', (filename,)),
-                      GLib.VariantType.new('()'),
-                      Gio.DBusCallFlags.NONE,
-                      -1,
-                      None)
+            bus.call_sync('org.freedesktop.Accounts',
+                          path,
+                          'org.freedesktop.Accounts.User',
+                          'SetIconFile',
+                          GLib.Variant('(s)', (filename,)),
+                          GLib.VariantType.new('()'),
+                          Gio.DBusCallFlags.NONE,
+                          -1,
+                          None)
+        except GLib.GError:
+            pass
 
     def set_pidgin_buddyicon(self, filename=None):
         """Sets the pidgin buddyicon to filename (usually ~/.face).
