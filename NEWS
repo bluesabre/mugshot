@@ -1,6 +1,6 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-02 Apr 2014, Mugshot 0.2.3
+04 Apr 2014, Mugshot 0.2.3
 
 - General:
   . Check if user has sudo rights, disable first/last name change if not
