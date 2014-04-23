@@ -243,8 +243,13 @@ class MugshotWindow(Window):
         for line in open('/etc/passwd', 'r'):
             if line.startswith(username + ':'):
                 logger.debug('Found details: %s' % line.strip())
-                details = line.split(':')[4]
-                name, office, office_phone, home_phone = details.split(',', 3)
+                details = line.split(':')[4].split(',', 3)
+
+                while len(details) < 4:
+                    details.append("")
+
+                # Extract the user details
+                name, office, office_phone, home_phone = details
                 break
 
         # Expand the user's fullname into first and last.
