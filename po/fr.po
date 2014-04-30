@@ -8,26 +8,26 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-04-22 06:13-0400\n"
-"PO-Revision-Date: 2013-07-19 14:52+0000\n"
-"Last-Translator: Benoit THIBAUD <frombenny@gmail.com>\n"
+"PO-Revision-Date: 2014-04-29 19:24+0000\n"
+"Last-Translator: Urien Desterres <urien.desterres@gmail.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-24 06:39+0000\n"
+"X-Launchpad-Export-Date: 2014-04-30 07:06+0000\n"
 "X-Generator: Launchpad (build 16985)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
-msgstr "A propos"
+msgstr "À mon sujet"
 
 #: ../mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
-msgstr "Configurer les infos de contact et la photo de votre profil"
+msgstr "Configurer les informations de contact et la photo de votre profil"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
-msgstr "Capturer - Mugshot"
+msgstr "Prendre une photo - Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
@@ -35,23 +35,23 @@ msgstr "<b>Aperçu</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
-msgstr "Centre"
+msgstr "Au centre"
 
 #: ../data/ui/MugshotWindow.ui.h:3
 msgid "Left"
-msgstr "Gauche"
+msgstr "À gauche"
 
 #: ../data/ui/MugshotWindow.ui.h:4
 msgid "Right"
-msgstr "Droite"
+msgstr "À droite"
 
 #: ../data/ui/MugshotWindow.ui.h:5
 msgid "<b>Crop</b>"
-msgstr "<b>Rogner</b>"
+msgstr "<b>Recadrer</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:6
 msgid "Select from stock…"
-msgstr "Parcourir..."
+msgstr "Sélectionner dans la collection..."
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
@@ -79,7 +79,7 @@ msgstr "<b>Initiales</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:13
 msgid "<b>Home Phone</b>"
-msgstr "<b>Téléphone privé</b>"
+msgstr "<b>Téléphone domicile</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:14
 msgid "<b>Email Address</b>"
@@ -87,7 +87,7 @@ msgstr "<b>Courriel</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:15
 msgid "<b>Office Phone</b>"
-msgstr "<b>Téléphone travail</b>"
+msgstr "<b>Téléphone bureau</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:16
 msgid "<b>Fax</b>"
@@ -99,12 +99,12 @@ msgstr "Sélectionner une photo..."
 
 #: ../mugshot/__init__.py:34
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
-msgstr "Afficher les messages de debogage (-vv debugs mugshot_lib also)"
+msgstr "Afficher les messages de débogage (-vv débogue aussi mugshot_lib)"
 
 #: ../mugshot/CameraMugshotDialog.py:106
 #, python-format
 msgid "Camera failed to load. Devices: %s"
-msgstr "L'activation de votre appareil photo a échoué. Périphériques : %s"
+msgstr "Impossible d’activer la caméra. Périphériques : %s"
 
 #. Translators: Please include newlines, as required to fit the message.
 #: ../mugshot/CameraMugshotDialog.py:124
@@ -112,8 +112,8 @@ msgid ""
 "Sorry, but your camera\n"
 "failed to initialize."
 msgstr ""
-"Désolé, mais votre appareil photo\n"
-"n'arrive pas à s'initialiser."
+"Désolé, votre caméra n’a\n"
+"pu être initialisée."
 
 #. Translators: Please include newlines, as required to fit the message.
 #: ../mugshot/CameraMugshotDialog.py:131
@@ -121,12 +121,12 @@ msgid ""
 "Please wait while your\n"
 "camera is initialized."
 msgstr ""
-"Patientez SVP pendant l'initialisation\n"
-"de votre appareil photo."
+"Veuillez patienter pendant\n"
+"l’initialisation de votre caméra."
 
 #: ../mugshot/CameraMugshotDialog.py:151
 msgid "Cannot display camera output.Ignoring play command"
-msgstr ""
+msgstr "Impossible d’afficher la sortie caméra. Lecture annulée"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
@@ -137,55 +137,58 @@ msgstr "Réessayer"
 #. Password was incorrect, complain.
 #: ../mugshot/MugshotWindow.py:327
 msgid "Authentication Failed"
-msgstr ""
+msgstr "L’authentification a échoué"
 
 #: ../mugshot/MugshotWindow.py:328
 msgid "User details were not updated."
-msgstr ""
+msgstr "Les informations utilisateur n’ont pas été mises à jour."
 
 #: ../mugshot/MugshotWindow.py:495
 msgid "Update Pidgin buddy icon?"
-msgstr "Mettre à jour aussi l'avatar de Pidgin ?"
+msgstr "Mettre à jour l’avatar dans Pidgin ?"
 
 #: ../mugshot/MugshotWindow.py:496
 msgid "Would you also like to update your Pidgin buddy icon?"
-msgstr "Souhaitez-vous mettre à jour aussi votre avatar dans Pidgin ?"
+msgstr "Souhaitez-vous également mettre à jour votre avatar dans Pidgin ?"
 
 #: ../mugshot/MugshotWindow.py:574
 msgid "Enter your password to change user details."
 msgstr ""
+"Saisissez votre mot de passe afin de modifier les informations utilisateur."
 
 #: ../mugshot/MugshotWindow.py:576
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
-"Il s'agit d'une mesure de sécurité pour éviter les mises à jour non "
-"souhaitées\n"
-"dans vos informations personnelles."
+"Il s’agit d’une mesure de sécurité visant à prévenir les\n"
+"modifications indésirées de vos informations personnelles."
 
 #: ../mugshot/MugshotWindow.py:727
 msgid "Update LibreOffice user details?"
-msgstr "Mettre à jour aussi les infos utilisateurs de LibreOffice ?"
+msgstr "Mettre à jour les informations utilisateur de LibreOffice ?"
 
 #: ../mugshot/MugshotWindow.py:728
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
-"Souhaitez-vous mettre à jour aussi vos infos utilisateurs dans LibreOffice ?"
+"Souhaitez-vous également mettre à jour les informations utilisateur dans "
+"LibreOffice ?\""
 
 #: ../mugshot_lib/SudoDialog.py:79
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: ../mugshot_lib/SudoDialog.py:80
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: ../mugshot_lib/SudoDialog.py:93
 msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
+"Saisissez votre mot de passe afin\n"
+"d’effectuer des tâches administratives."
 
 #: ../mugshot_lib/SudoDialog.py:95
 #, python-format
@@ -193,11 +196,13 @@ msgid ""
 "The application '%s' lets you\n"
 "modify essential parts of your system."
 msgstr ""
+"L’application « %s » vous permet de modifier\n"
+"des éléments essentiels de votre système."
 
 #: ../mugshot_lib/SudoDialog.py:116
 msgid "Incorrect password... try again."
-msgstr ""
+msgstr "Mot de passe incorrect... Veuillez réessayer."
 
 #: ../mugshot_lib/SudoDialog.py:121
 msgid "Password:"
-msgstr "Mot de passe :"
+msgstr "Mot de passe :"
