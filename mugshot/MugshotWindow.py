@@ -223,20 +223,29 @@ class MugshotWindow(Window):
         face = os.path.join(home, '.face')
         logger.debug('Checking AccountsService for profile image')
         image = self.accounts_service_get_user_image()
-        logger.debug('Found profile image: %s' % str(image))
 
-        if os.path.isfile(face):
-            if os.path.samefile(image, face):
-                self.updated_image = face
+        # AccountsService may not be supported or desired.
+        if image is None:
+            logger.debug("AccountsService is not supported.")
+            self.updated_image = face
+            self.set_user_image(face)
+
+        # If it is supported, process and compare to ~/.face
+        else:
+            logger.debug('Found profile image: %s' % str(image))
+
+            if os.path.isfile(face):
+                if os.path.samefile(image, face):
+                    self.updated_image = face
+                else:
+                    self.updated_image = None
+                self.set_user_image(face)
+            elif os.path.isfile(image):
+                self.updated_image = image
+                self.set_user_image(image)
             else:
                 self.updated_image = None
-            self.set_user_image(face)
-        elif os.path.isfile(image):
-            self.updated_image = image
-            self.set_user_image(image)
-        else:
-            self.updated_image = None
-            self.set_user_image(None)
+                self.set_user_image(None)
 
         # Search /etc/passwd for the current user's details.
         logger.debug('Getting user details from /etc/passwd')
@@ -435,31 +444,35 @@ class MugshotWindow(Window):
 
     def accounts_service_get_user_image(self):
         """Get user profile image using AccountsService."""
-        bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
-        result = bus.call_sync('org.freedesktop.Accounts',
-                               '/org/freedesktop/Accounts',
-                               'org.freedesktop.Accounts',
-                               'FindUserByName',
-                               GLib.Variant('(s)', (username,)),
-                               GLib.VariantType.new('(o)'),
-                               Gio.DBusCallFlags.NONE,
-                               -1,
-                               None)
-        (path,) = result.unpack()
+        try:
+            bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
+            result = bus.call_sync('org.freedesktop.Accounts',
+                                   '/org/freedesktop/Accounts',
+                                   'org.freedesktop.Accounts',
+                                   'FindUserByName',
+                                   GLib.Variant('(s)', (username,)),
+                                   GLib.VariantType.new('(o)'),
+                                   Gio.DBusCallFlags.NONE,
+                                   -1,
+                                   None)
+            (path,) = result.unpack()
 
-        result = bus.call_sync('org.freedesktop.Accounts',
-                               path,
-                               'org.freedesktop.DBus.Properties',
-                               'GetAll',
-                               GLib.Variant('(s)',
-                                            ('org.freedesktop.Accounts.User',)
-                                            ),
-                               GLib.VariantType.new('(a{sv})'),
-                               Gio.DBusCallFlags.NONE,
-                               -1,
-                               None)
-        (props,) = result.unpack()
-        return props['IconFile']
+            variant = GLib.Variant('(s)',
+                      ('org.freedesktop.Accounts.User',)
+                      )
+            result = bus.call_sync('org.freedesktop.Accounts',
+                                   path,
+                                   'org.freedesktop.DBus.Properties',
+                                   'GetAll',
+                                   variant,
+                                   GLib.VariantType.new('(a{sv})'),
+                                   Gio.DBusCallFlags.NONE,
+                                   -1,
+                                   None)
+            (props,) = result.unpack()
+            return props['IconFile']
+        except GLib.GError:
+            return None
 
     def accounts_service_set_user_image(self, filename):
         """Set user profile image using AccountsService."""
