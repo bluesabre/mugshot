@@ -335,8 +335,7 @@ class MugshotWindow(Window):
         changes."""
         logger.debug('Applying changes...')
         if self.get_chfn_details_updated():
-            result = self.save_chfn_details()
-            if result != [0, 0]:
+            if not self.save_chfn_details():
                 # Password was incorrect, complain.
                 primary = _("Authentication Failed")
                 secondary = _("User details were not updated.")
@@ -576,31 +575,44 @@ class MugshotWindow(Window):
             logger.debug('chfn details have NOT been modified.')
             return False
 
+    def process_terminal_password(self, command, password):
+        """Handle password prompts from the interactive chfn commands."""
+        # Force the C language for guaranteed english strings in the script.
+        logger.debug('Executing: %s' % command)
+        child = pexpect.spawn(command, env={"LANG": "C"})
+        child.timeout = 5
+        child.write_to_stdout = True
+        try:
+            child.expect([".*ssword.*", pexpect.EOF])
+            child.sendline(password)
+            child.expect([pexpect.EOF])
+        except pexpect.TIMEOUT:
+            logger.warning('Timeout reached, password was likely incorrect.')
+        child.close(True)
+        return child.exitstatus == 0
+
     def save_chfn_details(self):
         """Commit changes to chfn-related details.  For full name, changes must
         be performed as root.  Other changes are done with the user password.
 
-        Return exit codes for 1) full name changes and 2) home/work phone
-        changes.
-
-        e.g. [0, 0] (both passed)"""
-        return_codes = []
+        Return TRUE if successful."""
+        success = True
 
         # Get the password for sudo
         sudo_dialog = SudoDialog.SudoDialog(
             icon=None, name=_("Mugshot"), retries=3)
         sudo_dialog.format_primary_text(_("Enter your password to change user "
-                                        "details."))
+                                          "details."))
         sudo_dialog.format_secondary_text(_("This is a security measure to "
-                                          "prevent unwanted updates\n"
-                                          "to your personal information."))
+                                            "prevent unwanted updates\n"
+                                            "to your personal information."))
         sudo_dialog.run()
         sudo_dialog.hide()
         password = sudo_dialog.get_password()
         sudo_dialog.destroy()
 
         if not password:
-            return return_codes
+            return False
 
         sudo = which('sudo')
         chfn = which('chfn')
@@ -619,52 +631,29 @@ class MugshotWindow(Window):
 
         # Full name can only be modified by root.  Try using sudo to modify.
         if SudoDialog.check_sudo():
-            logger.debug('Attempting to set fullname with sudo chfn')
-            # Force the C language for guaranteed english strings in the script.
-            child = pexpect.spawn('%s %s %s' % (sudo, chfn, username),
-                                  env={"LANG": "C"})
-            child.timeout = 5
-            try:
-                child.expect([".*ssword.*", pexpect.EOF])
-                child.sendline(password)
-                child.expect(".*ame.*:")
-                child.sendline(full_name)
-                for i in range(5):
-                    child.sendline('')
-            except pexpect.TIMEOUT:
-                # Password was incorrect, or sudo rights not granted
-                logger.warning('Timeout reached, password was incorrect or '
-                               'sudo rights not granted.')
-                pass
-            child.close()
-            if child.exitstatus == 0:
+            logger.debug('Updating Full Name...')
+            command = "%s %s -f \"%s\" %s" % (sudo, chfn, full_name, username)
+            if self.process_terminal_password(command, password):
                 self.first_name = first_name
                 self.last_name = last_name
-            return_codes.append(child.exitstatus)
-        else:
-            return_codes.append(0)
+            else:
+                success = False
 
-        logger.debug('Attempting to set user details with chfn')
-        child = pexpect.spawn(chfn, env={"LANG": "C"})
-        child.timeout = 5
-        try:
-            child.expect([".*ssword.*", pexpect.EOF])
-            child.sendline(password)
-            child.expect(['Room Number.*:', 'Office.*:'])
-            child.sendline('')
-            child.expect(['Work Phone.*:', 'Office Phone.*:'])
-            child.sendline(office_phone)
-            child.expect('Home Phone.*:')
-            child.sendline(home_phone)
-            child.sendline(home_phone)
-        except pexpect.TIMEOUT:
-            logger.warning('Timeout reached, password was likely incorrect.')
-        child.close(True)
-        if child.exitstatus == 0:
-            self.office_phone = office_phone
+        logger.debug('Updating Home Phone...')
+        command = "%s -h \"%s\" %s" % (chfn, home_phone, username)
+        if self.process_terminal_password(command, password):
             self.home_phone = home_phone
-        return_codes.append(child.exitstatus)
-        return return_codes
+        else:
+            success = False
+
+        logger.debug('Updating Office Phone...')
+        command = "%s -w \"%s\" %s" % (chfn, office_phone, username)
+        if self.process_terminal_password(command, password):
+            self.office_phone = office_phone
+        else:
+            success = False
+
+        return success
 
     # = LibreOffice ========================================================= #
     def get_libreoffice_details_updated(self):
