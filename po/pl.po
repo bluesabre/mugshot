@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-04-22 06:13-0400\n"
+"POT-Creation-Date: 2014-05-14 20:43-0400\n"
 "PO-Revision-Date: 2014-04-19 21:57+0000\n"
 "Last-Translator: Piotr Sokół <Unknown>\n"
 "Language-Team: polski <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-24 06:39+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
+"X-Launchpad-Export-Date: 2014-05-15 06:15+0000\n"
+"X-Generator: Launchpad (build 17007)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -62,7 +62,7 @@ msgstr "Przechwyć z kamery…"
 msgid "Browse…"
 msgstr "Przeglądaj…"
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:573
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:603
 msgid "Mugshot"
 msgstr "Mugshot"
 
@@ -138,27 +138,27 @@ msgid "Retry"
 msgstr "Ponów"
 
 #. Password was incorrect, complain.
-#: ../mugshot/MugshotWindow.py:327
+#: ../mugshot/MugshotWindow.py:340
 msgid "Authentication Failed"
 msgstr "Uwierzytelnianie nieudane"
 
-#: ../mugshot/MugshotWindow.py:328
+#: ../mugshot/MugshotWindow.py:341
 msgid "User details were not updated."
 msgstr "Informacje o użytkowniku nie zostały uaktualnione."
 
-#: ../mugshot/MugshotWindow.py:495
+#: ../mugshot/MugshotWindow.py:512
 msgid "Update Pidgin buddy icon?"
 msgstr "Ikona użytkownika programu Pidgin"
 
-#: ../mugshot/MugshotWindow.py:496
+#: ../mugshot/MugshotWindow.py:513
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Uaktualnić także ikonę użytkownika w programie Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:574
+#: ../mugshot/MugshotWindow.py:604
 msgid "Enter your password to change user details."
 msgstr "Proszę wprowadzić hasło, aby zmienić informacje o użytkowniku."
 
-#: ../mugshot/MugshotWindow.py:576
+#: ../mugshot/MugshotWindow.py:606
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
@@ -166,11 +166,11 @@ msgstr ""
 "Jest to krok zabezpieczający przed niechcianymi uaktualnieniami\n"
 "osobistej bazy danych."
 
-#: ../mugshot/MugshotWindow.py:727
+#: ../mugshot/MugshotWindow.py:734
 msgid "Update LibreOffice user details?"
 msgstr "Informacje użytkownika programu LibreOffice"
 
-#: ../mugshot/MugshotWindow.py:728
+#: ../mugshot/MugshotWindow.py:735
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr "Uaktualnić także informacje użytkownika w programie LibreOffice?"
 
