@@ -1,0 +1,195 @@
+# Galician translation for mugshot
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the mugshot package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mugshot\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-05-14 20:43-0400\n"
+"PO-Revision-Date: 2014-07-14 23:37+0000\n"
+"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
+"Language-Team: Galician <gl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-07-15 05:59+0000\n"
+"X-Generator: Launchpad (build 17111)\n"
+
+#: ../mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "Acerca de min"
+
+#: ../mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "Configure a imaxe do seu perfil e a información de contacto"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>Previsualización</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select from stock…"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Capture from camera…"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Browse…"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:603
+msgid "Mugshot"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "<b>First Name</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>Last Name</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Initials</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Home Phone</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Email Address</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Office Phone</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Fax</b>"
+msgstr ""
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "Select a photo…"
+msgstr ""
+
+#: ../mugshot/__init__.py:34
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr ""
+
+#: ../mugshot/CameraMugshotDialog.py:106
+#, python-format
+msgid "Camera failed to load. Devices: %s"
+msgstr ""
+
+#. Translators: Please include newlines, as required to fit the message.
+#: ../mugshot/CameraMugshotDialog.py:124
+msgid ""
+"Sorry, but your camera\n"
+"failed to initialize."
+msgstr ""
+
+#. Translators: Please include newlines, as required to fit the message.
+#: ../mugshot/CameraMugshotDialog.py:131
+msgid ""
+"Please wait while your\n"
+"camera is initialized."
+msgstr ""
+
+#: ../mugshot/CameraMugshotDialog.py:151
+msgid "Cannot display camera output.Ignoring play command"
+msgstr ""
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:278
+msgid "Retry"
+msgstr ""
+
+#. Password was incorrect, complain.
+#: ../mugshot/MugshotWindow.py:340
+msgid "Authentication Failed"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:341
+msgid "User details were not updated."
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:512
+msgid "Update Pidgin buddy icon?"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:513
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:604
+msgid "Enter your password to change user details."
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:606
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:734
+msgid "Update LibreOffice user details?"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:735
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:79
+msgid "Cancel"
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:80
+msgid "OK"
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:93
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:95
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:116
+msgid "Incorrect password... try again."
+msgstr ""
+
+#: ../mugshot_lib/SudoDialog.py:121
+msgid "Password:"
+msgstr ""
