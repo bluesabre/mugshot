@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Sean Davis <smd.seandavis@gmail.com> -->
+<application>
+  <id type="desktop">mugshot.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>Mugshot</name>
+  <_summary>Lightweight user configuration</_summary>
+
+  <description>
+    <_p>
+    Mugshot enables users to easily updates personal contact information.
+    With Mugshot, users are able to:
+    </_p>
+    <ul>
+        <_li>Set the account photo displayed at login and optionally synchronize
+        this photo with their Pidgin buddy icon</_li>
+        <_li>Set account details stored in /etc/passwd (usable with the finger
+        command) and optionally synchronize with their LibreOffice contact
+        information</_li>
+    </ul>
+  </description>
+
+  <screenshots>
+    <screenshot type="default" width="640" height="360">http://screenshots.smdavis.us/mugshot/mugshot.png</screenshot>
+    <screenshot width="640" height="360">http://screenshots.smdavis.us/mugshot/mugshot-pidgin-sync.png</screenshot>
+  </screenshots>
+
+  <url type="homepage">https://launchpad.net/mugshot/</url>
+  <url type="bugtracker">https://bugs.launchpad.net/mugshot/</url>
+  <url type="help">http://wiki.smdavis.us/doku.php?id=mugshot-docs</url>
+
+  <updatecontact>smd-seandavis@ubuntu.com</updatecontact>
+
+  <provides>
+    <binary>mugshot</binary>
+  </provides>
+
+  <releases>
+    <release version="0.2.4" timestamp="">
+      <description>
+        <_p>This stable release improves the user configuration (chfn) backend
+        and prevents Mugshot from locking up. Mugshot also no longer depends
+        on AccountsService, but can leverage it to better support some systems.
+        A critical bug that prevented some users from starting Mugshot was also
+        addressed.
+        </_p>
+      </description>
+    </release>
+
+    <release version="0.2.3" timestamp="">
+      <description>
+        <_p>This stable release improved AccountsService functionality and 
+        overall usability. Users without admin rights can no longer attempt to 
+        change their name, and initials are automatically populated when the 
+        name is entered.
+        </_p>
+      </description>
+    </release>
+
+    <release version="0.2.2" timestamp="">
+      <description>
+        <_p>This stable release fixed a crash that occured when saving user
+        details in a non-English locale. This release also included an updated
+        translation template and new translations.
+        </_p>
+      </description>
+    </release>
+
+    <release version="0.2.1" timestamp="">
+      <description>
+        <_p>This stable release fixed several bugs related to profile image 
+        management, introduced an improved password dialog, and transitioned to
+        using GLib to more reliably determine user and environment settings.
+        </_p>
+      </description>
+    </release>
+
+    <release version="0.2.0" timestamp="">
+      <description>
+        <_p>The first stable release introduced simplified packaging, replaced
+        the Help functionality with the online help documents, and transitioned
+        to using Python 3.
+        </_p>
+      </description>
+    </release>
+  </releases>
+
+</application>

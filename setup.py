@@ -17,6 +17,7 @@
 
 import os
 import sys
+import subprocess
 
 try:
     import DistUtilsExtra.auto
@@ -118,6 +119,17 @@ def update_desktop_file(filename, script_path):
         sys.exit(1)
 
 
+def write_appdata_file(filename_in):
+    filename_out = filename_in.rstrip('.in')
+    cmd = ["intltool-merge", "-x", "-d", "po", filename_in, filename_out]
+    print(" ".join(cmd))
+    subprocess.call(cmd, shell=False)
+
+
+# Update AppData with latest translations first.
+write_appdata_file("data/appdata/mugshot.appdata.xml.in")
+
+
 class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
     """Command Class to install and update the directory."""
     def run(self):
@@ -181,6 +193,7 @@ DistUtilsExtra.auto.setup(
                      'to easily set profile image and user details for your '
                      'user profile and any supported applications.',
     url='https://launchpad.net/mugshot',
-    data_files=[('share/man/man1', ['mugshot.1'])],
+    data_files=[('share/man/man1', ['mugshot.1']),
+                ('share/appdata', ['data/appdata/mugshot.appdata.xml'])],
     cmdclass={'install': InstallAndUpdateDataDirectory}
     )

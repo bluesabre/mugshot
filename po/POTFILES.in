@@ -31,3 +31,6 @@ mugshot_lib/__init__.py
 mugshot_lib/helpers.py
 mugshot_lib/SudoDialog.py
 mugshot_lib/Window.py
+
+# XML Files
+[type: gettext/xml]data/appdata/mugshot.appdata.xml.in
