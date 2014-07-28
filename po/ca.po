@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-05-14 20:43-0400\n"
+"POT-Creation-Date: 2014-07-27 19:46-0400\n"
 "PO-Revision-Date: 2014-03-03 00:13+0000\n"
 "Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-05-16 06:52+0000\n"
-"X-Generator: Launchpad (build 17007)\n"
+"X-Launchpad-Export-Date: 2014-07-28 06:44+0000\n"
+"X-Generator: Launchpad (build 17131)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -206,3 +206,62 @@ msgstr "La contrasenya és incorrecta. Intenteu-ho de nou."
 #: ../mugshot_lib/SudoDialog.py:121
 msgid "Password:"
 msgstr "Contrasenya:"
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:1
+msgid "Lightweight user configuration"
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:2
+msgid ""
+"Mugshot enables users to easily updates personal contact information. With "
+"Mugshot, users are able to:"
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:3
+msgid ""
+"Set the account photo displayed at login and optionally synchronize this "
+"photo with their Pidgin buddy icon"
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:4
+msgid ""
+"Set account details stored in /etc/passwd (usable with the finger command) "
+"and optionally synchronize with their LibreOffice contact information"
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:5
+msgid ""
+"This stable release improves the user configuration (chfn) backend and "
+"prevents Mugshot from locking up. Mugshot also no longer depends on "
+"AccountsService, but can leverage it to better support some systems. A "
+"critical bug that prevented some users from starting Mugshot was also "
+"addressed."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:6
+msgid ""
+"This stable release improved AccountsService functionality and overall "
+"usability. Users without admin rights can no longer attempt to change their "
+"name, and initials are automatically populated when the name is entered."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:7
+msgid ""
+"This stable release fixed a crash that occured when saving user details in a "
+"non-English locale. This release also included an updated translation "
+"template and new translations."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:8
+msgid ""
+"This stable release fixed several bugs related to profile image management, "
+"introduced an improved password dialog, and transitioned to using GLib to "
+"more reliably determine user and environment settings."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:9
+msgid ""
+"The first stable release introduced simplified packaging, replaced the Help "
+"functionality with the online help documents, and transitioned to using "
+"Python 3."
+msgstr ""
