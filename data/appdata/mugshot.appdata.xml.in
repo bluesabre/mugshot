@@ -48,7 +48,7 @@
       </description>
     </release>
 
-    <release version="0.2.3" timestamp="">
+    <release version="0.2.3" timestamp="1396661280">
       <description>
         <_p>This stable release improved AccountsService functionality and 
         overall usability. Users without admin rights can no longer attempt to 
@@ -58,7 +58,7 @@
       </description>
     </release>
 
-    <release version="0.2.2" timestamp="">
+    <release version="0.2.2" timestamp="1394366340">
       <description>
         <_p>This stable release fixed a crash that occured when saving user
         details in a non-English locale. This release also included an updated
@@ -67,7 +67,7 @@
       </description>
     </release>
 
-    <release version="0.2.1" timestamp="">
+    <release version="0.2.1" timestamp="1393800000">
       <description>
         <_p>This stable release fixed several bugs related to profile image 
         management, introduced an improved password dialog, and transitioned to
@@ -76,7 +76,7 @@
       </description>
     </release>
 
-    <release version="0.2.0" timestamp="">
+    <release version="0.2.0" timestamp="1390737600">
       <description>
         <_p>The first stable release introduced simplified packaging, replaced
         the Help functionality with the online help documents, and transitioned
