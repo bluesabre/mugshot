@@ -37,7 +37,7 @@
   </provides>
 
   <releases>
-    <release version="0.2.4" timestamp="">
+    <release version="0.2.4" timestamp="1406977200">
       <description>
         <_p>This stable release improves the user configuration (chfn) backend
         and prevents Mugshot from locking up. Mugshot also no longer depends

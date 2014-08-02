@@ -1,5 +1,16 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+02 Aug 2014, Mugshot 0.2.4
+
+- General
+  . Add AppData files
+  . Upgrade license from GPL3 to GPL3+
+- Bugs fixed:
+  . Mugshot does not correctly expand user details (LP: #1310634)
+  . Remove hard dependency on AccountsService (LP: #1311938)
+  . Fix timeout by using non-interactive chfn (LP: #1315709)
+
+
 04 Apr 2014, Mugshot 0.2.3
 
 - General:
