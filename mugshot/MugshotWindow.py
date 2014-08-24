@@ -444,8 +444,7 @@ class MugshotWindow(Window):
             (path,) = result.unpack()
 
             variant = GLib.Variant('(s)',
-                      ('org.freedesktop.Accounts.User',)
-                      )
+                                   ('org.freedesktop.Accounts.User',))
             result = bus.call_sync('org.freedesktop.Accounts',
                                    path,
                                    'org.freedesktop.DBus.Properties',

@@ -37,6 +37,15 @@
   </provides>
 
   <releases>
+    <release version="0.4.0" timestamp="">
+      <description>
+        <_p>This stable release improves Mugshot functionality for LDAP users,
+        and includes the latest SudoDialog, improving the appearance and 
+        usability of the password dialog.
+        </_p>
+      </description>
+    </release>
+
     <release version="0.2.4" timestamp="1406977200">
       <description>
         <_p>This stable release improves the user configuration (chfn) backend

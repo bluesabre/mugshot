@@ -1,5 +1,12 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Next release, Mugshot 0.4.0
+
+ - General
+   . Improve usability for LDAP users
+   . Include latest SudoDialog
+
+
 02 Aug 2014, Mugshot 0.2.4
 
 - General

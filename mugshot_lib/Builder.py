@@ -5,7 +5,7 @@
 #
 #   This program is free software: you can redistribute it and/or modify it
 #   under the terms of the GNU General Public License as published by
-#   the Free Software Foundation, either version 3 of the License, or 
+#   the Free Software Foundation, either version 3 of the License, or
 #   (at your option) any later version.
 #
 #   This program is distributed in the hope that it will be useful, but
@@ -234,10 +234,10 @@ def dict_from_callback_obj(callback_obj):
     aliased_methods = [x[1] for x in methods if hasattr(x[1], 'aliases')]
 
     # a method may have several aliases
-    #~ @alias('on_btn_foo_clicked')
-    #~ @alias('on_tool_foo_activate')
-    #~ on_menu_foo_activate():
-        #~ pass
+    # ~ @alias('on_btn_foo_clicked')
+    # ~ @alias('on_tool_foo_activate')
+    # ~ on_menu_foo_activate():
+    # ~     pass
     alias_groups = [(x.aliases, x) for x in aliased_methods]
 
     aliases = []

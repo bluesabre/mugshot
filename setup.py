@@ -5,7 +5,7 @@
 #
 #   This program is free software: you can redistribute it and/or modify it
 #   under the terms of the GNU General Public License as published by
-#   the Free Software Foundation, either version 3 of the License, or 
+#   the Free Software Foundation, either version 3 of the License, or
 #   (at your option) any later version.
 #
 #   This program is distributed in the hope that it will be useful, but
@@ -185,7 +185,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 
 DistUtilsExtra.auto.setup(
     name='mugshot',
-    version='0.2.4',
+    version='0.4.0',
     license='GPL-3+',
     author='Sean Davis',
     author_email='smd.seandavis@gmail.com',
