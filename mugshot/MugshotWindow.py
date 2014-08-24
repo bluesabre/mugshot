@@ -192,7 +192,7 @@ class MugshotWindow(Window):
         self.fax_entry = builder.get_object('fax')
 
         # Users without sudo rights cannot change their name.
-        self.set_name_editable(SudoDialog.check_sudo())
+        self.set_name_editable(SudoDialog.check_dependencies(['chfn']))
 
         # Stock photo browser
         self.stock_browser = builder.get_object('stock_browser')
@@ -311,13 +311,24 @@ class MugshotWindow(Window):
         changes."""
         logger.debug('Applying changes...')
         if self.get_chfn_details_updated():
-            if not self.save_chfn_details():
+            success, response = self.save_chfn_details()
+            if not success:
                 # Password was incorrect, complain.
-                primary = _("Authentication Failed")
+                if response in [Gtk.ResponseType.NONE,
+                                Gtk.ResponseType.CANCEL,
+                                Gtk.ResponseType.DELETE_EVENT]:
+                    msg_type = Gtk.MessageType.WARNING
+                    primary = _("Authentication cancelled.")
+                elif response == Gtk.ResponseType.REJECT:
+                    msg_type = Gtk.MessageType.WARNING
+                    primary = _("Authentication failed.")
+                else:
+                    msg_type = Gtk.MessageType.ERROR
+                    primary = _("An error occurred when saving changes.")
+
                 secondary = _("User details were not updated.")
                 dialog = Gtk.MessageDialog(transient_for=self, flags=0,
-                                           message_type=
-                                           Gtk.MessageType.WARNING,
+                                           message_type=msg_type,
                                            buttons=Gtk.ButtonsType.OK,
                                            text=primary)
                 dialog.format_secondary_text(secondary)
@@ -555,8 +566,7 @@ class MugshotWindow(Window):
         """Handle password prompts from the interactive chfn commands."""
         # Force the C language for guaranteed english strings in the script.
         logger.debug('Executing: %s' % command)
-        child = pexpect.spawn(command, env={"LANG": "C"})
-        child.timeout = 5
+        child = SudoDialog.env_spawn(command, 5)
         child.write_to_stdout = True
         try:
             child.expect([".*ssword.*", pexpect.EOF])
@@ -582,13 +592,13 @@ class MugshotWindow(Window):
         sudo_dialog.format_secondary_text(_("This is a security measure to "
                                             "prevent unwanted updates\n"
                                             "to your personal information."))
-        sudo_dialog.run()
+        response = sudo_dialog.run()
         sudo_dialog.hide()
         password = sudo_dialog.get_password()
         sudo_dialog.destroy()
 
         if not password:
-            return False
+            return (False, response)
 
         sudo = which('sudo')
         chfn = which('chfn')
@@ -606,7 +616,7 @@ class MugshotWindow(Window):
             home_phone = 'none'
 
         # Full name can only be modified by root.  Try using sudo to modify.
-        if SudoDialog.check_sudo():
+        if SudoDialog.check_dependencies(['chfn']):
             logger.debug('Updating Full Name...')
             command = "%s %s -f \"%s\" %s" % (sudo, chfn, full_name, username)
             if self.process_terminal_password(command, password):
@@ -629,7 +639,7 @@ class MugshotWindow(Window):
         else:
             success = False
 
-        return success
+        return (success, response)
 
     # = LibreOffice ========================================================= #
     def get_libreoffice_details_updated(self):

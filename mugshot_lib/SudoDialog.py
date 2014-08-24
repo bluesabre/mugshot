@@ -5,7 +5,7 @@
 #
 #   This program is free software: you can redistribute it and/or modify it
 #   under the terms of the GNU General Public License as published by
-#   the Free Software Foundation, either version 3 of the License, or 
+#   the Free Software Foundation, either version 3 of the License, or
 #   (at your option) any later version.
 #
 #   This program is distributed in the hope that it will be useful, but
@@ -23,22 +23,70 @@ from locale import gettext as _
 
 import pexpect
 
+gtk_version = (Gtk.get_major_version(),
+               Gtk.get_minor_version(),
+               Gtk.get_micro_version())
 
-def check_sudo():
-    """Return True if user has permission to use sudo."""
-    child = pexpect.spawn('sudo -v', env={"LANG": "C"})
-    child.timeout = 1
-    # Check for failure message.
-    try:
-        child.expect(["Sorry", pexpect.EOF])
-        child.close()
+
+def check_gtk_version(major_version, minor_version, micro=0):
+    """Return true if running gtk >= requested version"""
+    return gtk_version >= (major_version, minor_version, micro)
+
+# Check if the LANG variable needs to be set
+use_env = False
+
+
+def check_dependencies(commands=[]):
+    """Check for the existence of required commands, and sudo access"""
+    # Check for sudo
+    if pexpect.which("sudo") is None:
         return False
-    except:
+
+    # Check for required commands
+    for command in commands:
+        if pexpect.which(command) is None:
+            return False
+
+    # Check for LANG requirements
+    child = env_spawn('sudo -v', 1)
+    if child.expect([".*ssword.*", "Sorry",
+                     pexpect.EOF,
+                     pexpect.TIMEOUT]) == 3:
+        global use_env
+        use_env = True
+    child.close()
+
+    # Check for sudo rights
+    child = env_spawn('sudo -v', 1)
+    try:
+        index = child.expect([".*ssword.*", "Sorry",
+                              pexpect.EOF, pexpect.TIMEOUT])
         child.close()
-        return True
+        if index == 0 or index == 2:
+            # User in sudoers, or already admin
+            return True
+        elif index == 1 or index == 3:
+            # User not in sudoers
+            return False
+
+    except:
+        # Something else went wrong.
+        child.close()
+
+    return False
 
 
-class SudoDialog(Gtk.MessageDialog):
+def env_spawn(command, timeout):
+    """Use pexpect.spawn, adapt for timeout and env requirements."""
+    if use_env:
+        child = pexpect.spawn(command, env={"LANG": "C"})
+    else:
+        child = pexpect.spawn(command)
+    child.timeout = timeout
+    return child
+
+
+class SudoDialog(Gtk.Dialog):
     '''
     Creates a new SudoDialog. This is a replacement for using gksudo which
     provides additional flexibility when performing sudo commands.
@@ -58,33 +106,93 @@ class SudoDialog(Gtk.MessageDialog):
     - REJECT:   Password invalid.
     - ACCEPT:   Password valid.
     '''
-    def __init__(self, parent=None, icon=None, message=None, name=None,
-                 retries=-1):
+    def __init__(self, title=None, parent=None, icon=None, message=None,
+                 name=None, retries=-1):
         """Initialize the SudoDialog."""
-        # default dialog parameters
-        message_type = Gtk.MessageType.QUESTION
-        buttons = Gtk.ButtonsType.NONE
-
         # initialize the dialog
-        super(SudoDialog, self).__init__(transient_for=parent,
+        super(SudoDialog, self).__init__(title=title,
+                                         transient_for=parent,
                                          modal=True,
-                                         destroy_with_parent=True,
-                                         message_type=message_type,
-                                         buttons=buttons,
-                                         text='')
-        self.set_dialog_icon(icon)
+                                         destroy_with_parent=True)
+        #
         self.connect("show", self.on_show)
+        if title is None:
+            title = _("Password Required")
+        self.set_title(title)
 
-        # add buttons
-        button_box = self.get_children()[0].get_children()[1]
-        self.add_button(_("Cancel"), Gtk.ResponseType.CANCEL)
+        self.set_border_width(5)
+
+        # Content Area
+        content_area = self.get_content_area()
+        grid = Gtk.Grid.new()
+        grid.set_row_spacing(6)
+        grid.set_column_spacing(12)
+        grid.set_margin_left(5)
+        grid.set_margin_right(5)
+        content_area.add(grid)
+
+        # Icon
+        self.dialog_icon = Gtk.Image.new_from_icon_name("dialog-password",
+                                                        Gtk.IconSize.DIALOG)
+        grid.attach(self.dialog_icon, 0, 0, 1, 2)
+
+        # Text
+        self.primary_text = Gtk.Label.new("")
+        self.primary_text.set_use_markup(True)
+        self.primary_text.set_halign(Gtk.Align.START)
+        self.secondary_text = Gtk.Label.new("")
+        self.secondary_text.set_use_markup(True)
+        self.secondary_text.set_halign(Gtk.Align.START)
+        self.secondary_text.set_margin_top(6)
+        grid.attach(self.primary_text, 1, 0, 1, 1)
+        grid.attach(self.secondary_text, 1, 1, 1, 1)
+
+        # Infobar
+        self.infobar = Gtk.InfoBar.new()
+        self.infobar.set_margin_top(12)
+        self.infobar.set_message_type(Gtk.MessageType.WARNING)
+        content_area = self.infobar.get_content_area()
+        infobar_icon = Gtk.Image.new_from_icon_name("dialog-warning",
+                                                    Gtk.IconSize.BUTTON)
+        label = Gtk.Label.new(_("Incorrect password... try again."))
+        content_area.add(infobar_icon)
+        content_area.add(label)
+        grid.attach(self.infobar, 0, 2, 2, 1)
+        content_area.show_all()
+        self.infobar.set_no_show_all(True)
+
+        # Password
+        label = Gtk.Label.new("")
+        label.set_use_markup(True)
+        label.set_markup("<b>%s</b>" % _("Password:"))
+        label.set_halign(Gtk.Align.START)
+        label.set_margin_top(12)
+        self.password_entry = Gtk.Entry()
+        self.password_entry.set_visibility(False)
+        self.password_entry.set_activates_default(True)
+        self.password_entry.set_margin_top(12)
+        grid.attach(label, 0, 3, 1, 1)
+        grid.attach(self.password_entry, 1, 3, 1, 1)
+
+        # Buttons
+        button = self.add_button(_("Cancel"), Gtk.ResponseType.CANCEL)
+        button_box = button.get_parent()
+        button_box.set_margin_top(24)
         ok_button = Gtk.Button.new_with_label(_("OK"))
         ok_button.connect("clicked", self.on_ok_clicked)
         ok_button.set_receives_default(True)
         ok_button.set_can_default(True)
         ok_button.set_sensitive(False)
         self.set_default(ok_button)
-        button_box.pack_start(ok_button, False, False, 0)
+        if check_gtk_version(3, 12):
+            button_box.pack_start(ok_button, True, True, 0)
+        else:
+            button_box.pack_start(ok_button, False, False, 0)
+
+        self.password_entry.connect("changed", self.on_password_changed,
+                                    ok_button)
+
+        self.set_dialog_icon(icon)
 
         # add primary and secondary text
         if message:
@@ -98,46 +206,10 @@ class SudoDialog(Gtk.MessageDialog):
         self.format_primary_text(primary_text)
         self.format_secondary_text(secondary_text)
 
-        # Pack the content area with password-related widgets.
-        content_area = self.get_content_area()
-
-        # Use an alignment to move align the password widgets with the text.
-        self.password_alignment = Gtk.Alignment()
-        # Make an educated guess about how for to align.
-        left_align = Gtk.icon_size_lookup(Gtk.IconSize.DIALOG)[1] + 16
-        self.password_alignment.set_padding(12, 12, left_align, 0)
-
-        # Outer password box for incorrect password label and inner widgets.
-        password_outer = Gtk.Box(orientation=Gtk.Orientation.VERTICAL,
-                                 spacing=12)
-        password_outer.set_orientation(Gtk.Orientation.VERTICAL)
-        # Password error label, only displayed when unsuccessful.
-        self.password_info = Gtk.Label(label="")
-        self.password_info.set_markup("<b>%s</b>" %
-                                      _("Incorrect password... try again."))
-
-        # Inner password box for Password: label and password entry.
-        password_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,
-                               spacing=12)
-        password_label = Gtk.Label(label=_("Password:"))
-        self.password_entry = Gtk.Entry()
-        self.password_entry.set_visibility(False)
-        self.password_entry.set_activates_default(True)
-        self.password_entry.connect("changed", self.on_password_changed,
-                                    ok_button)
-
-        # Pack all the widgets.
-        password_box.pack_start(password_label, False, False, 0)
-        password_box.pack_start(self.password_entry, True, True, 0)
-        password_outer.pack_start(self.password_info, True, True, 0)
-        password_outer.pack_start(password_box, True, True, 0)
-        self.password_alignment.add(password_outer)
-        content_area.pack_start(self.password_alignment, True, True, 0)
-        content_area.show_all()
-        self.password_info.set_visible(False)
-
         self.attempted_logins = 0
         self.max_attempted_logins = retries
+
+        self.show_all()
 
     def on_password_changed(self, widget, button):
         """Set the apply button sensitivity based on password input."""
@@ -146,11 +218,14 @@ class SudoDialog(Gtk.MessageDialog):
     def format_primary_text(self, message_format):
         '''
         Format the primary text widget.
-
-        API extension to match with format_secondary_text.
         '''
-        label = self.get_message_area().get_children()[0]
-        label.set_text(message_format)
+        self.primary_text.set_markup("<big><b>%s</b></big>" % message_format)
+
+    def format_secondary_text(self, message_format):
+        '''
+        Format the secondary text widget.
+        '''
+        self.secondary_text.set_markup(message_format)
 
     def set_dialog_icon(self, icon=None):
         '''
@@ -166,24 +241,21 @@ class SudoDialog(Gtk.MessageDialog):
                 pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(icon,
                                                                 icon_size,
                                                                 icon_size)
-                image = Gtk.Image.new_from_pixbuf(pixbuf)
+                self.dialog_icon.set_from_pixbuf(pixbuf)
                 self.set_icon_from_file(icon)
             else:
                 # icon is an named icon, so load it directly to an image
-                image = Gtk.Image.new_from_icon_name(icon, icon_size)
+                self.dialog_icon.set_from_icon_name(icon, icon_size)
                 self.set_icon_name(icon)
         else:
             # fallback on password icon
-            image = Gtk.Image.new_from_icon_name('dialog-password', icon_size)
+            self.dialog_icon.set_from_icon_name('dialog-password', icon_size)
             self.set_icon_name('dialog-password')
-        # align, show, and set the image.
-        image.set_alignment(Gtk.Align.CENTER, Gtk.Align.FILL)
-        image.show()
-        self.set_image(image)
 
     def on_show(self, widget):
         '''When the dialog is displayed, clear the password.'''
         self.set_password('')
+        self.password_valid = False
 
     def on_ok_clicked(self, widget):
         '''
@@ -193,26 +265,22 @@ class SudoDialog(Gtk.MessageDialog):
         If unsuccessful, try again until reaching maximum attempted logins,
         then emit the response signal with REJECT.
         '''
-        top, bottom, left, right = self.password_alignment.get_padding()
-        # Password cannot be validated without sudo
-        if (not check_sudo()) or self.attempt_login():
+        if self.attempt_login():
             self.password_valid = True
-            # Adjust the dialog for attactiveness.
-            self.password_alignment.set_padding(12, bottom, left, right)
-            self.password_info.hide()
             self.emit("response", Gtk.ResponseType.ACCEPT)
         else:
             self.password_valid = False
             # Adjust the dialog for attactiveness.
-            self.password_alignment.set_padding(0, bottom, left, right)
-            self.password_info.show()
-            self.set_password('')
+            self.infobar.show()
+            self.password_entry.grab_focus()
             if self.attempted_logins == self.max_attempted_logins:
                 self.attempted_logins = 0
                 self.emit("response", Gtk.ResponseType.REJECT)
 
     def get_password(self):
         '''Return the currently entered password, or None if blank.'''
+        if not self.password_valid:
+            return None
         password = self.password_entry.get_text()
         if password == '':
             return None
@@ -232,12 +300,11 @@ class SudoDialog(Gtk.MessageDialog):
         Return True if successful.
         '''
         # Set the pexpect variables and spawn the process.
-        child = pexpect.spawn('sudo /bin/true', env={"LANG": "C"})
-        child.timeout = 1
+        child = env_spawn('sudo /bin/true', 1)
         try:
             # Check for password prompt or program exit.
             child.expect([".*ssword.*", pexpect.EOF])
-            child.sendline(self.get_password())
+            child.sendline(self.password_entry.get_text())
             child.expect(pexpect.EOF)
         except pexpect.TIMEOUT:
             # If we timeout, that means the password was unsuccessful.
