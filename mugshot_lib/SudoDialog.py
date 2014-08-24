@@ -78,8 +78,10 @@ def check_dependencies(commands=[]):
 
 def env_spawn(command, timeout):
     """Use pexpect.spawn, adapt for timeout and env requirements."""
+    env = os.environ
+    env["LANG"] = "C"
     if use_env:
-        child = pexpect.spawn(command, env={"LANG": "C"})
+        child = pexpect.spawn(command, env)
     else:
         child = pexpect.spawn(command)
     child.timeout = timeout
