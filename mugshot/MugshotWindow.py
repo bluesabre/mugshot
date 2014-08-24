@@ -5,7 +5,7 @@
 #
 #   This program is free software: you can redistribute it and/or modify it
 #   under the terms of the GNU General Public License as published by
-#   the Free Software Foundation, either version 3 of the License, or 
+#   the Free Software Foundation, either version 3 of the License, or
 #   (at your option) any later version.
 #
 #   This program is distributed in the hope that it will be useful, but
@@ -192,9 +192,7 @@ class MugshotWindow(Window):
         self.fax_entry = builder.get_object('fax')
 
         # Users without sudo rights cannot change their name.
-        if not SudoDialog.check_sudo():
-            self.first_name_entry.set_sensitive(False)
-            self.last_name_entry.set_sensitive(False)
+        self.set_name_editable(SudoDialog.check_sudo())
 
         # Stock photo browser
         self.stock_browser = builder.get_object('stock_browser')
@@ -216,6 +214,12 @@ class MugshotWindow(Window):
 
         # Populate all of the widgets.
         self.init_user_details()
+
+    def set_name_editable(self, editable):
+        """Set name fields editable."""
+        self.first_name_entry.set_sensitive(editable)
+        self.last_name_entry.set_sensitive(editable)
+        self.initials_entry.set_sensitive(editable)
 
     def init_user_details(self):
         """Initialize the user details entries and variables."""
@@ -248,45 +252,16 @@ class MugshotWindow(Window):
                 self.updated_image = None
                 self.set_user_image(None)
 
-        # Search /etc/passwd for the current user's details.
-        logger.debug('Getting user details from /etc/passwd')
-        for line in open('/etc/passwd', 'r'):
-            if line.startswith(username + ':'):
-                logger.debug('Found details: %s' % line.strip())
-                details = line.split(':')[4].split(',', 3)
-
-                while len(details) < 4:
-                    details.append("")
-
-                # Extract the user details
-                name, office, office_phone, home_phone = details
-                break
-
-        # Expand the user's fullname into first and last.
-        try:
-            first_name, last_name = name.split(' ', 1)
-        except:
-            first_name = name
-            last_name = ''
-
-        # If the variables are defined as 'none', use blank for cleanliness.
-        if home_phone == 'none':
-            home_phone = ''
-        if office_phone == 'none':
-            office_phone = ''
-
-        # Get dconf settings
-        logger.debug('Getting initials, email, and fax from dconf')
-        initials = self.settings['initials']
-        email = self.settings['email']
-        fax = self.settings['fax']
+        user_details = self.get_user_details()
 
         # Set the class variables
-        self.first_name = first_name
-        self.last_name = last_name
-        self.initials = initials
-        self.home_phone = home_phone
-        self.office_phone = office_phone
+        self.first_name = user_details['first_name']
+        self.last_name = user_details['last_name']
+        self.initials = user_details['initials']
+        self.home_phone = user_details['home_phone']
+        self.office_phone = user_details['office_phone']
+        email = user_details['email']
+        fax = user_details['fax']
 
         # Populate the GtkEntries.
         logger.debug('Populating entries')
@@ -682,6 +657,83 @@ class MugshotWindow(Window):
             return True
         logger.debug('LibreOffice details do not need to be updated.')
         return False
+
+    def get_user_details(self):
+        """Use the various methods to get the most up-to-date version of the
+        user details."""
+        # Start with LibreOffice, as users may have configured that first.
+        data = self.get_libreoffice_data()
+
+        # Next is passwd, where we override name values with system values.
+        pwd_data = self.get_passwd_data()
+        data['first_name'] = pwd_data['first_name']
+        data['last_name'] = pwd_data['last_name']
+        data['initials'] = pwd_data['initials']
+        if len(data['home_phone']) == 0:
+            data['home_phone'] = pwd_data['home_phone']
+        if len(data['office_phone']) == 0:
+            data['office_phone'] = pwd_data['office_phone']
+
+        # Then get data from dconf
+        initials = self.settings['initials']
+        if len(initials) > 0:
+            data['initials'] = initials
+        email = self.settings['email']
+        if len(data['email']) == 0:
+            data['email'] = email
+        if len(data['fax']) == 0:
+            data['fax'] = self.settings['fax']
+
+        # Return all of the finalized information.
+        return data
+
+    def get_passwd_data(self):
+        """Get user details from passwd"""
+        # Use getent for current user's details.
+        try:
+            line = subprocess.check_output(['getent', 'passwd', username])
+            if isinstance(line, bytes):
+                line = line.decode('utf-8')
+            line = line.strip()
+            logger.debug('Found details: %s' % line.strip())
+            details = line.split(':')[4].split(',', 3)
+
+            while len(details) < 4:
+                details.append("")
+
+            # Extract the user details
+            name, office, office_phone, home_phone = details
+        except subprocess.CalledProcessError:
+            logger.warning("User %s not found in /etc/passwd. "
+                           "Mugshot may not function correctly." % username)
+            office = ""
+            office_phone = ""
+            home_phone = ""
+
+        # Use GLib to get the actual name.
+        name = GLib.get_real_name()
+
+        # Expand the user's fullname into first, last, and initials.
+        initials = name[0]
+        try:
+            first_name, last_name = name.split(' ', 1)
+            initials += last_name[0]
+        except:
+            first_name = name
+            last_name = ''
+
+        # If the variables are defined as 'none', use blank for cleanliness.
+        if home_phone == 'none':
+            home_phone = ''
+        if office_phone == 'none':
+            office_phone = ''
+
+        # Pack the data
+        data = {'first_name': first_name, 'last_name': last_name,
+                'home_phone': home_phone, 'office_phone': office_phone,
+                'initials': initials, 'email': '', 'fax': ''}
+
+        return data
 
     def get_libreoffice_data(self):
         """Get each of the preferences from the LibreOffice
