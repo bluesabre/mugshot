@@ -26,7 +26,7 @@ __all__ = [
 # files). By default, this is ../data, relative your trunk layout
 __mugshot_data_directory__ = '../data/'
 __license__ = 'GPL-3+'
-__version__ = '0.4.0'
+__version__ = '0.2.5'
 
 import os
 
