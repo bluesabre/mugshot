@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-24 12:39-0400\n"
+"POT-Creation-Date: 2014-08-31 21:40-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,7 +121,7 @@ msgid ""
 msgstr ""
 
 #: ../mugshot/CameraMugshotDialog.py:152
-msgid "Cannot display camera output.Ignoring play command"
+msgid "Cannot display camera output. Ignoring play command"
 msgstr ""
 
 #. Set the record button to retry, and disable it until the capture
@@ -212,7 +212,7 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:2
 msgid ""
-"Mugshot enables users to easily updates personal contact information. With "
+"Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
 

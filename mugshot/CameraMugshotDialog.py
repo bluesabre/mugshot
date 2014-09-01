@@ -149,7 +149,7 @@ class CameraMugshotDialog(CameraDialog):
         if not self.realized:
             self._set_video_window_id()
         if not self.realized:
-            logger.error(_("Cannot display camera output."
+            logger.error(_("Cannot display camera output. "
                          "Ignoring play command"))
         else:
             if self.camerabin:
