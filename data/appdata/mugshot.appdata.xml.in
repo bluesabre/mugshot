@@ -37,7 +37,7 @@
   </provides>
 
   <releases>
-    <release version="0.2.5" timestamp="">
+    <release version="0.2.5" timestamp="1409617800">
       <description>
         <_p>This stable release improves Mugshot functionality for LDAP users,
         and includes the latest SudoDialog, improving the appearance and 
