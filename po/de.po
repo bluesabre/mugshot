@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 21:40-0400\n"
-"PO-Revision-Date: 2014-08-31 22:34+0000\n"
-"Last-Translator: Simon Steinbeiß <ochosi@shimmerproject.org>\n"
+"PO-Revision-Date: 2014-09-03 13:31+0000\n"
+"Last-Translator: Tobias Bannert <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 07:20+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2014-09-04 08:35+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -27,7 +27,7 @@ msgstr "Profilbild und Kontaktdetails konfigurieren"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
-msgstr "Aufnahme - Mugshot"
+msgstr "Aufnahme - Benutzerfoto"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
@@ -121,12 +121,13 @@ msgid ""
 "Please wait while your\n"
 "camera is initialized."
 msgstr ""
-"Bitten warten während die\n"
+"Bitten warten, während die\n"
 "Kamera initialisiert wird."
 
 #: ../mugshot/CameraMugshotDialog.py:152
 msgid "Cannot display camera output. Ignoring play command"
 msgstr ""
+"Kameraausgabe kann nicht angezeigt werden. Wiedergabebefehl wird übergangen"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
@@ -136,11 +137,11 @@ msgstr "Erneut versuchen"
 
 #: ../mugshot/MugshotWindow.py:321
 msgid "Authentication cancelled."
-msgstr "Authentifizierung abgebrochen."
+msgstr "Legitimierung abgebrochen."
 
 #: ../mugshot/MugshotWindow.py:324
 msgid "Authentication failed."
-msgstr "Authentifizierung fehlgeschlagen."
+msgstr "Legitimierung fehlgeschlagen."
 
 #: ../mugshot/MugshotWindow.py:327
 msgid "An error occurred when saving changes."
@@ -160,14 +161,14 @@ msgstr "Soll das Pidgin-Freundesymbol auch aktualisiert werden?"
 
 #: ../mugshot/MugshotWindow.py:589
 msgid "Enter your password to change user details."
-msgstr "Passwort eingeben um die Nutzerdaten zu verändern."
+msgstr "Passwort eingeben um die Benutzerdaten zu ändern."
 
 #: ../mugshot/MugshotWindow.py:591
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
-"Dies ist eine Sicherheitsmaßnahme um ungewollte Aktualisierungen\n"
+"Das ist eine Sicherheitsmaßnahme, um ungewollte Aktualisierungen\n"
 "der persönlichen Informationen zu verhindern."
 
 #: ../mugshot/MugshotWindow.py:796
@@ -231,8 +232,8 @@ msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
-"Das Profil-Photo, das beim Login angezeigt wird, einstellen und es optional "
-"mit dem Pidgin buddy icon synchronisieren."
+"Das Profilfoto, das beim Anmelden angezeigt wird, einstellen und es optional "
+"mit dem Pidgin-Frundesymbol synchronisieren."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:4
 msgid ""
