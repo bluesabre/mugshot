@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 21:40-0400\n"
-"PO-Revision-Date: 2014-03-14 20:41+0000\n"
+"PO-Revision-Date: 2014-09-05 09:32+0000\n"
 "Last-Translator: Pjotr12345 <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 07:20+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2014-09-06 07:33+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -126,7 +126,7 @@ msgstr ""
 
 #: ../mugshot/CameraMugshotDialog.py:152
 msgid "Cannot display camera output. Ignoring play command"
-msgstr ""
+msgstr "Kan uitvoer van camera niet tonen. Afspeelopdracht wordt genegeerd"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
@@ -136,15 +136,15 @@ msgstr "Probeer opnieuw"
 
 #: ../mugshot/MugshotWindow.py:321
 msgid "Authentication cancelled."
-msgstr ""
+msgstr "Authenticatie geannuleerd."
 
 #: ../mugshot/MugshotWindow.py:324
 msgid "Authentication failed."
-msgstr ""
+msgstr "Authenticatie is mislukt."
 
 #: ../mugshot/MugshotWindow.py:327
 msgid "An error occurred when saving changes."
-msgstr ""
+msgstr "Er is een fout opgetreden bij het opslaan van de wijzigingen."
 
 #: ../mugshot/MugshotWindow.py:329
 msgid "User details were not updated."
@@ -180,7 +180,7 @@ msgstr "Wilt u ook uw gebruikerdetails bijwerken voor Libre Office?"
 
 #: ../mugshot_lib/SudoDialog.py:122
 msgid "Password Required"
-msgstr ""
+msgstr "Wachtwoord vereist"
 
 #: ../mugshot_lib/SudoDialog.py:159
 msgid "Incorrect password... try again."
@@ -215,30 +215,37 @@ msgid ""
 "modify essential parts of your system."
 msgstr ""
 "De toepassing '%s' laat u\n"
-"essentiele delen van uw\n"
+"essentiële delen van uw\n"
 "systeem wijzigen."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr ""
+msgstr "Lichtgewicht hulpmiddel voor gebruikersinstellingen"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:2
 msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
+"Mugshot stelt gebruikers in staat om eenvoudig persoonlijke "
+"contactpersooninformatie bij te werken. Met Mugshot kunnen gebruikers:"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
+"Stel de accountfoto in die getoond wordt bij aanmelding en synchroniseer "
+"deze foto desgewenst met hun Pidgin-pictogram"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
+"Stel accountbijzonderheden in die zijn opgeslagen in /etc/passwd (te "
+"gebruiken met de opdracht 'finger') en synchroniseer desgewenst met hun "
+"contactpersooninformatie in Libre Office."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""

@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 21:40-0400\n"
-"PO-Revision-Date: 2014-04-19 21:57+0000\n"
-"Last-Translator: Piotr Sokół <Unknown>\n"
+"PO-Revision-Date: 2014-09-05 08:57+0000\n"
+"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: polski <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 07:20+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2014-09-06 07:33+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -138,15 +138,15 @@ msgstr "Ponów"
 
 #: ../mugshot/MugshotWindow.py:321
 msgid "Authentication cancelled."
-msgstr ""
+msgstr "Anulowano uwierzytelnienie."
 
 #: ../mugshot/MugshotWindow.py:324
 msgid "Authentication failed."
-msgstr ""
+msgstr "Uwierzytelnienie się nie powiodło."
 
 #: ../mugshot/MugshotWindow.py:327
 msgid "An error occurred when saving changes."
-msgstr ""
+msgstr "Wystąpił błąd podczas zapisywania zmian."
 
 #: ../mugshot/MugshotWindow.py:329
 msgid "User details were not updated."
@@ -182,7 +182,7 @@ msgstr "Uaktualnić także informacje użytkownika w programie LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:122
 msgid "Password Required"
-msgstr ""
+msgstr "Wymagane hasło"
 
 #: ../mugshot_lib/SudoDialog.py:159
 msgid "Incorrect password... try again."
@@ -218,7 +218,7 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr ""
+msgstr "Lekka konfiguracja użytkownika"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:2
 msgid ""
