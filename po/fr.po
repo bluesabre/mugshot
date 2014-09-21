@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 21:40-0400\n"
-"PO-Revision-Date: 2014-05-19 20:17+0000\n"
-"Last-Translator: Jean Marc <Unknown>\n"
+"PO-Revision-Date: 2014-09-20 21:58+0000\n"
+"Last-Translator: Yannick Le Guen <Unknown>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 07:20+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2014-09-21 06:25+0000\n"
+"X-Generator: Launchpad (build 17196)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -136,15 +136,15 @@ msgstr "Réessayer"
 
 #: ../mugshot/MugshotWindow.py:321
 msgid "Authentication cancelled."
-msgstr ""
+msgstr "Authentification annulée."
 
 #: ../mugshot/MugshotWindow.py:324
 msgid "Authentication failed."
-msgstr ""
+msgstr "L'authentification a échoué."
 
 #: ../mugshot/MugshotWindow.py:327
 msgid "An error occurred when saving changes."
-msgstr ""
+msgstr "Une erreur est survenue lors de l'enregistrement des changements."
 
 #: ../mugshot/MugshotWindow.py:329
 msgid "User details were not updated."
@@ -183,7 +183,7 @@ msgstr ""
 
 #: ../mugshot_lib/SudoDialog.py:122
 msgid "Password Required"
-msgstr ""
+msgstr "Mot de passe requis"
 
 #: ../mugshot_lib/SudoDialog.py:159
 msgid "Incorrect password... try again."
@@ -221,25 +221,32 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr ""
+msgstr "Configuration d'utilisateur minimale"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:2
 msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
+"Mugshot permet aux utilisateurs de mettre facilement à jour leurs "
+"coordonnées personnelles. Avec Mugshot, les utilisateurs peuvent :"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
+"Définir la photo qui sera affichée pour la connexion à leur session et "
+"éventuellement synchroniser cette photo avec l'icône de leur compte Pidgin."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
+"Définir les détails de leur compte dans /etc/passwd (utilisable avec la "
+"commande finger) and éventuellement le synchroniser avec leurs informations "
+"de contact LibreOffice."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""
@@ -247,6 +254,9 @@ msgid ""
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
 msgstr ""
+"Cette version stable améliore les fonctionnalités de Mugshot pour les "
+"utilisateurs LDAP et inclut le dernier SudoDialog, qui améliore l'apparence "
+"et l'ergonomie de la fenêtre de dialogue du mot de passe."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:6
 msgid ""
