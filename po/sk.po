@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 21:40-0400\n"
-"PO-Revision-Date: 2015-01-13 15:17+0000\n"
+"PO-Revision-Date: 2015-01-20 09:38+0000\n"
 "Last-Translator: Miro Janosik <miro.janosik.geo@gmail.com>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-01-14 06:48+0000\n"
-"X-Generator: Launchpad (build 17298)\n"
+"X-Launchpad-Export-Date: 2015-01-21 06:43+0000\n"
+"X-Generator: Launchpad (build 17306)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -27,7 +27,7 @@ msgstr "Upravte si svoj profilový obrázok a kontaktné informácie"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
-msgstr ""
+msgstr "Zachytenie obrázka - Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
@@ -35,15 +35,15 @@ msgstr "<b>Náhľad</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
-msgstr ""
+msgstr "Na stred"
 
 #: ../data/ui/MugshotWindow.ui.h:3
 msgid "Left"
-msgstr ""
+msgstr "Vľavo"
 
 #: ../data/ui/MugshotWindow.ui.h:4
 msgid "Right"
-msgstr ""
+msgstr "Vpravo"
 
 #: ../data/ui/MugshotWindow.ui.h:5
 msgid "<b>Crop</b>"
@@ -219,25 +219,31 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr ""
+msgstr "Hlavné nastavenia užívateľa"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:2
 msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
+"S Mugshot si môže používateľ jednoducho upraviť kontaktné údaje. S Mugshot "
+"používatelia môžu:"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
+"Nastaviť obrázok svojho účtu ktorý sa zobrazí pri prihlasovaní. a možnosť ho "
+"synchronizovať s ikonou v Pidgine"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
+"Nastaviť údaje účtu uložené v /etc/passwd (pre použitie s príkazom finger) a "
+"možnosť synchronizovať ich s kontaktnými údajmi v LibreOffice"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""
@@ -245,6 +251,9 @@ msgid ""
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
 msgstr ""
+"Táto stabilná verzia vylepšuje funkcionalitu Mugshotu pre užívateľov LDAP, "
+"obsahuje nový SudoDialog, zlepšuje vzhľad a použiteľnosť dialógu na zadanie "
+"hesla."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:6
 msgid ""
@@ -254,6 +263,11 @@ msgid ""
 "critical bug that prevented some users from starting Mugshot was also "
 "addressed."
 msgstr ""
+"Táto stabilná verzia vylepšuje backend konfigurácie používateľa (chfn) a "
+"zabraňuje uzamknutiu Mugshotu. Mugshot taktiež už nemá závislosť na "
+"AccountsService ale môže ho využiť na lepšiu podporu na niektorých "
+"systémoch. Taktiež bola opravená kritická chyba ktorá bránila spusteniu "
+"Mugshot."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:7
 msgid ""
