@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 21:40-0400\n"
-"PO-Revision-Date: 2014-03-02 23:58+0000\n"
-"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
+"PO-Revision-Date: 2015-03-14 14:45+0000\n"
+"Last-Translator: Jristz <prflr88@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 07:20+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2015-03-15 05:32+0000\n"
+"X-Generator: Launchpad (build 17389)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -63,7 +63,7 @@ msgstr "Examinar…"
 
 #: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:588
 msgid "Mugshot"
-msgstr "Mugshot"
+msgstr "Fotografía"
 
 #: ../data/ui/MugshotWindow.ui.h:10
 msgid "<b>First Name</b>"
@@ -95,7 +95,7 @@ msgstr "<b>Fax</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:17
 msgid "Select a photo…"
-msgstr "Seleccionar una foto…"
+msgstr "Seleccione una foto…"
 
 #: ../mugshot/__init__.py:35
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
@@ -104,7 +104,7 @@ msgstr "Mostrar mensajes de depuración (-vv depura mugshot_lib también)"
 #: ../mugshot/CameraMugshotDialog.py:107
 #, python-format
 msgid "Camera failed to load. Devices: %s"
-msgstr "Falló la carga de la cámara. Dispositivos: %s"
+msgstr "Hubo fallos al cargar la cámara. Dispositivos: %s"
 
 #. Translators: Please include newlines, as required to fit the message.
 #: ../mugshot/CameraMugshotDialog.py:125
@@ -112,8 +112,8 @@ msgid ""
 "Sorry, but your camera\n"
 "failed to initialize."
 msgstr ""
-"Falló la inicialización\n"
-"de la cámara."
+"Hubo fallos durante la\n"
+"inicialización de su cámara."
 
 #. Translators: Please include newlines, as required to fit the message.
 #: ../mugshot/CameraMugshotDialog.py:132
@@ -127,6 +127,7 @@ msgstr ""
 #: ../mugshot/CameraMugshotDialog.py:152
 msgid "Cannot display camera output. Ignoring play command"
 msgstr ""
+"No se puede mostrar la salida de la cámara. Orden de reproducción Ignoranda"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
@@ -136,15 +137,15 @@ msgstr "Reintentar"
 
 #: ../mugshot/MugshotWindow.py:321
 msgid "Authentication cancelled."
-msgstr ""
+msgstr "Autenticación cancelada."
 
 #: ../mugshot/MugshotWindow.py:324
 msgid "Authentication failed."
-msgstr ""
+msgstr "Ha fallado la autenticación."
 
 #: ../mugshot/MugshotWindow.py:327
 msgid "An error occurred when saving changes."
-msgstr ""
+msgstr "Se produjo un error al guardar los cambios."
 
 #: ../mugshot/MugshotWindow.py:329
 msgid "User details were not updated."
@@ -180,11 +181,11 @@ msgstr "¿Quiere actualizar también los detalles de usuario de LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:122
 msgid "Password Required"
-msgstr ""
+msgstr "Se requiere una contraseña"
 
 #: ../mugshot_lib/SudoDialog.py:159
 msgid "Incorrect password... try again."
-msgstr "Contraseña incorrecta. Inténtelo de nuevo."
+msgstr "Contraseña incorrecta. Inténtelo nuevamente."
 
 #: ../mugshot_lib/SudoDialog.py:169
 msgid "Password:"
@@ -218,25 +219,33 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr ""
+msgstr "Configuración de usuario superligera"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:2
 msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
+"Fotografía le permite a los usuarios actualizar fácilmente la información de "
+"contacto personal. Con Fotografía, los usuarios son capaces de:"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
+"Establecer la foto de la cuenta que aparece al iniciar la sesión y, "
+"opcionalmente, sincronizar esta foto con su icono de contacto de amigo de "
+"Pidgin"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
+"Establecer detalles de cuentas almacenadas en /etc/passwd (que pueden "
+"utilizarse con la orden de huella digital) y, opcionalmente, sincronizar su "
+"información de contacto con LibreOffice"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""
@@ -244,6 +253,9 @@ msgid ""
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
 msgstr ""
+"Esta versión estable mejora la funcionalidad de Fotografía para usuarios de "
+"LDAP, e incluye el último Diálogo de sudo, mejorando el aspecto y la "
+"usabilidad del diálogo de contraseña."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:6
 msgid ""
