@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 21:40-0400\n"
-"PO-Revision-Date: 2015-03-20 21:35+0000\n"
+"PO-Revision-Date: 2015-03-25 20:00+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-21 05:43+0000\n"
-"X-Generator: Launchpad (build 17405)\n"
+"X-Launchpad-Export-Date: 2015-03-26 05:27+0000\n"
+"X-Generator: Launchpad (build 17413)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -27,7 +27,7 @@ msgstr "Konfigūruokite savo profilį bei kontaktinius duomenis"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
-msgstr ""
+msgstr "Fotografuoti - Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
@@ -35,23 +35,23 @@ msgstr "<b>Peržiūra</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
-msgstr ""
+msgstr "Centras"
 
 #: ../data/ui/MugshotWindow.ui.h:3
 msgid "Left"
-msgstr ""
+msgstr "Kairė"
 
 #: ../data/ui/MugshotWindow.ui.h:4
 msgid "Right"
-msgstr ""
+msgstr "Dešinė"
 
 #: ../data/ui/MugshotWindow.ui.h:5
 msgid "<b>Crop</b>"
-msgstr ""
+msgstr "<b>Apkirpti</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:6
 msgid "Select from stock…"
-msgstr ""
+msgstr "Pasirinkti iš esamų..."
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
@@ -104,7 +104,7 @@ msgstr "Rodyti derinimo pranešimus (-vv debugs mugshot_lib also)"
 #: ../mugshot/CameraMugshotDialog.py:107
 #, python-format
 msgid "Camera failed to load. Devices: %s"
-msgstr ""
+msgstr "Nepavyko įkelti kameros. Įrenginiai: %s"
 
 #. Translators: Please include newlines, as required to fit the message.
 #: ../mugshot/CameraMugshotDialog.py:125
@@ -161,7 +161,7 @@ msgstr ""
 
 #: ../mugshot/MugshotWindow.py:589
 msgid "Enter your password to change user details."
-msgstr ""
+msgstr "Norėdami keisti naudotojo detales, įveskite slaptažodį."
 
 #: ../mugshot/MugshotWindow.py:591
 msgid ""
@@ -171,7 +171,7 @@ msgstr ""
 
 #: ../mugshot/MugshotWindow.py:796
 msgid "Update LibreOffice user details?"
-msgstr ""
+msgstr "Atnaujinti LibreOffice naudotojo detales?"
 
 #: ../mugshot/MugshotWindow.py:797
 msgid "Would you also like to update your user details in LibreOffice?"
@@ -203,6 +203,7 @@ msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
+"Įveskite slaptažodį, kad galėtumėte atlikti administratoriaus užduotis."
 
 #: ../mugshot_lib/SudoDialog.py:206
 #, python-format
@@ -210,6 +211,8 @@ msgid ""
 "The application '%s' lets you\n"
 "modify essential parts of your system."
 msgstr ""
+"Programa '%s' leidžia jums\n"
+"modifikuoti svarbiausias jūsų sistemos dalis."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
@@ -220,12 +223,16 @@ msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
+"Mugshot įgalina naudotojus lengvai atnaujinti asmeninę kontaktinę "
+"informaciją. Su Mugshot, naudotojai gali:"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
+"Nustatyti, prisijungimo metu rodomą, paskyros nuotrauką ir pasirinktinai "
+"sinchronizuoti šią nuotrauką su savo Pidgin naudotojo paveiksliuku"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:4
 msgid ""
