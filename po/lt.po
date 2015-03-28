@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 21:40-0400\n"
-"PO-Revision-Date: 2015-03-25 20:00+0000\n"
+"PO-Revision-Date: 2015-03-27 13:43+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-03-26 05:27+0000\n"
+"X-Launchpad-Export-Date: 2015-03-28 05:32+0000\n"
 "X-Generator: Launchpad (build 17413)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -55,7 +55,7 @@ msgstr "Pasirinkti iš esamų..."
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
-msgstr ""
+msgstr "Fotografuoti per kamerą..."
 
 #: ../data/ui/MugshotWindow.ui.h:8
 msgid "Browse…"
@@ -153,11 +153,11 @@ msgstr "Naudotojo duomenys nebuvo atnaujinti."
 
 #: ../mugshot/MugshotWindow.py:498
 msgid "Update Pidgin buddy icon?"
-msgstr ""
+msgstr "Atnaujinti Pidgin naudotojo piktogramą?"
 
 #: ../mugshot/MugshotWindow.py:499
 msgid "Would you also like to update your Pidgin buddy icon?"
-msgstr ""
+msgstr "Ar norėtumėte tuo pačiu atnaujinti savo Pidgin naudotojo piktogramą?"
 
 #: ../mugshot/MugshotWindow.py:589
 msgid "Enter your password to change user details."
@@ -168,6 +168,8 @@ msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
+"Tai yra saugumo priemonė, skirta apsaugoti nuo nepageidaujamų asmeninės "
+"informacijos atnaujinimų."
 
 #: ../mugshot/MugshotWindow.py:796
 msgid "Update LibreOffice user details?"
@@ -176,6 +178,8 @@ msgstr "Atnaujinti LibreOffice naudotojo detales?"
 #: ../mugshot/MugshotWindow.py:797
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
+"Ar norėtumėte tuo pačiu atnaujinti savo naudotojo detales programoje "
+"LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:122
 msgid "Password Required"
@@ -216,7 +220,7 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr ""
+msgstr "Supaprastintas naudotojo konfigūravimas"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:2
 msgid ""
