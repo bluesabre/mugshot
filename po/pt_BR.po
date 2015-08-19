@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-31 21:40-0400\n"
-"PO-Revision-Date: 2014-03-25 21:36+0000\n"
-"Last-Translator: Raphael David François <raphaeldavidf@gmail.com>\n"
+"PO-Revision-Date: 2015-08-18 14:01+0000\n"
+"Last-Translator: Adriano Ramos <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 07:20+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2015-08-19 05:55+0000\n"
+"X-Generator: Launchpad (build 17690)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -127,6 +127,7 @@ msgstr ""
 #: ../mugshot/CameraMugshotDialog.py:152
 msgid "Cannot display camera output. Ignoring play command"
 msgstr ""
+"Não é possível exibir a saída da câmera. Ignorando comando de reprodução"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
@@ -136,15 +137,15 @@ msgstr "Repetir"
 
 #: ../mugshot/MugshotWindow.py:321
 msgid "Authentication cancelled."
-msgstr ""
+msgstr "Autenticação cancelada."
 
 #: ../mugshot/MugshotWindow.py:324
 msgid "Authentication failed."
-msgstr ""
+msgstr "Falha na autenticação."
 
 #: ../mugshot/MugshotWindow.py:327
 msgid "An error occurred when saving changes."
-msgstr ""
+msgstr "Ocorreu um erro ao salvar as alterações."
 
 #: ../mugshot/MugshotWindow.py:329
 msgid "User details were not updated."
@@ -180,7 +181,7 @@ msgstr "Gostaria também de atualizar seus dados de usuário no LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:122
 msgid "Password Required"
-msgstr ""
+msgstr "Senha Requerida"
 
 #: ../mugshot_lib/SudoDialog.py:159
 msgid "Incorrect password... try again."
