@@ -1,0 +1,319 @@
+# Greek translation for mugshot
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the mugshot package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mugshot\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-08-31 21:40-0400\n"
+"PO-Revision-Date: 2015-08-19 12:34+0000\n"
+"Last-Translator: Lefteris Pavlou <lepa.22@hotmail.com>\n"
+"Language-Team: Greek <el@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-08-20 06:01+0000\n"
+"X-Generator: Launchpad (build 17690)\n"
+
+#: ../mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "Σχετικά Με Εμένα"
+
+#: ../mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "Διαμορφώστε την εικόνα προφίλ και τις λεπτομέρειες επαφής σας"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "Αποτύπωση - Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>Προεπισκόπηση</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "Κέντρο"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "Αριστερά"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "Δεξιά"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>Περικοπή</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select from stock…"
+msgstr "Επιλογή από αποθηκευμένες..."
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Capture from camera…"
+msgstr "Αποτύπωση από την κάμερα..."
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Browse…"
+msgstr "Περιήγηση…"
+
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:588
+msgid "Mugshot"
+msgstr "Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "<b>First Name</b>"
+msgstr "<b>Όνομα</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>Last Name</b>"
+msgstr "<b>Επώνυμο</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Initials</b>"
+msgstr "<b>Αρχικά</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Home Phone</b>"
+msgstr "<b>Τηλέφωνο Οικίας</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Email Address</b>"
+msgstr "<b>Διεύθυνση Ηλεκτρονικού Ταχυδρομείου</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Office Phone</b>"
+msgstr "<b>Τηλέφωνο Εργασίας</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Fax</b>"
+msgstr "<b>Fax</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "Select a photo…"
+msgstr "Επιλογή φωτογραφίας..."
+
+#: ../mugshot/__init__.py:35
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr "Προβολή μυνημάτων αποσφαλμάτωσης (-vv debugs mugshot_lib also)"
+
+#: ../mugshot/CameraMugshotDialog.py:107
+#, python-format
+msgid "Camera failed to load. Devices: %s"
+msgstr "Αποτυχία φόρτωσης κάμερας. Συσκευές: %s"
+
+#. Translators: Please include newlines, as required to fit the message.
+#: ../mugshot/CameraMugshotDialog.py:125
+msgid ""
+"Sorry, but your camera\n"
+"failed to initialize."
+msgstr ""
+"Λυπούμαστε, αλλά η εκκίνηση\n"
+"της κάμεράς σας απέτυχε."
+
+#. Translators: Please include newlines, as required to fit the message.
+#: ../mugshot/CameraMugshotDialog.py:132
+msgid ""
+"Please wait while your\n"
+"camera is initialized."
+msgstr ""
+"Παρακαλώ περιμένετε καθώς\n"
+"γίνεται εκκίνηση της κάμεράς σας."
+
+#: ../mugshot/CameraMugshotDialog.py:152
+msgid "Cannot display camera output. Ignoring play command"
+msgstr ""
+"Δεν είναι δυνατή η εμφάνιση της εξόδου της κάμεράς σας. Αγνόηση της εντολής "
+"αναπαραγωγής"
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:279
+msgid "Retry"
+msgstr "Προσπάθεια ξανά"
+
+#: ../mugshot/MugshotWindow.py:321
+msgid "Authentication cancelled."
+msgstr "Ακύρωση πιστοποίησης."
+
+#: ../mugshot/MugshotWindow.py:324
+msgid "Authentication failed."
+msgstr "Αποτυχία πιστοποίησης."
+
+#: ../mugshot/MugshotWindow.py:327
+msgid "An error occurred when saving changes."
+msgstr "Συνέβη ένα σφάλμα κατά την αποθήκευση των αλλαγών."
+
+#: ../mugshot/MugshotWindow.py:329
+msgid "User details were not updated."
+msgstr "Οι λεπτομέρειες χρήστη δεν ανανεώθηκαν."
+
+#: ../mugshot/MugshotWindow.py:498
+msgid "Update Pidgin buddy icon?"
+msgstr "Ενημέρωση εικονιδίου του Pidgin buddy;"
+
+#: ../mugshot/MugshotWindow.py:499
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr "Θα θέλατε επίσης να ενημερώσετε  το εικονίδιο του Pidgin buddy;"
+
+#: ../mugshot/MugshotWindow.py:589
+msgid "Enter your password to change user details."
+msgstr "Εισάγετε το συνθηματικό σας για να αλλάξετε τις λεπτομέρειες χρήστη."
+
+#: ../mugshot/MugshotWindow.py:591
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+"Αυτό είναι ένα μέτρο ασφαλείας για την αποφυγή ανεπιθύμητων ενημερώσεων\n"
+"στις προσωπικές σας πληροφορίες."
+
+#: ../mugshot/MugshotWindow.py:796
+msgid "Update LibreOffice user details?"
+msgstr "Ενημέρωση λεπτομερειών χρήστη του LibreOffice;"
+
+#: ../mugshot/MugshotWindow.py:797
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr ""
+"Θα θέλατε επίσης να ενημερώσετε  τις λεπτομέρειες χρήστη του LibreOffice;"
+
+#: ../mugshot_lib/SudoDialog.py:122
+msgid "Password Required"
+msgstr "Απαιτείται Συνθηματικό"
+
+#: ../mugshot_lib/SudoDialog.py:159
+msgid "Incorrect password... try again."
+msgstr "Λάθος συνθηματικό... προσπαθήστε ξανά."
+
+#: ../mugshot_lib/SudoDialog.py:169
+msgid "Password:"
+msgstr "Συνθηματικό:"
+
+#. Buttons
+#: ../mugshot_lib/SudoDialog.py:180
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#: ../mugshot_lib/SudoDialog.py:183
+msgid "OK"
+msgstr "Εντάξει"
+
+#: ../mugshot_lib/SudoDialog.py:204
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+"Εισάγετε το συνθηματικό σας για να\n"
+"πραγματοποιήσετε εργασίες διαχείρισης."
+
+#: ../mugshot_lib/SudoDialog.py:206
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+"Η εφαρμογή '%s' σας επιτρέπει\n"
+"να τροποποιήσετε βασικά στοιχεία του συστήματός σας."
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:1
+msgid "Lightweight user configuration"
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:2
+msgid ""
+"Mugshot enables users to easily update personal contact information. With "
+"Mugshot, users are able to:"
+msgstr ""
+"Η εφαρμογή Mugshot επιτρέπει στους χρήστες να ενημερώνουν πληροφορίες "
+"προσωπικών επαφών με ευκολία. Με το Mugshot , οι χρήστες είναι σε θέση:"
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:3
+msgid ""
+"Set the account photo displayed at login and optionally synchronize this "
+"photo with their Pidgin buddy icon"
+msgstr ""
+"Να ορίσουν τη φωτογραφία λογαριασμού που εμφανίζεται στην οθόνη υποδοχής και "
+"προαιρετικά να συγχρονίσουν αυτή τη φωτογραφία με το εικονίδιο του Pidgin "
+"buddy."
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:4
+msgid ""
+"Set account details stored in /etc/passwd (usable with the finger command) "
+"and optionally synchronize with their LibreOffice contact information"
+msgstr ""
+"Να ορίσουν τις λεπτομέρειες λογαριασμού που είναι απόθηκευμένες στο "
+"/etc/passwd (μπορεί να χρησιμοποιηθεί με την εντολή finger) και προαιρετικά "
+"να τις συγχρονίσουν με τις πληροφορίες επαφής του LibreOffice"
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:5
+msgid ""
+"This stable release improves Mugshot functionality for LDAP users, and "
+"includes the latest SudoDialog, improving the appearance and usability of "
+"the password dialog."
+msgstr ""
+"Αυτή η σταθερή έκδοση βελτιώνει τη λειτουργικότητα του Mugshot για χρήστες "
+"LDAP, και περιλαμβάνει το πιο πρόσφατο Παράθυρο Διαλόγου Sudo, βελτιώνοντας "
+"την εμφάνιση και τη χρηστικότητα του παραθύρου διαλόγου εισαγωγής "
+"συνθηματικού."
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:6
+msgid ""
+"This stable release improves the user configuration (chfn) backend and "
+"prevents Mugshot from locking up. Mugshot also no longer depends on "
+"AccountsService, but can leverage it to better support some systems. A "
+"critical bug that prevented some users from starting Mugshot was also "
+"addressed."
+msgstr ""
+"Αυτή η σταθερή έκδοση βελτιώνει το παρασκήνιο (backend) διαμόρφωσης χρήστη "
+"(chfh) και εμποδίζει το κλέιδωμα του Mugshot. Ακόμη, τo Mugshot δεν "
+"εξαρτάται πλέον από την Υπηρεσία Λογαριασμών (AccountsService), αλλά μπορεί "
+"να την επηρρεάσει για καλύτερη υποστήριξη κάποιων συστημάτων. Επίσης, "
+"αντιμετωπίστηκε ένα σοβαρό bug, το οποίο εμπόδιζε κάποιους χρήστες από το να "
+"εκκινήσουν το Mugshot."
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:7
+msgid ""
+"This stable release improved AccountsService functionality and overall "
+"usability. Users without admin rights can no longer attempt to change their "
+"name, and initials are automatically populated when the name is entered."
+msgstr ""
+"Αυτή η σταθερή έκδοση βελτίωσε τη λειτουργικότητα της Υπηρεσίας Λογαριασμών "
+"(AccountsService) και τη συνολική χρηστικότητα. Χρήστες χωρίς δικαιώματα "
+"διαχειριστή δε μπορούν πλέον να επιχειρήσουν να αλλάξουν το όνομά τους, και "
+"τα αρχικά συμπληρώνονται αυτόματα κατά την εισαγωγή του ονόματος."
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:8
+msgid ""
+"This stable release fixed a crash that occured when saving user details in a "
+"non-English locale. This release also included an updated translation "
+"template and new translations."
+msgstr ""
+"Αυτή η σταθερή έκδοση επιδιόρθωσε ένα σφάλμα συστήματος που συνέβαινε κατά "
+"την αποθήκευση λεπτομερειών χρήστη σε μη-Αγγλικές τοπικές ρυθμίσεις. Αυτή η "
+"έκδοση περιλαμβάνει επίσης ένα ενημερωμένο πρότυπο μετάφρασης και νέες "
+"μεταφράσεις."
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:9
+msgid ""
+"This stable release fixed several bugs related to profile image management, "
+"introduced an improved password dialog, and transitioned to using GLib to "
+"more reliably determine user and environment settings."
+msgstr ""
+"Αυτή η σταθερή έκδοση επιδιόρθωσε διάφορα bugs που σχετίζονται με τη "
+"διαχείριση εικόνας προφίλ, εισήγαγε ένα βελτιωμένο παράθυρο διαλόγου για την "
+"εισαγωγή του συνθηματικού, και μετέβη στη χρήση του GLib προκειμένου να "
+"καθορίζονται πιο αξιόπιστα οι ρυθμίσεις χρήστη και περιβάλλοντος."
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:10
+msgid ""
+"The first stable release introduced simplified packaging, replaced the Help "
+"functionality with the online help documents, and transitioned to using "
+"Python 3."
+msgstr ""
+"Η πρώτη σταθερή έκδοση εισήγαγε απλοποιημένο packaging, αντικατέστησε τη "
+"λειτουργία της Βοήθειας με τα έγγραφα βοήθειας στο διαδίκτυο, και μετέβη στη "
+"χρήση της Python 3."
