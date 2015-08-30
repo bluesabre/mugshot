@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-31 21:40-0400\n"
+"POT-Creation-Date: 2015-08-29 22:19-0400\n"
 "PO-Revision-Date: 2014-03-03 00:13+0000\n"
 "Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-02 07:20+0000\n"
-"X-Generator: Launchpad (build 17192)\n"
+"X-Launchpad-Export-Date: 2015-08-30 05:34+0000\n"
+"X-Generator: Launchpad (build 17690)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -101,36 +101,9 @@ msgstr "Seleccioneu una imatge..."
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
 msgstr "Mostra missatges de depuració (-vv també depura mugshot_lib)"
 
-#: ../mugshot/CameraMugshotDialog.py:107
-#, python-format
-msgid "Camera failed to load. Devices: %s"
-msgstr "S'ha produït un error en carregar la càmera. Dispositius: %s"
-
-#. Translators: Please include newlines, as required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:125
-msgid ""
-"Sorry, but your camera\n"
-"failed to initialize."
-msgstr ""
-"S'ha produït un error en\n"
-"inicialitzar la càmera."
-
-#. Translators: Please include newlines, as required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:132
-msgid ""
-"Please wait while your\n"
-"camera is initialized."
-msgstr ""
-"Espereu mentre la\n"
-"càmera és inicialitzada."
-
-#: ../mugshot/CameraMugshotDialog.py:152
-msgid "Cannot display camera output. Ignoring play command"
-msgstr ""
-
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:279
+#: ../mugshot/CameraMugshotDialog.py:232
 msgid "Retry"
 msgstr "Reintenta"
 
@@ -282,3 +255,21 @@ msgid ""
 "functionality with the online help documents, and transitioned to using "
 "Python 3."
 msgstr ""
+
+#~ msgid ""
+#~ "Please wait while your\n"
+#~ "camera is initialized."
+#~ msgstr ""
+#~ "Espereu mentre la\n"
+#~ "càmera és inicialitzada."
+
+#, python-format
+#~ msgid "Camera failed to load. Devices: %s"
+#~ msgstr "S'ha produït un error en carregar la càmera. Dispositius: %s"
+
+#~ msgid ""
+#~ "Sorry, but your camera\n"
+#~ "failed to initialize."
+#~ msgstr ""
+#~ "S'ha produït un error en\n"
+#~ "inicialitzar la càmera."

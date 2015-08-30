@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-31 21:40-0400\n"
+"POT-Creation-Date: 2015-08-29 22:19-0400\n"
 "PO-Revision-Date: 2015-08-18 14:01+0000\n"
 "Last-Translator: Adriano Ramos <Unknown>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-19 05:55+0000\n"
+"X-Launchpad-Export-Date: 2015-08-30 05:34+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -101,37 +101,9 @@ msgstr "Escolha uma foto..."
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
 msgstr "Mostrar mensagens de depuração (-vv debugs mugshot_lib also)"
 
-#: ../mugshot/CameraMugshotDialog.py:107
-#, python-format
-msgid "Camera failed to load. Devices: %s"
-msgstr "Falha ao carregar a câmera. Dispositivos: %s"
-
-#. Translators: Please include newlines, as required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:125
-msgid ""
-"Sorry, but your camera\n"
-"failed to initialize."
-msgstr ""
-"Desculpe, sua câmera\n"
-"falhou ao iniciar."
-
-#. Translators: Please include newlines, as required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:132
-msgid ""
-"Please wait while your\n"
-"camera is initialized."
-msgstr ""
-"Por favor aguarde enquanto\n"
-"sua câmera é iniciada."
-
-#: ../mugshot/CameraMugshotDialog.py:152
-msgid "Cannot display camera output. Ignoring play command"
-msgstr ""
-"Não é possível exibir a saída da câmera. Ignorando comando de reprodução"
-
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:279
+#: ../mugshot/CameraMugshotDialog.py:232
 msgid "Retry"
 msgstr "Repetir"
 
@@ -282,3 +254,25 @@ msgid ""
 "functionality with the online help documents, and transitioned to using "
 "Python 3."
 msgstr ""
+
+#, python-format
+#~ msgid "Camera failed to load. Devices: %s"
+#~ msgstr "Falha ao carregar a câmera. Dispositivos: %s"
+
+#~ msgid ""
+#~ "Sorry, but your camera\n"
+#~ "failed to initialize."
+#~ msgstr ""
+#~ "Desculpe, sua câmera\n"
+#~ "falhou ao iniciar."
+
+#~ msgid ""
+#~ "Please wait while your\n"
+#~ "camera is initialized."
+#~ msgstr ""
+#~ "Por favor aguarde enquanto\n"
+#~ "sua câmera é iniciada."
+
+#~ msgid "Cannot display camera output. Ignoring play command"
+#~ msgstr ""
+#~ "Não é possível exibir a saída da câmera. Ignorando comando de reprodução"

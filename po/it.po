@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-31 21:40-0400\n"
+"POT-Creation-Date: 2015-08-29 22:19-0400\n"
 "PO-Revision-Date: 2014-09-09 08:45+0000\n"
 "Last-Translator: Man from Mars <manfrommars@libero.it>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-09-10 08:02+0000\n"
-"X-Generator: Launchpad (build 17196)\n"
+"X-Launchpad-Export-Date: 2015-08-30 05:34+0000\n"
+"X-Generator: Launchpad (build 17690)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -101,36 +101,9 @@ msgstr "Seleziona una foto..."
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
 msgstr "Mostra i messaggi di debug (-vv analizza anche mugshot_lib)"
 
-#: ../mugshot/CameraMugshotDialog.py:107
-#, python-format
-msgid "Camera failed to load. Devices: %s"
-msgstr "Il caricamento della fotocamera è fallito. Dispositivi: %s"
-
-#. Translators: Please include newlines, as required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:125
-msgid ""
-"Sorry, but your camera\n"
-"failed to initialize."
-msgstr ""
-"Spiacente, non è stato possibile\n"
-"inizializzare la tua fotocamera."
-
-#. Translators: Please include newlines, as required to fit the message.
-#: ../mugshot/CameraMugshotDialog.py:132
-msgid ""
-"Please wait while your\n"
-"camera is initialized."
-msgstr ""
-"Attendere l'inizializzazione\n"
-"della fotocamera."
-
-#: ../mugshot/CameraMugshotDialog.py:152
-msgid "Cannot display camera output. Ignoring play command"
-msgstr "Impossibile mostrare l'output della fotocamera. Esecuzione ignorata."
-
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:279
+#: ../mugshot/CameraMugshotDialog.py:232
 msgid "Retry"
 msgstr "Riprova"
 
@@ -310,3 +283,24 @@ msgstr ""
 "La prima release stabile introduce una pacchettizzazione semplificata, "
 "sostituisce la funzione di Help con la documentazione online e passa ad "
 "usare Python 3."
+
+#~ msgid "Cannot display camera output. Ignoring play command"
+#~ msgstr "Impossibile mostrare l'output della fotocamera. Esecuzione ignorata."
+
+#, python-format
+#~ msgid "Camera failed to load. Devices: %s"
+#~ msgstr "Il caricamento della fotocamera è fallito. Dispositivi: %s"
+
+#~ msgid ""
+#~ "Sorry, but your camera\n"
+#~ "failed to initialize."
+#~ msgstr ""
+#~ "Spiacente, non è stato possibile\n"
+#~ "inizializzare la tua fotocamera."
+
+#~ msgid ""
+#~ "Please wait while your\n"
+#~ "camera is initialized."
+#~ msgstr ""
+#~ "Attendere l'inizializzazione\n"
+#~ "della fotocamera."
