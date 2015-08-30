@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.18.3 -->
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
-  <!-- interface-requires camera_mugshot_dialog 1.0 -->
+  <requires lib="gtk+" version="3.0"/>
+  <requires lib="camera_mugshot_dialog" version="1.0"/>
   <object class="CameraMugshotDialog" id="camera_mugshot_dialog">
     <property name="width_request">230</property>
     <property name="height_request">300</property>
@@ -12,10 +13,10 @@
     <property name="default_height">300</property>
     <property name="icon_name">mugshot</property>
     <property name="type_hint">normal</property>
-    <signal name="destroy" handler="on_camera_mugshot_dialog_destroy" swapped="no"/>
-    <signal name="show" handler="on_camera_mugshot_dialog_show" swapped="no"/>
     <signal name="delete-event" handler="on_camera_mugshot_dialog_delete_event" swapped="no"/>
+    <signal name="destroy" handler="on_camera_mugshot_dialog_destroy" swapped="no"/>
     <signal name="hide" handler="on_camera_mugshot_dialog_hide" swapped="no"/>
+    <signal name="show" handler="on_camera_mugshot_dialog_show" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox1">
         <property name="visible">True</property>

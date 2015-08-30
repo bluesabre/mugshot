@@ -25,54 +25,136 @@ import logging
 logger = logging.getLogger('mugshot')
 
 from gi.repository import Gtk, GObject, Gst, GdkPixbuf
-from gi.repository import GdkX11, GstVideo  # lint:ok
-import cairo
+from gi.repository import Cheese, Clutter, GtkClutter
 
 import os
 
 from mugshot_lib import helpers
 from mugshot_lib.CameraDialog import CameraDialog
 
+Clutter.init(None)
+class CameraBox(GtkClutter.Embed):
+    __gsignals__ = {
+        'photo-saved': (GObject.SIGNAL_RUN_LAST,
+                        GObject.TYPE_NONE,
+                        (GObject.TYPE_STRING,)),
+        'gst-state-changed': (GObject.SIGNAL_RUN_LAST,
+                              GObject.TYPE_NONE,
+                              (GObject.TYPE_INT,))
+    }
+    
+    def __init__(self, parent):
+        GtkClutter.Embed.__init__(self)
+        self.state = Gst.State.NULL
+        self.parent = parent
+        
+        self.stage = self.get_stage()
+        self.layout_manager = Clutter.BoxLayout()
+        
+        self.scroll = Clutter.ScrollActor.new()
+        self.scroll.set_scroll_mode(Clutter.ScrollMode.HORIZONTALLY)
+        
+        self.textures_box = Clutter.Actor(layout_manager=self.layout_manager)
+        self.textures_box.set_x_align(Clutter.ActorAlign.CENTER)
+        
+        self.scroll.add_actor(self.textures_box)
+        self.stage.add_actor(self.scroll)
 
-def draw_message(widget, message, ctx):
-    """Draw a message (including newlines) vertically centered on a cairo
-    context."""
-    split_msg = message.split('\n')
+        self.video_texture = Clutter.Texture.new()
 
-    # Get the height and width of the drawing area.
-    alloc = widget.get_allocation()
-    height = alloc.height
+        self.layout_manager.pack(self.video_texture, expand=True, x_fill=False, y_fill=False, x_align=Clutter.BoxAlignment.CENTER, y_align=Clutter.BoxAlignment.CENTER)
 
-    # Make the background black.
-    ctx.set_source_rgb(0, 0, 0)
-    ctx.paint()
+        self.camera = Cheese.Camera.new(self.video_texture, None, 100, 100)
+        Cheese.Camera.setup(self.camera, None)
+        Cheese.Camera.play(self.camera)
+        self.state = Gst.State.PLAYING
 
-    # Set the font details.
-    font_size = 20
-    font_color = (255, 255, 255)
-    font_name = "Sans"
-    row_spacing = 6
-    left_spacing = 10
+        def added(signal, data):
+            node = data.get_device_node()
+            self.camera.set_device_by_device_node(node)
+            self.camera.switch_camera_device()
+            
+        device_monitor=Cheese.CameraDeviceMonitor.new()
+        device_monitor.connect("added", added)
+        device_monitor.coldplug()
+        
+        self.connect("size-allocate", self.on_size_allocate)
+        self.camera.connect("photo-taken", self.on_photo_taken)
+        self.camera.connect("state-flags-changed", self.on_state_flags_changed)
+        
+        self._save_filename = ""
+        
+    def on_state_flags_changed(self, camera, state):
+        self.state = state
+        self.emit("gst-state-changed", self.state)
+        
+    def play(self):
+        if self.state != Gst.State.PLAYING:
+            Cheese.Camera.play(self.camera)
+            
+    def pause(self):
+        if self.state == Gst.State.PLAYING:
+            Cheese.Camera.play(self.camera)
+        
+    def stop(self):
+        Cheese.Camera.stop(self.camera)
+    
+    def on_size_allocate(self, widget, allocation):
+        vheight = self.video_texture.get_height()
+        vwidth = self.video_texture.get_width()
+        if vheight == 0 or vwidth == 0:
+            vformat = self.camera.get_current_video_format()
+            vheight = vformat.height
+            vwidth = vformat.width
+            
+        height = allocation.height
+        mult = vheight / height
+        width = round(vwidth / mult,1)
+        
+        self.video_texture.set_height(height)
+        self.video_texture.set_width(width)
+        
+        point = Clutter.Point()
+        point.x = (self.video_texture.get_width() - allocation.width) / 2
+        point.y = 0
+        
+        self.scroll.scroll_to_point(point)
+        
+    def take_photo(self, target_filename):
+        self._save_filename = target_filename
+        return self.camera.take_photo_pixbuf()
+        
+    def on_photo_taken(self, camera, pixbuf):
+        # Get the image dimensions.
+        height = pixbuf.get_height()
+        width = pixbuf.get_width()
+        start_x = 0
+        start_y = 0
 
-    # Get start position
-    message_height = (len(split_msg) * font_size) + len(split_msg) - 15
-    current_pos = (height - message_height) / 2
+        # Calculate a balanced center.
+        if width > height:
+            start_x = (width - height) / 2
+            width = height
+        else:
+            start_y = (height - width) / 2
+            height = width
 
-    # Draw the message to the drawing area.
-    ctx.set_source_rgb(*font_color)
-    ctx.select_font_face(font_name, cairo.FONT_SLANT_NORMAL,
-                         cairo.FONT_WEIGHT_NORMAL)
-    ctx.set_font_size(font_size)
+        # Create a new cropped pixbuf.
+        new_pixbuf = pixbuf.new_subpixbuf(start_x, start_y, width, height)
 
-    for line in split_msg:
-        ctx.move_to(left_spacing, current_pos)
-        ctx.show_text(line)
-        current_pos = current_pos + font_size + row_spacing
-
-
+        # Overwrite the temporary file with our new cropped image.
+        new_pixbuf.savev(self._save_filename, "png", [], [])
+        
+        self.emit("photo-saved", self._save_filename)
+        
+        
 class CameraMugshotDialog(CameraDialog):
     """Camera Capturing Dialog"""
     __gtype_name__ = "CameraMugshotDialog"
+    __gsignals__ = {'apply': (GObject.SIGNAL_RUN_LAST,
+                              GObject.TYPE_NONE,
+                              (GObject.TYPE_STRING,))
+    }
 
     def finish_initializing(self, builder):  # pylint: disable=E1002
         """Set up the camera dialog"""
@@ -80,35 +162,16 @@ class CameraMugshotDialog(CameraDialog):
 
         # Initialize Gst or nothing will work.
         Gst.init(None)
+        
+        self.camera = CameraBox(self)
+        self.camera.show()
+        
+        self.camera.connect("gst-state-changed", self.on_camera_state_changed)
+        self.camera.connect("photo-saved", self.on_camera_photo_saved)
 
         # Pack the video widget into the dialog.
         vbox = builder.get_object('camera_box')
-        self.video_window = Gtk.DrawingArea()
-        self.video_window.connect("realize", self.__on_video_window_realized)
-        vbox.pack_start(self.video_window, True, True, 0)
-        self.video_window.show()
-
-        # Prepare the camerabin element.
-        self.camerabin = Gst.ElementFactory.make("camerabin", "camera-source")
-        if self.camerabin:
-            bus = self.camerabin.get_bus()
-            bus.add_signal_watch()
-            bus.enable_sync_message_emission()
-            bus.connect("message", self._on_message)
-            bus.connect("sync-message::element", self._on_sync_message)
-            self.realized = False
-            self.draw_handler = self.video_window.connect('draw', self.on_draw)
-        # If the camera fails to load, show an error on the screen.
-        else:
-            devices = []
-            for device in os.listdir('/dev/'):
-                if device.startswith('video'):
-                    devices.append(device)
-            logger.error(_('Camera failed to load. Devices: %s') %
-                         '; '.join(devices))
-            self.draw_handler = self.video_window.connect('draw',
-                                                          self.on_failed_draw)
-            self.realized = True
+        vbox.pack_start(self.camera, True, True, 0)
 
         # Essential widgets
         self.record_button = builder.get_object('camera_record')
@@ -118,139 +181,29 @@ class CameraMugshotDialog(CameraDialog):
         self.filename = None
 
         self.show_all()
-
-    def on_failed_draw(self, widget, ctx):
-        """Display a message that the camera failed to load."""
-        # Translators: Please include newlines, as required to fit the message.
-        message = _("Sorry, but your camera\nfailed to initialize.")
-        draw_message(widget, message, ctx)
-
-    def on_draw(self, widget, ctx):
-        """Display a message that the camera is initializing on first draw.
-        Afterwards, blank the drawing area to clear the message."""
-        # Translators: Please include newlines, as required to fit the message.
-        message = _("Please wait while your\ncamera is initialized.")
-        draw_message(widget, message, ctx)
-
-        # Redefine on_draw to blank the drawing area next time.
-        def on_draw(self, widget, ctx):
-            """Redefinition of on_draw to blank the drawing area next time."""
-            ctx.set_source_rgb(0, 0, 0)
-            ctx.paint()
-
-            # Redefine on_draw once more to do nothing else.
-            def on_draw(self, widget, ctx):
-                """Redefinition of on_draw no longer do anything."""
-                pass
-
-    def play(self):
-        """Start the camera streaming and display the output. It is necessary
-        to start the camera playing before using most other functions."""
-        if not self.realized:
-            self._set_video_window_id()
-        if not self.realized:
-            logger.error(_("Cannot display camera output. "
-                         "Ignoring play command"))
+        
+    def on_camera_state_changed(self, widget, state):
+        if state == Gst.State.PLAYING or self.apply_button.get_sensitive():
+            self.record_button.set_sensitive(True)
         else:
-            if self.camerabin:
-                self.camerabin.set_state(Gst.State.PLAYING)
-
+            self.record_button.set_sensitive(False)
+            
+    def on_camera_photo_saved(self, widget, filename):
+        self.filename = filename
+        self.apply_button.set_sensitive(True)
+        self.camera.pause()
+        
+    def play(self):
+        self.camera.play()
+        
     def pause(self):
-        """Pause the camera output. It will cause the image to "freeze".
-        Use play() to start the camera playing again. Note that calling pause
-        before play may cause errors on certain camera."""
-        if self.camerabin:
-            self.camerabin.set_state(Gst.State.PAUSED)
+        self.camera.pause()
+        
+    def stop(self):
+        self.camera.stop()
 
     def take_picture(self, filename):
-        """take_picture - grab a frame from the webcam and save it to
-        'filename.
-
-        If play is not called before take_picture,
-        an error may occur. If take_picture is called immediately after play,
-        the camera may not be fully initialized, and an error may occur.
-
-        Connect to the signal "image-captured" to be alerted when the picture
-        is saved."""
-        self.camerabin.set_property("location", filename)
-        self.camerabin.emit("start-capture")
-
-    def stop(self):
-        """Stop the camera streaming and display the output."""
-        self.camerabin.set_state(Gst.State.NULL)
-
-    def _on_message(self, bus, message):
-        """Internal signal handler for bus messages.
-        May be useful to extend in a base class to handle messages
-        produced from custom behaviors.
-
-        arguments -
-        bus: the bus from which the message was sent, typically self.bux
-        message: the message sent"""
-        # Ignore if there is no message.
-        if message is None:
-            return
-
-        # Get the message type.
-        t = message.type
-
-        # Initial load, wait until camera is ready before enabling capture.
-        if t == Gst.MessageType.ASYNC_DONE:
-            self.record_button.set_sensitive(True)
-
-        if t == Gst.MessageType.ELEMENT:
-            # Keep the camera working after several pictures are taken.
-            if message.get_structure().get_name() == "image-captured":
-                self.camerabin.set_state(Gst.Sate.NULL)
-                self.camerabin.set_state(Gst.State.PLAYING)
-                self.emit("image-captured", self.filename)
-
-            # Enable interface elements once the images are finished saving.
-            elif message.get_structure().get_name() == "image-done":
-                self.apply_button.set_sensitive(True)
-                self.record_button.set_sensitive(True)
-                self.pause()
-
-        # Stop the stream if the EOS (end of stream) message is received.
-        if t == Gst.MessageType.EOS:
-            self.camerabin.set_state(Gst.State.NULL)
-
-        # Capture and report any error received.
-        elif t == Gst.MessageType.ERROR:
-            err, debug = message.parse_error()
-            logger.error("%s" % err, debug)
-
-    def _on_sync_message(self, bus, message):
-        """ _on_sync_message - internal signal handler for bus messages.
-        May be useful to extend in a base class to handle messages
-        produced from custom behaviors.
-
-        arguments -
-        bus: the bus from which the message was sent, typically self.bux
-        message: the message sent
-
-        """
-        # Ignore empty messages.
-        if message.get_structure() is None:
-            return
-        message_name = message.get_structure().get_name()
-        # Embed the gstreamer element into our window.
-        if message_name == "prepare-window-handle":
-            imagesink = message.src
-            imagesink.set_property("force-aspect-ratio", True)
-            imagesink.set_window_handle(self.video_window.get_window()
-                                        .get_xid())
-
-    def __on_video_window_realized(self, widget, data=None):
-        """Internal signal handler, used to set up the xid for the drawing area
-        in a thread safe manner. Do not call directly."""
-        self._set_video_window_id()
-
-    def _set_video_window_id(self):
-        """Set the window ID only if not previously configured."""
-        if not self.realized and self.video_window.get_window() is not None:
-            self.video_window.get_window().get_xid()
-            self.realized = True
+        self.camera.take_photo(filename)
 
     def on_camera_record_clicked(self, widget):
         """When the camera record/retry button is clicked:
@@ -283,14 +236,13 @@ class CameraMugshotDialog(CameraDialog):
         """When the camera Apply button is clicked, crop the current photo and
         emit a signal to let the main application know there is a new file
         available.  Then close the camera dialog."""
-        self.center_crop(self.filename)
         self.emit("apply", self.filename)
         self.hide()
 
     def on_camera_cancel_clicked(self, widget):
         """When the Cancel button is clicked, just hide the dialog."""
         self.hide()
-
+        
     def on_camera_mugshot_dialog_destroy(self, widget, data=None):
         """When the application exits, remove the current temporary file and
         stop the gstreamer element."""
@@ -298,7 +250,7 @@ class CameraMugshotDialog(CameraDialog):
         if self.filename and os.path.isfile(self.filename):
             os.remove(self.filename)
         # Clean up the camera before exiting
-        self.camerabin.set_state(Gst.State.NULL)
+        self.camera.stop()
 
     def on_camera_mugshot_dialog_hide(self, widget, data=None):
         """When the dialog is hidden, pause the camera recording."""
@@ -312,44 +264,7 @@ class CameraMugshotDialog(CameraDialog):
         self.show_all()
         self.play()
 
-    def center_crop(self, filename):
-        """Crop the specified file to square dimensions."""
-        # Load the image into a Pixbuf.
-        pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
-
-        # Get the image dimensions.
-        height = pixbuf.get_height()
-        width = pixbuf.get_width()
-        start_x = 0
-        start_y = 0
-
-        # Calculate a balanced center.
-        if width > height:
-            start_x = (width - height) / 2
-            width = height
-        else:
-            start_y = (height - width) / 2
-            height = width
-
-        # Create a new cropped pixbuf.
-        new_pixbuf = pixbuf.new_subpixbuf(start_x, start_y, width, height)
-
-        # Overwrite the temporary file with our new cropped image.
-        new_pixbuf.savev(filename, "png", [], [])
-
     def on_camera_mugshot_dialog_delete_event(self, widget, data=None):
         """Override the dialog delete event to just hide the window."""
         self.hide()
         return True
-
-    # Signals used by CameraMugshotDialog:
-    # image-captured: emitted when the camera is done capturing an image.
-    # apply: emitted when the apply button has been pressed and there is a
-    # new file saved for use.
-    __gsignals__ = {'image-captured': (GObject.SIGNAL_RUN_LAST,
-                                       GObject.TYPE_NONE,
-                                       (GObject.TYPE_PYOBJECT,)),
-                    'apply': (GObject.SIGNAL_RUN_LAST,
-                              GObject.TYPE_NONE,
-                              (GObject.TYPE_STRING,))
-                    }
