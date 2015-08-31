@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-30 05:34+0000\n"
+"X-Launchpad-Export-Date: 2015-08-31 05:27+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -263,24 +263,3 @@ msgid ""
 "functionality with the online help documents, and transitioned to using "
 "Python 3."
 msgstr ""
-
-#, python-format
-#~ msgid "Camera failed to load. Devices: %s"
-#~ msgstr "Camera kon niet laden. Apparaten: %s"
-
-#~ msgid ""
-#~ "Please wait while your\n"
-#~ "camera is initialized."
-#~ msgstr ""
-#~ "Wacht a.u.b. tot uw\n"
-#~ "camera het doet."
-
-#~ msgid ""
-#~ "Sorry, but your camera\n"
-#~ "failed to initialize."
-#~ msgstr ""
-#~ "Helaas, uw camera kon\n"
-#~ "niet in werking treden."
-
-#~ msgid "Cannot display camera output. Ignoring play command"
-#~ msgstr "Kan uitvoer van camera niet tonen. Afspeelopdracht wordt genegeerd"

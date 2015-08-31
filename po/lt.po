@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-30 05:34+0000\n"
+"X-Launchpad-Export-Date: 2015-08-31 05:27+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -283,25 +283,3 @@ msgstr ""
 "Pirmoji stabili laida pristatė supaprastintą pakavimą, pakeitė Pagalbos "
 "funkcionalumą pagalbiniais dokumentais internete ir perėjo prie Python 3 "
 "naudojimo."
-
-#~ msgid ""
-#~ "Sorry, but your camera\n"
-#~ "failed to initialize."
-#~ msgstr ""
-#~ "Atleiskite, bet nepavyko\n"
-#~ "inicijuoti jūsų kameros."
-
-#~ msgid ""
-#~ "Please wait while your\n"
-#~ "camera is initialized."
-#~ msgstr ""
-#~ "Prašome palaukti, \n"
-#~ "kol inicijuojama \n"
-#~ "jūsų kamera."
-
-#, python-format
-#~ msgid "Camera failed to load. Devices: %s"
-#~ msgstr "Nepavyko įkelti kameros. Įrenginiai: %s"
-
-#~ msgid "Cannot display camera output. Ignoring play command"
-#~ msgstr "Nepavyksta rodyti kameros išvesties. Nepaisoma grojimo komandos"

@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-30 05:34+0000\n"
+"X-Launchpad-Export-Date: 2015-08-31 05:27+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -280,24 +280,3 @@ msgid ""
 msgstr ""
 "Prvá stabilná verzia priniesla jednoduchšie balíčkovanie, nahradila funkciu "
 "Pomoc odkazom na dokument na webe, a začala používať Python 3."
-
-#~ msgid "Cannot display camera output. Ignoring play command"
-#~ msgstr "Neviem zobraziť výstup z kamery. Ignorujem prehrávanie"
-
-#, python-format
-#~ msgid "Camera failed to load. Devices: %s"
-#~ msgstr "Kamera nenájdená. Dostupné zariadenia: %s"
-
-#~ msgid ""
-#~ "Sorry, but your camera\n"
-#~ "failed to initialize."
-#~ msgstr ""
-#~ "Prepáčte, vaša kamera\n"
-#~ "sa nenaštartovala."
-
-#~ msgid ""
-#~ "Please wait while your\n"
-#~ "camera is initialized."
-#~ msgstr ""
-#~ "Prosím čakajte na\n"
-#~ "spustenie kamery."

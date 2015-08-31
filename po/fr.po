@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-30 05:34+0000\n"
+"X-Launchpad-Export-Date: 2015-08-31 05:27+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -286,24 +286,3 @@ msgstr ""
 "La première version stable introduit un emballage simplifié, a remplacé la "
 "fonctionnalité d'aide avec les documents d'aide en ligne, et a transitionné "
 "vers l'utilisation de Python 3."
-
-#~ msgid ""
-#~ "Sorry, but your camera\n"
-#~ "failed to initialize."
-#~ msgstr ""
-#~ "Désolé, votre caméra n’a\n"
-#~ "pu être initialisée."
-
-#~ msgid ""
-#~ "Please wait while your\n"
-#~ "camera is initialized."
-#~ msgstr ""
-#~ "Veuillez patienter pendant\n"
-#~ "l’initialisation de votre caméra."
-
-#, python-format
-#~ msgid "Camera failed to load. Devices: %s"
-#~ msgstr "Impossible d’activer la caméra. Périphériques : %s"
-
-#~ msgid "Cannot display camera output. Ignoring play command"
-#~ msgstr "Ne peut afficher la sortie de la caméra. Commande de lecture ignorée"

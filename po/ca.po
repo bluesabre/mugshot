@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-30 05:34+0000\n"
+"X-Launchpad-Export-Date: 2015-08-31 05:27+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -255,21 +255,3 @@ msgid ""
 "functionality with the online help documents, and transitioned to using "
 "Python 3."
 msgstr ""
-
-#~ msgid ""
-#~ "Please wait while your\n"
-#~ "camera is initialized."
-#~ msgstr ""
-#~ "Espereu mentre la\n"
-#~ "càmera és inicialitzada."
-
-#, python-format
-#~ msgid "Camera failed to load. Devices: %s"
-#~ msgstr "S'ha produït un error en carregar la càmera. Dispositius: %s"
-
-#~ msgid ""
-#~ "Sorry, but your camera\n"
-#~ "failed to initialize."
-#~ msgstr ""
-#~ "S'ha produït un error en\n"
-#~ "inicialitzar la càmera."
