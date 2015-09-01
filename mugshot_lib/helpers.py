@@ -54,7 +54,9 @@ def get_media_file(media_file_name):
 
 
 class NullHandler(logging.Handler):
+
     """Handle NULL"""
+
     def emit(self, record):
         """Do not emit anything."""
         pass

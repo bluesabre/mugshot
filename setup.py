@@ -132,7 +132,9 @@ write_appdata_file("data/appdata/mugshot.appdata.xml.in")
 
 
 class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
+
     """Command Class to install and update the directory."""
+
     def run(self):
         """Run the setup commands."""
         DistUtilsExtra.auto.install_auto.run(self)
@@ -197,4 +199,4 @@ DistUtilsExtra.auto.setup(
     data_files=[('share/man/man1', ['mugshot.1']),
                 ('share/appdata', ['data/appdata/mugshot.appdata.xml'])],
     cmdclass={'install': InstallAndUpdateDataDirectory}
-    )
+)

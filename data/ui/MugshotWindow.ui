@@ -657,12 +657,12 @@
     <property name="use_preview_label">False</property>
     <signal name="update-preview" handler="on_filechooserdialog_update_preview" swapped="no"/>
     <child internal-child="vbox">
-      <object class="GtkBox" id="filechooserdialog-vbox1">
+      <object class="GtkBox" id="filechooserdialog_vbox1">
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="filechooserdialog-action_area1">
+          <object class="GtkButtonBox" id="filechooserdialog_action_area1">
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>

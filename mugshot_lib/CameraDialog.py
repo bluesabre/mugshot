@@ -24,6 +24,7 @@ from . helpers import get_builder
 
 
 class CameraDialog(Gtk.Dialog):
+
     """Camera Dialog"""
     __gtype_name__ = "CameraDialog"
 

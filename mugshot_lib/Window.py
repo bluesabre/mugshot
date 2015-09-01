@@ -26,6 +26,7 @@ from . helpers import get_builder, show_uri
 
 
 class Window(Gtk.Window):
+
     """This class is meant to be subclassed by MugshotWindow. It provides
     common functions and some boilerplate."""
     __gtype_name__ = "Window"

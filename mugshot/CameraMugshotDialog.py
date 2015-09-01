@@ -33,6 +33,8 @@ from mugshot_lib import helpers
 from mugshot_lib.CameraDialog import CameraDialog
 
 Clutter.init(None)
+
+
 class CameraBox(GtkClutter.Embed):
     __gsignals__ = {
         'photo-saved': (GObject.SIGNAL_RUN_LAST,
@@ -42,27 +44,29 @@ class CameraBox(GtkClutter.Embed):
                               GObject.TYPE_NONE,
                               (GObject.TYPE_INT,))
     }
-    
+
     def __init__(self, parent):
         GtkClutter.Embed.__init__(self)
         self.state = Gst.State.NULL
         self.parent = parent
-        
+
         self.stage = self.get_stage()
         self.layout_manager = Clutter.BoxLayout()
-        
+
         self.scroll = Clutter.ScrollActor.new()
         self.scroll.set_scroll_mode(Clutter.ScrollMode.HORIZONTALLY)
-        
+
         self.textures_box = Clutter.Actor(layout_manager=self.layout_manager)
         self.textures_box.set_x_align(Clutter.ActorAlign.CENTER)
-        
+
         self.scroll.add_actor(self.textures_box)
         self.stage.add_actor(self.scroll)
 
         self.video_texture = Clutter.Texture.new()
 
-        self.layout_manager.pack(self.video_texture, expand=True, x_fill=False, y_fill=False, x_align=Clutter.BoxAlignment.CENTER, y_align=Clutter.BoxAlignment.CENTER)
+        self.layout_manager.pack(
+            self.video_texture, expand=True, x_fill=False, y_fill=False,
+                                 x_align=Clutter.BoxAlignment.CENTER, y_align=Clutter.BoxAlignment.CENTER)
 
         self.camera = Cheese.Camera.new(self.video_texture, None, 100, 100)
         Cheese.Camera.setup(self.camera, None)
@@ -73,32 +77,32 @@ class CameraBox(GtkClutter.Embed):
             node = data.get_device_node()
             self.camera.set_device_by_device_node(node)
             self.camera.switch_camera_device()
-            
-        device_monitor=Cheese.CameraDeviceMonitor.new()
+
+        device_monitor = Cheese.CameraDeviceMonitor.new()
         device_monitor.connect("added", added)
         device_monitor.coldplug()
-        
+
         self.connect("size-allocate", self.on_size_allocate)
         self.camera.connect("photo-taken", self.on_photo_taken)
         self.camera.connect("state-flags-changed", self.on_state_flags_changed)
-        
+
         self._save_filename = ""
-        
+
     def on_state_flags_changed(self, camera, state):
         self.state = state
         self.emit("gst-state-changed", self.state)
-        
+
     def play(self):
         if self.state != Gst.State.PLAYING:
             Cheese.Camera.play(self.camera)
-            
+
     def pause(self):
         if self.state == Gst.State.PLAYING:
             Cheese.Camera.play(self.camera)
-        
+
     def stop(self):
         Cheese.Camera.stop(self.camera)
-    
+
     def on_size_allocate(self, widget, allocation):
         vheight = self.video_texture.get_height()
         vwidth = self.video_texture.get_width()
@@ -106,24 +110,24 @@ class CameraBox(GtkClutter.Embed):
             vformat = self.camera.get_current_video_format()
             vheight = vformat.height
             vwidth = vformat.width
-            
+
         height = allocation.height
         mult = vheight / height
-        width = round(vwidth / mult,1)
-        
+        width = round(vwidth / mult, 1)
+
         self.video_texture.set_height(height)
         self.video_texture.set_width(width)
-        
+
         point = Clutter.Point()
         point.x = (self.video_texture.get_width() - allocation.width) / 2
         point.y = 0
-        
+
         self.scroll.scroll_to_point(point)
-        
+
     def take_photo(self, target_filename):
         self._save_filename = target_filename
         return self.camera.take_photo_pixbuf()
-        
+
     def on_photo_taken(self, camera, pixbuf):
         # Get the image dimensions.
         height = pixbuf.get_height()
@@ -144,17 +148,18 @@ class CameraBox(GtkClutter.Embed):
 
         # Overwrite the temporary file with our new cropped image.
         new_pixbuf.savev(self._save_filename, "png", [], [])
-        
+
         self.emit("photo-saved", self._save_filename)
-        
-        
+
+
 class CameraMugshotDialog(CameraDialog):
+
     """Camera Capturing Dialog"""
     __gtype_name__ = "CameraMugshotDialog"
     __gsignals__ = {'apply': (GObject.SIGNAL_RUN_LAST,
                               GObject.TYPE_NONE,
                               (GObject.TYPE_STRING,))
-    }
+                    }
 
     def finish_initializing(self, builder):  # pylint: disable=E1002
         """Set up the camera dialog"""
@@ -162,10 +167,10 @@ class CameraMugshotDialog(CameraDialog):
 
         # Initialize Gst or nothing will work.
         Gst.init(None)
-        
+
         self.camera = CameraBox(self)
         self.camera.show()
-        
+
         self.camera.connect("gst-state-changed", self.on_camera_state_changed)
         self.camera.connect("photo-saved", self.on_camera_photo_saved)
 
@@ -181,24 +186,24 @@ class CameraMugshotDialog(CameraDialog):
         self.filename = None
 
         self.show_all()
-        
+
     def on_camera_state_changed(self, widget, state):
         if state == Gst.State.PLAYING or self.apply_button.get_sensitive():
             self.record_button.set_sensitive(True)
         else:
             self.record_button.set_sensitive(False)
-            
+
     def on_camera_photo_saved(self, widget, filename):
         self.filename = filename
         self.apply_button.set_sensitive(True)
         self.camera.pause()
-        
+
     def play(self):
         self.camera.play()
-        
+
     def pause(self):
         self.camera.pause()
-        
+
     def stop(self):
         self.camera.stop()
 
@@ -242,7 +247,7 @@ class CameraMugshotDialog(CameraDialog):
     def on_camera_cancel_clicked(self, widget):
         """When the Cancel button is clicked, just hide the dialog."""
         self.hide()
-        
+
     def on_camera_mugshot_dialog_destroy(self, widget, data=None):
         """When the application exits, remove the current temporary file and
         stop the gstreamer element."""

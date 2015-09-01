@@ -160,6 +160,7 @@ def menu_position(self, menu, data=None, something_else=None):
 
 # See mugshot_lib.Window.py for more details about how this class works
 class MugshotWindow(Window):
+
     """Mugshot GtkWindow"""
     __gtype_name__ = "MugshotWindow"
 

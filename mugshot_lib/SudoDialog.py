@@ -89,6 +89,7 @@ def env_spawn(command, timeout):
 
 
 class SudoDialog(Gtk.Dialog):
+
     '''
     Creates a new SudoDialog. This is a replacement for using gksudo which
     provides additional flexibility when performing sudo commands.
@@ -108,6 +109,7 @@ class SudoDialog(Gtk.Dialog):
     - REJECT:   Password invalid.
     - ACCEPT:   Password valid.
     '''
+
     def __init__(self, title=None, parent=None, icon=None, message=None,
                  name=None, retries=-1):
         """Initialize the SudoDialog."""
