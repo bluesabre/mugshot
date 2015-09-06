@@ -6,7 +6,7 @@ Uploaders: Jackson Doak <noskcaj@ubuntu.com>, Sean Davis <smd.seandavis@gmail.co
 Build-Depends: debhelper (>= 9),
  python3,
  python3-distutils-extra
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: https://launchpad.net/mugshot
 Vcs-Svn: svn://anonscm.debian.org/python-apps/packages/mugshot/trunk/
 Vcs-Browser: http://anonscm.debian.org/viewvc/python-apps/packages/mugshot/trunk/
@@ -25,7 +25,10 @@ Depends: ${shlibs:Depends},
  python3-dbus,
  python3-pexpect
 Suggests:
- gstreamer1.0-plugins-good, gstreamer1.0-tools
+ gstreamer1.0-plugins-good, 
+ gstreamer1.0-tools,
+ gir1.2-cheese-3.0,
+ gir1.2-gtkclutter-1.0
 Description: lightweight user-configuration application
  Mugshot is a lightweight user configuration utility that allows you to
  easily update personal user details. This includes:
