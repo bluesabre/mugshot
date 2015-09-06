@@ -157,7 +157,6 @@
   <object class="GtkMenu" id="image_menu">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <signal name="hide" handler="on_image_menu_hide" swapped="no"/>
     <child>
       <object class="GtkImageMenuItem" id="image_from_stock">
         <property name="label" translatable="yes">Select from stock…</property>
@@ -205,14 +204,6 @@
       </object>
     </child>
   </object>
-  <object class="GtkListStore" id="liststore1">
-    <columns>
-      <!-- column-name filename -->
-      <column type="gchararray"/>
-      <!-- column-name stock_image -->
-      <column type="GdkPixbuf"/>
-    </columns>
-  </object>
   <object class="MugshotWindow" id="mugshot_window">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Mugshot</property>
@@ -230,14 +221,15 @@
             <property name="can_focus">False</property>
             <property name="spacing">12</property>
             <child>
-              <object class="GtkToggleButton" id="image_button">
+              <object class="GtkMenuButton" id="image_button">
                 <property name="width_request">128</property>
                 <property name="height_request">128</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="relief">half</property>
-                <signal name="clicked" handler="on_image_button_clicked" swapped="no"/>
+                <property name="xalign">0</property>
+                <property name="popup">image_menu</property>
                 <child>
                   <object class="GtkImage" id="user_image">
                     <property name="visible">True</property>
@@ -712,6 +704,14 @@
       <action-widget response="-6">button1</action-widget>
       <action-widget response="-10">button2</action-widget>
     </action-widgets>
+  </object>
+  <object class="GtkListStore" id="liststore1">
+    <columns>
+      <!-- column-name filename -->
+      <column type="gchararray"/>
+      <!-- column-name stock_image -->
+      <column type="GdkPixbuf"/>
+    </columns>
   </object>
   <object class="GtkWindow" id="stock_browser">
     <property name="can_focus">False</property>

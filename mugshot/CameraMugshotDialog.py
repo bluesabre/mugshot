@@ -32,8 +32,6 @@ import os
 from mugshot_lib import helpers
 from mugshot_lib.CameraDialog import CameraDialog
 
-Clutter.init(None)
-
 
 class CameraBox(GtkClutter.Embed):
     __gsignals__ = {
@@ -167,6 +165,7 @@ class CameraMugshotDialog(CameraDialog):
 
         # Initialize Gst or nothing will work.
         Gst.init(None)
+        Clutter.init(None)
 
         self.camera = CameraBox(self)
         self.camera.show()

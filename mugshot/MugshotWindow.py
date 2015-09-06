@@ -33,7 +33,11 @@ import logging
 logger = logging.getLogger('mugshot')
 
 from mugshot_lib import Window, SudoDialog, helpers
-from mugshot.CameraMugshotDialog import CameraMugshotDialog
+
+try:
+    from mugshot.CameraMugshotDialog import CameraMugshotDialog
+except:
+    pass
 
 username = GLib.get_user_name()
 home = GLib.get_home_dir()
@@ -93,6 +97,15 @@ def has_gstreamer_camerasrc_support():
     return has_support
 
 
+def has_camera_libraries():
+    """Return True if it is possible to display the camera dialog."""
+    try:
+        from gi.repository import Cheese, Clutter, GtkClutter
+    except:
+        return False
+    return True
+
+
 def get_camera_installed():
     """Return True if /dev/video0 exists."""
     if not os.path.exists('/dev/video0'):
@@ -110,6 +123,8 @@ def get_has_camera_support():
     if not has_gstreamer_camerabin_support():
         return False
     if not has_gstreamer_camerasrc_support():
+        return False
+    if not has_camera_libraries():
         return False
     return True
 
@@ -146,18 +161,6 @@ def get_confirmation_dialog(parent, primary_message, secondary_message,
     return response == Gtk.ResponseType.YES
 
 
-def menu_position(self, menu, data=None, something_else=None):
-    '''Position a menu at the bottom of its attached widget'''
-    widget = menu.get_attach_widget()
-    allocation = widget.get_allocation()
-    window_pos = widget.get_window().get_position()
-    # Align the left side of the menu with the left side of the button.
-    x = window_pos[0] + allocation.x
-    # Align the top of the menu with the bottom of the button.
-    y = window_pos[1] + allocation.y + allocation.height
-    return (x, y, True)
-
-
 # See mugshot_lib.Window.py for more details about how this class works
 class MugshotWindow(Window):
 
@@ -169,19 +172,22 @@ class MugshotWindow(Window):
         super(MugshotWindow, self).finish_initializing(builder)
         self.set_wmclass("Mugshot", "Mugshot")
 
-        self.CameraDialog = CameraMugshotDialog
-
         # User Image widgets
         self.image_button = builder.get_object('image_button')
         self.user_image = builder.get_object('user_image')
         self.image_menu = builder.get_object('image_menu')
-        self.image_menu.attach_to_widget(self.image_button, detach_cb)
         self.image_from_camera = builder.get_object('image_from_camera')
         self.image_from_stock = builder.get_object('image_from_stock')
         self.image_from_stock.set_visible(os.path.exists(faces_dir) and
                                           len(os.listdir(faces_dir)) > 0)
         self.menuitem1 = builder.get_object('menuitem1')
         self.image_remove = builder.get_object('image_remove')
+
+        if get_has_camera_support():
+            self.CameraDialog = CameraMugshotDialog
+            self.image_from_camera.set_visible(True)
+        else:
+            self.image_from_camera.set_visible(False)
 
         # Entry widgets (chfn)
         self.first_name_entry = builder.get_object('first_name')
@@ -373,20 +379,6 @@ class MugshotWindow(Window):
         """When the window cancel button is clicked, close the program."""
         logger.debug('Cancel clicked, goodbye.')
         self.destroy()
-
-    # = Image Button and Menu =============================================== #
-    def on_image_button_clicked(self, widget):
-        """When the menu button is clicked, display the photo menu."""
-        if widget.get_active():
-            logger.debug('Show photo menu')
-            self.image_from_camera.set_visible(get_has_camera_support())
-            self.image_menu.popup(None, None, menu_position,
-                                  self.image_menu, 3,
-                                  Gtk.get_current_event_time())
-
-    def on_image_menu_hide(self, widget):
-        """Untoggle the image button when the menu is hidden."""
-        self.image_button.set_active(False)
 
     def on_image_remove_activate(self, widget):
         """Remove the user's profile image."""

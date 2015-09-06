@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-31 22:28-0400\n"
+"POT-Creation-Date: 2015-09-06 16:23-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Browse…"
 msgstr ""
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:589
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:581
 msgid "Mugshot"
 msgstr ""
 
@@ -103,49 +103,49 @@ msgstr ""
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:237
+#: ../mugshot/CameraMugshotDialog.py:236
 msgid "Retry"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:322
+#: ../mugshot/MugshotWindow.py:328
 msgid "Authentication cancelled."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:325
+#: ../mugshot/MugshotWindow.py:331
 msgid "Authentication failed."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:328
+#: ../mugshot/MugshotWindow.py:334
 msgid "An error occurred when saving changes."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:330
+#: ../mugshot/MugshotWindow.py:336
 msgid "User details were not updated."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:499
+#: ../mugshot/MugshotWindow.py:491
 msgid "Update Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:500
+#: ../mugshot/MugshotWindow.py:492
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:590
+#: ../mugshot/MugshotWindow.py:582
 msgid "Enter your password to change user details."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:592
+#: ../mugshot/MugshotWindow.py:584
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:797
+#: ../mugshot/MugshotWindow.py:789
 msgid "Update LibreOffice user details?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:798
+#: ../mugshot/MugshotWindow.py:790
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
 
