@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2014 Sean Davis <smd.seandavis@gmail.com> -->
+<!-- Copyright 2014-2015 Sean Davis <smd.seandavis@gmail.com> -->
 <application>
   <id type="desktop">mugshot.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -37,10 +37,18 @@
   </provides>
 
   <releases>
+    <release version="0.3.0" timestamp="">
+      <description>
+        <_p>This development release upgrades the camera dialog to use
+        Cheese and Clutter to display and capture the camera feed.
+        </_p>
+      </description>
+    </release>
+
     <release version="0.2.5" timestamp="1409617800">
       <description>
         <_p>This stable release improves Mugshot functionality for LDAP users,
-        and includes the latest SudoDialog, improving the appearance and 
+        and includes the latest SudoDialog, improving the appearance and
         usability of the password dialog.
         </_p>
       </description>
@@ -59,9 +67,9 @@
 
     <release version="0.2.3" timestamp="1396661280">
       <description>
-        <_p>This stable release improved AccountsService functionality and 
-        overall usability. Users without admin rights can no longer attempt to 
-        change their name, and initials are automatically populated when the 
+        <_p>This stable release improved AccountsService functionality and
+        overall usability. Users without admin rights can no longer attempt to
+        change their name, and initials are automatically populated when the
         name is entered.
         </_p>
       </description>
@@ -78,7 +86,7 @@
 
     <release version="0.2.1" timestamp="1393800000">
       <description>
-        <_p>This stable release fixed several bugs related to profile image 
+        <_p>This stable release fixed several bugs related to profile image
         management, introduced an improved password dialog, and transitioned to
         using GLib to more reliably determine user and environment settings.
         </_p>

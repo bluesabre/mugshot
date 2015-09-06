@@ -1,5 +1,20 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+UNRELEASED, Mugshot 0.3.0
+
+- New development release
+  . As GTK and GStreamer continue to evolve, mugshot's camera was no longer
+    able to keep up in its current form. It now uses Cheese and Clutter to
+    display the video feed and capture photos.
+  . New optional requirements for cameras: Cheese, Clutter, and GtkClutter
+- Bugs fixed:
+  . Camera doesn't initialize (LP: #1414443)
+- Known issues:
+  . Some users may find that Mugshot freezes when capturing a photo. This
+    is a known issue in Clutter that seems to affect other applications as
+    well (LP: #1462445)
+
+
 01 Sep 2014, Mugshot 0.2.5
 
 - General
