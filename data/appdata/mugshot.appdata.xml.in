@@ -37,7 +37,7 @@
   </provides>
 
   <releases>
-    <release version="0.3.0" timestamp="">
+    <release version="0.3.0" timestamp="1441648800">
       <description>
         <_p>This development release upgrades the camera dialog to use
         Cheese and Clutter to display and capture the camera feed.
