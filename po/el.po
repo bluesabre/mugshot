@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-31 22:28-0400\n"
+"POT-Creation-Date: 2015-09-06 16:45-0400\n"
 "PO-Revision-Date: 2015-08-19 12:34+0000\n"
 "Last-Translator: Lefteris Pavlou <lepa.22@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-02 05:51+0000\n"
+"X-Launchpad-Export-Date: 2015-09-07 05:59+0000\n"
 "X-Generator: Launchpad (build 17706)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -61,7 +61,7 @@ msgstr "Αποτύπωση από την κάμερα..."
 msgid "Browse…"
 msgstr "Περιήγηση…"
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:589
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:581
 msgid "Mugshot"
 msgstr "Mugshot"
 
@@ -103,39 +103,39 @@ msgstr "Προβολή μυνημάτων αποσφαλμάτωσης (-vv debu
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:237
+#: ../mugshot/CameraMugshotDialog.py:236
 msgid "Retry"
 msgstr "Προσπάθεια ξανά"
 
-#: ../mugshot/MugshotWindow.py:322
+#: ../mugshot/MugshotWindow.py:328
 msgid "Authentication cancelled."
 msgstr "Ακύρωση πιστοποίησης."
 
-#: ../mugshot/MugshotWindow.py:325
+#: ../mugshot/MugshotWindow.py:331
 msgid "Authentication failed."
 msgstr "Αποτυχία πιστοποίησης."
 
-#: ../mugshot/MugshotWindow.py:328
+#: ../mugshot/MugshotWindow.py:334
 msgid "An error occurred when saving changes."
 msgstr "Συνέβη ένα σφάλμα κατά την αποθήκευση των αλλαγών."
 
-#: ../mugshot/MugshotWindow.py:330
+#: ../mugshot/MugshotWindow.py:336
 msgid "User details were not updated."
 msgstr "Οι λεπτομέρειες χρήστη δεν ανανεώθηκαν."
 
-#: ../mugshot/MugshotWindow.py:499
+#: ../mugshot/MugshotWindow.py:491
 msgid "Update Pidgin buddy icon?"
 msgstr "Ενημέρωση εικονιδίου του Pidgin buddy;"
 
-#: ../mugshot/MugshotWindow.py:500
+#: ../mugshot/MugshotWindow.py:492
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Θα θέλατε επίσης να ενημερώσετε  το εικονίδιο του Pidgin buddy;"
 
-#: ../mugshot/MugshotWindow.py:590
+#: ../mugshot/MugshotWindow.py:582
 msgid "Enter your password to change user details."
 msgstr "Εισάγετε το συνθηματικό σας για να αλλάξετε τις λεπτομέρειες χρήστη."
 
-#: ../mugshot/MugshotWindow.py:592
+#: ../mugshot/MugshotWindow.py:584
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
@@ -143,11 +143,11 @@ msgstr ""
 "Αυτό είναι ένα μέτρο ασφαλείας για την αποφυγή ανεπιθύμητων ενημερώσεων\n"
 "στις προσωπικές σας πληροφορίες."
 
-#: ../mugshot/MugshotWindow.py:797
+#: ../mugshot/MugshotWindow.py:789
 msgid "Update LibreOffice user details?"
 msgstr "Ενημέρωση λεπτομερειών χρήστη του LibreOffice;"
 
-#: ../mugshot/MugshotWindow.py:798
+#: ../mugshot/MugshotWindow.py:790
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
 "Θα θέλατε επίσης να ενημερώσετε  τις λεπτομέρειες χρήστη του LibreOffice;"
@@ -222,6 +222,12 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""
+"This development release upgrades the camera dialog to use Cheese and "
+"Clutter to display and capture the camera feed."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:6
+msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
@@ -231,7 +237,7 @@ msgstr ""
 "την εμφάνιση και τη χρηστικότητα του παραθύρου διαλόγου εισαγωγής "
 "συνθηματικού."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:6
+#: ../data/appdata/mugshot.appdata.xml.in.h:7
 msgid ""
 "This stable release improves the user configuration (chfn) backend and "
 "prevents Mugshot from locking up. Mugshot also no longer depends on "
@@ -246,7 +252,7 @@ msgstr ""
 "αντιμετωπίστηκε ένα σοβαρό bug, το οποίο εμπόδιζε κάποιους χρήστες από το να "
 "εκκινήσουν το Mugshot."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:7
+#: ../data/appdata/mugshot.appdata.xml.in.h:8
 msgid ""
 "This stable release improved AccountsService functionality and overall "
 "usability. Users without admin rights can no longer attempt to change their "
@@ -257,7 +263,7 @@ msgstr ""
 "διαχειριστή δε μπορούν πλέον να επιχειρήσουν να αλλάξουν το όνομά τους, και "
 "τα αρχικά συμπληρώνονται αυτόματα κατά την εισαγωγή του ονόματος."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:8
+#: ../data/appdata/mugshot.appdata.xml.in.h:9
 msgid ""
 "This stable release fixed a crash that occured when saving user details in a "
 "non-English locale. This release also included an updated translation "
@@ -268,7 +274,7 @@ msgstr ""
 "έκδοση περιλαμβάνει επίσης ένα ενημερωμένο πρότυπο μετάφρασης και νέες "
 "μεταφράσεις."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:9
+#: ../data/appdata/mugshot.appdata.xml.in.h:10
 msgid ""
 "This stable release fixed several bugs related to profile image management, "
 "introduced an improved password dialog, and transitioned to using GLib to "
@@ -279,7 +285,7 @@ msgstr ""
 "εισαγωγή του συνθηματικού, και μετέβη στη χρήση του GLib προκειμένου να "
 "καθορίζονται πιο αξιόπιστα οι ρυθμίσεις χρήστη και περιβάλλοντος."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:10
+#: ../data/appdata/mugshot.appdata.xml.in.h:11
 msgid ""
 "The first stable release introduced simplified packaging, replaced the Help "
 "functionality with the online help documents, and transitioned to using "

@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-31 22:28-0400\n"
+"POT-Creation-Date: 2015-09-06 16:45-0400\n"
 "PO-Revision-Date: 2015-01-13 14:05+0000\n"
 "Last-Translator: Tobias Bannert <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-09-02 05:51+0000\n"
+"X-Launchpad-Export-Date: 2015-09-07 05:59+0000\n"
 "X-Generator: Launchpad (build 17706)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -61,7 +61,7 @@ msgstr "Mit der Kamera aufnehmen …"
 msgid "Browse…"
 msgstr "Durchsuchen …"
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:589
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:581
 msgid "Mugshot"
 msgstr "Benutzerfoto"
 
@@ -103,39 +103,39 @@ msgstr "Fehlerdiagnosenachrichten anzeigen (auch -vv debugs mugshot_lib)"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:237
+#: ../mugshot/CameraMugshotDialog.py:236
 msgid "Retry"
 msgstr "Erneut versuchen"
 
-#: ../mugshot/MugshotWindow.py:322
+#: ../mugshot/MugshotWindow.py:328
 msgid "Authentication cancelled."
 msgstr "Legitimierung abgebrochen."
 
-#: ../mugshot/MugshotWindow.py:325
+#: ../mugshot/MugshotWindow.py:331
 msgid "Authentication failed."
 msgstr "Legitimierung fehlgeschlagen."
 
-#: ../mugshot/MugshotWindow.py:328
+#: ../mugshot/MugshotWindow.py:334
 msgid "An error occurred when saving changes."
 msgstr "Beim Speichern der Änderungen ist ein Fehler aufgetreten."
 
-#: ../mugshot/MugshotWindow.py:330
+#: ../mugshot/MugshotWindow.py:336
 msgid "User details were not updated."
 msgstr "Benutzerdatails wurden nicht aktualisiert."
 
-#: ../mugshot/MugshotWindow.py:499
+#: ../mugshot/MugshotWindow.py:491
 msgid "Update Pidgin buddy icon?"
 msgstr "Pidgin-Freundesymbol aktualisieren?"
 
-#: ../mugshot/MugshotWindow.py:500
+#: ../mugshot/MugshotWindow.py:492
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Soll das Pidgin-Freundesymbol auch aktualisiert werden?"
 
-#: ../mugshot/MugshotWindow.py:590
+#: ../mugshot/MugshotWindow.py:582
 msgid "Enter your password to change user details."
 msgstr "Passwort eingeben um die Benutzerdaten zu ändern."
 
-#: ../mugshot/MugshotWindow.py:592
+#: ../mugshot/MugshotWindow.py:584
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
@@ -143,11 +143,11 @@ msgstr ""
 "Das ist eine Sicherheitsmaßnahme, um ungewollte Aktualisierungen\n"
 "der persönlichen Informationen zu verhindern."
 
-#: ../mugshot/MugshotWindow.py:797
+#: ../mugshot/MugshotWindow.py:789
 msgid "Update LibreOffice user details?"
 msgstr "LibreOffice-Benutzerdaten aktualisieren?"
 
-#: ../mugshot/MugshotWindow.py:798
+#: ../mugshot/MugshotWindow.py:790
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr "Sollen die LibreOffice-Benutzerdaten auch aktualisiert werden?"
 
@@ -219,6 +219,12 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""
+"This development release upgrades the camera dialog to use Cheese and "
+"Clutter to display and capture the camera feed."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:6
+msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
@@ -227,7 +233,7 @@ msgstr ""
 "aktuellsten SudoDialog, wodurch das Erscheinungsbild und die "
 "Nutzerfreundlichkeit des Passwortdialogs verbessert wird."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:6
+#: ../data/appdata/mugshot.appdata.xml.in.h:7
 msgid ""
 "This stable release improves the user configuration (chfn) backend and "
 "prevents Mugshot from locking up. Mugshot also no longer depends on "
@@ -241,7 +247,7 @@ msgstr ""
 "Systemen einsetzen. Ein kritischer Fehler, der manche Nutzer am Start von "
 "Mugshot hinderte wurde ebenfalls behoben."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:7
+#: ../data/appdata/mugshot.appdata.xml.in.h:8
 msgid ""
 "This stable release improved AccountsService functionality and overall "
 "usability. Users without admin rights can no longer attempt to change their "
@@ -252,7 +258,7 @@ msgstr ""
 "können ihren Namen nicht mehr ändern und die Initialen werden automatisch "
 "ergänzt, wenn der Name eingegeben wurde."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:8
+#: ../data/appdata/mugshot.appdata.xml.in.h:9
 msgid ""
 "This stable release fixed a crash that occured when saving user details in a "
 "non-English locale. This release also included an updated translation "
@@ -262,7 +268,7 @@ msgstr ""
 "Benutzerdetails in einer anderen Sprache als Englisch. Diese Version enthält "
 "auch aktualisierte Übersetzungsvorlagen und neue Übersetzungen."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:9
+#: ../data/appdata/mugshot.appdata.xml.in.h:10
 msgid ""
 "This stable release fixed several bugs related to profile image management, "
 "introduced an improved password dialog, and transitioned to using GLib to "
@@ -273,7 +279,7 @@ msgstr ""
 "Bibliothek gewechselt um Benutzer- und Umgebungseinstellungen zuverlässiger "
 "bestimmen zu können."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:10
+#: ../data/appdata/mugshot.appdata.xml.in.h:11
 msgid ""
 "The first stable release introduced simplified packaging, replaced the Help "
 "functionality with the online help documents, and transitioned to using "
