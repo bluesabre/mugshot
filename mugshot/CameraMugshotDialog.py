@@ -72,8 +72,11 @@ class CameraBox(GtkClutter.Embed):
         self.state = Gst.State.PLAYING
 
         def added(signal, data):
-            node = data.get_device_node()
-            self.camera.set_device_by_device_node(node)
+            if ("get_device_node" in dir(data)):
+                node = data.get_device_node()
+                self.camera.set_device_by_device_node(node)
+            else:
+                self.camera.set_device(data)
             self.camera.switch_camera_device()
 
         device_monitor = Cheese.CameraDeviceMonitor.new()
