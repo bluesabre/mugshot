@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-02-13 07:53-0500\n"
-"PO-Revision-Date: 2015-09-07 10:55+0000\n"
+"PO-Revision-Date: 2016-03-11 21:28+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-02-14 06:11+0000\n"
-"X-Generator: Launchpad (build 17925)\n"
+"X-Launchpad-Export-Date: 2016-03-12 06:07+0000\n"
+"X-Generator: Launchpad (build 17939)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -79,15 +79,15 @@ msgstr "<b>Inicialai</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:13
 msgid "<b>Home Phone</b>"
-msgstr "<b>Namų Telefonas</b>"
+msgstr "<b>Namų telefonas</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:14
 msgid "<b>Email Address</b>"
-msgstr "<b>El. Pašto Adresas</b>"
+msgstr "<b>El. pašto adresas</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:15
 msgid "<b>Office Phone</b>"
-msgstr "<b>Raštinės Telefonas</b>"
+msgstr "<b>Biuro telefonas</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:16
 msgid "<b>Fax</b>"
@@ -117,7 +117,7 @@ msgstr "Nepavyko nustatyti tapatybės."
 
 #: ../mugshot/MugshotWindow.py:334
 msgid "An error occurred when saving changes."
-msgstr "Įvyko klaida, išsaugojant pakeitimus."
+msgstr "Įvyko klaida, įrašant pakeitimus."
 
 #: ../mugshot/MugshotWindow.py:336
 msgid "User details were not updated."
@@ -133,7 +133,8 @@ msgstr "Ar norėtumėte tuo pačiu atnaujinti savo Pidgin naudotojo piktogramą?
 
 #: ../mugshot/MugshotWindow.py:582
 msgid "Enter your password to change user details."
-msgstr "Norėdami keisti naudotojo detales, įveskite slaptažodį."
+msgstr ""
+"Norėdami keisti išsamesnę naudotojo informaciją, įveskite slaptažodį."
 
 #: ../mugshot/MugshotWindow.py:584
 msgid ""
@@ -145,17 +146,17 @@ msgstr ""
 
 #: ../mugshot/MugshotWindow.py:789
 msgid "Update LibreOffice user details?"
-msgstr "Atnaujinti LibreOffice naudotojo detales?"
+msgstr "Atnaujinti išsamesnę LibreOffice naudotojo informaciją?"
 
 #: ../mugshot/MugshotWindow.py:790
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
-"Ar norėtumėte tuo pačiu atnaujinti savo naudotojo detales programoje "
-"LibreOffice?"
+"Ar norėtumėte tuo pačiu atnaujinti išsamesnę savo naudotojo informaciją "
+"programoje LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:124
 msgid "Password Required"
-msgstr "Reikalingas Slaptažodis"
+msgstr "Reikalingas slaptažodis"
 
 #: ../mugshot_lib/SudoDialog.py:161
 msgid "Incorrect password... try again."
@@ -179,7 +180,8 @@ msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
-"Įveskite slaptažodį, kad galėtumėte atlikti administratoriaus užduotis."
+"Įveskite slaptažodį, kad galėtumėte\n"
+"atlikti administravimo užduotis."
 
 #: ../mugshot_lib/SudoDialog.py:208
 #, python-format
@@ -215,8 +217,8 @@ msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
-"Nustatyti paskyros detales laikomas /etc/passwd (naudojama su finger "
-"komanda) ir pasirinktinai sinchronizuoti su LibreOffice kontaktine "
+"Nustatyti išsamesnę paskyros informaciją, laikomą /etc/passwd (naudojama su "
+"finger komanda) ir pasirinktinai sinchronizuoti su LibreOffice kontaktine "
 "informacija."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
