@@ -17,6 +17,7 @@
 #   with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import optparse
+import signal
 
 from locale import gettext as _
 
@@ -45,6 +46,9 @@ def main():
     # Run the application.
     window = MugshotWindow.MugshotWindow()
     window.show()
+    
+    # Allow application shutdown with Ctrl-C in terminal
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
     Gtk.main()
 
     # Cleanup temporary files
