@@ -24,6 +24,11 @@ from locale import gettext as _
 import logging
 logger = logging.getLogger('mugshot')
 
+import gi
+gi.require_version('Gst', '1.0')
+gi.require_version('Cheese', '3.0')
+gi.require_version('GtkClutter', '1.0')
+
 from gi.repository import Gtk, GObject, Gst, GdkPixbuf
 from gi.repository import Cheese, Clutter, GtkClutter
 
@@ -66,7 +71,7 @@ class CameraBox(GtkClutter.Embed):
             self.video_texture, expand=True, x_fill=False, y_fill=False,
                                  x_align=Clutter.BoxAlignment.CENTER, y_align=Clutter.BoxAlignment.CENTER)
 
-        self.camera = Cheese.Camera.new(self.video_texture, None, 100, 100)
+        self.camera = Cheese.Camera.new(self.video_texture, "Mugshot", 100, 100)
         Cheese.Camera.setup(self.camera, None)
         Cheese.Camera.play(self.camera)
         self.state = Gst.State.PLAYING
