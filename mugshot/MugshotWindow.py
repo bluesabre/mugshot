@@ -198,9 +198,6 @@ class MugshotWindow(Window):
         self.email_entry = builder.get_object('email')
         self.fax_entry = builder.get_object('fax')
 
-        # Users without sudo rights cannot change their name.
-        self.set_name_editable(SudoDialog.check_dependencies(['chfn']))
-
         # Stock photo browser
         self.stock_browser = builder.get_object('stock_browser')
         self.iconview = builder.get_object('stock_iconview')
@@ -221,6 +218,10 @@ class MugshotWindow(Window):
 
         self.accounts_service = \
             AccountsServiceAdapter.MugshotAccountsServiceAdapter(username)
+
+        # Users without sudo rights cannot change their name.
+        if not self.accounts_service.available():
+            self.set_name_editable(SudoDialog.check_dependencies(['chfn']))
 
         # Populate all of the widgets.
         self.init_user_details()
