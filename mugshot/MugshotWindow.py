@@ -288,17 +288,21 @@ class MugshotWindow(Window):
         """Scale and set the user profile image."""
         logger.debug("Setting user profile image to %s" % str(filename))
         if filename and os.path.exists(filename):
-            pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
-            scaled = pixbuf.scale_simple(128, 128, GdkPixbuf.InterpType.HYPER)
-            self.user_image.set_from_pixbuf(scaled)
-            # Show "Remove" menu item.
-            self.menuitem1.set_visible(True)
-            self.image_remove.set_visible(True)
-        else:
-            self.user_image.set_from_icon_name('avatar-default', 128)
-            # Hide "Remove" menu item.
-            self.menuitem1.set_visible(False)
-            self.image_remove.set_visible(False)
+            try:
+                pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
+                scaled = pixbuf.scale_simple(128, 128, GdkPixbuf.InterpType.HYPER)
+                self.user_image.set_from_pixbuf(scaled)
+                # Show "Remove" menu item.
+                self.menuitem1.set_visible(True)
+                self.image_remove.set_visible(True)
+                return
+            except GLib.Error:
+                pass
+
+        self.user_image.set_from_icon_name('avatar-default', 128)
+        # Hide "Remove" menu item.
+        self.menuitem1.set_visible(False)
+        self.image_remove.set_visible(False)
 
     def suggest_initials(self, first_name, last_name):
         """Generate initials from first and last name."""
