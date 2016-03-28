@@ -32,7 +32,7 @@ from gi.repository import Gtk, GdkPixbuf, GLib, Gio  # pylint: disable=E0611
 import logging
 logger = logging.getLogger('mugshot')
 
-from mugshot_lib import Window, SudoDialog, helpers
+from mugshot_lib import Window, SudoDialog, AccountsServiceAdapter, helpers
 
 try:
     from mugshot.CameraMugshotDialog import CameraMugshotDialog
@@ -219,6 +219,9 @@ class MugshotWindow(Window):
 
         self.tmpfile = None
 
+        self.accounts_service = \
+            AccountsServiceAdapter.MugshotAccountsServiceAdapter(username)
+
         # Populate all of the widgets.
         self.init_user_details()
 
@@ -233,17 +236,17 @@ class MugshotWindow(Window):
         # Check for .face and set profile image.
         logger.debug('Checking for ~/.face profile image')
         face = os.path.join(home, '.face')
-        logger.debug('Checking AccountsService for profile image')
-        image = self.accounts_service_get_user_image()
 
-        # AccountsService may not be supported or desired.
-        if image is None:
+        logger.debug('Checking AccountsService for profile image')
+        if not self.accounts_service.available():
+            # AccountsService may not be supported or desired.
             logger.debug("AccountsService is not supported.")
             self.updated_image = face
             self.set_user_image(face)
 
         # If it is supported, process and compare to ~/.face
         else:
+            image = self.accounts_service.get_icon_file()
             logger.debug('Found profile image: %s' % str(image))
 
             if os.path.isfile(face):
@@ -284,7 +287,7 @@ class MugshotWindow(Window):
     def set_user_image(self, filename=None):
         """Scale and set the user profile image."""
         logger.debug("Setting user profile image to %s" % str(filename))
-        if filename:
+        if filename and os.path.exists(filename):
             pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
             scaled = pixbuf.scale_simple(128, 128, GdkPixbuf.InterpType.HYPER)
             self.user_image.set_from_pixbuf(scaled)
@@ -342,6 +345,9 @@ class MugshotWindow(Window):
                 dialog.run()
                 dialog.destroy()
                 return
+
+        if self.get_as_details_updated():
+            self.save_as_details()
 
         if self.get_libreoffice_details_updated():
             self.set_libreoffice_data()
@@ -412,72 +418,15 @@ class MugshotWindow(Window):
                 shutil.copyfile(self.updated_image, face)
 
         # Update AccountsService profile image
-        logger.debug('Photo updated, saving AccountsService profile image.')
-        self.accounts_service_set_user_image(self.updated_image)
+        if self.accounts_service.available():
+            logger.debug('Photo updated, saving AccountsService profile image.')
+            self.accounts_service.set_icon_file(self.updated_image)
 
         # Update Pidgin buddy icon
         self.set_pidgin_buddyicon(self.updated_image)
 
         self.updated_image = None
         return True
-
-    def accounts_service_get_user_image(self):
-        """Get user profile image using AccountsService."""
-        try:
-            bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
-            result = bus.call_sync('org.freedesktop.Accounts',
-                                   '/org/freedesktop/Accounts',
-                                   'org.freedesktop.Accounts',
-                                   'FindUserByName',
-                                   GLib.Variant('(s)', (username,)),
-                                   GLib.VariantType.new('(o)'),
-                                   Gio.DBusCallFlags.NONE,
-                                   -1,
-                                   None)
-            (path,) = result.unpack()
-
-            variant = GLib.Variant('(s)',
-                                   ('org.freedesktop.Accounts.User',))
-            result = bus.call_sync('org.freedesktop.Accounts',
-                                   path,
-                                   'org.freedesktop.DBus.Properties',
-                                   'GetAll',
-                                   variant,
-                                   GLib.VariantType.new('(a{sv})'),
-                                   Gio.DBusCallFlags.NONE,
-                                   -1,
-                                   None)
-            (props,) = result.unpack()
-            return props['IconFile']
-        except GLib.GError:
-            return None
-
-    def accounts_service_set_user_image(self, filename):
-        """Set user profile image using AccountsService."""
-        try:
-            bus = Gio.bus_get_sync(Gio.BusType.SYSTEM, None)
-            result = bus.call_sync('org.freedesktop.Accounts',
-                                   '/org/freedesktop/Accounts',
-                                   'org.freedesktop.Accounts',
-                                   'FindUserByName',
-                                   GLib.Variant('(s)', (username,)),
-                                   GLib.VariantType.new('(o)'),
-                                   Gio.DBusCallFlags.NONE,
-                                   -1,
-                                   None)
-            (path,) = result.unpack()
-
-            bus.call_sync('org.freedesktop.Accounts',
-                          path,
-                          'org.freedesktop.Accounts.User',
-                          'SetIconFile',
-                          GLib.Variant('(s)', (filename,)),
-                          GLib.VariantType.new('()'),
-                          Gio.DBusCallFlags.NONE,
-                          -1,
-                          None)
-        except GLib.GError:
-            pass
 
     def set_pidgin_buddyicon(self, filename=None):
         """Sets the pidgin buddyicon to filename (usually ~/.face).
@@ -535,14 +484,37 @@ class MugshotWindow(Window):
             write_prefs.close()
 
     # = chfn functions ============================================ #
+    def get_as_details_updated(self):
+        if not self.accounts_service.available():
+            return False
+        if self.first_name != self.first_name_entry.get_text().strip():
+            return True
+        if self.last_name != self.last_name_entry.get_text().strip():
+            return True
+        if self.email != self.email_entry.get_text().strip():
+            return True
+
+    def save_as_details(self):
+        if not self.accounts_service.available():
+            return True
+        first_name = get_entry_value(self.first_name_entry)
+        last_name = get_entry_value(self.last_name_entry)
+        full_name = "%s %s" % (first_name, last_name)
+        full_name = full_name.strip()
+        email = get_entry_value(self.email_entry)
+        self.accounts_service.set_real_name(full_name)
+        self.accounts_service.set_email(email)
+        return True
+
     def get_chfn_details_updated(self):
         """Return True if chfn-related details have been modified."""
         logger.debug('Checking if chfn details have been modified.')
         modified = False
-        if self.first_name != self.first_name_entry.get_text().strip():
-            modified = True
-        if self.last_name != self.last_name_entry.get_text().strip():
-            modified = True
+        if not self.accounts_service.available():
+            if self.first_name != self.first_name_entry.get_text().strip():
+                modified = True
+            if self.last_name != self.last_name_entry.get_text().strip():
+                modified = True
         if self.home_phone != self.home_phone_entry.get_text().strip():
             modified = True
         if self.office_phone != self.office_phone_entry.get_text().strip():
@@ -608,14 +580,16 @@ class MugshotWindow(Window):
             home_phone = 'none'
 
         # Full name can only be modified by root.  Try using sudo to modify.
-        if SudoDialog.check_dependencies(['chfn']):
-            logger.debug('Updating Full Name...')
-            command = "%s %s -f \"%s\" %s" % (sudo, chfn, full_name, username)
-            if self.process_terminal_password(command, password):
-                self.first_name = first_name
-                self.last_name = last_name
-            else:
-                success = False
+        if not self.accounts_service.available():
+            if SudoDialog.check_dependencies(['chfn']):
+                logger.debug('Updating Full Name...')
+                command = "%s %s -f \"%s\" %s" % (sudo, chfn, full_name,
+                                                  username)
+                if self.process_terminal_password(command, password):
+                    self.first_name = first_name
+                    self.last_name = last_name
+                else:
+                    success = False
 
         logger.debug('Updating Home Phone...')
         command = "%s -h \"%s\" %s" % (chfn, home_phone, username)
@@ -666,28 +640,72 @@ class MugshotWindow(Window):
         # Start with LibreOffice, as users may have configured that first.
         data = self.get_libreoffice_data()
 
-        # Next is passwd, where we override name values with system values.
+        # Prefer AccountsService, GLib, then passwd
+        as_data = self.get_accounts_service_data()
+        gl_data = self.get_glib_data()
         pwd_data = self.get_passwd_data()
-        data['first_name'] = pwd_data['first_name']
-        data['last_name'] = pwd_data['last_name']
-        data['initials'] = pwd_data['initials']
-        if len(data['home_phone']) == 0:
-            data['home_phone'] = pwd_data['home_phone']
-        if len(data['office_phone']) == 0:
-            data['office_phone'] = pwd_data['office_phone']
+
+        for dataset in [as_data, gl_data, pwd_data]:
+            if dataset is None:
+                continue
+            if len(dataset['first_name']) > 0:
+                data['first_name'] = dataset['first_name']
+                data['last_name'] = dataset['last_name']
+                data['initials'] = dataset['initials']
+                break
+
+        for dataset in [as_data, gl_data, pwd_data]:
+            if dataset is None:
+                continue
+            for key in ['home_phone', 'office_phone', 'email', 'fax']:
+                if len(data[key]) == 0:
+                    data[key] = dataset[key]
 
         # Then get data from dconf
-        initials = self.settings['initials']
-        if len(initials) > 0:
-            data['initials'] = initials
-        email = self.settings['email']
+        if len(self.settings['initials']) > len(data['initials']):
+            data['initials'] = self.settings['initials']
         if len(data['email']) == 0:
-            data['email'] = email
+            data['email'] = self.settings['email']
         if len(data['fax']) == 0:
             data['fax'] = self.settings['fax']
 
         # Return all of the finalized information.
         return data
+
+    def split_name(self, name):
+        parts = name.split()
+        initials = ""
+        first = ""
+        last = ""
+        if len(' '.join(parts)) > 0:
+            first = parts[0]
+            if len(parts) > 1:
+                last = ' '.join(parts[1:])
+            for part in parts:
+                if len(part) > 0:
+                    initials += part[0]
+        return {
+            "first": first, "last": last, "initials": initials
+        }
+
+    def get_accounts_service_data(self):
+        if not self.accounts_service.available():
+            return None
+
+        name = self.accounts_service.get_real_name()
+        name = self.split_name(name)
+        email = self.accounts_service.get_email()
+        data = {'first_name': name['first'], 'last_name': name['last'],
+                'home_phone': '', 'office_phone': '',
+                'initials': name['initials'], 'email': email, 'fax': ''}
+        return data
+
+    def get_glib_data(self):
+        name = GLib.get_real_name()
+        name = self.split_name(name)
+        data = {'first_name': name['first'], 'last_name': name['last'],
+                'home_phone': '', 'office_phone': '',
+                'initials': name['initials'], 'email': '', 'fax': ''}
 
     def get_passwd_data(self):
         """Get user details from passwd"""
@@ -711,18 +729,9 @@ class MugshotWindow(Window):
             office = ""
             office_phone = ""
             home_phone = ""
+            name = ""
 
-        # Use GLib to get the actual name.
-        name = GLib.get_real_name()
-
-        # Expand the user's fullname into first, last, and initials.
-        initials = name[0]
-        try:
-            first_name, last_name = name.split(' ', 1)
-            initials += last_name[0]
-        except:
-            first_name = name
-            last_name = ''
+        name = self.split_name(name)
 
         # If the variables are defined as 'none', use blank for cleanliness.
         if home_phone == 'none':
@@ -731,9 +740,9 @@ class MugshotWindow(Window):
             office_phone = ''
 
         # Pack the data
-        data = {'first_name': first_name, 'last_name': last_name,
+        data = {'first_name': name['first'], 'last_name': name['last'],
                 'home_phone': home_phone, 'office_phone': office_phone,
-                'initials': initials, 'email': '', 'fax': ''}
+                'initials': name['initials'], 'email': '', 'fax': ''}
 
         return data
 
