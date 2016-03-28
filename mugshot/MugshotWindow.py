@@ -270,8 +270,8 @@ class MugshotWindow(Window):
         self.initials = user_details['initials']
         self.home_phone = user_details['home_phone']
         self.office_phone = user_details['office_phone']
-        email = user_details['email']
-        fax = user_details['fax']
+        self.email = user_details['email']
+        self.fax = user_details['fax']
 
         # Populate the GtkEntries.
         logger.debug('Populating entries')
@@ -280,8 +280,8 @@ class MugshotWindow(Window):
         self.initials_entry.set_text(self.initials)
         self.office_phone_entry.set_text(self.office_phone)
         self.home_phone_entry.set_text(self.home_phone)
-        self.email_entry.set_text(email)
-        self.fax_entry.set_text(fax)
+        self.email_entry.set_text(self.email)
+        self.fax_entry.set_text(self.fax)
 
     # = Mugshot Window ====================================================== #
     def set_user_image(self, filename=None):
@@ -760,6 +760,15 @@ class MugshotWindow(Window):
                 'home_phone': '', 'office_phone': '', 'fax': ''}
         if os.path.isfile(prefs_file):
             logger.debug('Getting settings from %s' % prefs_file)
+
+            # Check for file access
+            try:
+                prefs = open(prefs_file, 'r')
+                prefs.close()
+            except PermissionError:
+                logger.debug('Reject: Cannot open file.')
+                return data
+
             for line in open(prefs_file):
                 if "UserProfile/Data" in line:
                     try:
@@ -820,6 +829,15 @@ class MugshotWindow(Window):
                 fax = get_entry_value(self.fax_entry)
                 fax_updated = False
                 tmp_buffer = []
+
+                # Check for file access
+                try:
+                    prefs = open(prefs_file, 'a')
+                    prefs.close()
+                except PermissionError:
+                    logger.debug('Reject: Not updating.')
+                    return
+
                 for line in open(prefs_file):
                     new = None
                     if "UserProfile/Data" in line:
