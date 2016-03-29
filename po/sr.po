@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-03-27 22:26-0400\n"
+"POT-Creation-Date: 2016-03-28 07:11-0400\n"
 "PO-Revision-Date: 2015-02-28 20:54+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian <sr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-28 05:45+0000\n"
+"X-Launchpad-Export-Date: 2016-03-29 05:41+0000\n"
 "X-Generator: Launchpad (build 17967)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -61,7 +61,7 @@ msgstr "Сними камерицом..."
 msgid "Browse…"
 msgstr "Разгледај…"
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:557
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:558
 msgid "Mugshot"
 msgstr ""
 
@@ -108,35 +108,35 @@ msgstr ""
 msgid "Retry"
 msgstr "Покушај поново"
 
-#: ../mugshot/MugshotWindow.py:335
+#: ../mugshot/MugshotWindow.py:336
 msgid "Authentication cancelled."
 msgstr "Потврда овлашћења је отказана."
 
-#: ../mugshot/MugshotWindow.py:338
+#: ../mugshot/MugshotWindow.py:339
 msgid "Authentication failed."
 msgstr "Потврда овлашћења није успела."
 
-#: ../mugshot/MugshotWindow.py:341
+#: ../mugshot/MugshotWindow.py:342
 msgid "An error occurred when saving changes."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:343
+#: ../mugshot/MugshotWindow.py:344
 msgid "User details were not updated."
 msgstr "Кориснички подаци нису освежени."
 
-#: ../mugshot/MugshotWindow.py:444
+#: ../mugshot/MugshotWindow.py:445
 msgid "Update Pidgin buddy icon?"
 msgstr "Да ли да освежим иконицу другара Пиџина?"
 
-#: ../mugshot/MugshotWindow.py:445
+#: ../mugshot/MugshotWindow.py:446
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Да ли желите да освежите своју иконицу другара у Пиџину?"
 
-#: ../mugshot/MugshotWindow.py:558
+#: ../mugshot/MugshotWindow.py:559
 msgid "Enter your password to change user details."
 msgstr "Унесите своју лозинку ради промене корисничких података."
 
-#: ../mugshot/MugshotWindow.py:560
+#: ../mugshot/MugshotWindow.py:561
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
@@ -144,11 +144,11 @@ msgstr ""
 "Ово је безбедносна мера ради спречавања нежељених промена\n"
 "личних података."
 
-#: ../mugshot/MugshotWindow.py:811
+#: ../mugshot/MugshotWindow.py:812
 msgid "Update LibreOffice user details?"
 msgstr "Да ли да освежим корисничке податке Либре Офиса?"
 
-#: ../mugshot/MugshotWindow.py:812
+#: ../mugshot/MugshotWindow.py:813
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr "Да ли би желели да освежите своје корисничке податке у Либре Офису?"
 
