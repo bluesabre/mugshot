@@ -721,7 +721,7 @@ class MugshotWindow(Window):
                 line = line.decode('utf-8')
             line = line.strip()
             logger.debug('Found details: %s' % line.strip())
-            details = line.split(':')[4].split(',', 3)
+            details = line.split(':')[4].split(',')[:3]
 
             while len(details) < 4:
                 details.append("")
