@@ -222,6 +222,7 @@ class MugshotWindow(Window):
         # Users without sudo rights cannot change their name.
         if not self.accounts_service.available():
             self.set_name_editable(SudoDialog.check_dependencies(['chfn']))
+        self.set_phone_editable(SudoDialog.check_dependencies(['chfn']))
 
         # Populate all of the widgets.
         self.init_user_details()
@@ -231,6 +232,10 @@ class MugshotWindow(Window):
         self.first_name_entry.set_sensitive(editable)
         self.last_name_entry.set_sensitive(editable)
         self.initials_entry.set_sensitive(editable)
+
+    def set_phone_editable(self, editable):
+        self.home_phone_entry.set_sensitive(editable)
+        self.office_phone_entry.set_sensitive(editable)
 
     def init_user_details(self):
         """Initialize the user details entries and variables."""
@@ -727,7 +732,7 @@ class MugshotWindow(Window):
                 details.append("")
 
             # Extract the user details
-            name, office, office_phone, home_phone = details
+            name, office, office_phone, home_phone = details[:4]
         except subprocess.CalledProcessError:
             logger.warning("User %s not found in /etc/passwd. "
                            "Mugshot may not function correctly." % username)
