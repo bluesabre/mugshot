@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-03-29 21:59-0400\n"
+"POT-Creation-Date: 2016-03-30 21:15-0400\n"
 "PO-Revision-Date: 2015-08-19 12:34+0000\n"
 "Last-Translator: Lefteris Pavlou <lepa.22@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-30 06:25+0000\n"
+"X-Launchpad-Export-Date: 2016-03-31 05:49+0000\n"
 "X-Generator: Launchpad (build 17967)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -61,7 +61,7 @@ msgstr "Αποτύπωση από την κάμερα..."
 msgid "Browse…"
 msgstr "Περιήγηση…"
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:558
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:563
 msgid "Mugshot"
 msgstr "Mugshot"
 
@@ -107,35 +107,35 @@ msgstr "Προβολή μυνημάτων αποσφαλμάτωσης (-vv debu
 msgid "Retry"
 msgstr "Προσπάθεια ξανά"
 
-#: ../mugshot/MugshotWindow.py:336
+#: ../mugshot/MugshotWindow.py:341
 msgid "Authentication cancelled."
 msgstr "Ακύρωση πιστοποίησης."
 
-#: ../mugshot/MugshotWindow.py:339
+#: ../mugshot/MugshotWindow.py:344
 msgid "Authentication failed."
 msgstr "Αποτυχία πιστοποίησης."
 
-#: ../mugshot/MugshotWindow.py:342
+#: ../mugshot/MugshotWindow.py:347
 msgid "An error occurred when saving changes."
 msgstr "Συνέβη ένα σφάλμα κατά την αποθήκευση των αλλαγών."
 
-#: ../mugshot/MugshotWindow.py:344
+#: ../mugshot/MugshotWindow.py:349
 msgid "User details were not updated."
 msgstr "Οι λεπτομέρειες χρήστη δεν ανανεώθηκαν."
 
-#: ../mugshot/MugshotWindow.py:445
+#: ../mugshot/MugshotWindow.py:450
 msgid "Update Pidgin buddy icon?"
 msgstr "Ενημέρωση εικονιδίου του Pidgin buddy;"
 
-#: ../mugshot/MugshotWindow.py:446
+#: ../mugshot/MugshotWindow.py:451
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Θα θέλατε επίσης να ενημερώσετε  το εικονίδιο του Pidgin buddy;"
 
-#: ../mugshot/MugshotWindow.py:559
+#: ../mugshot/MugshotWindow.py:564
 msgid "Enter your password to change user details."
 msgstr "Εισάγετε το συνθηματικό σας για να αλλάξετε τις λεπτομέρειες χρήστη."
 
-#: ../mugshot/MugshotWindow.py:561
+#: ../mugshot/MugshotWindow.py:566
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
@@ -143,11 +143,11 @@ msgstr ""
 "Αυτό είναι ένα μέτρο ασφαλείας για την αποφυγή ανεπιθύμητων ενημερώσεων\n"
 "στις προσωπικές σας πληροφορίες."
 
-#: ../mugshot/MugshotWindow.py:812
+#: ../mugshot/MugshotWindow.py:817
 msgid "Update LibreOffice user details?"
 msgstr "Ενημέρωση λεπτομερειών χρήστη του LibreOffice;"
 
-#: ../mugshot/MugshotWindow.py:813
+#: ../mugshot/MugshotWindow.py:818
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
 "Θα θέλατε επίσης να ενημερώσετε  τις λεπτομέρειες χρήστη του LibreOffice;"
