@@ -1,5 +1,23 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+31 Mar 2016, Mugshot 0.3.1
+
+- New bugfix release
+  . This release targets a number of bugs that were discovered in past
+    releases. To better handle user properties, AccountsService is now
+    better utilized when it is available.
+- Bugs fixed:
+  . Failure in extracting details from /etc/passwd (LP: #1304920)
+  . Failed reading of /etc/passwd with empty values (LP: #1394064)
+  . Crash when ~/.face is empty or invalid (LP: #1400055)
+  . Crash when unable to read LibreOffice config (LP: #1557744)
+  . Incorrect handling of empty name fields (LP: #1559815)
+- Known issues:
+  . Mugshot's camera dialog no longer works with recent versions of
+    Clutter. This is due to a change in the video sink and requires
+    a larger fix.
+
+
 07 Sep 2015, Mugshot 0.3.0
 
 - New development release

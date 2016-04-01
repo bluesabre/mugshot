@@ -187,7 +187,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 
 DistUtilsExtra.auto.setup(
     name='mugshot',
-    version='0.3.0',
+    version='0.3.1',
     license='GPL-3+',
     author='Sean Davis',
     author_email='smd.seandavis@gmail.com',
