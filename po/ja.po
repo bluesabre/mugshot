@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-03-30 21:15-0400\n"
+"POT-Creation-Date: 2016-03-31 20:17-0400\n"
 "PO-Revision-Date: 2014-03-30 02:53+0000\n"
 "Last-Translator: Ikuya Awashiro <ikuya@fruitsbasket.info>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-03-31 05:49+0000\n"
-"X-Generator: Launchpad (build 17967)\n"
+"X-Launchpad-Export-Date: 2016-04-01 05:56+0000\n"
+"X-Generator: Launchpad (build 17972)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -213,18 +213,25 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""
+"This development release fixes a large number of bugs from previous "
+"releases. User properties that cannot be edited are now restricted to "
+"administrative users."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:6
+msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:6
+#: ../data/appdata/mugshot.appdata.xml.in.h:7
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:7
+#: ../data/appdata/mugshot.appdata.xml.in.h:8
 msgid ""
 "This stable release improves the user configuration (chfn) backend and "
 "prevents Mugshot from locking up. Mugshot also no longer depends on "
@@ -233,28 +240,28 @@ msgid ""
 "addressed."
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:8
+#: ../data/appdata/mugshot.appdata.xml.in.h:9
 msgid ""
 "This stable release improved AccountsService functionality and overall "
 "usability. Users without admin rights can no longer attempt to change their "
 "name, and initials are automatically populated when the name is entered."
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:9
+#: ../data/appdata/mugshot.appdata.xml.in.h:10
 msgid ""
 "This stable release fixed a crash that occured when saving user details in a "
 "non-English locale. This release also included an updated translation "
 "template and new translations."
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:10
+#: ../data/appdata/mugshot.appdata.xml.in.h:11
 msgid ""
 "This stable release fixed several bugs related to profile image management, "
 "introduced an improved password dialog, and transitioned to using GLib to "
 "more reliably determine user and environment settings."
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:11
+#: ../data/appdata/mugshot.appdata.xml.in.h:12
 msgid ""
 "The first stable release introduced simplified packaging, replaced the Help "
 "functionality with the online help documents, and transitioned to using "
