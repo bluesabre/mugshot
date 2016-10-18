@@ -18,9 +18,10 @@
 
 from gi.repository import Gtk  # pylint: disable=E0611
 import logging
-logger = logging.getLogger('mugshot_lib')
 
 from . helpers import get_builder
+
+logger = logging.getLogger('mugshot_lib')
 
 
 class CameraDialog(Gtk.Dialog):

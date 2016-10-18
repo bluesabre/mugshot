@@ -46,7 +46,7 @@ def main():
     # Run the application.
     window = MugshotWindow.MugshotWindow()
     window.show()
-    
+
     # Allow application shutdown with Ctrl-C in terminal
     signal.signal(signal.SIGINT, signal.SIG_DFL)
     Gtk.main()

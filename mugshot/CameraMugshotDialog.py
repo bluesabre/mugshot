@@ -19,23 +19,23 @@
 #   You should have received a copy of the GNU General Public License along
 #   with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from locale import gettext as _
-
+import os
 import logging
-logger = logging.getLogger('mugshot')
+
+from locale import gettext as _
 
 import gi
 gi.require_version('Gst', '1.0')
 gi.require_version('Cheese', '3.0')
 gi.require_version('GtkClutter', '1.0')
 
-from gi.repository import Gtk, GObject, Gst, GdkPixbuf
-from gi.repository import Cheese, Clutter, GtkClutter
+from gi.repository import Gtk, GObject, Gst, GdkPixbuf  # nopep8
+from gi.repository import Cheese, Clutter, GtkClutter  # nopep8
 
-import os
+from mugshot_lib import helpers  # nopep8
+from mugshot_lib.CameraDialog import CameraDialog  # nopep8
 
-from mugshot_lib import helpers
-from mugshot_lib.CameraDialog import CameraDialog
+logger = logging.getLogger('mugshot')
 
 
 class CameraBox(GtkClutter.Embed):
@@ -95,7 +95,8 @@ class CameraBox(GtkClutter.Embed):
         viewport_layout_manager = Clutter.BinLayout()
 
         background_layer = Clutter.Actor.new()
-        status, background_layer.props.background_color = Clutter.Color.from_string("Black")
+        status, background_layer.props.background_color = \
+            Clutter.Color.from_string("Black")
         background_layer.props.x = 0
         background_layer.props.y = 0
         background_layer.props.width = 100
@@ -109,7 +110,8 @@ class CameraBox(GtkClutter.Embed):
 
         viewport.add_child(viewport_layout)
 
-        viewport.connect("allocation_changed", self.on_stage_resize, viewport_layout, background_layer)
+        viewport.connect("allocation_changed", self.on_stage_resize,
+                         viewport_layout, background_layer)
 
         return video_texture
 

@@ -18,16 +18,19 @@
 
 '''Enhances builder connections, provides object to access glade objects'''
 
-import gi
-gi.require_version('Gtk', '3.0')
-from gi.repository import GObject, Gtk  # pylint: disable=E0611
-
 import inspect
 import functools
 import logging
-logger = logging.getLogger('mugshot_lib')
 
 from xml.etree.cElementTree import ElementTree
+
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import GObject, Gtk  # pylint: disable=E0611 # nopep8
+
+
+logger = logging.getLogger('mugshot_lib')
+
 
 # this module is big so uses some conventional prefixes and postfixes
 # *s list, except self.widgets is a dictionary

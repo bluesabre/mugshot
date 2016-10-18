@@ -16,13 +16,14 @@
 #   You should have received a copy of the GNU General Public License along
 #   with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import Gio, Gtk  # pylint: disable=E0611
-import logging
-logger = logging.getLogger('mugshot_lib')
-
 import os
+import logging
+
+from gi.repository import Gio, Gtk  # pylint: disable=E0611
 
 from . helpers import get_builder, show_uri
+
+logger = logging.getLogger('mugshot_lib')
 
 
 class Window(Gtk.Window):

@@ -30,7 +30,6 @@ import dbus
 
 from gi.repository import Gtk, GdkPixbuf, GLib, Gio  # pylint: disable=E0611
 import logging
-logger = logging.getLogger('mugshot')
 
 from mugshot_lib import Window, SudoDialog, AccountsServiceAdapter, helpers
 
@@ -38,6 +37,8 @@ try:
     from mugshot.CameraMugshotDialog import CameraMugshotDialog
 except:
     pass
+
+logger = logging.getLogger('mugshot')
 
 username = GLib.get_user_name()
 home = GLib.get_home_dir()
@@ -296,7 +297,8 @@ class MugshotWindow(Window):
         if filename and os.path.exists(filename):
             try:
                 pixbuf = GdkPixbuf.Pixbuf.new_from_file(filename)
-                scaled = pixbuf.scale_simple(128, 128, GdkPixbuf.InterpType.HYPER)
+                scaled = pixbuf.scale_simple(128, 128,
+                                             GdkPixbuf.InterpType.HYPER)
                 self.user_image.set_from_pixbuf(scaled)
                 # Show "Remove" menu item.
                 self.menuitem1.set_visible(True)
@@ -429,7 +431,8 @@ class MugshotWindow(Window):
 
         # Update AccountsService profile image
         if self.accounts_service.available():
-            logger.debug('Photo updated, saving AccountsService profile image.')
+            logger.debug(
+                'Photo updated, saving AccountsService profile image.')
             self.accounts_service.set_icon_file(self.updated_image)
 
         # Update Pidgin buddy icon
