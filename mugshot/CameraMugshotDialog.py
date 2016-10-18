@@ -53,25 +53,10 @@ class CameraBox(GtkClutter.Embed):
         self.state = Gst.State.NULL
         self.parent = parent
 
-        self.stage = self.get_stage()
-        self.layout_manager = Clutter.BoxLayout()
+        video_texture = self.setup_ui()
 
-        self.scroll = Clutter.ScrollActor.new()
-        self.scroll.set_scroll_mode(Clutter.ScrollMode.HORIZONTALLY)
-
-        self.textures_box = Clutter.Actor(layout_manager=self.layout_manager)
-        self.textures_box.set_x_align(Clutter.ActorAlign.CENTER)
-
-        self.scroll.add_actor(self.textures_box)
-        self.stage.add_actor(self.scroll)
-
-        self.video_texture = Clutter.Texture.new()
-
-        self.layout_manager.pack(
-            self.video_texture, expand=True, x_fill=False, y_fill=False,
-                                 x_align=Clutter.BoxAlignment.CENTER, y_align=Clutter.BoxAlignment.CENTER)
-
-        self.camera = Cheese.Camera.new(self.video_texture, "Mugshot", 100, 100)
+        self.camera = Cheese.Camera.new(video_texture,
+                                        "Mugshot", 1280, 720)
         Cheese.Camera.setup(self.camera, None)
         Cheese.Camera.play(self.camera)
         self.state = Gst.State.PLAYING
@@ -88,11 +73,69 @@ class CameraBox(GtkClutter.Embed):
         device_monitor.connect("added", added)
         device_monitor.coldplug()
 
-        self.connect("size-allocate", self.on_size_allocate)
         self.camera.connect("photo-taken", self.on_photo_taken)
         self.camera.connect("state-flags-changed", self.on_state_flags_changed)
 
         self._save_filename = ""
+
+    def setup_ui(self):
+        viewport = self.get_stage()
+
+        video_preview = Clutter.Actor.new()
+        video_preview.set_content_gravity(Clutter.ContentGravity.RESIZE_ASPECT)
+        video_preview.set_x_expand(True)
+        video_preview.set_y_expand(True)
+        video_preview.props.min_height = 100.0
+        video_preview.props.min_width = 100.0
+        video_texture = video_preview
+
+        viewport_layout = Clutter.Actor.new()
+        viewport_layout.add_child(video_preview)
+
+        viewport_layout_manager = Clutter.BinLayout()
+
+        background_layer = Clutter.Actor.new()
+        status, background_layer.props.background_color = Clutter.Color.from_string("Black")
+        background_layer.props.x = 0
+        background_layer.props.y = 0
+        background_layer.props.width = 100
+        background_layer.props.height = 100
+
+        video_preview.props.request_mode = Clutter.RequestMode.HEIGHT_FOR_WIDTH
+
+        viewport.add_child(background_layer)
+
+        viewport_layout.set_layout_manager(viewport_layout_manager)
+
+        viewport.add_child(viewport_layout)
+
+        viewport.connect("allocation_changed", self.on_stage_resize, viewport_layout, background_layer)
+
+        return video_texture
+
+    def on_stage_resize(self, actor, box, flags, layout, background):
+        s_width, s_height = self.get_stage().get_size()
+
+        v_width = self.camera.props.format.width
+        v_height = self.camera.props.format.height
+
+        square = min(s_width, s_height)
+        if v_width > v_height:
+            scale = square / v_height
+            v_height = square
+            v_width = v_width * scale
+        else:
+            scale = square / v_width
+            v_height = v_height * scale
+            v_width = square
+
+        x_adj, y_adj = (s_width - v_width) / 2.0, (s_height - v_height) / 2.0
+
+        layout.set_size(v_width, v_height)
+        layout.set_x(x_adj)
+        layout.set_y(y_adj)
+
+        background.set_size(s_width, s_height)
 
     def on_state_flags_changed(self, camera, state):
         self.state = state
@@ -108,27 +151,6 @@ class CameraBox(GtkClutter.Embed):
 
     def stop(self):
         Cheese.Camera.stop(self.camera)
-
-    def on_size_allocate(self, widget, allocation):
-        vheight = self.video_texture.get_height()
-        vwidth = self.video_texture.get_width()
-        if vheight == 0 or vwidth == 0:
-            vformat = self.camera.get_current_video_format()
-            vheight = vformat.height
-            vwidth = vformat.width
-
-        height = allocation.height
-        mult = vheight / height
-        width = round(vwidth / mult, 1)
-
-        self.video_texture.set_height(height)
-        self.video_texture.set_width(width)
-
-        point = Clutter.Point()
-        point.x = (self.video_texture.get_width() - allocation.width) / 2
-        point.y = 0
-
-        self.scroll.scroll_to_point(point)
 
     def take_photo(self, target_filename):
         self._save_filename = target_filename
