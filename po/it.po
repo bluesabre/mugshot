@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-10-18 00:02-0400\n"
+"POT-Creation-Date: 2016-10-18 06:34-0400\n"
 "PO-Revision-Date: 2014-09-09 08:45+0000\n"
 "Last-Translator: Man from Mars <manfrommars@libero.it>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-10-18 06:47+0000\n"
+"X-Launchpad-Export-Date: 2016-10-19 06:34+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -61,7 +61,7 @@ msgstr "Cattura dalla webcam..."
 msgid "Browse…"
 msgstr "Esplora..."
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:563
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:566
 msgid "Mugshot"
 msgstr "Mugshot"
 
@@ -103,39 +103,39 @@ msgstr "Mostra i messaggi di debug (-vv analizza anche mugshot_lib)"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
-#: ../mugshot/CameraMugshotDialog.py:266
+#: ../mugshot/CameraMugshotDialog.py:268
 msgid "Retry"
 msgstr "Riprova"
 
-#: ../mugshot/MugshotWindow.py:341
+#: ../mugshot/MugshotWindow.py:343
 msgid "Authentication cancelled."
 msgstr "Autenticazione annullata."
 
-#: ../mugshot/MugshotWindow.py:344
+#: ../mugshot/MugshotWindow.py:346
 msgid "Authentication failed."
 msgstr "Autenticazione fallita."
 
-#: ../mugshot/MugshotWindow.py:347
+#: ../mugshot/MugshotWindow.py:349
 msgid "An error occurred when saving changes."
 msgstr "Si è verificato un errore nel salvataggio delle modifiche."
 
-#: ../mugshot/MugshotWindow.py:349
+#: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
 msgstr "I dettagli dell'utente non sono stati aggiornati."
 
-#: ../mugshot/MugshotWindow.py:450
+#: ../mugshot/MugshotWindow.py:453
 msgid "Update Pidgin buddy icon?"
 msgstr "Aggiornare l'avatar di Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:451
+#: ../mugshot/MugshotWindow.py:454
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Vuoi aggiornare anche l'avatar di Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:564
+#: ../mugshot/MugshotWindow.py:567
 msgid "Enter your password to change user details."
 msgstr "Digitare la password per cambiare le informazioni utente."
 
-#: ../mugshot/MugshotWindow.py:566
+#: ../mugshot/MugshotWindow.py:569
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
@@ -143,11 +143,11 @@ msgstr ""
 "Questa è una misura di sicurezza per evitare aggiornamenti\n"
 "indesiderati alle tue informazioni."
 
-#: ../mugshot/MugshotWindow.py:817
+#: ../mugshot/MugshotWindow.py:820
 msgid "Update LibreOffice user details?"
 msgstr "Aggiornare le informazioni utente di LibreOffice?"
 
-#: ../mugshot/MugshotWindow.py:818
+#: ../mugshot/MugshotWindow.py:821
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr "Vuoi aggiornare anche le informazioni utente in LibreOffice?"
 
