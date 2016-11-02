@@ -37,6 +37,14 @@
   </provides>
 
   <releases>
+    <release version="0.3.2" timestamp="1478083500">
+      <description>
+        <_p>This development release restores camera dialog functionality
+        that with recent software versions.
+        </_p>
+      </description>
+    </release>
+
     <release version="0.3.1" timestamp="1459470600">
       <description>
         <_p>This development release fixes a large number of bugs from
