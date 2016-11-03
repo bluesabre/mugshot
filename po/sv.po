@@ -10,15 +10,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2016-10-18 06:34-0400\n"
+"POT-Creation-Date: 2016-11-02 06:30-0400\n"
 "PO-Revision-Date: 2016-04-16 19:46+0000\n"
 "Last-Translator: Påvel Nicklasson <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-10-19 06:34+0000\n"
-"X-Generator: Launchpad (build 18232)\n"
+"X-Launchpad-Export-Date: 2016-11-03 06:12+0000\n"
+"X-Generator: Launchpad (build 18246)\n"
 "Language: sv\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -224,6 +224,12 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""
+"This development release restores camera dialog functionality that with "
+"recent software versions."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:6
+msgid ""
 "This development release fixes a large number of bugs from previous "
 "releases. User properties that cannot be edited are now restricted to "
 "administrative users."
@@ -232,7 +238,7 @@ msgstr ""
 "versioner. Användaregenskaper som inte kan redigeras är nu begränsade till "
 "administrativa användare."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:6
+#: ../data/appdata/mugshot.appdata.xml.in.h:7
 msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
@@ -240,7 +246,7 @@ msgstr ""
 "Den här utvecklingsversionen uppgraderar kameradialogen till att använda "
 "Cheese och Clutter för att visa och fånga kamerainmatning."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:7
+#: ../data/appdata/mugshot.appdata.xml.in.h:8
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
@@ -250,7 +256,7 @@ msgstr ""
 "och inkluderar den senaste SudoDialog, som förbättrar utseende och "
 "användning av lösenordsdialogen."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:8
+#: ../data/appdata/mugshot.appdata.xml.in.h:9
 msgid ""
 "This stable release improves the user configuration (chfn) backend and "
 "prevents Mugshot from locking up. Mugshot also no longer depends on "
@@ -264,7 +270,7 @@ msgstr ""
 "kritiskt fel som förhindrade en del användare från att starta Mugshot har "
 "också åtgärdats."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:9
+#: ../data/appdata/mugshot.appdata.xml.in.h:10
 msgid ""
 "This stable release improved AccountsService functionality and overall "
 "usability. Users without admin rights can no longer attempt to change their "
@@ -274,7 +280,7 @@ msgstr ""
 "övergripande användbarhet. Användare utan admin-rättigheter kan inte längre "
 "försöka ändra sina namn, och initialer fylls automatiskt i då namnet anges."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:10
+#: ../data/appdata/mugshot.appdata.xml.in.h:11
 msgid ""
 "This stable release fixed a crash that occured when saving user details in a "
 "non-English locale. This release also included an updated translation "
@@ -284,7 +290,7 @@ msgstr ""
 "sparades i en ickeengelsk miljö. Denna utgåva inkluderar också en uppdaterad "
 "mall och nya översättningar."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:11
+#: ../data/appdata/mugshot.appdata.xml.in.h:12
 msgid ""
 "This stable release fixed several bugs related to profile image management, "
 "introduced an improved password dialog, and transitioned to using GLib to "
@@ -294,7 +300,7 @@ msgstr ""
 "profilbilder, introducerade en förbättrad lösenordsdialog, och gick över "
 "till GLib för att mer pålitligt avgöra användare och miljöinställningar."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:12
+#: ../data/appdata/mugshot.appdata.xml.in.h:13
 msgid ""
 "The first stable release introduced simplified packaging, replaced the Help "
 "functionality with the online help documents, and transitioned to using "
