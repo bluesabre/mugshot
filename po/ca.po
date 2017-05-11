@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-11-02 06:30-0400\n"
-"PO-Revision-Date: 2014-03-03 00:13+0000\n"
-"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
+"PO-Revision-Date: 2017-05-11 01:34+0000\n"
+"Last-Translator: toniem <toni.estevez@gmail.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-11-03 06:11+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
+"X-Launchpad-Export-Date: 2017-05-11 05:50+0000\n"
+"X-Generator: Launchpad (build 18366)\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -109,15 +109,15 @@ msgstr "Reintenta"
 
 #: ../mugshot/MugshotWindow.py:343
 msgid "Authentication cancelled."
-msgstr ""
+msgstr "Autenticació cancel·lada."
 
 #: ../mugshot/MugshotWindow.py:346
 msgid "Authentication failed."
-msgstr ""
+msgstr "Ha fallat l’autenticació."
 
 #: ../mugshot/MugshotWindow.py:349
 msgid "An error occurred when saving changes."
-msgstr ""
+msgstr "S'ha produït un error en desar els canvis."
 
 #: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
@@ -154,7 +154,7 @@ msgstr "Desitgeu també actualitzar les dades d'usuari en LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:124
 msgid "Password Required"
-msgstr ""
+msgstr "Es requereix una contrasenya"
 
 #: ../mugshot_lib/SudoDialog.py:161
 msgid "Incorrect password... try again."
@@ -199,24 +199,33 @@ msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
+"El Mugshot permet als usuaris actualitzar fàcilment la informació de "
+"contacte personal. Amb el Mugshot, els usuaris són capaços de:"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
+"Configurar la foto del compte que es mostra en iniciar sessió i, "
+"opcionalment, sincronitzar aquesta foto amb la seva icona de Pidgin"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
+"Configurar els detalls del compte emmagatzemats a /etc/passwd (que poden "
+"utilitzar-se amb l'ordre finger) i, opcionalment, sincronitzar-los amb la "
+"informació de contacte de LibreOffice"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
 msgstr ""
+"Aquesta versió de desenvolupament restaura la funcionalitat del diàleg de la "
+"càmera amb les últimes versions de programari."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:6
 msgid ""
@@ -224,6 +233,9 @@ msgid ""
 "releases. User properties that cannot be edited are now restricted to "
 "administrative users."
 msgstr ""
+"Aquesta versió de desenvolupament corregeix un gran nombre d'errors de "
+"versions anteriors. Les propietats d'usuari que no es poden editar ara estan "
+"restringides als usuaris administratius."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:7
 msgid ""
