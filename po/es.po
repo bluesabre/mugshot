@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-11-02 06:30-0400\n"
-"PO-Revision-Date: 2017-05-11 01:23+0000\n"
+"PO-Revision-Date: 2017-05-12 22:50+0000\n"
 "Last-Translator: toniem <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2017-05-12 06:28+0000\n"
+"X-Launchpad-Export-Date: 2017-05-13 05:54+0000\n"
 "X-Generator: Launchpad (build 18373)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -23,7 +23,7 @@ msgstr "Acerca de mí"
 
 #: ../mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
-msgstr "Configure su imagen de perfil y datos de contacto"
+msgstr "Configure su imagen de perfil y los datos de contacto"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
@@ -31,19 +31,19 @@ msgstr "Capturar - Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
-msgstr "<b>Previsualización</b>"
+msgstr "<b>Vista previa</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
-msgstr "Centro"
+msgstr "Al centro"
 
 #: ../data/ui/MugshotWindow.ui.h:3
 msgid "Left"
-msgstr "Izquierda"
+msgstr "A la izquierda"
 
 #: ../data/ui/MugshotWindow.ui.h:4
 msgid "Right"
-msgstr "Derecha"
+msgstr "A la derecha"
 
 #: ../data/ui/MugshotWindow.ui.h:5
 msgid "<b>Crop</b>"
@@ -63,7 +63,7 @@ msgstr "Examinar…"
 
 #: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:566
 msgid "Mugshot"
-msgstr "Fotografía"
+msgstr "Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:10
 msgid "<b>First Name</b>"
@@ -95,11 +95,11 @@ msgstr "<b>Fax</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:17
 msgid "Select a photo…"
-msgstr "Seleccione una foto…"
+msgstr "Seleccionar una foto…"
 
 #: ../mugshot/__init__.py:36
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
-msgstr "Mostrar mensajes de depuración (-vv depura mugshot_lib también)"
+msgstr "Mostrar mensajes de depuración (-vv depura también mugshot_lib)"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
@@ -109,7 +109,7 @@ msgstr "Reintentar"
 
 #: ../mugshot/MugshotWindow.py:343
 msgid "Authentication cancelled."
-msgstr "Autenticación cancelada."
+msgstr "Se ha cancelado la autenticación."
 
 #: ../mugshot/MugshotWindow.py:346
 msgid "Authentication failed."
@@ -117,11 +117,11 @@ msgstr "Ha fallado la autenticación."
 
 #: ../mugshot/MugshotWindow.py:349
 msgid "An error occurred when saving changes."
-msgstr "Se produjo un error al guardar los cambios."
+msgstr "Se ha producido un error al guardar los cambios."
 
 #: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
-msgstr "No se actualizaron los datos del usuario."
+msgstr "No se han actualizado los datos del usuario."
 
 #: ../mugshot/MugshotWindow.py:453
 msgid "Update Pidgin buddy icon?"
@@ -133,23 +133,23 @@ msgstr "¿Quiere actualizar también el icono de amigo de Pidgin?"
 
 #: ../mugshot/MugshotWindow.py:567
 msgid "Enter your password to change user details."
-msgstr "Escriba su contraseña para cambiar los detalles del usuario."
+msgstr "Introduzca su contraseña para cambiar los datos del usuario."
 
 #: ../mugshot/MugshotWindow.py:569
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
-"Esta es una medida de seguridad para prevenir actualizaciones\n"
+"Esta es una medida de seguridad para evitar actualizaciones\n"
 " no deseadas de su información personal."
 
 #: ../mugshot/MugshotWindow.py:820
 msgid "Update LibreOffice user details?"
-msgstr "¿Actualizar los detalles de usuario de LibreOffice?"
+msgstr "¿Actualizar los datos de usuario de LibreOffice?"
 
 #: ../mugshot/MugshotWindow.py:821
 msgid "Would you also like to update your user details in LibreOffice?"
-msgstr "¿Quiere actualizar también los detalles de usuario de LibreOffice?"
+msgstr "¿Quiere actualizar también los datos de usuario de LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:124
 msgid "Password Required"
@@ -157,7 +157,7 @@ msgstr "Se requiere una contraseña"
 
 #: ../mugshot_lib/SudoDialog.py:161
 msgid "Incorrect password... try again."
-msgstr "Contraseña incorrecta. Inténtelo nuevamente."
+msgstr "Contraseña incorrecta... Inténtelo de nuevo."
 
 #: ../mugshot_lib/SudoDialog.py:171
 msgid "Password:"
@@ -177,7 +177,7 @@ msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
-"Escriba su contraseña para\n"
+"Introduzca la contraseña para\n"
 "realizar tareas administrativas."
 
 #: ../mugshot_lib/SudoDialog.py:208
@@ -191,7 +191,7 @@ msgstr ""
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr "Configuración de usuario superligera"
+msgstr "Configuración de usuario mínima"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:2
 msgid ""
@@ -243,7 +243,7 @@ msgid ""
 "Clutter to display and capture the camera feed."
 msgstr ""
 "Esta versión de desarrollo actualiza el diálogo de la cámara para usar "
-"Cheese y Clutter para mostrar y capturar el canal de la cámara."
+"Cheese y Clutter para mostrar y capturar la informació de la cámara."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:8
 msgid ""
@@ -251,9 +251,9 @@ msgid ""
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
 msgstr ""
-"Esta versión estable mejora la funcionalidad de Fotografía para usuarios de "
-"LDAP, e incluye el último Diálogo de sudo, mejorando el aspecto y la "
-"usabilidad del diálogo de contraseña."
+"Esta versión estable mejora la funcionalidad de Mugshot para los usuarios de "
+"LDAP e incluye el último SudoDialog, que mejora la apariencia y la facilidad "
+"de uso del diálogo de la contraseña."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:9
 msgid ""
@@ -263,11 +263,11 @@ msgid ""
 "critical bug that prevented some users from starting Mugshot was also "
 "addressed."
 msgstr ""
-"Esta versión estable mejora el backend de configuración de usuario (chfn) y "
-"evita que Mugshot se bloquee. Además, Mugshot no depende ya de "
-"AccountsService, pero puede aprovecharlo para dar mejor soporte a algunos "
-"sistemas. Un fallo crítico que impedía a algunos usuarios iniciar Mugshot "
-"también ha sido corregido."
+"Esta versión estable mejora el motor de la configuración del usuario (chfn) "
+"y evita que Mugshot se bloquee. Mugshot ya no depende de AccountsService, "
+"pero puede aprovecharlo para mejora la compatibilidad con algunos sistemas. "
+"También se ha corregido un fallo crítico que impedía a algunos usuarios "
+"iniciar Mugshot."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:10
 msgid ""
@@ -276,9 +276,9 @@ msgid ""
 "name, and initials are automatically populated when the name is entered."
 msgstr ""
 "Esta versión estable ha mejorado la funcionalidad de AccountsService y la "
-"usabilidad en general. Usuarios sin privilegios de administrador ya no "
-"pueden intentar cambiar su nombre, y las iniciales se rellenan "
-"automáticamente cuando se introduce el nombre."
+"usabilidad general. Los usuarios sin derechos de administrador ya no pueden "
+"intentar cambiar su nombre y las iniciales se rellenan automáticamente "
+"cuando se introduce el nombre."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:11
 msgid ""
@@ -287,7 +287,7 @@ msgid ""
 "template and new translations."
 msgstr ""
 "Esta versión estable ha corregido un error que ocurría cuando se guardaban "
-"detalles de usuario en un idioma no inglés. Esta versión ha incluído una "
+"detalles del usuario en un idioma no inglés. Esta versión ha incluído una "
 "plantilla de traducción actualizada así como nuevas traducciones."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:12
@@ -298,8 +298,8 @@ msgid ""
 msgstr ""
 "Esta versión estable ha corregido varios fallos relacionados con la "
 "administración de la imagen del perfil, ha introducido un diálogo de "
-"contraseña mejorado, y ahora usa GLib para determinar con mayor fiabilidad "
-"la configuración de usuario y entorno."
+"contraseña mejorado y ha pasado a usar GLib para determinar con mayor "
+"fiabilidad las configuraciones del usuario y del entorno."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:13
 msgid ""
@@ -307,6 +307,6 @@ msgid ""
 "functionality with the online help documents, and transitioned to using "
 "Python 3."
 msgstr ""
-"La primera versión estable introdujo una administración de paquetes "
-"simplificada, sustituyó la funcionalidad de ayuda por la documentación de "
-"ayuda online, y pasó a usar Python 3."
+"La primera versión estable ha introducido una administración de paquetes "
+"simplificada, ha sustituido la funcionalidad de ayuda por documentos de "
+"ayuda en línea y ha pasado a usar Python 3."
