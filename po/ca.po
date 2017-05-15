@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-11-02 06:30-0400\n"
-"PO-Revision-Date: 2017-05-12 21:40+0000\n"
+"PO-Revision-Date: 2017-05-13 09:20+0000\n"
 "Last-Translator: toniem <toni.estevez@gmail.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2017-05-13 05:54+0000\n"
+"X-Launchpad-Export-Date: 2017-05-15 06:29+0000\n"
 "X-Generator: Launchpad (build 18373)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -23,15 +23,15 @@ msgstr "Quant a mi"
 
 #: ../mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
-msgstr "Configureu l'imatge del perfil i les dades de contacte"
+msgstr "Configureu la imatge d'usuari i les dades de contacte"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
-msgstr "Captació d'imatges - Mugshot"
+msgstr "Captura - Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
-msgstr "<b>Previsualització</b>"
+msgstr "<b>Visualització prèvia</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
@@ -51,11 +51,11 @@ msgstr "<b>Escapça</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:6
 msgid "Select from stock…"
-msgstr "Selecciona des de mostrari..."
+msgstr "Selecciona del mostrari..."
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
-msgstr "Captura des d'una càmera..."
+msgstr "Captura amb la càmera..."
 
 #: ../data/ui/MugshotWindow.ui.h:8
 msgid "Browse…"
@@ -99,7 +99,7 @@ msgstr "Seleccioneu una imatge..."
 
 #: ../mugshot/__init__.py:36
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
-msgstr "Mostra missatges de depuració (-vv també depura mugshot_lib)"
+msgstr "Mostra els missatges de depuració (-vv depura també mugshot_lib)"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
@@ -109,7 +109,7 @@ msgstr "Reintenta"
 
 #: ../mugshot/MugshotWindow.py:343
 msgid "Authentication cancelled."
-msgstr "Autenticació cancel·lada."
+msgstr "S'ha cancel·lat l'autenticació."
 
 #: ../mugshot/MugshotWindow.py:346
 msgid "Authentication failed."
@@ -121,36 +121,35 @@ msgstr "S'ha produït un error en desar els canvis."
 
 #: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
-msgstr "No s’han actualitzat els detalls de l’usuari."
+msgstr "No s’han actualitzat les dades d’usuari."
 
 #: ../mugshot/MugshotWindow.py:453
 msgid "Update Pidgin buddy icon?"
-msgstr "Actualitzar la icona de l'amic en Pidgin?"
+msgstr "Actualitzar la icona d'usuari del Pidgin?"
 
 #: ../mugshot/MugshotWindow.py:454
 msgid "Would you also like to update your Pidgin buddy icon?"
-msgstr "Desitgeu també actualitzar la icona de l'amic en Pidgin?"
+msgstr "Voleu actualitzar també la icona d'usuari del Pidgin?"
 
 #: ../mugshot/MugshotWindow.py:567
 msgid "Enter your password to change user details."
-msgstr ""
-"Escriviu la vostra contrasenya per modificar els detalls de l’usuari."
+msgstr "Introduïu la contrasenya per canviar les dades d'usuari."
 
 #: ../mugshot/MugshotWindow.py:569
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
-"Aquesta és una mesura de seguretat per prevenir actualitzacions\n"
-"no desitjades de la informació personal."
+"Aquesta és una mesura de seguretat per evitar canvis no desitjats\n"
+"de la informació personal."
 
 #: ../mugshot/MugshotWindow.py:820
 msgid "Update LibreOffice user details?"
-msgstr "Actualitzar les dades d'usuari en LibreOffice?"
+msgstr "Actualitzar les dades d'usuari del LibreOffice?"
 
 #: ../mugshot/MugshotWindow.py:821
 msgid "Would you also like to update your user details in LibreOffice?"
-msgstr "Desitgeu també actualitzar les dades d'usuari en LibreOffice?"
+msgstr "Voleu actualitzar també les dades d'usuari en el LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:124
 msgid "Password Required"
@@ -158,7 +157,7 @@ msgstr "Es requereix una contrasenya"
 
 #: ../mugshot_lib/SudoDialog.py:161
 msgid "Incorrect password... try again."
-msgstr "La contrasenya és incorrecta. Intenteu-ho de nou."
+msgstr "Contrasenya incorrecta... Intenteu-ho de nou."
 
 #: ../mugshot_lib/SudoDialog.py:171
 msgid "Password:"
@@ -178,8 +177,8 @@ msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
-"Escriviu la vostra contrasenya per\n"
-"fer tasques administratives."
+"Introduïu la contrasenya per\n"
+"realitzar tasques administratives."
 
 #: ../mugshot_lib/SudoDialog.py:208
 #, python-format
@@ -200,24 +199,24 @@ msgid ""
 "Mugshot, users are able to:"
 msgstr ""
 "El Mugshot permet als usuaris actualitzar fàcilment la informació de "
-"contacte personal. Amb el Mugshot, els usuaris són capaços de:"
+"contacte personal. Amb el Mugshot els usuaris són capaços de:"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
-"Configurar la foto del compte que es mostra en iniciar sessió i, "
-"opcionalment, sincronitzar aquesta foto amb la seva icona de Pidgin"
+"Configurar la imatge d'usuari que es mostra a la pantalla d'inici de sessió "
+"i, opcionalment, sincronitzar aquesta imatge amb la icona d'usuari de Pidgin"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
-"Configurar els detalls del compte emmagatzemats a /etc/passwd (que poden "
-"utilitzar-se amb l'ordre finger) i, opcionalment, sincronitzar-los amb la "
-"informació de contacte de LibreOffice"
+"Configurar les dades del compte emmagatzemats a /etc/passwd (accessibles amb "
+"l'ordre finger) i, opcionalment, sincronitzar-les amb la informació de "
+"contacte del LibreOffice"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""
@@ -243,7 +242,7 @@ msgid ""
 "Clutter to display and capture the camera feed."
 msgstr ""
 "Aquesta versió de desenvolupament actualitza el diàleg de la càmera per "
-"utilitzar Cheese i Clutter per mostrar i capturar la informació de la càmera."
+"utilitzar Cheese i Clutter per mostrar i capturar la imatge de la càmera."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:8
 msgid ""
@@ -263,10 +262,10 @@ msgid ""
 "critical bug that prevented some users from starting Mugshot was also "
 "addressed."
 msgstr ""
-"Aquesta versió estable millora el motor de configuració de l'usuari (chfn) i "
-"evita que Mugshot es bloquegi. Mugshot ja no depèn de AccountsService, però "
-"pot aprofitar-lo per millorar la compatibilitat amb alguns sistemes. També "
-"s'ha corregit una fallada crítica que impedia a alguns usuaris iniciar "
+"Aquesta versió estable millora el motor de configuració d'usuari (chfn) i "
+"evita que Mugshot es bloquegi. Mugshot ja no depèn de l'AccountsService, "
+"però pot aprofitar-lo per millorar la compatibilitat amb alguns sistemes. "
+"També corregeix una fallada crítica que impedia a alguns usuaris iniciar "
 "Mugshot."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:10
@@ -275,8 +274,8 @@ msgid ""
 "usability. Users without admin rights can no longer attempt to change their "
 "name, and initials are automatically populated when the name is entered."
 msgstr ""
-"Aquesta versió estable ha millorat la funcionalitat de AccountsService i la "
-"usabilitat general. Els usuaris sense drets d'administrador ja no poden "
+"Aquesta versió estable millora la funcionalitat de l'AccountsService i la "
+"usabilitat general. Els usuaris sense permisos d'administrador ja no poden "
 "intentar canviar el seu nom i les inicials s'omplen automàticament quan "
 "s'introdueix el nom."
 
@@ -286,8 +285,8 @@ msgid ""
 "non-English locale. This release also included an updated translation "
 "template and new translations."
 msgstr ""
-"Aquesta versió estable ha corregit un error que es produïa quan es guardaven "
-"detalls de l'usuari en un idioma no anglès. Aquesta versió inclou una "
+"Aquesta versió estable corregeix un error que es produïa quan es guardaven "
+"les dades d'usuari en un idioma no anglès. Aquesta versió inclou una "
 "plantilla de traducció actualitzada i noves traduccions."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:12
@@ -296,10 +295,10 @@ msgid ""
 "introduced an improved password dialog, and transitioned to using GLib to "
 "more reliably determine user and environment settings."
 msgstr ""
-"Aquesta versió estable ha corregit diversos errors relacionats amb "
-"l'administració de la imatge del perfil, ha introduït un diàleg de "
-"contrasenya millorat i ha passat a usar GLib per determinar amb més "
-"fiabilitat les configuracions de l'usuari i de l'entorn."
+"Aquesta versió estable corregeix diversos errors relacionats amb "
+"l'administració de la imatge d'usuari, introdueix un diàleg de contrasenya "
+"millorat i utilitza el GLib per determinar amb més fiabilitat les "
+"configuracions d'usuari i d'entorn."
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:13
 msgid ""
@@ -307,6 +306,5 @@ msgid ""
 "functionality with the online help documents, and transitioned to using "
 "Python 3."
 msgstr ""
-"La primera versió estable ha introduït una administració de paquets "
-"simplificada, ha substituït la funcionalitat d'ajuda per documents d'ajuda "
-"en línia i ha passat a fer servir Python 3."
+"La primera versió estable introdueix  un empaquetat simplificat, sustitueix "
+"la funcionalitat d'ajuda per documents d'ajuda en línia i fa servir Python 3."
