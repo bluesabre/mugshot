@@ -1,0 +1,275 @@
+# Danish translation for mugshot
+# Copyright (c) 2017 Rosetta Contributors and Canonical Ltd 2017
+# This file is distributed under the same license as the mugshot package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mugshot\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2016-11-02 06:30-0400\n"
+"PO-Revision-Date: 2017-07-14 01:07+0000\n"
+"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
+"Language-Team: Danish <da@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2017-07-14 05:35+0000\n"
+"X-Generator: Launchpad (build 18419)\n"
+
+#: ../mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "Om mig"
+
+#: ../mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "Konfigurer dit profilbillede og kontaktdetaljer"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "Indfang - Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "Forhåndsvisning"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "Centrér"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "Venstre"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "Højre"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>Beskær</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select from stock…"
+msgstr "Vælg fra lager…"
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Capture from camera…"
+msgstr "Indfang fra kamera…"
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Browse…"
+msgstr "Gennemse…"
+
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:566
+msgid "Mugshot"
+msgstr "Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "<b>First Name</b>"
+msgstr "<b>Fornavn</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>Last Name</b>"
+msgstr "<b>Efternavn</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Initials</b>"
+msgstr "<b>Initialer</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Home Phone</b>"
+msgstr "<b>Hjemmetelefon</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Email Address</b>"
+msgstr "<b>E-mailadresse</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Office Phone</b>"
+msgstr "<b>Kontortelefon</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Fax</b>"
+msgstr "<b>Fax</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "Select a photo…"
+msgstr "Vælg et billede…"
+
+#: ../mugshot/__init__.py:36
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr "Vis fejlretningsmeddelelser (-vv fejlretter også mugshot_lib)"
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:268
+msgid "Retry"
+msgstr "Prøv igen"
+
+#: ../mugshot/MugshotWindow.py:343
+msgid "Authentication cancelled."
+msgstr "Autentifikation annulleret."
+
+#: ../mugshot/MugshotWindow.py:346
+msgid "Authentication failed."
+msgstr "Autentifikation mislykkedes."
+
+#: ../mugshot/MugshotWindow.py:349
+msgid "An error occurred when saving changes."
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:351
+msgid "User details were not updated."
+msgstr "Brugerdetaljer blev ikke opdateret."
+
+#: ../mugshot/MugshotWindow.py:453
+msgid "Update Pidgin buddy icon?"
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:454
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr "Vil du også opdatere dit Pidgin buddy-ikon?"
+
+#: ../mugshot/MugshotWindow.py:567
+msgid "Enter your password to change user details."
+msgstr "Indtast din adgangskode for at skifte brugerdetaljer."
+
+#: ../mugshot/MugshotWindow.py:569
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+
+#: ../mugshot/MugshotWindow.py:820
+msgid "Update LibreOffice user details?"
+msgstr "Opdater LibreOffice brugerdetaljer?"
+
+#: ../mugshot/MugshotWindow.py:821
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr "Vil du også opdatere dine brugerdetaljer i LibreOffice?"
+
+#: ../mugshot_lib/SudoDialog.py:124
+msgid "Password Required"
+msgstr "Adgangskode kræves"
+
+#: ../mugshot_lib/SudoDialog.py:161
+msgid "Incorrect password... try again."
+msgstr "Forkert adgangskode... prøv igen."
+
+#: ../mugshot_lib/SudoDialog.py:171
+msgid "Password:"
+msgstr "Adgangskode:"
+
+#. Buttons
+#: ../mugshot_lib/SudoDialog.py:182
+msgid "Cancel"
+msgstr "Annuller"
+
+#: ../mugshot_lib/SudoDialog.py:185
+msgid "OK"
+msgstr "OK"
+
+#: ../mugshot_lib/SudoDialog.py:206
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+"Indtast din adgangskode for at\n"
+"udføre administrative opgaver."
+
+#: ../mugshot_lib/SudoDialog.py:208
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+"Programmet '%s' lader dig\n"
+"ændre essentielle dele af dit system."
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:1
+msgid "Lightweight user configuration"
+msgstr "Letvægts brugerkonfiguration"
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:2
+msgid ""
+"Mugshot enables users to easily update personal contact information. With "
+"Mugshot, users are able to:"
+msgstr ""
+"Mugshot gør det muligt for brugere at opdatere personlig kontaktinformation. "
+"Med Mugshot kan brugere:"
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:3
+msgid ""
+"Set the account photo displayed at login and optionally synchronize this "
+"photo with their Pidgin buddy icon"
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:4
+msgid ""
+"Set account details stored in /etc/passwd (usable with the finger command) "
+"and optionally synchronize with their LibreOffice contact information"
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:5
+msgid ""
+"This development release restores camera dialog functionality that with "
+"recent software versions."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:6
+msgid ""
+"This development release fixes a large number of bugs from previous "
+"releases. User properties that cannot be edited are now restricted to "
+"administrative users."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:7
+msgid ""
+"This development release upgrades the camera dialog to use Cheese and "
+"Clutter to display and capture the camera feed."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:8
+msgid ""
+"This stable release improves Mugshot functionality for LDAP users, and "
+"includes the latest SudoDialog, improving the appearance and usability of "
+"the password dialog."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:9
+msgid ""
+"This stable release improves the user configuration (chfn) backend and "
+"prevents Mugshot from locking up. Mugshot also no longer depends on "
+"AccountsService, but can leverage it to better support some systems. A "
+"critical bug that prevented some users from starting Mugshot was also "
+"addressed."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:10
+msgid ""
+"This stable release improved AccountsService functionality and overall "
+"usability. Users without admin rights can no longer attempt to change their "
+"name, and initials are automatically populated when the name is entered."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:11
+msgid ""
+"This stable release fixed a crash that occured when saving user details in a "
+"non-English locale. This release also included an updated translation "
+"template and new translations."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:12
+msgid ""
+"This stable release fixed several bugs related to profile image management, "
+"introduced an improved password dialog, and transitioned to using GLib to "
+"more reliably determine user and environment settings."
+msgstr ""
+
+#: ../data/appdata/mugshot.appdata.xml.in.h:13
+msgid ""
+"The first stable release introduced simplified packaging, replaced the Help "
+"functionality with the online help documents, and transitioned to using "
+"Python 3."
+msgstr ""
