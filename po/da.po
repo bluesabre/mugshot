@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2016-11-02 06:30-0400\n"
-"PO-Revision-Date: 2017-07-14 01:07+0000\n"
+"PO-Revision-Date: 2017-07-14 12:17+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2017-07-14 05:35+0000\n"
+"X-Launchpad-Export-Date: 2017-07-15 05:42+0000\n"
 "X-Generator: Launchpad (build 18419)\n"
 
 #: ../mugshot.desktop.in.h:1
@@ -117,7 +117,7 @@ msgstr "Autentifikation mislykkedes."
 
 #: ../mugshot/MugshotWindow.py:349
 msgid "An error occurred when saving changes."
-msgstr ""
+msgstr "Der opstod en fejl da ændringer blev forsøgt gemt."
 
 #: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
@@ -125,11 +125,11 @@ msgstr "Brugerdetaljer blev ikke opdateret."
 
 #: ../mugshot/MugshotWindow.py:453
 msgid "Update Pidgin buddy icon?"
-msgstr ""
+msgstr "Opdater Pidgin venneikon?"
 
 #: ../mugshot/MugshotWindow.py:454
 msgid "Would you also like to update your Pidgin buddy icon?"
-msgstr "Vil du også opdatere dit Pidgin buddy-ikon?"
+msgstr "Vil du også opdatere dit Pidgin venneikon?"
 
 #: ../mugshot/MugshotWindow.py:567
 msgid "Enter your password to change user details."
@@ -140,6 +140,8 @@ msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
+"Dette er et sikkerhedstiltag for at forhindre uønskede opdateringer\n"
+"til din personlige information."
 
 #: ../mugshot/MugshotWindow.py:820
 msgid "Update LibreOffice user details?"
@@ -204,12 +206,16 @@ msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
+"Sæt kontoens billede som vises ved login og synkroniser valgfrit dette "
+"billede med deres Pidgin venneikon"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
+"Sæt kontodetaljer lagret i /etc/passwd (typisk med finger-kommandoen) og "
+"synkroniser valgfrit med deres LibreOffice kontaktinformation"
 
 #: ../data/appdata/mugshot.appdata.xml.in.h:5
 msgid ""
