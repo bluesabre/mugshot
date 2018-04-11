@@ -128,7 +128,7 @@ def write_appdata_file(filename_in):
 
 
 # Update AppData with latest translations first.
-write_appdata_file("data/appdata/mugshot.appdata.xml.in")
+write_appdata_file("data/metainfo/mugshot.appdata.xml.in")
 
 
 class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
@@ -187,7 +187,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 
 DistUtilsExtra.auto.setup(
     name='mugshot',
-    version='0.3.2',
+    version='0.4.0',
     license='GPL-3+',
     author='Sean Davis',
     author_email='smd.seandavis@gmail.com',

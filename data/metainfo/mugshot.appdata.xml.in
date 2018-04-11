@@ -44,6 +44,14 @@
   </provides>
 
   <releases>
+    <release version="0.4.0" date="2018-04-11">
+      <description>
+        <_p>This stable release adds support for the latest GTK and
+        GStreamer technologies.
+        </_p>
+      </description>
+    </release>
+
     <release version="0.3.2" date="2016-11-02">
       <description>
         <_p>This development release restores camera dialog functionality

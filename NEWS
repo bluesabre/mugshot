@@ -1,5 +1,16 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+11 Apr 2018, Mugshot 0.4.0
+
+- New stable release
+- General:
+  . Update URLs from smdavis.us to bluesabre.org
+  . Upgrade appdata file to latest spec
+  . Move appdata to metainfo, per latest spec
+- Translation Updates:
+  . Catalan, Croatian, Danish, Lithuanian, Romanian, Spanish, Swedish
+
+
 02 Nov 2016, Mugshot 0.3.2
 
 - New bugfix release
@@ -105,7 +116,7 @@ Mugshot                                                                    NEWS
   . Dependency on yelp/ghelp has been removed.
   . Packaging has been simplified.
 
-  
+
 27 Jul 2013, Mugshot 0.1
 
 - Initial release.
