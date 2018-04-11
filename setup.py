@@ -197,6 +197,6 @@ DistUtilsExtra.auto.setup(
                      'user profile and any supported applications.',
     url='https://launchpad.net/mugshot',
     data_files=[('share/man/man1', ['mugshot.1']),
-                ('share/appdata', ['data/appdata/mugshot.appdata.xml'])],
+                ('share/metainfo/', ['data/metainfo/mugshot.appdata.xml'])],
     cmdclass={'install': InstallAndUpdateDataDirectory}
 )

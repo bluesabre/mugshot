@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 18:38-0400\n"
+"POT-Creation-Date: 2018-04-11 18:46-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -183,48 +183,48 @@ msgid ""
 "modify essential parts of your system."
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:1
+#: ../data/metainfo/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:2
+#: ../data/metainfo/mugshot.appdata.xml.in.h:2
 msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:3
+#: ../data/metainfo/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:4
+#: ../data/metainfo/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:5
+#: ../data/metainfo/mugshot.appdata.xml.in.h:5
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:6
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
 msgid ""
 "This development release fixes a large number of bugs from previous "
 "releases. User properties that cannot be edited are now restricted to "
 "administrative users."
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:7
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
 msgstr ""
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:8
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
