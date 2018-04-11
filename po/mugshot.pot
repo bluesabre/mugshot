@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 06:30-0400\n"
+"POT-Creation-Date: 2018-04-11 18:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -229,41 +229,4 @@ msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
-msgstr ""
-
-#: ../data/appdata/mugshot.appdata.xml.in.h:9
-msgid ""
-"This stable release improves the user configuration (chfn) backend and "
-"prevents Mugshot from locking up. Mugshot also no longer depends on "
-"AccountsService, but can leverage it to better support some systems. A "
-"critical bug that prevented some users from starting Mugshot was also "
-"addressed."
-msgstr ""
-
-#: ../data/appdata/mugshot.appdata.xml.in.h:10
-msgid ""
-"This stable release improved AccountsService functionality and overall "
-"usability. Users without admin rights can no longer attempt to change their "
-"name, and initials are automatically populated when the name is entered."
-msgstr ""
-
-#: ../data/appdata/mugshot.appdata.xml.in.h:11
-msgid ""
-"This stable release fixed a crash that occured when saving user details in a "
-"non-English locale. This release also included an updated translation "
-"template and new translations."
-msgstr ""
-
-#: ../data/appdata/mugshot.appdata.xml.in.h:12
-msgid ""
-"This stable release fixed several bugs related to profile image management, "
-"introduced an improved password dialog, and transitioned to using GLib to "
-"more reliably determine user and environment settings."
-msgstr ""
-
-#: ../data/appdata/mugshot.appdata.xml.in.h:13
-msgid ""
-"The first stable release introduced simplified packaging, replaced the Help "
-"functionality with the online help documents, and transitioned to using "
-"Python 3."
 msgstr ""
