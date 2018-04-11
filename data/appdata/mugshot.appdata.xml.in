@@ -22,13 +22,13 @@
   </description>
 
   <screenshots>
-    <screenshot type="default" width="640" height="360">http://screenshots.smdavis.us/mugshot/mugshot.png</screenshot>
-    <screenshot width="640" height="360">http://screenshots.smdavis.us/mugshot/mugshot-pidgin-sync.png</screenshot>
+    <screenshot type="default" width="640" height="360">https://screenshots.bluesabre.org/mugshot/mugshot.png</screenshot>
+    <screenshot width="640" height="360">https://screenshots.bluesabre.org/mugshot/mugshot-pidgin-sync.png</screenshot>
   </screenshots>
 
   <url type="homepage">https://launchpad.net/mugshot/</url>
   <url type="bugtracker">https://bugs.launchpad.net/mugshot/</url>
-  <url type="help">http://wiki.smdavis.us/doku.php?id=mugshot-docs</url>
+  <url type="help">https://wiki.bluesabre.org/doku.php?id=mugshot-docs</url>
 
   <updatecontact>smd-seandavis@ubuntu.com</updatecontact>
 
