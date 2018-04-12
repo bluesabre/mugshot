@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2018-04-10 05:50+0000\n"
+"POT-Creation-Date: 2018-04-11 19:06-0400\n"
 "PO-Revision-Date: 2017-05-16 20:46+0000\n"
 "Last-Translator: toniem <toni.estevez@gmail.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2018-04-11 05:45+0000\n"
+"X-Launchpad-Export-Date: 2018-04-12 05:43+0000\n"
 "X-Generator: Launchpad (build 18609)\n"
 "Language: ca\n"
 
@@ -190,11 +190,11 @@ msgstr ""
 "L'aplicació «%s» us permet\n"
 "modificar parts essencials del sistema."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:1
+#: ../data/metainfo/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
 msgstr "Configuració d'usuari mínima"
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:2
+#: ../data/metainfo/mugshot.appdata.xml.in.h:2
 msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
@@ -202,7 +202,7 @@ msgstr ""
 "El Mugshot permet als usuaris actualitzar fàcilment la informació de "
 "contacte personal. Amb el Mugshot els usuaris són capaços de:"
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:3
+#: ../data/metainfo/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
@@ -210,7 +210,7 @@ msgstr ""
 "Configurar la imatge d'usuari que es mostra en la pantalla d'inici de sessió "
 "i, opcionalment, sincronitzar aquesta imatge amb la icona d'usuari de Pidgin"
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:4
+#: ../data/metainfo/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
@@ -219,7 +219,13 @@ msgstr ""
 "l'ordre finger) i, opcionalment, sincronitzar-les amb la informació de "
 "contacte del LibreOffice"
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:5
+#: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"This stable release adds support for the latest GTK and GStreamer "
+"technologies."
+msgstr ""
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
@@ -227,7 +233,7 @@ msgstr ""
 "Aquesta versió de desenvolupament restaura la funcionalitat del diàleg de la "
 "càmera amb versions de programari recents."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:6
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
 "This development release fixes a large number of bugs from previous "
 "releases. User properties that cannot be edited are now restricted to "
@@ -237,7 +243,7 @@ msgstr ""
 "versions anteriors. Les propietats d'usuari que no es poden editar ara estan "
 "restringides als usuaris administradors."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:7
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
 msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
@@ -245,7 +251,7 @@ msgstr ""
 "Aquesta versió de desenvolupament actualitza el diàleg de la càmera per "
 "utilitzar Cheese i Clutter per mostrar i capturar la imatge de la càmera."
 
-#: ../data/appdata/mugshot.appdata.xml.in.h:8
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
@@ -254,58 +260,3 @@ msgstr ""
 "Aquesta versió estable millora la funcionalitat del Mugshot per als usuaris "
 "d'LDAP i inclou l'últim SudoDialog, que millora l'aparença i la facilitat "
 "d'ús del diàleg de la contrasenya."
-
-#: ../data/appdata/mugshot.appdata.xml.in.h:9
-msgid ""
-"This stable release improves the user configuration (chfn) backend and "
-"prevents Mugshot from locking up. Mugshot also no longer depends on "
-"AccountsService, but can leverage it to better support some systems. A "
-"critical bug that prevented some users from starting Mugshot was also "
-"addressed."
-msgstr ""
-"Aquesta versió estable millora el motor de configuració d'usuari (chfn) i "
-"evita que el Mugshot es bloquegi. El Mugshot ja no depèn de "
-"l'AccountsService, però pot aprofitar-lo per millorar la compatibilitat amb "
-"alguns sistemes. També corregeix una fallada crítica que impedia a alguns "
-"usuaris iniciar el Mugshot."
-
-#: ../data/appdata/mugshot.appdata.xml.in.h:10
-msgid ""
-"This stable release improved AccountsService functionality and overall "
-"usability. Users without admin rights can no longer attempt to change their "
-"name, and initials are automatically populated when the name is entered."
-msgstr ""
-"Aquesta versió estable millora la funcionalitat de l'AccountsService i la "
-"usabilitat general. Els usuaris sense permisos d'administrador ja no poden "
-"intentar canviar el seu nom i les inicials s'omplen automàticament quan "
-"s'introdueix el nom."
-
-#: ../data/appdata/mugshot.appdata.xml.in.h:11
-msgid ""
-"This stable release fixed a crash that occured when saving user details in a "
-"non-English locale. This release also included an updated translation "
-"template and new translations."
-msgstr ""
-"Aquesta versió estable corregeix un error que es produïa quan es desaven les "
-"dades d'usuari en un idioma no anglès. Aquesta versió inclou una plantilla "
-"de traducció actualitzada i noves traduccions."
-
-#: ../data/appdata/mugshot.appdata.xml.in.h:12
-msgid ""
-"This stable release fixed several bugs related to profile image management, "
-"introduced an improved password dialog, and transitioned to using GLib to "
-"more reliably determine user and environment settings."
-msgstr ""
-"Aquesta versió estable corregeix diversos errors relacionats amb "
-"l'administració de la imatge d'usuari, introdueix un diàleg de contrasenya "
-"millorat i utilitza el GLib per determinar amb més fiabilitat les "
-"configuracions d'usuari i d'entorn."
-
-#: ../data/appdata/mugshot.appdata.xml.in.h:13
-msgid ""
-"The first stable release introduced simplified packaging, replaced the Help "
-"functionality with the online help documents, and transitioned to using "
-"Python 3."
-msgstr ""
-"La primera versió estable introdueix  un empaquetat simplificat, sustitueix "
-"la funcionalitat d'ajuda per documents d'ajuda en línia i fa servir Python 3."
