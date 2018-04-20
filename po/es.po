@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2018-04-18 06:06+0000\n"
-"PO-Revision-Date: 2017-12-22 17:52+0000\n"
-"Last-Translator: Adolfo Jayme <Unknown>\n"
+"POT-Creation-Date: 2018-04-19 05:03+0000\n"
+"PO-Revision-Date: 2018-04-19 15:23+0000\n"
+"Last-Translator: toniem <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2018-04-19 05:02+0000\n"
+"X-Launchpad-Export-Date: 2018-04-20 05:45+0000\n"
 "X-Generator: Launchpad (build 18617)\n"
 "Language: es\n"
 
@@ -24,7 +24,7 @@ msgstr "Acerca de mí"
 
 #: ../mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
-msgstr "Configure su imagen de perfil y datos de contacto"
+msgstr "Configure su imagen de perfil y los datos de contacto"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
@@ -32,7 +32,7 @@ msgstr "Capturar - Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
-msgstr "<b>Previsualización</b>"
+msgstr "<b>Vista previa</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
@@ -52,7 +52,7 @@ msgstr "<b>Cortar</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:6
 msgid "Select from stock…"
-msgstr "Seleccionar prediseñadas…"
+msgstr "Seleccionar del muestrario…"
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
@@ -100,7 +100,7 @@ msgstr "Seleccionar una foto…"
 
 #: ../mugshot/__init__.py:36
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
-msgstr "Mostrar mensajes de depuración (-vv depura mugshot_lib también)"
+msgstr "Mostrar los mensajes de depuración (-vv depura mugshot_lib también)"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
@@ -122,27 +122,27 @@ msgstr "Se ha producido un error al guardar los cambios."
 
 #: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
-msgstr "No se actualizaron los datos del usuario."
+msgstr "No se actualizaron los datos de usuario."
 
 #: ../mugshot/MugshotWindow.py:453
 msgid "Update Pidgin buddy icon?"
-msgstr "¿Actualizar el icono de amigo de Pidgin?"
+msgstr "¿Actualizar el icono de usuario de Pidgin?"
 
 #: ../mugshot/MugshotWindow.py:454
 msgid "Would you also like to update your Pidgin buddy icon?"
-msgstr "¿Quiere actualizar también el icono de amigo de Pidgin?"
+msgstr "¿Quiere actualizar también el icono de usuario de Pidgin?"
 
 #: ../mugshot/MugshotWindow.py:567
 msgid "Enter your password to change user details."
-msgstr "Escriba su contraseña para cambiar los detalles del usuario."
+msgstr "Introduzca su contraseña para cambiar los datos de usuario."
 
 #: ../mugshot/MugshotWindow.py:569
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
-"Esta es una medida de seguridad para evitar actualizaciones\n"
-"no deseadas de su información personal."
+"Esta es una medida de seguridad para evitar los cambios no deseados\n"
+"de su información personal."
 
 #: ../mugshot/MugshotWindow.py:820
 msgid "Update LibreOffice user details?"
@@ -150,7 +150,7 @@ msgstr "¿Actualizar los datos de usuario de LibreOffice?"
 
 #: ../mugshot/MugshotWindow.py:821
 msgid "Would you also like to update your user details in LibreOffice?"
-msgstr "¿Quiere actualizar también los detalles de usuario de LibreOffice?"
+msgstr "¿Quiere actualizar también los datos de usuario de LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:124
 msgid "Password Required"
@@ -158,7 +158,7 @@ msgstr "Se requiere una contraseña"
 
 #: ../mugshot_lib/SudoDialog.py:161
 msgid "Incorrect password... try again."
-msgstr "Contraseña incorrecta. Inténtelo de nuevo."
+msgstr "Contraseña incorrecta... Inténtelo de nuevo."
 
 #: ../mugshot_lib/SudoDialog.py:171
 msgid "Password:"
@@ -216,7 +216,7 @@ msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
-"Configurar los datos de la cuenta almacenados en /etc/passwd (accesibles con "
+"Configurar los datos de usuario almacenados en /etc/passwd (accesibles con "
 "la orden finger) y, opcionalmente, sincronizarlos con la información de "
 "contacto de LibreOffice"
 
@@ -225,6 +225,8 @@ msgid ""
 "This stable release adds support for the latest GTK and GStreamer "
 "technologies."
 msgstr ""
+"Esta versión estable añade soporte para las últimas tecnologías de GTK y "
+"GStreamer."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:6
 msgid ""
@@ -232,7 +234,7 @@ msgid ""
 "recent software versions."
 msgstr ""
 "Esta versión de desarrollo restaura la funcionalidad del diálogo de la "
-"cámara con versiones de software recientes."
+"cámara con las versiones de software recientes."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
