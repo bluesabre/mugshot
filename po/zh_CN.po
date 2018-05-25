@@ -1,0 +1,243 @@
+# Chinese (Simplified) translation for mugshot
+# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
+# This file is distributed under the same license as the mugshot package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mugshot\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2018-04-26 05:42+0000\n"
+"PO-Revision-Date: 2018-05-25 03:41+0000\n"
+"Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-05-25 05:32+0000\n"
+"X-Generator: Launchpad (build 18667)\n"
+
+#: ../mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "关于我"
+
+#: ../mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "设置您的头像和详细联系信息"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "捕获- Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>预览</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "中心"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "左侧"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "右侧"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>裁剪</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select from stock…"
+msgstr "从库存中选择..."
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Capture from camera…"
+msgstr "从相机捕捉..."
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Browse…"
+msgstr "浏览..."
+
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:566
+msgid "Mugshot"
+msgstr "Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "<b>First Name</b>"
+msgstr "<b>名</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>Last Name</b>"
+msgstr "<b>姓</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Initials</b>"
+msgstr "<b>缩写</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Home Phone</b>"
+msgstr "<b>家庭电话</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Email Address</b>"
+msgstr "<b>电子邮件地址</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Office Phone</b>"
+msgstr "<b>办公电话</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Fax</b>"
+msgstr "<b>传真</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "Select a photo…"
+msgstr "选择一张照片..."
+
+#: ../mugshot/__init__.py:36
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr "显示调试消息 (-vv debugs mugshot_lib also)"
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:268
+msgid "Retry"
+msgstr "重试"
+
+#: ../mugshot/MugshotWindow.py:343
+msgid "Authentication cancelled."
+msgstr "认证取消。"
+
+#: ../mugshot/MugshotWindow.py:346
+msgid "Authentication failed."
+msgstr "认证失败。"
+
+#: ../mugshot/MugshotWindow.py:349
+msgid "An error occurred when saving changes."
+msgstr "保存更改时发生错误。"
+
+#: ../mugshot/MugshotWindow.py:351
+msgid "User details were not updated."
+msgstr "用户详细信息未更新。"
+
+#: ../mugshot/MugshotWindow.py:453
+msgid "Update Pidgin buddy icon?"
+msgstr "更新Pidgin好友图标？"
+
+#: ../mugshot/MugshotWindow.py:454
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr "您还想更新你的Pidgin好友图标吗？"
+
+#: ../mugshot/MugshotWindow.py:567
+msgid "Enter your password to change user details."
+msgstr "输入您的密码以更改用户详细信息。"
+
+#: ../mugshot/MugshotWindow.py:569
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr "这是一项安全措施，可防止对您的个人信息进行不必要的更新。"
+
+#: ../mugshot/MugshotWindow.py:820
+msgid "Update LibreOffice user details?"
+msgstr "更新 LibreOffice 用户的详细信息?"
+
+#: ../mugshot/MugshotWindow.py:821
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr "您还想更新 LibreOffice 中的用户详细信息吗？"
+
+#: ../mugshot_lib/SudoDialog.py:124
+msgid "Password Required"
+msgstr "需要密码"
+
+#: ../mugshot_lib/SudoDialog.py:161
+msgid "Incorrect password... try again."
+msgstr "密码不正确... 再试一次。"
+
+#: ../mugshot_lib/SudoDialog.py:171
+msgid "Password:"
+msgstr "密码："
+
+#. Buttons
+#: ../mugshot_lib/SudoDialog.py:182
+msgid "Cancel"
+msgstr "取消"
+
+#: ../mugshot_lib/SudoDialog.py:185
+msgid "OK"
+msgstr "确定"
+
+#: ../mugshot_lib/SudoDialog.py:206
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+"请输入密码以便 \n"
+"执行管理任务。"
+
+#: ../mugshot_lib/SudoDialog.py:208
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+"应用程序 '%s' 想要修改\n"
+"系统的关键部分。"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:1
+msgid "Lightweight user configuration"
+msgstr "轻量级用户配置"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:2
+msgid ""
+"Mugshot enables users to easily update personal contact information. With "
+"Mugshot, users are able to:"
+msgstr "Mugshot 使用户可以轻松更新个人联系信息。 通过 Mugshot，用户可以："
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:3
+msgid ""
+"Set the account photo displayed at login and optionally synchronize this "
+"photo with their Pidgin buddy icon"
+msgstr "设置登录时显示的帐户照片，并可选择将此照片与其 Pidgin 好友图标同步"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:4
+msgid ""
+"Set account details stored in /etc/passwd (usable with the finger command) "
+"and optionally synchronize with their LibreOffice contact information"
+msgstr ""
+"设置存储在 / etc / passwd 中的帐户详细信息（可与 finger 命令一起使用），并可选择与其 LibreOffice 联系信息同步"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"This stable release adds support for the latest GTK and GStreamer "
+"technologies."
+msgstr "这个稳定版本增加了对最新 GTK 和 GStreamer 技术的支持。"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+msgid ""
+"This development release restores camera dialog functionality that with "
+"recent software versions."
+msgstr "这个开发版本恢复了最近软件版本的相机对话框功能。"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+msgid ""
+"This development release fixes a large number of bugs from previous "
+"releases. User properties that cannot be edited are now restricted to "
+"administrative users."
+msgstr "该开发版本修复了以前版本中的大量错误。 无法编辑的用户属性现在仅限于管理用户。"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+msgid ""
+"This development release upgrades the camera dialog to use Cheese and "
+"Clutter to display and capture the camera feed."
+msgstr "该开发版本升级相机对话框以使用 Cheese 和 Clutter 来显示和捕捉相机输入。"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+msgid ""
+"This stable release improves Mugshot functionality for LDAP users, and "
+"includes the latest SudoDialog, improving the appearance and usability of "
+"the password dialog."
+msgstr "这个稳定的版本改进了 LDAP 用户的 Mugshot 功能，并包含最新的 SudoDialog，改进了密码对话框的外观和可用性。"
