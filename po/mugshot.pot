@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-06 06:37-0400\n"
+"POT-Creation-Date: 2018-08-06 18:22-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,42 +141,42 @@ msgid ""
 "to your personal information."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:832
+#: ../mugshot/MugshotWindow.py:839
 msgid "Update LibreOffice user details?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:833
+#: ../mugshot/MugshotWindow.py:840
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:124
+#: ../mugshot_lib/SudoDialog.py:130
 msgid "Password Required"
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:161
+#: ../mugshot_lib/SudoDialog.py:167
 msgid "Incorrect password... try again."
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:171
+#: ../mugshot_lib/SudoDialog.py:177
 msgid "Password:"
 msgstr ""
 
 #. Buttons
-#: ../mugshot_lib/SudoDialog.py:182
+#: ../mugshot_lib/SudoDialog.py:188
 msgid "Cancel"
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:185
+#: ../mugshot_lib/SudoDialog.py:191
 msgid "OK"
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:206
+#: ../mugshot_lib/SudoDialog.py:212
 msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:208
+#: ../mugshot_lib/SudoDialog.py:214
 #, python-format
 msgid ""
 "The application '%s' lets you\n"

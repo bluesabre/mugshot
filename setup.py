@@ -100,8 +100,8 @@ def get_desktop_file(root, target_data, prefix):
 def update_desktop_file(filename, script_path):
     """Update the desktop file with prefixed paths."""
     try:
-        fin = open(filename, 'r')
-        fout = open(filename + '.new', 'w')
+        fin = open(filename, 'r', -1, 'utf-8')
+        fout = open(filename + '.new', 'w', -1, 'utf-8')
 
         for line in fin:
             if 'Exec=' in line:
