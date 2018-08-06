@@ -48,13 +48,17 @@ def check_dependencies(commands=[]):
             return False
 
     # Check for LANG requirements
-    child = env_spawn('sudo', ['-v'], 1)
-    if child.expect([".*ssword.*", "Sorry",
-                     pexpect.EOF,
-                     pexpect.TIMEOUT]) == 3:
-        global use_env
-        use_env = True
-    child.close()
+    try:
+        child = env_spawn('sudo', ['-v'], 1)
+        if child.expect([".*ssword.*", "Sorry",
+                        pexpect.EOF,
+                        pexpect.TIMEOUT]) == 3:
+            global use_env
+            use_env = True
+        child.close()
+    except OSError:
+        child.close()
+        return False
 
     # Check for sudo rights
     child = env_spawn('sudo', ['-v'], 1)
