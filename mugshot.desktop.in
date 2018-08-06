@@ -1,7 +1,7 @@
 [Desktop Entry]
 _Name=About Me
 _Comment=Configure your profile image and contact details
-Categories=GNOME;GTK;Settings;X-GNOME-Settings-Panel;X-GNOME-PersonalSettings;DesktopSettings;X-XFCE;
+Categories=GNOME;GTK;Settings;X-GNOME-Settings-Panel;X-GNOME-PersonalSettings;DesktopSettings;X-XFCE;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
 Keywords=Configuration;Profile;User;
 Exec=mugshot
 Icon=mugshot
