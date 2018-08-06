@@ -716,8 +716,15 @@ class MugshotWindow(Window):
             return None
 
         name = self.accounts_service.get_real_name()
-        name = self.split_name(name)
+        if name:
+            name = self.split_name(name)
+        else:
+            name = {'first': '', 'last': '', 'initials': ''}
+
         email = self.accounts_service.get_email()
+        if not email:
+            email = ''
+
         data = {'first_name': name['first'], 'last_name': name['last'],
                 'home_phone': '', 'office_phone': '',
                 'initials': name['initials'], 'email': email, 'fax': ''}
