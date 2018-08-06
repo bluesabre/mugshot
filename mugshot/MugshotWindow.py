@@ -612,8 +612,15 @@ class MugshotWindow(Window):
             success = False
 
         logger.debug('Updating Office Phone...')
-        command = "%s -w \"%s\" %s" % (chfn, office_phone, username)
-        if self.process_terminal_password(command, password):
+
+        # chfn 2.29 uses "-p" as parameter for changing the office-phone (LP: #1699285)
+        p_command = "%s -p \"%s\" %s" % (chfn, office_phone, username)
+
+        # other (newer, older?) use "-w"
+        w_command = "%s -w \"%s\" %s" % (chfn, office_phone, username)
+
+        if self.process_terminal_password(p_command, password) or \
+            self.process_terminal_password(w_command, password):
             self.office_phone = office_phone
         else:
             success = False
