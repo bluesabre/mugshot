@@ -257,9 +257,12 @@ class MugshotWindow(Window):
             logger.debug('Found profile image: %s' % str(image))
 
             if os.path.isfile(face):
-                if os.path.samefile(image, face):
-                    self.updated_image = face
-                else:
+                try:
+                    if os.path.samefile(image, face):
+                        self.updated_image = face
+                    else:
+                        self.updated_image = None
+                except FileNotFoundError:
                     self.updated_image = None
                 self.set_user_image(face)
             elif os.path.isfile(image):
