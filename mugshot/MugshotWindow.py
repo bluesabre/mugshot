@@ -101,7 +101,7 @@ def has_gstreamer_camerasrc_support():
 def has_camera_libraries():
     """Return True if it is possible to display the camera dialog."""
     try:
-        from gi.repository import Cheese, Clutter, GtkClutter
+        from gi.repository import Cheese, Clutter, GtkClutter  # pylint: disable=W0612
     except:
         return False
     return True
@@ -304,7 +304,7 @@ class MugshotWindow(Window):
                 self.menuitem1.set_visible(True)
                 self.image_remove.set_visible(True)
                 return
-            except GLib.Error:
+            except GLib.Error:  # pylint: disable=E0712
                 pass
 
         self.user_image.set_from_icon_name('avatar-default', 128)
@@ -719,6 +719,7 @@ class MugshotWindow(Window):
         data = {'first_name': name['first'], 'last_name': name['last'],
                 'home_phone': '', 'office_phone': '',
                 'initials': name['initials'], 'email': '', 'fax': ''}
+        return data
 
     def get_passwd_data(self):
         """Get user details from passwd"""
@@ -735,14 +736,15 @@ class MugshotWindow(Window):
                 details.append("")
 
             # Extract the user details
-            name, office, office_phone, home_phone = details[:4]
+            name = details[0]
+            office_phone = details[2]
+            home_phone = details[3]
         except subprocess.CalledProcessError:
             logger.warning("User %s not found in /etc/passwd. "
                            "Mugshot may not function correctly." % username)
-            office = ""
+            name = ""
             office_phone = ""
             home_phone = ""
-            name = ""
 
         name = self.split_name(name)
 

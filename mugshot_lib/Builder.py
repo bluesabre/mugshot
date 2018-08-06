@@ -26,7 +26,7 @@ from xml.etree.cElementTree import ElementTree
 
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import GObject, Gtk  # pylint: disable=E0611 # nopep8
+from gi.repository import GObject, Gtk
 
 
 logger = logging.getLogger('mugshot_lib')

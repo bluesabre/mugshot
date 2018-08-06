@@ -83,7 +83,6 @@ class MugshotAccountsServiceAdapter:
 
         try:
             bus = self._get_bus()
-            path = self._find_user_by_name(self._username)
 
             bus.call_sync('org.freedesktop.Accounts',
                           self._get_path(),

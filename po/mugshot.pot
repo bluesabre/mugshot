@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-06 05:17-0400\n"
+"POT-Creation-Date: 2018-08-06 05:44-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,11 +141,11 @@ msgid ""
 "to your personal information."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:820
+#: ../mugshot/MugshotWindow.py:822
 msgid "Update LibreOffice user details?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:821
+#: ../mugshot/MugshotWindow.py:823
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
 

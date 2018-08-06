@@ -69,6 +69,8 @@ class Window(Gtk.Window):
         self.settings = Gio.Settings.new("apps.mugshot")
         self.settings.connect('changed', self.on_preferences_changed)
 
+        self.tmpfile = None
+
     def on_help_activate(self, widget, data=None):
         """Show the Help documentation when Help is clicked."""
         show_uri(self, "https://wiki.bluesabre.org/doku.php?id=mugshot-docs")
@@ -81,7 +83,7 @@ class Window(Gtk.Window):
         elif self.CameraDialog is not None:
             logger.debug('create new camera_dialog')
             self.camera_dialog = self.CameraDialog()  # pylint: disable=E1102
-            self.camera_dialog.connect('apply', self.on_camera_dialog_apply)
+            self.camera_dialog.connect('apply', self.on_camera_dialog_apply)  # pylint: disable=E1101
             self.camera_dialog.show()
 
     def on_destroy(self, widget, data=None):
