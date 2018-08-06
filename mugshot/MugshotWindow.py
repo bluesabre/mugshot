@@ -675,7 +675,7 @@ class MugshotWindow(Window):
                     data[key] = dataset[key]
 
         # Then get data from dconf
-        if len(self.settings['initials']) > len(data['initials']):
+        if len(self.settings['initials']) > 0:
             data['initials'] = self.settings['initials']
         if len(data['email']) == 0:
             data['email'] = self.settings['email']
