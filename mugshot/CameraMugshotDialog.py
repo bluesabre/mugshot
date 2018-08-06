@@ -96,7 +96,7 @@ class CameraBox(GtkClutter.Embed):
 
         background_layer = Clutter.Actor.new()
         background_layer.props.background_color = \
-            Clutter.Color.from_string("Black")[0]
+            Clutter.Color.from_string("Black")[1]
         background_layer.props.x = 0
         background_layer.props.y = 0
         background_layer.props.width = 100
