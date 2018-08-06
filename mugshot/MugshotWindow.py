@@ -543,7 +543,7 @@ class MugshotWindow(Window):
         """Handle password prompts from the interactive chfn commands."""
         # Force the C language for guaranteed english strings in the script.
         logger.debug('Executing: %s' % command)
-        child = SudoDialog.env_spawn(command, 5)
+        child = SudoDialog.env_spawn(command, [], 5)
         child.write_to_stdout = True
         try:
             child.expect([".*ssword.*", pexpect.EOF])
