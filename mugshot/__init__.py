@@ -16,7 +16,7 @@
 #   You should have received a copy of the GNU General Public License along
 #   with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import optparse
+import argparse
 import signal
 
 from locale import gettext as _
@@ -30,11 +30,11 @@ from mugshot_lib import set_up_logging, get_version, helpers
 
 def parse_options():
     """Support for command line options"""
-    parser = optparse.OptionParser(version="%%prog %s" % get_version())
-    parser.add_option(
+    parser = argparse.ArgumentParser(description="Mugshot %s" % get_version())
+    parser.add_argument(
         "-v", "--verbose", action="count", dest="verbose",
         help=_("Show debug messages (-vv debugs mugshot_lib also)"))
-    options = parser.parse_args()[0]
+    options = parser.parse_args()
 
     set_up_logging(options)
 
