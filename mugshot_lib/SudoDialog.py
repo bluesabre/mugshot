@@ -16,10 +16,10 @@
 #   You should have received a copy of the GNU General Public License along
 #   with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, GdkPixbuf
 import os
-
 from locale import gettext as _
+
+from gi.repository import Gtk, GdkPixbuf
 
 import pexpect
 
@@ -31,6 +31,7 @@ gtk_version = (Gtk.get_major_version(),
 def check_gtk_version(major_version, minor_version, micro=0):
     """Return true if running gtk >= requested version"""
     return gtk_version >= (major_version, minor_version, micro)
+
 
 # Check if the LANG variable needs to be set
 use_env = False
@@ -52,8 +53,8 @@ def check_dependencies(commands=[]):
     try:
         child = env_spawn('sudo', ['-v'], 1)
         if child.expect([".*ssword.*", "Sorry",
-                        pexpect.EOF,
-                        pexpect.TIMEOUT]) == 3:
+                         pexpect.EOF,
+                         pexpect.TIMEOUT]) == 3:
             global use_env
             use_env = True
         child.close()
@@ -325,6 +326,5 @@ class SudoDialog(Gtk.Dialog):
         if child.exitstatus == 0:
             self.attempted_logins = 0
             return True
-        else:
-            self.attempted_logins += 1
-            return False
+        self.attempted_logins += 1
+        return False

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-06 18:22-0400\n"
+"POT-Creation-Date: 2018-08-07 06:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Browse…"
 msgstr ""
 
-#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:569
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:567
 msgid "Mugshot"
 msgstr ""
 
@@ -107,76 +107,76 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:346
+#: ../mugshot/MugshotWindow.py:344
 msgid "Authentication cancelled."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:349
+#: ../mugshot/MugshotWindow.py:347
 msgid "Authentication failed."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:352
+#: ../mugshot/MugshotWindow.py:350
 msgid "An error occurred when saving changes."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:354
+#: ../mugshot/MugshotWindow.py:352
 msgid "User details were not updated."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:456
+#: ../mugshot/MugshotWindow.py:454
 msgid "Update Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:457
+#: ../mugshot/MugshotWindow.py:455
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:570
+#: ../mugshot/MugshotWindow.py:568
 msgid "Enter your password to change user details."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:572
+#: ../mugshot/MugshotWindow.py:570
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:839
+#: ../mugshot/MugshotWindow.py:837
 msgid "Update LibreOffice user details?"
 msgstr ""
 
-#: ../mugshot/MugshotWindow.py:840
+#: ../mugshot/MugshotWindow.py:838
 msgid "Would you also like to update your user details in LibreOffice?"
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:130
+#: ../mugshot_lib/SudoDialog.py:131
 msgid "Password Required"
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:167
+#: ../mugshot_lib/SudoDialog.py:168
 msgid "Incorrect password... try again."
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:177
+#: ../mugshot_lib/SudoDialog.py:178
 msgid "Password:"
 msgstr ""
 
 #. Buttons
-#: ../mugshot_lib/SudoDialog.py:188
+#: ../mugshot_lib/SudoDialog.py:189
 msgid "Cancel"
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:191
+#: ../mugshot_lib/SudoDialog.py:192
 msgid "OK"
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:212
+#: ../mugshot_lib/SudoDialog.py:213
 msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
 
-#: ../mugshot_lib/SudoDialog.py:214
+#: ../mugshot_lib/SudoDialog.py:215
 #, python-format
 msgid ""
 "The application '%s' lets you\n"

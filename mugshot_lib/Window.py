@@ -83,7 +83,8 @@ class Window(Gtk.Window):
         elif self.CameraDialog is not None:
             logger.debug('create new camera_dialog')
             self.camera_dialog = self.CameraDialog()  # pylint: disable=E1102
-            self.camera_dialog.connect('apply', self.on_camera_dialog_apply)  # pylint: disable=E1101
+            self.camera_dialog.connect(
+                'apply', self.on_camera_dialog_apply)  # pylint: disable=E1101
             self.camera_dialog.show()
 
     def on_destroy(self, widget, data=None):

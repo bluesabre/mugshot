@@ -55,7 +55,7 @@ def update_config(libdir, values={}):
     return oldvalues
 
 
-def move_icon_file(root, target_data, prefix):
+def move_icon_file(root, target_data):
     """Move the icon files to their installation prefix."""
     old_icon_path = os.path.normpath(os.path.join(root, target_data, 'share',
                                                   'mugshot', 'media'))
@@ -67,7 +67,7 @@ def move_icon_file(root, target_data, prefix):
                                          'mugshot_%s.svg' %
                                          icon_size.split('x')[0])
         icon_path = os.path.normpath(os.path.join(root, target_data, 'share',
-                                     'icons', 'hicolor', icon_size, 'apps'))
+                                                  'icons', 'hicolor', icon_size, 'apps'))
         icon_file = os.path.join(icon_path, 'mugshot.svg')
         old_icon_file = os.path.realpath(old_icon_file)
         icon_file = os.path.realpath(icon_file)
@@ -89,7 +89,7 @@ def move_icon_file(root, target_data, prefix):
     return icon_file
 
 
-def get_desktop_file(root, target_data, prefix):
+def get_desktop_file(root, target_data):
     """Move the desktop file to its installation prefix."""
     desktop_path = os.path.realpath(os.path.join(root, target_data, 'share',
                                                  'applications'))
@@ -140,7 +140,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
         DistUtilsExtra.auto.install_auto.run(self)
 
         print(("=== Installing %s, version %s ===" %
-              (self.distribution.get_name(), self.distribution.get_version())))
+               (self.distribution.get_name(), self.distribution.get_version())))
 
         if not self.prefix:
             self.prefix = ''
@@ -180,10 +180,11 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
                   '__version__': "'%s'" % self.distribution.get_version()}
         update_config(self.install_lib, values)
 
-        desktop_file = get_desktop_file(self.root, target_data, self.prefix)
+        desktop_file = get_desktop_file(self.root, target_data)
         print(("Desktop File: %s\n" % desktop_file))
-        move_icon_file(self.root, target_data, self.prefix)
+        move_icon_file(self.root, target_data)
         update_desktop_file(desktop_file, script_path)
+
 
 DistUtilsExtra.auto.setup(
     name='mugshot',

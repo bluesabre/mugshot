@@ -18,18 +18,16 @@
 
 from locale import gettext as _
 
-import os
-# Used for automating chfn
-import pexpect
-# Used for copying files to ~/.face
-import shutil
-# Used for which command and checking for running processes.
-import subprocess
-# DBUS interface is used to update pidgin buddyicon when pidgin is running.
-import dbus
-
-from gi.repository import Gtk, GdkPixbuf, GLib, Gio  # pylint: disable=E0611
 import logging
+import os
+import shutil
+import subprocess
+
+import dbus
+import pexpect
+
+from gi.repository import Gtk, GdkPixbuf, GLib  # pylint: disable=E0611
+
 
 from mugshot_lib import Window, SudoDialog, AccountsServiceAdapter, helpers
 
@@ -509,6 +507,7 @@ class MugshotWindow(Window):
             return True
         if self.email != self.email_entry.get_text().strip():
             return True
+        return False
 
     def save_as_details(self):
         if not self.accounts_service.available():
@@ -538,9 +537,8 @@ class MugshotWindow(Window):
         if modified:
             logger.debug('chfn details have been modified.')
             return True
-        else:
-            logger.debug('chfn details have NOT been modified.')
-            return False
+        logger.debug('chfn details have NOT been modified.')
+        return False
 
     def process_terminal_password(self, command, password):
         """Handle password prompts from the interactive chfn commands."""
@@ -623,7 +621,7 @@ class MugshotWindow(Window):
         w_command = "%s -w \"%s\" %s" % (chfn, office_phone, username)
 
         if self.process_terminal_password(p_command, password) or \
-            self.process_terminal_password(w_command, password):
+                self.process_terminal_password(w_command, password):
             self.office_phone = office_phone
         else:
             success = False

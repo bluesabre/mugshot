@@ -29,7 +29,7 @@ gi.require_version('Gst', '1.0')
 gi.require_version('Cheese', '3.0')
 gi.require_version('GtkClutter', '1.0')
 
-from gi.repository import Gtk, GObject, Gst, GdkPixbuf  # nopep8
+from gi.repository import Gtk, GObject, Gst  # nopep8
 from gi.repository import Cheese, Clutter, GtkClutter  # nopep8
 
 from mugshot_lib import helpers  # nopep8
@@ -62,7 +62,7 @@ class CameraBox(GtkClutter.Embed):
         self.state = Gst.State.PLAYING
 
         def added(signal, data):
-            if ("get_device_node" in dir(data)):
+            if "get_device_node" in dir(data):
                 node = data.get_device_node()
                 self.camera.set_device_by_device_node(node)
             else:
@@ -189,7 +189,7 @@ class CameraMugshotDialog(CameraDialog):
     __gsignals__ = {'apply': (GObject.SIGNAL_RUN_LAST,
                               GObject.TYPE_NONE,
                               (GObject.TYPE_STRING,))
-                    }
+                   }
 
     def finish_initializing(self, builder):  # pylint: disable=E1002
         """Set up the camera dialog"""
