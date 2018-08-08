@@ -44,6 +44,15 @@
   </provides>
 
   <releases>
+    <release version="0.4.1" date="2018-08-08">
+      <description>
+        <_p>This release includes a number of code quality improvements,
+        bug fixes, and translations. Mugshot can now be built and run
+        in a minimal chroot environment.
+        </_p>
+      </description>
+    </release>
+
     <release version="0.4.0" date="2018-04-11">
       <description>
         <_p>This stable release adds support for the latest GTK and

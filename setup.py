@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 #   Mugshot - Lightweight user configuration utility
-#   Copyright (C) 2013-2015 Sean Davis <smd.seandavis@gmail.com>
+#   Copyright (C) 2013-2018 Sean Davis <smd.seandavis@gmail.com>
 #
 #   This program is free software: you can redistribute it and/or modify it
 #   under the terms of the GNU General Public License as published by
@@ -188,7 +188,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.auto.install_auto):
 
 DistUtilsExtra.auto.setup(
     name='mugshot',
-    version='0.4.0',
+    version='0.4.1',
     license='GPL-3+',
     author='Sean Davis',
     author_email='smd.seandavis@gmail.com',
