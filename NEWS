@@ -1,5 +1,26 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+UNRELEASED, Mugshot 0.4.1
+
+- New stable release
+- Code Quality:
+  . Replaced deprecated logger.warn with logger.warning
+  . Replaced deprecated module optparse with argparse
+  . Resolved Pylint and PEP8 errors and warnings
+- Bugs fixed:
+  . TypeError in _spawn(): The argument, args, must be a list (LP: #1443283)
+  . User-specified initials are not correctly loaded (LP: #1574239)
+  . Include Mugshot in Xfce Settings, Personal Settings (LP: #1698626)
+  . Support "-p" and "-w" office phone flags in chfn (LP: #1699285)
+  . FileNotFoundError when comparing profile images (LP: #1771629)
+- Fixes in minimal chroot environment:
+  . Fix crash when run without AccountsService
+  . Handle OSError: out of pty devices
+  . Specify utf-8 codec for desktop file processing (setup.py)
+- Translation Updates:
+  . Catalan, Chinese (Simplified), Danish, Lithuanian, Spanish
+
+
 11 Apr 2018, Mugshot 0.4.0
 
 - New stable release
