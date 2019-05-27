@@ -1,16 +1,16 @@
-# Basque translation for mugshot
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# Norwegian Bokmal translation for mugshot
+# Copyright (c) 2018 Rosetta Contributors and Canonical Ltd 2018
 # This file is distributed under the same license as the mugshot package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: mugshot\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2018-08-08 05:13-0400\n"
-"PO-Revision-Date: 2014-07-14 23:39+0000\n"
-"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
-"Language-Team: Basque <eu@li.org>\n"
+"PO-Revision-Date: 2018-11-30 22:22+0000\n"
+"Last-Translator: Erlend Østlie <erlendandreas12368@gmail.com>\n"
+"Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
-msgstr "Niri buruz"
+msgstr "Om meg"
 
 #: ../mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
-msgstr ""
+msgstr "Endre ditt profilbilde og kontakt-detaljer"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
@@ -31,23 +31,23 @@ msgstr ""
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
-msgstr ""
+msgstr "<b>Forhåndsvisning</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
-msgstr "Erdian"
+msgstr "Midtstilt"
 
 #: ../data/ui/MugshotWindow.ui.h:3
 msgid "Left"
-msgstr "Ezkerrean"
+msgstr "Venstrejustert"
 
 #: ../data/ui/MugshotWindow.ui.h:4
 msgid "Right"
-msgstr "Eskuinean"
+msgstr "Høyrejustert"
 
 #: ../data/ui/MugshotWindow.ui.h:5
 msgid "<b>Crop</b>"
-msgstr ""
+msgstr "<b>Beskjær</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:6
 msgid "Select from stock…"
@@ -55,11 +55,11 @@ msgstr ""
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
-msgstr ""
+msgstr "Ta bilde med kamera ..."
 
 #: ../data/ui/MugshotWindow.ui.h:8
 msgid "Browse…"
-msgstr ""
+msgstr "Bla gjennom …"
 
 #: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:567
 msgid "Mugshot"
@@ -67,35 +67,35 @@ msgstr ""
 
 #: ../data/ui/MugshotWindow.ui.h:10
 msgid "<b>First Name</b>"
-msgstr ""
+msgstr "<b>Fornavn</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:11
 msgid "<b>Last Name</b>"
-msgstr ""
+msgstr "<b>Etternavn</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:12
 msgid "<b>Initials</b>"
-msgstr ""
+msgstr "<b>Initialer</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:13
 msgid "<b>Home Phone</b>"
-msgstr ""
+msgstr "<b>Hjemmetelefon</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:14
 msgid "<b>Email Address</b>"
-msgstr ""
+msgstr "<b>Epostadresse</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:15
 msgid "<b>Office Phone</b>"
-msgstr ""
+msgstr "<b>Kontortelefon</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:16
 msgid "<b>Fax</b>"
-msgstr ""
+msgstr "<b>Faks</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:17
 msgid "Select a photo…"
-msgstr ""
+msgstr "Velg et bilde ..."
 
 #: ../mugshot/__init__.py:36
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
@@ -105,23 +105,23 @@ msgstr ""
 #. finishes.
 #: ../mugshot/CameraMugshotDialog.py:268
 msgid "Retry"
-msgstr "Saiatu berriz"
+msgstr "Prøv på nytt"
 
 #: ../mugshot/MugshotWindow.py:344
 msgid "Authentication cancelled."
-msgstr ""
+msgstr "Autentisering avbrutt."
 
 #: ../mugshot/MugshotWindow.py:347
 msgid "Authentication failed."
-msgstr ""
+msgstr "Autentisering mislyktes."
 
 #: ../mugshot/MugshotWindow.py:350
 msgid "An error occurred when saving changes."
-msgstr ""
+msgstr "En feil oppsto ved lagring av endringene."
 
 #: ../mugshot/MugshotWindow.py:352
 msgid "User details were not updated."
-msgstr ""
+msgstr "Bruker-informasjonen ble ikke oppdatert."
 
 #: ../mugshot/MugshotWindow.py:454
 msgid "Update Pidgin buddy icon?"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: ../mugshot/MugshotWindow.py:568
 msgid "Enter your password to change user details."
-msgstr ""
+msgstr "Skriv inn passordet ditt for å endre bruker-informasjon."
 
 #: ../mugshot/MugshotWindow.py:570
 msgid ""
@@ -143,28 +143,28 @@ msgstr ""
 
 #: ../mugshot/MugshotWindow.py:837
 msgid "Update LibreOffice user details?"
-msgstr ""
+msgstr "Vil du oppdaterere bruker-informasjonen til LibreOffice?"
 
 #: ../mugshot/MugshotWindow.py:838
 msgid "Would you also like to update your user details in LibreOffice?"
-msgstr ""
+msgstr "Ønsker du også å oppdatere bruker-informasjonen din i LibreOffice?"
 
 #: ../mugshot_lib/SudoDialog.py:131
 msgid "Password Required"
-msgstr ""
+msgstr "Passord kreves"
 
 #: ../mugshot_lib/SudoDialog.py:168
 msgid "Incorrect password... try again."
-msgstr ""
+msgstr "Feil passord ... prøv igjen."
 
 #: ../mugshot_lib/SudoDialog.py:178
 msgid "Password:"
-msgstr ""
+msgstr "Passord:"
 
 #. Buttons
 #: ../mugshot_lib/SudoDialog.py:189
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: ../mugshot_lib/SudoDialog.py:192
 msgid "OK"
@@ -175,6 +175,8 @@ msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
+"Skriv inn passord for å\n"
+"utføre administrative oppgaver."
 
 #: ../mugshot_lib/SudoDialog.py:215
 #, python-format
@@ -185,7 +187,7 @@ msgstr ""
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr ""
+msgstr "Enkel bruker-konfigurering"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:2
 msgid ""
