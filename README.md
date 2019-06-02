@@ -36,7 +36,10 @@
 Please submit a bug report or pull request to include additional methods of installation!
 
 ## Links
-Check for new versions or report comments, suggestions and bugs on [GitHub](https://github.com/bluesabre/mugshot)
+ - [Homepage](https://github.com/bluesabre/mugshot)
+ - [Releases](https://github.com/bluesabre/mugshot/releases)
+ - [Bug Reports](https://github.com/bluesabre/mugshot/issues)
+ - [Translations](https://www.transifex.com/bluesabreorg/mugshot)
 
 ## Troubleshooting
 If you see the following error:
