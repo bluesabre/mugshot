@@ -1,6 +1,8 @@
 # Mugshot
 **Mugshot** is a lightweight user configuration utility for Linux designed for simplicity and ease of use. Quickly update your personal profile and sync your updates across applications.
 
+![Mugshot window](https://screenshots.bluesabre.org/mugshot/docs/mugshot-main.png)
+
 ## Features
  - Update your user profile image (~/.face and AccountService)
  - Update user details stored in /etc/passwd (used by *finger* and other desktop applications)
