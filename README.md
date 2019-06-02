@@ -9,7 +9,16 @@
 
 ## Dependencies
 
-### Required
+### Build Requirements
+ - gir1.2-gtk-3.0
+ - python3
+ - python3-dbus
+ - python3-distutils
+ - [python3-distutils-extra](https://launchpad.net/python-distutils-extra)
+ - python3-gi
+ - python3-pexpect
+
+### Runtime Requirements
  - chfn
  - python3-cairo
  - python3-dbus
