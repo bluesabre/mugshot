@@ -40,6 +40,7 @@ Please submit a bug report or pull request to include additional methods of inst
  - [Releases](https://github.com/bluesabre/mugshot/releases)
  - [Bug Reports](https://github.com/bluesabre/mugshot/issues)
  - [Translations](https://www.transifex.com/bluesabreorg/mugshot)
+ - [Wiki](https://github.com/bluesabre/mugshot/wiki)
 
 ## Troubleshooting
 If you see the following error:
