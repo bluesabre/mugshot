@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2014-2018 Sean Davis <smd.seandavis@gmail.com> -->
+<!-- Copyright 2014-2019 Sean Davis <sean@bluesabre.org> -->
 <component type="desktop">
   <id>mugshot.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -35,7 +35,7 @@
   <url type="help">https://github.com/bluesabre/mugshot/wiki</url>
   <url type="translate">https://www.transifex.com/bluesabreorg/mugshot</url>
 
-  <update_contact>bluesabre@ubuntu.com</update_contact>
+  <update_contact>sean@bluesabre.org</update_contact>
 
   <translation type="gettext">mugshot</translation>
 
