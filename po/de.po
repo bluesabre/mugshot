@@ -1,21 +1,23 @@
-# German translation for mugshot
-# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
-# This file is distributed under the same license as the mugshot package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-#
+# Translators:
+# Sean Davis <sean@bluesabre.org>, 2019
+# Vinzenz Vietzke <vinz@vinzv.de>, 2019
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: mugshot\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-08 05:13-0400\n"
-"PO-Revision-Date: 2016-03-20 12:53+0000\n"
-"Last-Translator: Jan Jansen <jjansen91@gmx.net>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2019-05-27 10:40+0000\n"
+"Last-Translator: Vinzenz Vietzke <vinz@vinzv.de>, 2019\n"
+"Language-Team: German (https://www.transifex.com/bluesabreorg/teams/99550/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Launchpad (build 18968)\n"
+"X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -206,8 +208,8 @@ msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
-"Das Profilfoto, das beim Anmelden angezeigt wird, einstellen und es optional "
-"mit dem Pidgin-Frundesymbol synchronisieren."
+"Das Profilfoto, das beim Anmelden angezeigt wird, einstellen und es optional"
+" mit dem Pidgin-Frundesymbol synchronisieren."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:4
 msgid ""
@@ -223,18 +225,25 @@ msgid ""
 "translations. Mugshot can now be built and run in a minimal chroot "
 "environment."
 msgstr ""
+"Diese Version enthält eine Reihe von Verbesserungen der Codequalität, "
+"Bugfixes und Übersetzungen. Mugshot kann nun in einer minimalen Chroot-"
+"Umgebung gebaut und ausgeführt werden."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:6
 msgid ""
 "This stable release adds support for the latest GTK and GStreamer "
 "technologies."
 msgstr ""
+"Dieses stabile Release bietet Unterstützung für die neuesten GTK- und "
+"GStreamer-Technologien."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
 msgstr ""
+"Diese Entwicklungsversion stellt die Kamera-Dialogfunktionalität mit den "
+"neuesten Softwareversionen wieder her."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:8
 msgid ""
@@ -242,6 +251,9 @@ msgid ""
 "releases. User properties that cannot be edited are now restricted to "
 "administrative users."
 msgstr ""
+"Dieses Entwicklungsrelease behebt eine große Anzahl von Fehlern aus früheren"
+" Releases. Benutzereigenschaften, die nicht bearbeitet werden können, sind "
+"nun auf administrative Benutzer beschränkt."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:9
 msgid ""
