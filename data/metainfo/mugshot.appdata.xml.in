@@ -30,10 +30,10 @@
     </screenshot>
   </screenshots>
 
-  <url type="homepage">https://launchpad.net/mugshot/</url>
-  <url type="bugtracker">https://bugs.launchpad.net/mugshot/</url>
-  <url type="help">https://wiki.bluesabre.org/doku.php?id=mugshot-docs</url>
-  <url type="translate">https://translations.launchpad.net/mugshot</url>
+  <url type="homepage">https://github.com/bluesabre/mugshot</url>
+  <url type="bugtracker">https://github.com/bluesabre/mugshot/issues</url>
+  <url type="help">https://github.com/bluesabre/mugshot/wiki</url>
+  <url type="translate">https://www.transifex.com/bluesabreorg/mugshot</url>
 
   <update_contact>bluesabre@ubuntu.com</update_contact>
 

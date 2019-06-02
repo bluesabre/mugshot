@@ -196,7 +196,7 @@ DistUtilsExtra.auto.setup(
     long_description='A lightweight user configuration utility. It allows you '
                      'to easily set profile image and user details for your '
                      'user profile and any supported applications.',
-    url='https://launchpad.net/mugshot',
+    url='https://github.com/bluesabre/mugshot',
     data_files=[('share/man/man1', ['mugshot.1']),
                 ('share/metainfo/', ['data/metainfo/mugshot.appdata.xml'])],
     cmdclass={'install': InstallAndUpdateDataDirectory}

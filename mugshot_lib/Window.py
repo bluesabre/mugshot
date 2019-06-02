@@ -73,7 +73,7 @@ class Window(Gtk.Window):
 
     def on_help_activate(self, widget, data=None):
         """Show the Help documentation when Help is clicked."""
-        show_uri(self, "https://wiki.bluesabre.org/doku.php?id=mugshot-docs")
+        show_uri(self, "https://github.com/bluesabre/mugshot/wiki")
 
     def on_menu_camera_activate(self, widget, data=None):
         """Display the camera window for mugshot."""
