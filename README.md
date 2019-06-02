@@ -24,16 +24,7 @@
 
 ## Installation
 
-### Debian, Ubuntu, and Derivatives
-    sudo apt update
-    sudo apt install mugshot
-
-### From Source
-    sudo python3 setup.py install
-    sudo glib-compile-schemas /usr/share/glib-2.0/schemas
-
-### Other Supported Methods
-Please submit a bug report or pull request to include additional methods of installation!
+Please refer to the [Mugshot Wiki](https://github.com/bluesabre/mugshot/wiki/Installation) for installation instructions.
 
 ## Links
  - [Homepage](https://github.com/bluesabre/mugshot)
