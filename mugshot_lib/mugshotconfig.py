@@ -28,7 +28,7 @@ __all__ = [
 # files). By default, this is ../data, relative your trunk layout
 __mugshot_data_directory__ = '../data/'
 __license__ = 'GPL-3+'
-__version__ = '0.4.1'
+__version__ = '0.4.2'
 
 
 class project_path_not_found(Exception):

@@ -44,6 +44,14 @@
   </provides>
 
   <releases>
+    <release version="0.4.2" date="2019-07-28">
+      <description>
+        <_p>Mugshot has moved to GitHub! This maintenance release
+        includes numerous translation updates.
+        </_p>
+      </description>
+    </release>
+
     <release version="0.4.1" date="2018-08-08">
       <description>
         <_p>This release includes a number of code quality improvements,

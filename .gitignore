@@ -1,0 +1,5 @@
+build/
+data/metainfo/mugshot.appdata.xml
+dist/
+MANIFEST
+mugshot_lib/__pycache__/
