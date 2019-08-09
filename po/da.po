@@ -1,21 +1,26 @@
-# Danish translation for mugshot
-# Copyright (c) 2017 Rosetta Contributors and Canonical Ltd 2017
-# This file is distributed under the same license as the mugshot package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Sean Davis <sean@bluesabre.org>, 2019
+# scootergrisen, 2019
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: mugshot\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2018-08-08 05:13-0400\n"
-"PO-Revision-Date: 2019-05-17 12:50+0000\n"
-"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
-"Language-Team: Danish <da@li.org>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-28 14:46-0400\n"
+"PO-Revision-Date: 2019-05-27 10:40+0000\n"
+"Last-Translator: scootergrisen, 2019\n"
+"Language-Team: Danish (https://www.transifex.com/bluesabreorg/teams/99550/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
-"X-Generator: Launchpad (build 18968)\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../mugshot.desktop.in.h:1
 msgid "About Me"
@@ -31,7 +36,7 @@ msgstr "Indfang - Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
-msgstr "Forhåndsvisning"
+msgstr "<b>Forhåndsvisning</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
@@ -59,7 +64,7 @@ msgstr "Indfang fra kamera …"
 
 #: ../data/ui/MugshotWindow.ui.h:8
 msgid "Browse…"
-msgstr "Gennemse…"
+msgstr "Gennemse …"
 
 #: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:567
 msgid "Mugshot"
@@ -117,19 +122,19 @@ msgstr "Autentifikation mislykkedes."
 
 #: ../mugshot/MugshotWindow.py:350
 msgid "An error occurred when saving changes."
-msgstr "Der opstod en fejl da ændringer blev forsøgt gemt."
+msgstr "Der opstod en fejl da ændringerne blev forsøgt gemt."
 
 #: ../mugshot/MugshotWindow.py:352
 msgid "User details were not updated."
-msgstr "Brugerdetaljer blev ikke opdateret."
+msgstr "Brugerdetaljerne blev ikke opdateret."
 
 #: ../mugshot/MugshotWindow.py:454
 msgid "Update Pidgin buddy icon?"
-msgstr "Opdater Pidgin venneikon?"
+msgstr "Opdater venneikon i Pidgin?"
 
 #: ../mugshot/MugshotWindow.py:455
 msgid "Would you also like to update your Pidgin buddy icon?"
-msgstr "Vil du også opdatere dit Pidgin venneikon?"
+msgstr "Vil du også opdatere dit venneikon i Pidgin?"
 
 #: ../mugshot/MugshotWindow.py:568
 msgid "Enter your password to change user details."
@@ -140,12 +145,12 @@ msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
-"Dette er et sikkerhedstiltag for at forhindre uønskede opdateringer\n"
-"til din personlige information."
+"Det er et sikkerhedstiltag for at forhindre uønskede opdateringer\n"
+"af dine personlige informationer."
 
 #: ../mugshot/MugshotWindow.py:837
 msgid "Update LibreOffice user details?"
-msgstr "Opdater LibreOffice brugerdetaljer?"
+msgstr "Opdater brugerdetaljer i LibreOffice?"
 
 #: ../mugshot/MugshotWindow.py:838
 msgid "Would you also like to update your user details in LibreOffice?"
@@ -191,43 +196,52 @@ msgstr ""
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr "Letvægts brugerkonfiguration"
+msgstr "Letvægtsbrugerkonfiguration"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:2
 msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
-"Mugshot gør det muligt for brugere at opdatere personlig kontaktinformation. "
-"Med Mugshot kan brugere:"
+"Mugshot gør det let for brugerne at opdatere personlige "
+"kontaktinformationer. Med Mugshot kan brugerne:"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
-"Sæt kontoens billede som vises ved login og synkroniser valgfrit dette "
-"billede med deres Pidgin venneikon"
+"Indstille kontobilledet, som vises ved login og valgfrit synkronisere "
+"billedet med deres venneikon i Pidgin"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
-"Sæt kontodetaljer lagret i /etc/passwd (typisk med finger-kommandoen) og "
-"synkroniser valgfrit med deres LibreOffice kontaktinformation"
+"Indstille kontodetaljer som er gemt i /etc/passwd (kan bruges med finger-"
+"kommandoen) og valgfrit synkronisere med deres kontaktinformationer i "
+"LibreOffice"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot er flyttet til GitHub! Denne vedligeholdelsesudgivelse indeholder "
+"opdateringer af diverse oversættelser."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
 msgid ""
 "This release includes a number of code quality improvements, bug fixes, and "
 "translations. Mugshot can now be built and run in a minimal chroot "
 "environment."
 msgstr ""
-"Denne udgivelse inkluderer et antal kvalitetsforbedringer af koden, "
-"fejlrettelser og oversættelser. Mugshot kan nu bygges og køres i et minimalt "
-"chroot-miljø."
+"Denne udgivelse inkluderer nogle kvalitetsforbedringer i koden, "
+"fejlrettelser og oversættelser. Mugshot kan nu bygges og køres i et minimalt"
+" chroot-miljø."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
 "This stable release adds support for the latest GTK and GStreamer "
 "technologies."
@@ -235,38 +249,38 @@ msgstr ""
 "Denne stabile udgivelse tilføjer understøttelse af de seneste GTK- og "
 "GStreamer-teknologier."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
 msgstr ""
-"Denne udviklingsudgivelse gendanner kameradialogfunktionalitet som med nyere "
-"softwareversioner."
+"Denne udviklingsudgivelse gør det igen muligt at bruge "
+"kameradialogfunktionalitet med nyere softwareversioner."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
 msgid ""
 "This development release fixes a large number of bugs from previous "
 "releases. User properties that cannot be edited are now restricted to "
 "administrative users."
 msgstr ""
-"Denne udviklingsudgivelse retter et stort antal fejl fra forrige udgivelser. "
-"Brugeregenskaber som ikke kan redigeres er nu begrænset til administrative "
+"Denne udviklingsudgivelse retter et stort antal fejl fra forrige udgivelser."
+" Brugeregenskaber som ikke kan redigeres, begrænses nu til administrative "
 "brugere."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
 msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
 msgstr ""
 "Denne udviklingsudgivelse opgraderer kameradialogen så Cheese og Clutter "
-"bruges til at vise og optage kamera-feedet."
+"bruges til at vise og indfange kamerafeedet."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
 msgstr ""
-"Denne stabile udgivelse forbedre Mugshot-funktionaliteter for LDAP-brugere "
-"og inkluderer den seneste SudoDialog, som forbedre udseendet af adgangskode-"
-"dialogen."
+"Denne stabile udgivelse forbedre Mugshots funktionalitet for LDAP-brugere og"
+" inkluderer den seneste SudoDialog, som forbedre udseendet og "
+"anvendeligheden af adgangskode-dialogen."
