@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 #   Mugshot - Lightweight user configuration utility
-#   Copyright (C) 2013-2019 Sean Davis <sean@bluesabre.org>
+#   Copyright (C) 2013-2018 Sean Davis <smd.seandavis@gmail.com>
 #
 #   This program is free software: you can redistribute it and/or modify it
 #   under the terms of the GNU General Public License as published by
@@ -26,7 +26,8 @@ import subprocess
 import dbus
 import pexpect
 
-from gi.repository import Gtk, GdkPixbuf, GLib  # pylint: disable=E0611
+from gi.repository import Gtk, GdkPixbuf, GLib, Gdk  # pylint: disable=E0611
+import cairo
 
 
 from mugshot_lib import Window, SudoDialog, AccountsServiceAdapter, helpers
@@ -207,6 +208,7 @@ class MugshotWindow(Window):
         self.crop_left = builder.get_object('crop_left')
         self.crop_right = builder.get_object('crop_right')
         self.file_chooser_preview = builder.get_object('file_chooser_preview')
+        self.circle = builder.get_object('circle')
         # Add a filter for only image files.
         image_filter = Gtk.FileFilter()
         image_filter.set_name('Images')
@@ -1050,6 +1052,8 @@ class MugshotWindow(Window):
         width = filechooser_pixbuf.get_width()
         start_x = 0
         start_y = 0
+        center_x = width/2 # Coordinate for circle center
+        center_y = height/2
 
         if self.crop_center.get_active():
             # Calculate a balanced center.
@@ -1064,6 +1068,7 @@ class MugshotWindow(Window):
             start_x = 0
             if width > height:
                 width = height
+                center_x = width/2
             else:
                 start_y = (height - width) / 2
                 height = width
@@ -1071,13 +1076,31 @@ class MugshotWindow(Window):
             if width > height:
                 start_x = width - height
                 width = height
+                center_x = start_x + width/2
             else:
                 start_y = (height - width) / 2
                 height = width
 
         # Create a new cropped pixbuf.
-        self.filechooser_preview_pixbuf = \
-            filechooser_pixbuf.new_subpixbuf(start_x, start_y, width, height)
+        if self.circle.get_active(): # Create a Circle Crop
+            surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 
+                filechooser_pixbuf.get_width(), filechooser_pixbuf.get_height())
+            context = cairo.Context(surface)
+            
+            context.arc(center_x, center_y, width/2, 0, 2*22/7)
+            context.clip()    
+            context.new_path()
+
+            image_cairo = \
+                Gdk.cairo_surface_create_from_pixbuf(filechooser_pixbuf, 0)
+            context.set_source_surface(image_cairo, 0, 0)
+            context.paint()
+
+            self.filechooser_preview_pixbuf = \
+                Gdk.pixbuf_get_from_surface(surface, start_x, start_y, width, height)
+        else:
+            self.filechooser_preview_pixbuf = \
+                filechooser_pixbuf.new_subpixbuf(start_x, start_y, width, height)   # Create a square crop
 
         scaled = self.filechooser_preview_pixbuf.scale_simple(
             128, 128,
@@ -1086,5 +1109,4 @@ class MugshotWindow(Window):
 
     def on_crop_changed(self, widget, data=None):
         """Update the preview image when crop style is modified."""
-        if widget.get_active():
-            self.on_filechooserdialog_update_preview(self.chooser)
+        self.on_filechooserdialog_update_preview(self.chooser)
