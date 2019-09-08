@@ -209,6 +209,7 @@ class MugshotWindow(Window):
         self.crop_right = builder.get_object('crop_right')
         self.file_chooser_preview = builder.get_object('file_chooser_preview')
         self.circle = builder.get_object('circle')
+        self.zoom_scale = builder.get_object('zoom_scale')
         # Add a filter for only image files.
         image_filter = Gtk.FileFilter()
         image_filter.set_name('Images')
@@ -1052,34 +1053,58 @@ class MugshotWindow(Window):
         width = filechooser_pixbuf.get_width()
         start_x = 0
         start_y = 0
-        center_x = width/2 # Coordinate for circle center
-        center_y = height/2
 
+        zoom_scale_min = self.zoom_scale.get_adjustment().get_lower() # Min zoom value
+        zoom_scale_value = self.zoom_scale.get_adjustment().get_value() # Current zoom value
+        zoom_scale_value = zoom_scale_value - zoom_scale_min
+
+        # When zoomed.
+        # Set maximum scale value to the width or height of the picture
+        if width > height:
+            self.zoom_scale.get_adjustment().set_upper(height)
+        else:
+            self.zoom_scale.get_adjustment().set_upper(width)
+
+        # Minus height or width with current zoom value
+        height = height - zoom_scale_value
+        width = width - zoom_scale_value
+
+        # Coordinate for circle's center
+        # if width > height:
+        center_x = (width + zoom_scale_value) / 2
+        center_y = (height + zoom_scale_value) / 2
+        start_x = zoom_scale_value / 2
+        start_y = start_x
+ 
         if self.crop_center.get_active():
             # Calculate a balanced center.
             if width > height:
-                start_x = (width - height) / 2
+                start_x = (width - height) / 2 + start_x
                 width = height
             else:
-                start_y = (height - width) / 2
+                start_y = (height - width) / 2 + start_y
                 height = width
 
         elif self.crop_left.get_active():
-            start_x = 0
             if width > height:
                 width = height
-                center_x = width/2
             else:
-                start_y = (height - width) / 2
+                start_y = (height - width) / 2 + start_y
                 height = width
+
+            center_x = width/2
+            start_x = 0
+
         elif self.crop_right.get_active():
             if width > height:
-                start_x = width - height
+                start_x = (width - height) + zoom_scale_value
                 width = height
-                center_x = start_x + width/2
             else:
-                start_y = (height - width) / 2
+                start_x = zoom_scale_value
+                start_y = (height - width) / 2 + start_y
                 height = width
+
+            center_x = start_x + width/2
 
         # Create a new cropped pixbuf.
         if self.circle.get_active(): # Create a Circle Crop
