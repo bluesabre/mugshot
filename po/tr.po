@@ -1,0 +1,274 @@
+# Translators:
+# Gökhan Gökkaya <gokhanlnx@gmail.com>, 2020
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-08 05:13-0400\n"
+"PO-Revision-Date: 2020-05-11 15:23+0300\n"
+"Last-Translator: Gökhan Gökkaya <gokhanlnx@gmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
+
+#: ../mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "Hakkımda"
+
+#: ../mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "Profil resminizi ve iletişim bilgilerinizi yapılandırın"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "Yakala - Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>Önizleme</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "Merkez"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "Sol"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "Sağ"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>Kırp</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select from stock…"
+msgstr "Depolamadan seç…"
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Capture from camera…"
+msgstr "Kameradan yakala…"
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Browse…"
+msgstr "Gözat…"
+
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:567
+msgid "Mugshot"
+msgstr "Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "<b>First Name</b>"
+msgstr "<b>İlk İsim</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>Last Name</b>"
+msgstr "<b>Soy Adı</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Initials</b>"
+msgstr "<b>Baş harf</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Home Phone</b>"
+msgstr "<b>Ev Telefonu</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Email Address</b>"
+msgstr "<b>E-posta Adresi</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Office Phone</b>"
+msgstr "<b>Ofis Telefonu</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Fax</b>"
+msgstr "<b>Fax</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "Select a photo…"
+msgstr "Bir resim seçin…"
+
+#: ../mugshot/__init__.py:36
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr ""
+"Hata ayıklama iletilerini göster (-vv ayrıca mugshot_lib hata ayıklaması da "
+"yapar)"
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:268
+msgid "Retry"
+msgstr "Tekrar dene"
+
+#: ../mugshot/MugshotWindow.py:344
+msgid "Authentication cancelled."
+msgstr "Kimlik doğrulama iptal edildi."
+
+#: ../mugshot/MugshotWindow.py:347
+msgid "Authentication failed."
+msgstr "Kimlik doğrulama başarısız oldu."
+
+#: ../mugshot/MugshotWindow.py:350
+msgid "An error occurred when saving changes."
+msgstr "Değişiklikler kaydedilirken bir hata oluştu."
+
+#: ../mugshot/MugshotWindow.py:352
+msgid "User details were not updated."
+msgstr "Kullanıcı ayrıntıları güncellenmedi."
+
+#: ../mugshot/MugshotWindow.py:454
+msgid "Update Pidgin buddy icon?"
+msgstr "Pidgin arkadaş simgesini güncelle?"
+
+#: ../mugshot/MugshotWindow.py:455
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr "Pidgin arkadaş simgesini de güncellemek istiyor musunuz?"
+
+#: ../mugshot/MugshotWindow.py:568
+msgid "Enter your password to change user details."
+msgstr "Kullanıcı ayrıntılarını değiştirmek için parolanızı girin."
+
+#: ../mugshot/MugshotWindow.py:570
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+"Bu, kişisel bilgilerinizde istenmeyen güncellemeleri önlemek için\n"
+"bir güvenlik önlemidir."
+
+#: ../mugshot/MugshotWindow.py:837
+msgid "Update LibreOffice user details?"
+msgstr "LibreOffice kullanıcı ayrıntılarını güncelle?"
+
+#: ../mugshot/MugshotWindow.py:838
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr ""
+"LibreOffice'teki kullanıcı ayrıntılarınızı da güncellemek istiyor musunuz?"
+
+#: ../mugshot_lib/SudoDialog.py:131
+msgid "Password Required"
+msgstr "Parola Gerekiyor"
+
+#: ../mugshot_lib/SudoDialog.py:168
+msgid "Incorrect password... try again."
+msgstr "Hatalı parola... yeniden deneyin."
+
+#: ../mugshot_lib/SudoDialog.py:178
+msgid "Password:"
+msgstr "Parola:"
+
+#. Buttons
+#: ../mugshot_lib/SudoDialog.py:189
+msgid "Cancel"
+msgstr "İptal"
+
+#: ../mugshot_lib/SudoDialog.py:192
+msgid "OK"
+msgstr "TAMAM"
+
+#: ../mugshot_lib/SudoDialog.py:213
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+"Yönetici görevlerini uygulamak için\n"
+"şifrenizi giriniz."
+
+#: ../mugshot_lib/SudoDialog.py:215
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+"'%s' uygulaması, sisteminizin\n"
+"önemli bölümlerini değiştirmenizi sağlar."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:1
+msgid "Lightweight user configuration"
+msgstr "Hafif kullanıcı yapılandırması"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:2
+msgid ""
+"Mugshot enables users to easily update personal contact information. With "
+"Mugshot, users are able to:"
+msgstr ""
+"Mugshot, kullanıcıların kişisel iletişim bilgilerini kolayca "
+"güncellemelerini sağlar. Mugshot ile kullanıcılar şunları yapabilir:"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:3
+msgid ""
+"Set the account photo displayed at login and optionally synchronize this "
+"photo with their Pidgin buddy icon"
+msgstr ""
+"Oturum açma sırasında görüntülenen hesap fotoğrafını ayarlayın ve isteğe "
+"bağlı olarak bu fotoğrafı Pidgin arkadaş simgesiyle senkronize edin"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:4
+msgid ""
+"Set account details stored in /etc/passwd (usable with the finger command) "
+"and optionally synchronize with their LibreOffice contact information"
+msgstr ""
+"/etc/passwd dizininde saklanan hesap ayrıntılarını ayarlayın (parmak komutu "
+"ile kullanılabilir) ve isteğe bağlı olarak LibreOffice iletişim "
+"bilgileriyle senkronize edin"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"This release includes a number of code quality improvements, bug fixes, and "
+"translations. Mugshot can now be built and run in a minimal chroot "
+"environment."
+msgstr ""
+"Bu sürüm bir dizi kod kalitesi iyileştirmesi, hata düzeltmesi ve çevirileri "
+"içerir. Mugshot artık minimal bir chroot ortamında oluşturulabilir ve "
+"çalıştırılabilir."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+msgid ""
+"This stable release adds support for the latest GTK and GStreamer "
+"technologies."
+msgstr "Bu kararlı sürüm, en yeni GTK ve GStreamer teknolojilerini destekler."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+msgid ""
+"This development release restores camera dialog functionality that with "
+"recent software versions."
+msgstr ""
+"Bu geliştirme sürümü, son yazılım sürümlerinde bulunan kamera iletişim "
+"kutusu işlevselliğini geri yükler."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+msgid ""
+"This development release fixes a large number of bugs from previous "
+"releases. User properties that cannot be edited are now restricted to "
+"administrative users."
+msgstr ""
+"Bu geliştirme sürümü, önceki sürümlerden çok sayıda hatayı düzeltir. "
+"Düzenlenemeyen kullanıcı özellikleri artık yönetici kullanıcılarla "
+"sınırlandırıldı."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+msgid ""
+"This development release upgrades the camera dialog to use Cheese and "
+"Clutter to display and capture the camera feed."
+msgstr ""
+"Bu geliştirme sürümü kamera iletişim kutusunu, Cheese ve Clutter kullanmak "
+"ve kamera akışından yakalama için yükseltir."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+msgid ""
+"This stable release improves Mugshot functionality for LDAP users, and "
+"includes the latest SudoDialog, improving the appearance and usability of "
+"the password dialog."
+msgstr ""
+"Bu kararlı sürüm LDAP kullanıcıları için Mugshot işlevini iyileştirir ve en "
+"son SudoDialog'u içerir. Ayrıca şifre iletişim kutusunun görünümünü ve "
+"kullanılabilirliğini iyileştirilmiştir."
