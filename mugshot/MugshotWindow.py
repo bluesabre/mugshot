@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 #   Mugshot - Lightweight user configuration utility
-#   Copyright (C) 2013-2019 Sean Davis <sean@bluesabre.org>
+#   Copyright (C) 2013-2018 Sean Davis <smd.seandavis@gmail.com>
 #
 #   This program is free software: you can redistribute it and/or modify it
 #   under the terms of the GNU General Public License as published by
@@ -26,7 +26,8 @@ import subprocess
 import dbus
 import pexpect
 
-from gi.repository import Gtk, GdkPixbuf, GLib  # pylint: disable=E0611
+from gi.repository import Gtk, GdkPixbuf, GLib, Gdk  # pylint: disable=E0611
+import cairo
 
 
 from mugshot_lib import Window, SudoDialog, AccountsServiceAdapter, helpers
@@ -206,7 +207,13 @@ class MugshotWindow(Window):
         self.crop_center = builder.get_object('crop_center')
         self.crop_left = builder.get_object('crop_left')
         self.crop_right = builder.get_object('crop_right')
+        self.crop_manual = builder.get_object('crop_manual')
         self.file_chooser_preview = builder.get_object('file_chooser_preview')
+        self.circle = builder.get_object('circle')
+        self.zoom_scale = builder.get_object('zoom_scale')
+        self.x_spin_button = builder.get_object('x_spin_button')
+        self.y_spin_button = builder.get_object('y_spin_button')
+
         # Add a filter for only image files.
         image_filter = Gtk.FileFilter()
         image_filter.set_name('Images')
@@ -1036,6 +1043,10 @@ class MugshotWindow(Window):
 
     def on_filechooserdialog_update_preview(self, widget):
         """Update the preview image used in the file chooser."""
+        # Set x&y spin button's default to non-editable
+        self.x_spin_button.set_editable(False)
+        self.y_spin_button.set_editable(False)
+
         filename = widget.get_filename()
         if not filename:
             self.file_chooser_preview.set_from_icon_name('folder', 128)
@@ -1048,36 +1059,107 @@ class MugshotWindow(Window):
         # Get the image dimensions.
         height = filechooser_pixbuf.get_height()
         width = filechooser_pixbuf.get_width()
-        start_x = 0
-        start_y = 0
+        
+        # When zoomed.
+        # Get zoom value.
+        zoom_scale_min = self.zoom_scale.get_adjustment().get_lower() # Min zoom value
+        zoom_scale_value = self.zoom_scale.get_adjustment().get_value() # Current zoom value
+        zoom_scale_value = zoom_scale_value - zoom_scale_min
+
+        # Set maximum scale value to the width or height of the picture.
+        if width > height:
+            self.zoom_scale.get_adjustment().set_upper(height)
+        else:
+            self.zoom_scale.get_adjustment().set_upper(width)
+
+        # Minus height or width with current zoom value.
+        height = height - zoom_scale_value
+        width = width - zoom_scale_value
+
+        # Set crop area to the center of picture.
+        start_x = zoom_scale_value / 2
+        start_y = start_x
+ 
+        # Coordinate for circle's center.
+        center_x = start_x + width / 2
+        center_y = start_y + height / 2
 
         if self.crop_center.get_active():
             # Calculate a balanced center.
             if width > height:
-                start_x = (width - height) / 2
+                start_x = (width - height) / 2 + start_x
                 width = height
             else:
-                start_y = (height - width) / 2
+                start_y = (height - width) / 2 + start_y
                 height = width
+
+            self.x_spin_button.get_adjustment().set_value(start_x)
+            self.y_spin_button.get_adjustment().set_value(start_y)
 
         elif self.crop_left.get_active():
-            start_x = 0
             if width > height:
                 width = height
             else:
-                start_y = (height - width) / 2
-                height = width
-        elif self.crop_right.get_active():
-            if width > height:
-                start_x = width - height
-                width = height
-            else:
-                start_y = (height - width) / 2
+                start_y = (height - width) / 2 + start_y
                 height = width
 
+            start_x = 0
+            center_x = start_x + width / 2
+
+            self.x_spin_button.get_adjustment().set_value(start_x)
+            self.y_spin_button.get_adjustment().set_value(start_y)
+
+        elif self.crop_right.get_active():
+            if width > height:
+                start_x = (width - height) + zoom_scale_value
+                width = height
+            else:
+                start_x = zoom_scale_value
+                start_y = (height - width) / 2 + start_y
+                height = width
+
+            center_x = start_x + width / 2
+
+            self.x_spin_button.get_adjustment().set_value(start_x)
+            self.y_spin_button.get_adjustment().set_value(start_y)
+
+        elif self.crop_manual.get_active():
+            self.x_spin_button.set_editable(True)
+            self.y_spin_button.set_editable(True)
+            if width > height:
+                self.x_spin_button.get_adjustment().set_upper(width - height + zoom_scale_value)
+                self.y_spin_button.get_adjustment().set_upper(zoom_scale_value)
+                width = height
+            else:
+                self.x_spin_button.get_adjustment().set_upper(zoom_scale_value)
+                self.y_spin_button.get_adjustment().set_upper(height - width + zoom_scale_value)
+                height = width
+
+            start_x = self.x_spin_button.get_adjustment().get_value()
+            start_y = self.y_spin_button.get_adjustment().get_value()
+            center_x = start_x + width / 2
+            center_y = start_y + height / 2
+
         # Create a new cropped pixbuf.
-        self.filechooser_preview_pixbuf = \
-            filechooser_pixbuf.new_subpixbuf(start_x, start_y, width, height)
+        if self.circle.get_active(): # Create a Circle Crop
+            surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 
+                filechooser_pixbuf.get_width(), filechooser_pixbuf.get_height())
+            context = cairo.Context(surface)
+            
+            context.arc(center_x, center_y, width/2, 0, 2*22/7)
+            context.clip()    
+            context.new_path()
+
+            image_cairo = \
+                Gdk.cairo_surface_create_from_pixbuf(filechooser_pixbuf, 0)
+            context.set_source_surface(image_cairo, 0, 0)
+            context.paint()
+
+            self.filechooser_preview_pixbuf = \
+                Gdk.pixbuf_get_from_surface(surface, start_x, start_y, width, height)
+        else:
+            self.filechooser_preview_pixbuf = \
+                filechooser_pixbuf.new_subpixbuf(start_x, start_y, width, height)   # Create a square crop
 
         scaled = self.filechooser_preview_pixbuf.scale_simple(
             128, 128,
@@ -1086,5 +1168,4 @@ class MugshotWindow(Window):
 
     def on_crop_changed(self, widget, data=None):
         """Update the preview image when crop style is modified."""
-        if widget.get_active():
-            self.on_filechooserdialog_update_preview(self.chooser)
+        self.on_filechooserdialog_update_preview(self.chooser)
