@@ -23,10 +23,9 @@ import os
 import shutil
 import subprocess
 
-import dbus
 import pexpect
 
-from gi.repository import Gtk, GdkPixbuf, GLib  # pylint: disable=E0611
+from gi.repository import Gio, Gtk, GdkPixbuf, GLib  # pylint: disable=E0611
 
 
 from mugshot_lib import Window, SudoDialog, AccountsServiceAdapter, helpers
@@ -466,14 +465,15 @@ class MugshotWindow(Window):
     def set_pidgin_buddyicon_dbus(self, filename=None):
         """Set the pidgin buddy icon via dbus."""
         logger.debug('Updating pidgin buddy icon via dbus')
-        bus = dbus.SessionBus()
-        obj = bus.get_object("im.pidgin.purple.PurpleService",
-                             "/im/pidgin/purple/PurpleObject")
-        purple = dbus.Interface(obj, "im.pidgin.purple.PurpleInterface")
+        bus = Gio.bus_get_sync(Gio.BusType.SESSION, None)
+        purple = Gio.DBusProxy.new_sync(bus, Gio.DBusProxyFlags.NONE, None,
+                                        "im.pidgin.purple.PurpleService",
+                                        "/im/pidgin/purple/PurpleObject",
+                                        "im.pidgin.purple.PurpleInterface", None)
         # To make the change instantly visible, set the icon to none first.
-        purple.PurplePrefsSetPath('/pidgin/accounts/buddyicon', '')
+        purple.PurplePrefsSetPath('(ss)', '/pidgin/accounts/buddyicon', '')
         if filename:
-            purple.PurplePrefsSetPath('/pidgin/accounts/buddyicon', filename)
+            purple.PurplePrefsSetPath('(ss)', '/pidgin/accounts/buddyicon', filename)
 
     def set_pidgin_buddyicon_xml(self, filename=None):
         """Set the buddyicon used by pidgin to filename (via the xml file)."""
