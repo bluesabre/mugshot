@@ -17,11 +17,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
 "X-Generator: Launchpad (build 18968)\n"
 
-#: ../mugshot.desktop.in.h:1
+#: ../org.bluesabre.Mugshot.desktop.in.h:1
 msgid "About Me"
 msgstr "About Me"
 
-#: ../mugshot.desktop.in.h:2
+#: ../org.bluesabre.Mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
 msgstr "Configure your profile image and contact details"
 

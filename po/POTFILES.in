@@ -14,7 +14,7 @@
 ### END LICENSE
 
 # Desktop File
-mugshot.desktop.in
+org.bluesabre.Mugshot.desktop.in
 
 # Glade Files
 [type: gettext/glade]data/ui/CameraMugshotDialog.ui

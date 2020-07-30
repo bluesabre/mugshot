@@ -1,4 +1,4 @@
-include AUTHORS COPYING mugshot.1 mugshot.desktop.in README
+include AUTHORS COPYING mugshot.1 org.bluesabre.Mugshot.desktop.in README.md
 include bin/*
 recursive-include data *.svg *.ui *.xml
 recursive-include mugshot *.py

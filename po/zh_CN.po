@@ -22,11 +22,11 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../mugshot.desktop.in.h:1
+#: ../org.bluesabre.Mugshot.desktop.in.h:1
 msgid "About Me"
 msgstr "关于我"
 
-#: ../mugshot.desktop.in.h:2
+#: ../org.bluesabre.Mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
 msgstr "设置您的头像和详细联系信息"
 

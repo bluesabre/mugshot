@@ -22,11 +22,11 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../mugshot.desktop.in.h:1
+#: ../org.bluesabre.Mugshot.desktop.in.h:1
 msgid "About Me"
 msgstr "О мени"
 
-#: ../mugshot.desktop.in.h:2
+#: ../org.bluesabre.Mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
 msgstr "Подесите своју слику и податке о налогу"
 

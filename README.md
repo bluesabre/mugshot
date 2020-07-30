@@ -47,9 +47,9 @@ Please refer to the [Mugshot Wiki](https://github.com/bluesabre/mugshot/wiki/Ins
 ## Troubleshooting
 If you see the following error:
 
-    (mugshot:22748): GLib-GIO-ERROR **: Settings schema 'apps.mugshot' is not installed
+    (mugshot:22748): GLib-GIO-ERROR **: Settings schema 'org.bluesabre.mugshot' is not installed
 
-Be sure to copy data/glib-2.0/schemas/apps.mugshot.gschema.xml to either:
+Be sure to copy data/glib-2.0/schemas/org.bluesabre.mugshot.gschema.xml to either:
 
  - /usr/share/glib-2.0/schemas, or
  - /usr/local/share/glib-2.0/schemas

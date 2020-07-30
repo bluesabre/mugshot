@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="mugshot">
-  <schema id="apps.mugshot" path="/apps/mugshot/">
+  <schema id="org.bluesabre.mugshot" path="/org/bluesabre/mugshot/">
     <key name="initials" type="s">
       <default>''</default>
       <summary>Initials</summary>

@@ -93,7 +93,7 @@ def get_desktop_file(root, target_data):
     """Move the desktop file to its installation prefix."""
     desktop_path = os.path.realpath(os.path.join(root, target_data, 'share',
                                                  'applications'))
-    desktop_file = os.path.join(desktop_path, 'mugshot.desktop')
+    desktop_file = os.path.join(desktop_path, 'org.bluesabre.Mugshot.desktop')
     return desktop_file
 
 

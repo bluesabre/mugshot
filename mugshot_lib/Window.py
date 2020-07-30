@@ -66,7 +66,7 @@ class Window(Gtk.Window):
         self.CameraDialog = None  # class
         self.camera_dialog = None  # instance
 
-        self.settings = Gio.Settings.new("apps.mugshot")
+        self.settings = Gio.Settings.new("org.bluesabre.mugshot")
         self.settings.connect('changed', self.on_preferences_changed)
 
         self.tmpfile = None
