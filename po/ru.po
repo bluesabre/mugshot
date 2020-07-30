@@ -191,7 +191,7 @@ msgstr ""
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr "Ресусрсоэффективная (Lightweight) пользовательская конфигурация."
+msgstr "Ресусрсоэффективная (Lightweight) пользовательская конфигурация"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:2
 msgid ""
