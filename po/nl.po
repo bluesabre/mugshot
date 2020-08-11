@@ -1,21 +1,26 @@
-# Dutch translation for mugshot
-# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
-# This file is distributed under the same license as the mugshot package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Sean Davis <sean@bluesabre.org>, 2019
+# Heimen Stoffels <vistausss@outlook.com>, 2020
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: mugshot\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2018-08-08 05:13-0400\n"
-"PO-Revision-Date: 2016-03-23 11:22+0000\n"
-"Last-Translator: Pjotr12345 <Unknown>\n"
-"Language-Team: Dutch <nl@li.org>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-30 07:46-0400\n"
+"PO-Revision-Date: 2019-05-27 10:40+0000\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>, 2020\n"
+"Language-Team: Dutch (https://www.transifex.com/bluesabreorg/teams/99550/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
-"X-Generator: Launchpad (build 18968)\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../org.bluesabre.Mugshot.desktop.in.h:1
 msgid "About Me"
@@ -23,7 +28,7 @@ msgstr "Over mij"
 
 #: ../org.bluesabre.Mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
-msgstr "Stel uw profielafbeelding en contactdetails in"
+msgstr "Stel uw profielafbeelding en contactgegevens in"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
@@ -31,7 +36,7 @@ msgstr "Pasfoto maken"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
-msgstr "<b>Voorbeeld</b>"
+msgstr "<b>Voorvertoning</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
@@ -51,11 +56,11 @@ msgstr "<b>Bijsnijden</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:6
 msgid "Select from stock…"
-msgstr "Kies uit voorraad..."
+msgstr "Kiezen uit standaardset..."
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
-msgstr "Maak opname met camera..."
+msgstr "Foto maken..."
 
 #: ../data/ui/MugshotWindow.ui.h:8
 msgid "Browse…"
@@ -79,7 +84,7 @@ msgstr "<b>Voorletters</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:13
 msgid "<b>Home Phone</b>"
-msgstr "<b>Telefoon thuis</b>"
+msgstr "<b>Telefoonnummer (thuis)</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:14
 msgid "<b>Email Address</b>"
@@ -87,7 +92,7 @@ msgstr "<b>E-mailadres</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:15
 msgid "<b>Office Phone</b>"
-msgstr "<b>Telefoon op werk</b>"
+msgstr "<b>Telefoonnummer (werk)</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:16
 msgid "<b>Fax</b>"
@@ -99,21 +104,21 @@ msgstr "Kies een foto..."
 
 #: ../mugshot/__init__.py:36
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
-msgstr "Toon foutopsporingsberichten (-vv toont die ook voor mugshot_lib)"
+msgstr "Foutopsporingsberichten tonen (-vv toont ze ook voor mugshot_lib)"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
 #: ../mugshot/CameraMugshotDialog.py:268
 msgid "Retry"
-msgstr "Probeer opnieuw"
+msgstr "Opnieuw proberen"
 
 #: ../mugshot/MugshotWindow.py:344
 msgid "Authentication cancelled."
-msgstr "Authenticatie geannuleerd."
+msgstr "Authenticatie afgebroken."
 
 #: ../mugshot/MugshotWindow.py:347
 msgid "Authentication failed."
-msgstr "Authenticatie is mislukt."
+msgstr "Authenticatie mislukt."
 
 #: ../mugshot/MugshotWindow.py:350
 msgid "An error occurred when saving changes."
@@ -121,19 +126,19 @@ msgstr "Er is een fout opgetreden bij het opslaan van de wijzigingen."
 
 #: ../mugshot/MugshotWindow.py:352
 msgid "User details were not updated."
-msgstr "Gebruikersdetails werden niet bijgewerkt."
+msgstr "De gebruikersinformatie is niet bijgewerkt."
 
 #: ../mugshot/MugshotWindow.py:454
 msgid "Update Pidgin buddy icon?"
-msgstr "Pictogram voor Pidgin-vriend bijwerken?"
+msgstr "Pidgin-profielfoto bijwerken?"
 
 #: ../mugshot/MugshotWindow.py:455
 msgid "Would you also like to update your Pidgin buddy icon?"
-msgstr "Wilt u ook uw pictogram bijwerken voor Pidgin-vriend?"
+msgstr "Wilt u ook uw Pidgin-profielfoto bijwerken?"
 
 #: ../mugshot/MugshotWindow.py:568
 msgid "Enter your password to change user details."
-msgstr "Voer uw wachtwoord in om gebruikersdetails te wijzigen."
+msgstr "Voer uw wachtwoord in om gebruikersinformatie te wijzigen."
 
 #: ../mugshot/MugshotWindow.py:570
 msgid ""
@@ -141,15 +146,15 @@ msgid ""
 "to your personal information."
 msgstr ""
 "Dit is een veiligheidsmaatregel ter voorkoming van\n"
-"ongewenste wijzigingen in uw persoonlijke informatie."
+"ongewenste wijzigingen aan uw persoonlijke informatie."
 
 #: ../mugshot/MugshotWindow.py:837
 msgid "Update LibreOffice user details?"
-msgstr "Gebruikerdetails voor Libre Office bijwerken?"
+msgstr "LibreOffice-gebruikersinformatie bijwerken?"
 
 #: ../mugshot/MugshotWindow.py:838
 msgid "Would you also like to update your user details in LibreOffice?"
-msgstr "Wilt u ook uw gebruikerdetails bijwerken voor Libre Office?"
+msgstr "Wilt u ook uw LibreOffice-gebruikersinformatie bijwerken?"
 
 #: ../mugshot_lib/SudoDialog.py:131
 msgid "Password Required"
@@ -157,7 +162,7 @@ msgstr "Wachtwoord vereist"
 
 #: ../mugshot_lib/SudoDialog.py:168
 msgid "Incorrect password... try again."
-msgstr "Onjuist wachtwoord.... Probeer het a.u.b. opnieuw."
+msgstr "Onjuist wachtwoord - probeer het opnieuw."
 
 #: ../mugshot_lib/SudoDialog.py:178
 msgid "Password:"
@@ -170,7 +175,7 @@ msgstr "Annuleren"
 
 #: ../mugshot_lib/SudoDialog.py:192
 msgid "OK"
-msgstr "OK"
+msgstr "Oké"
 
 #: ../mugshot_lib/SudoDialog.py:213
 msgid ""
@@ -178,7 +183,7 @@ msgid ""
 "perform administrative tasks."
 msgstr ""
 "Voer uw wachtwoord in\n"
-"om beheerstaken uit te\n"
+"om beheerderstaken uit te\n"
 "voeren."
 
 #: ../mugshot_lib/SudoDialog.py:215
@@ -200,53 +205,68 @@ msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
-"Mugshot stelt gebruikers in staat om eenvoudig persoonlijke "
-"contactpersooninformatie bij te werken. Met Mugshot kunnen gebruikers:"
+"Pasfoto stelt gebruikers in staat om op eenvoudige wijze persoonlijke "
+"contactpersooninformatie bij te werken. U kunt:"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
-"Stel de accountfoto in die getoond wordt bij aanmelding en synchroniseer "
-"deze foto desgewenst met hun Pidgin-pictogram"
+"De accountfoto instellen die getoond wordt op het aanmeldscherm en deze "
+"desgewenst synchroniseren met uw Pidgin-profielfoto"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
-"Stel accountbijzonderheden in die zijn opgeslagen in /etc/passwd (te "
-"gebruiken met de opdracht 'finger') en synchroniseer desgewenst met hun "
-"contactpersooninformatie in Libre Office."
+"Accountinformatie instellen die is opgeslagen in /etc/passwd (te gebruiken "
+"met de opdracht 'finger') en desgewenst synchroniseren  met uw LibreOffice-"
+"contactpersooninformatie."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Pasfoto is verhuisd naar GitHub! Deze onderhoudsuitgave bevat meerdere "
+"bijgewerkte vertalingen."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
 msgid ""
 "This release includes a number of code quality improvements, bug fixes, and "
 "translations. Mugshot can now be built and run in a minimal chroot "
 "environment."
 msgstr ""
+"Deze uitgave bevat vele kwaliteitsverbeteringen aan de code, foutoplossingen"
+" en vertalingen. Pasfoto kan nu worden gecompileerd en uitgevoerd in een "
+"minimale chroot-omgeving."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
 "This stable release adds support for the latest GTK and GStreamer "
 "technologies."
 msgstr ""
+"Deze stabiele uitgave voegt ondersteuning toe voor de nieuwste GTK- en "
+"GStreamer-versies."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
-msgstr ""
+msgstr "Deze vroegtijdige uitgave herstelt het cameravenster."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
 msgid ""
 "This development release fixes a large number of bugs from previous "
 "releases. User properties that cannot be edited are now restricted to "
 "administrative users."
 msgstr ""
+"Deze vroegtijdige uitgave bevat vele foutoplossingen. Gebruikersinformatie "
+"die niet kan worden bijgewerkt is nu beperkt tot beheerders."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
 msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
@@ -254,7 +274,7 @@ msgstr ""
 "Deze ontwikkelversie waardeert de cameradialoog op om Cheese en Clutter te "
 "gebruiken voor het vertonen en vastleggen van de camera-invoer."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
