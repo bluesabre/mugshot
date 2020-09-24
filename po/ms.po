@@ -1,0 +1,286 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Yaya - Nurul Azeera Hidayah @ Muhammad Nur Hidayat Yasuyoshi (MNH48) <mnh48mail@gmail.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-30 07:46-0400\n"
+"PO-Revision-Date: 2019-05-27 10:40+0000\n"
+"Last-Translator: Yaya - Nurul Azeera Hidayah @ Muhammad Nur Hidayat Yasuyoshi (MNH48) <mnh48mail@gmail.com>, 2020\n"
+"Language-Team: Malay (https://www.transifex.com/bluesabreorg/teams/99550/ms/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ms\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../org.bluesabre.Mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "Perihal Diriku"
+
+#: ../org.bluesabre.Mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "Kemaskini gambar profil dan maklumat perhubungan anda"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "Tangkap - Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>Pratonton</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "Tengah"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "Kiri"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "Kanan"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>Potong</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select from stock…"
+msgstr "Pilih daripada stok…"
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Capture from camera…"
+msgstr "Tangkap daripada kamera…"
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Browse…"
+msgstr "Layari…"
+
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:567
+msgid "Mugshot"
+msgstr "Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "<b>First Name</b>"
+msgstr "<b>Nama Hadapan</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>Last Name</b>"
+msgstr "<b>Nama Belakang</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Initials</b>"
+msgstr "<b>Awalan Nama</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Home Phone</b>"
+msgstr "<b>Telefon Rumah</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Email Address</b>"
+msgstr "<b>Alamat E-mel</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Office Phone</b>"
+msgstr "<b>Telefon Pejabat</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Fax</b>"
+msgstr "<b>Nombor Faks</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "Select a photo…"
+msgstr "Pilih gambar…"
+
+#: ../mugshot/__init__.py:36
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr "Tunjuk mesej nyahpepijat (-vv juga menyahpepijatkan mugshot_lib)"
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:268
+msgid "Retry"
+msgstr "Cuba lagi"
+
+#: ../mugshot/MugshotWindow.py:344
+msgid "Authentication cancelled."
+msgstr "Pengesahan dibatalkan."
+
+#: ../mugshot/MugshotWindow.py:347
+msgid "Authentication failed."
+msgstr "Pengesahan gagal."
+
+#: ../mugshot/MugshotWindow.py:350
+msgid "An error occurred when saving changes."
+msgstr "Telah berlakunya ralat ketika menyimpan perubahan."
+
+#: ../mugshot/MugshotWindow.py:352
+msgid "User details were not updated."
+msgstr "Maklumat pengguna tidak dikemaskini."
+
+#: ../mugshot/MugshotWindow.py:454
+msgid "Update Pidgin buddy icon?"
+msgstr "Kemaskini ikon rakan Pidgin?"
+
+#: ../mugshot/MugshotWindow.py:455
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr "Adakah anda juga ingin mengemaskini ikon rakan Pidgin milik anda?"
+
+#: ../mugshot/MugshotWindow.py:568
+msgid "Enter your password to change user details."
+msgstr "Masukkan kata laluan untuk mengubah maklumat pengguna."
+
+#: ../mugshot/MugshotWindow.py:570
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+"Ini tindakan keselamatan untuk mengelakkan pengemaskinian\n"
+"yang tidak diingini ke atas maklumat peribadi anda."
+
+#: ../mugshot/MugshotWindow.py:837
+msgid "Update LibreOffice user details?"
+msgstr "Kemaskini maklumat pengguna LibreOffice?"
+
+#: ../mugshot/MugshotWindow.py:838
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr ""
+"Adakah anda juga ingin mengemaskini maklumat pengguna anda di LibreOffice?"
+
+#: ../mugshot_lib/SudoDialog.py:131
+msgid "Password Required"
+msgstr "Kata Laluan Diperlukan"
+
+#: ../mugshot_lib/SudoDialog.py:168
+msgid "Incorrect password... try again."
+msgstr "Kata laluan salah… sila cuba lagi."
+
+#: ../mugshot_lib/SudoDialog.py:178
+msgid "Password:"
+msgstr "Kata laluan:"
+
+#. Buttons
+#: ../mugshot_lib/SudoDialog.py:189
+msgid "Cancel"
+msgstr "Batal"
+
+#: ../mugshot_lib/SudoDialog.py:192
+msgid "OK"
+msgstr "OK"
+
+#: ../mugshot_lib/SudoDialog.py:213
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+"Masukkan kata laluan anda untuk\n"
+"melakukan kerja pentadbiran."
+
+#: ../mugshot_lib/SudoDialog.py:215
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+"Aplikasi '%s' membolehkan anda\n"
+"mengubahsuai bahagian asas sistem anda."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:1
+msgid "Lightweight user configuration"
+msgstr "Tatarajah pengguna yang ringan"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:2
+msgid ""
+"Mugshot enables users to easily update personal contact information. With "
+"Mugshot, users are able to:"
+msgstr ""
+"Mugshot membolehkan pengguna untuk mengemaskini maklumat perhubungan "
+"peribadi dengan mudah. Dengan menggunakan Mugshot, para pengguna mampu:"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:3
+msgid ""
+"Set the account photo displayed at login and optionally synchronize this "
+"photo with their Pidgin buddy icon"
+msgstr ""
+"Menetapkan gambar akaun yang dipaparkan semasa log masuk dan pilihan untuk "
+"menyegerakkan gambar ini dengan ikon rakan Pidgin mereka"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:4
+msgid ""
+"Set account details stored in /etc/passwd (usable with the finger command) "
+"and optionally synchronize with their LibreOffice contact information"
+msgstr ""
+"Menetapkan maklumat akaun yang disimpan di /etc/passwd (boleh digunakan "
+"dengan perintah jari) dan pilihan untuk menyegerakkan dengan maklumat "
+"perhubungan LibreOffice mereka"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot telah berpindah ke GitHub! Terbitan senggaraan ini mempunyai "
+"pelbagai kemaskini terjemahan."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+msgid ""
+"This release includes a number of code quality improvements, bug fixes, and "
+"translations. Mugshot can now be built and run in a minimal chroot "
+"environment."
+msgstr ""
+"Terbitan ini mempunyai beberapa penambahbaikan kualiti kod, pembaikian "
+"pepijat, dan terjemahan. Mugshot kini boleh dibina dan dijalankan dalam "
+"suasana chroot minima."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+msgid ""
+"This stable release adds support for the latest GTK and GStreamer "
+"technologies."
+msgstr ""
+"Terbitan stabil ini menambah sokongan teknologi GTK dan GStreamer yang "
+"terbaharu."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+msgid ""
+"This development release restores camera dialog functionality that with "
+"recent software versions."
+msgstr ""
+"Terbitan pembangunan ini mengembalikan fungsi dialog kamera yang ada dalam "
+"versi perisian terbaharu."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+msgid ""
+"This development release fixes a large number of bugs from previous "
+"releases. User properties that cannot be edited are now restricted to "
+"administrative users."
+msgstr ""
+"Terbitan pembangunan ini membaiki banyak pepijat daripada terbitan "
+"sebelumnya. Sifat pengguna yang tidak boleh disunting sebelum ini kini "
+"dihadkan kepada pengguna pentadbir."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+msgid ""
+"This development release upgrades the camera dialog to use Cheese and "
+"Clutter to display and capture the camera feed."
+msgstr ""
+"Terbitan pembangunan ini menaiktaraf dialog kamera untuk menggunakan Cheese "
+"dan Clutter untuk memaparkan dan menangkap suapan kamera."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
+msgid ""
+"This stable release improves Mugshot functionality for LDAP users, and "
+"includes the latest SudoDialog, improving the appearance and usability of "
+"the password dialog."
+msgstr ""
+"Terbitan stabil ini menambahbaik fungsi Mugshot untuk pengguna LDAP, dan "
+"menyertakan SudoDialog terbaharu, menambahbaik penampilan dan kebolehgunaan "
+"dialog kata laluan."
