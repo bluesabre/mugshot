@@ -1,0 +1,280 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Yaya - Nurul Azeera Hidayah @ Muhammad Nur Hidayat Yasuyoshi (MNH48) <mnh48mail@gmail.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-30 07:46-0400\n"
+"PO-Revision-Date: 2019-05-27 10:40+0000\n"
+"Last-Translator: Yaya - Nurul Azeera Hidayah @ Muhammad Nur Hidayat Yasuyoshi (MNH48) <mnh48mail@gmail.com>, 2020\n"
+"Language-Team: Malay (Arabic) (https://www.transifex.com/bluesabreorg/teams/99550/ms@Arab/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ms@Arab\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../org.bluesabre.Mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "ڤريهل ديريکو"
+
+#: ../org.bluesabre.Mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "کمسکيني ݢمبر ڤروفيل دان معلومت ڤرهوبوڠن اندا"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "تڠکڤ - Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>ڤراتونتون</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "تڠه"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "کيري"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "کانن"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>ڤوتوڠ</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select from stock…"
+msgstr "ڤيليه درڤد ستوک…"
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Capture from camera…"
+msgstr "تڠکڤ درڤد کاميرا…"
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Browse…"
+msgstr "لايري…"
+
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:567
+msgid "Mugshot"
+msgstr "Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "<b>First Name</b>"
+msgstr "<b>نام هادڤن</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>Last Name</b>"
+msgstr "<b>نام بلاکڠ</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Initials</b>"
+msgstr "<b>اولن نام</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Home Phone</b>"
+msgstr "<b>تيليفون رومه</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Email Address</b>"
+msgstr "<b>علامت إي-ميل</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Office Phone</b>"
+msgstr "<b>تيليفون ڤجابت</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Fax</b>"
+msgstr "<b>نومبور فکس</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "Select a photo…"
+msgstr "ڤيليه ݢمبر…"
+
+#: ../mugshot/__init__.py:36
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr "تونجوق ميسيج ڽهڤڤيجت (-vv جوݢ مڽهڤڤيجتکن mugshot_lib)"
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:268
+msgid "Retry"
+msgstr "چوبا لاݢي"
+
+#: ../mugshot/MugshotWindow.py:344
+msgid "Authentication cancelled."
+msgstr "ڤڠصحن دباتلکن."
+
+#: ../mugshot/MugshotWindow.py:347
+msgid "Authentication failed."
+msgstr "ڤڠصحن ݢاݢل."
+
+#: ../mugshot/MugshotWindow.py:350
+msgid "An error occurred when saving changes."
+msgstr "تله برلاکوڽ رالت کتيک مڽيمڤن ڤروبهن."
+
+#: ../mugshot/MugshotWindow.py:352
+msgid "User details were not updated."
+msgstr "معلومت ڤڠݢونا تيدق دکمسکيني."
+
+#: ../mugshot/MugshotWindow.py:454
+msgid "Update Pidgin buddy icon?"
+msgstr "کمسکيني ايکون راکن Pidgin؟"
+
+#: ../mugshot/MugshotWindow.py:455
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr "اداکه اندا جوݢ ايڠين مڠمسکيني ايکون راکن Pidgin ميليق اندا؟"
+
+#: ../mugshot/MugshotWindow.py:568
+msgid "Enter your password to change user details."
+msgstr "ماسوقکن کات لالوان اونتوق مڠوبه معلومت ڤڠݢونا."
+
+#: ../mugshot/MugshotWindow.py:570
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+"اين تيندقن کسلامتن اونتوق مڠيلقکن ڤڠمسکينين يڠ تيدق دأيڠيني کأتس معلومت "
+"ڤريبادي اندا."
+
+#: ../mugshot/MugshotWindow.py:837
+msgid "Update LibreOffice user details?"
+msgstr "کمسکيني معلومت ڤڠݢونا LibreOffice؟"
+
+#: ../mugshot/MugshotWindow.py:838
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr "اداکه اندا جوݢ ايڠين مڠمسکيني معلومت ڤڠݢونا اندا LibreOffice؟"
+
+#: ../mugshot_lib/SudoDialog.py:131
+msgid "Password Required"
+msgstr "کات لالوان دڤرلوکن"
+
+#: ../mugshot_lib/SudoDialog.py:168
+msgid "Incorrect password... try again."
+msgstr "کات لالوان ساله... سيلا چوبا لاݢي."
+
+#: ../mugshot_lib/SudoDialog.py:178
+msgid "Password:"
+msgstr "کات لالوان:"
+
+#. Buttons
+#: ../mugshot_lib/SudoDialog.py:189
+msgid "Cancel"
+msgstr "باتل"
+
+#: ../mugshot_lib/SudoDialog.py:192
+msgid "OK"
+msgstr "اوکي"
+
+#: ../mugshot_lib/SudoDialog.py:213
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+"ماسوقکن کات لالوان اندا اونتوق\n"
+"ملاکوکن کرجا ڤنتدبيرن."
+
+#: ../mugshot_lib/SudoDialog.py:215
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+"اڤليکاسي '%s' ممبوليهکن اندا\n"
+"مڠوبهسواي بهاݢين اساس سيستم اندا."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:1
+msgid "Lightweight user configuration"
+msgstr "تاتاراجه ڤڠݢونا يڠ ريڠن"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:2
+msgid ""
+"Mugshot enables users to easily update personal contact information. With "
+"Mugshot, users are able to:"
+msgstr ""
+"Mugshot ممبوليهکن ڤڠݢونا اونتوق مڠمسکيني معلومت ڤرهوبوڠن ڤريبادي دڠن موده. "
+"دڠن مڠݢوناکن Mugshot⹁ ڤارا ڤڠݢونا ممڤو:"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:3
+msgid ""
+"Set the account photo displayed at login and optionally synchronize this "
+"photo with their Pidgin buddy icon"
+msgstr ""
+"منتڤکن ݢمبر اکاٴون يڠ دڤاڤرکن سماس لوݢ ماسوق دان ڤيليهن اونتوق مڽݢرقکن ݢمبر "
+"اين دڠن ايکون راکن Pidgin مريک"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:4
+msgid ""
+"Set account details stored in /etc/passwd (usable with the finger command) "
+"and optionally synchronize with their LibreOffice contact information"
+msgstr ""
+"منتڤکن معلومت اکاٴون يڠ دسيمڤن د/etc/passwd (بوليه دݢوناکن دڠن ڤرينة جاري) "
+"دان ڤيليهن اونتوق مڽݢرقکن دڠن معلومت ڤرهوبوڠن LibreOffice مريک"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot تله برڤينده کGitHub! تربيتن سڠݢاراٴن اين ممڤوڽاٴي ڤلباݢاي کمسکيني "
+"ترجمهن."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+msgid ""
+"This release includes a number of code quality improvements, bug fixes, and "
+"translations. Mugshot can now be built and run in a minimal chroot "
+"environment."
+msgstr ""
+"تربيتن اين ممڤوڽاٴي ببراڤ ڤنمبهباٴيقن کواليتي کود⹁ ڤمباٴيقين ڤڤيجت⹁ دان "
+"ترجمهن. Mugshot کيني بوليه دبينا دان دجالنکن دالم سواسان chroot مينيما."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+msgid ""
+"This stable release adds support for the latest GTK and GStreamer "
+"technologies."
+msgstr ""
+"تربيتن ستابيل اين منمبه سوکوڠن تيکنولوݢي GTK دان GStreamer يڠ تربهارو."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+msgid ""
+"This development release restores camera dialog functionality that with "
+"recent software versions."
+msgstr ""
+"تربيتن ڤمباڠونن اين مڠمباليکن فوڠسي ديالوݢ کاميرا يڠ اد دالم ۏرسي ڤريسين "
+"تربهارو."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+msgid ""
+"This development release fixes a large number of bugs from previous "
+"releases. User properties that cannot be edited are now restricted to "
+"administrative users."
+msgstr ""
+"تربيتن ڤمباڠونن اين ممباٴيقي باڽق ڤڤيجت درڤد تربيتن سبلومڽ. صيفت ڤڠݢونا يڠ "
+"تيدق بوليه دسونتيڠ سبلوم اين کيني دحدکن کڤد ڤڠݢونا ڤنتدبير."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+msgid ""
+"This development release upgrades the camera dialog to use Cheese and "
+"Clutter to display and capture the camera feed."
+msgstr ""
+"تربيتن ڤمباڠونن اين مناٴيقطرف ديالوݢ کاميرا اونتوق مڠݢوناکن Cheese دان "
+"Clutter اونتوق مماڤرکن دان منڠکڤ سواڤن کاميرا."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
+msgid ""
+"This stable release improves Mugshot functionality for LDAP users, and "
+"includes the latest SudoDialog, improving the appearance and usability of "
+"the password dialog."
+msgstr ""
+"تربيتن ستابيل اين منمبهباٴيق فوڠسي Mugshot اونتوق ڤڠݢونا LDAP⹁ دان مڽرتاکن "
+"SudoDialog تربهارو⹁ منمبهباٴيق ڤنمڤيلن دان کبوليهݢوناٴن ديالوݢ کات لالوان."
