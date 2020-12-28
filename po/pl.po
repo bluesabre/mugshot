@@ -1,22 +1,26 @@
-# Polish translation for mugshot
-# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
-# This file is distributed under the same license as the mugshot package.
-# Michał Olber <michal.olber@osworld.pl>, 2014.
-# Piotr Sokół <psokol@jabster.pl>, 2014.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Sean Davis <sean@bluesabre.org>, 2019
+# Waldemar Stoczkowski, 2020
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: mugshot\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2018-08-08 05:13-0400\n"
-"PO-Revision-Date: 2016-10-23 11:30+0000\n"
-"Last-Translator: Marcin Mikołajczak <lubuntu@m4sk.in>\n"
-"Language-Team: polski <>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-30 07:46-0400\n"
+"PO-Revision-Date: 2019-05-27 10:40+0000\n"
+"Last-Translator: Waldemar Stoczkowski, 2020\n"
+"Language-Team: Polish (https://www.transifex.com/bluesabreorg/teams/99550/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
-"X-Generator: Launchpad (build 18968)\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: ../org.bluesabre.Mugshot.desktop.in.h:1
 msgid "About Me"
@@ -220,24 +224,38 @@ msgstr ""
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:5
 msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot przeniósł się do GitHub! Ta wersja konserwacji zawiera wiele "
+"aktualizacji tłumaczeń."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+msgid ""
 "This release includes a number of code quality improvements, bug fixes, and "
 "translations. Mugshot can now be built and run in a minimal chroot "
 "environment."
 msgstr ""
+"To wydanie zawiera szereg ulepszeń jakości kodu, poprawek błędów i "
+"tłumaczeń. Mugshot można teraz budować i uruchamiać w minimalnym środowisku "
+"chroot."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
 "This stable release adds support for the latest GTK and GStreamer "
 "technologies."
 msgstr ""
+"To stabilne wydanie dodaje obsługę najnowszych technologii GTK i GStreamer."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
 msgstr ""
+"Ta wersja rozwojowa przywraca funkcjonalność okna dialogowego aparatu, która"
+" działa w najnowszych wersjach oprogramowania."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
 msgid ""
 "This development release fixes a large number of bugs from previous "
 "releases. User properties that cannot be edited are now restricted to "
@@ -247,7 +265,7 @@ msgstr ""
 "użytkownika które nie mogą być edytowane są teraz dostępne wyłącznie dla "
 "administratorów."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
 msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
@@ -255,9 +273,12 @@ msgstr ""
 "To wydanie rozwojowe ulepszą okno kamery, aby używało Cheese i Clutter do "
 "wyświetlania i przechwytywania obrazu kamery."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
 msgstr ""
+"Ta stabilna wersja poprawia funkcjonalność Mugshot dla użytkowników LDAP i "
+"zawiera najnowszy SudoDialog, poprawiający wygląd i użyteczność okna "
+"dialogowego hasła."
