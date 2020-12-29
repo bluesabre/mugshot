@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 #   Mugshot - Lightweight user configuration utility
-#   Copyright (C) 2013-2019 Sean Davis <sean@bluesabre.org>
+#   Copyright (C) 2013-2020 Sean Davis <sean@bluesabre.org>
 #
 #   This program is free software: you can redistribute it and/or modify it
 #   under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ __all__ = [
 # files). By default, this is ../data, relative your trunk layout
 __mugshot_data_directory__ = '../data/'
 __license__ = 'GPL-3+'
-__version__ = '0.4.2'
+__version__ = '0.4.3'
 
 
 class project_path_not_found(Exception):

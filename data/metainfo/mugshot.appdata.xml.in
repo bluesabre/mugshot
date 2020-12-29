@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2014-2019 Sean Davis <sean@bluesabre.org> -->
+<!-- Copyright 2014-2020 Sean Davis <sean@bluesabre.org> -->
 <component type="desktop">
   <id>org.bluesabre.Mugshot.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -44,6 +44,14 @@
   </provides>
 
   <releases>
+    <release version="0.4.3" date="2020-12-28">
+      <description>
+        <_p>This maintenance release adds support for Python 3.9
+        and includes many translation updates.
+        </_p>
+      </description>
+    </release>
+
     <release version="0.4.2" date="2019-07-28">
       <description>
         <_p>Mugshot has moved to GitHub! This maintenance release

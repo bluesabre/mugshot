@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 #   Mugshot - Lightweight user configuration utility
-#   Copyright (C) 2013-2019 Sean Davis <sean@bluesabre.org>
+#   Copyright (C) 2013-2020 Sean Davis <sean@bluesabre.org>
 #
 #   Portions of this file are adapted from web_cam_box,
 #   Copyright (C) 2010 Rick Spencer <rick.spencer@canonical.com>

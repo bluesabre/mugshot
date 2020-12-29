@@ -1,5 +1,18 @@
 Mugshot                                                                    NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+28 Dec 2020, Mugshot 0.4.3
+
+- New stable release
+- Add support for Python 3.9
+- Switched to RDN-format for .desktop and gschema (org.bluesabre.mugshot)
+  (fixes asv-cid-desktopapp-is-not-rdns)
+- Port python3-dbus usage to GDBus
+- Remove period at end of short description (fixes asv-summary-has-dot-suffix)
+- Translation Updates:
+  . Catalan, Chinese (China), Danish, Dutch, German, Lithuanian, Malay,
+    Malay (Arabic), Polish, Serbian, Spanish, Turkish
+
+
 28 Jul 2019, Mugshot 0.4.2
 
 - New stable release
