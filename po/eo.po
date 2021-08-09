@@ -1,21 +1,26 @@
-# Esperanto translation for mugshot
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the mugshot package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Sean Davis <sean@bluesabre.org>, 2019
+# Warut Bunprasert <warutbun92@gmail.com>, 2021
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: mugshot\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2018-08-08 05:13-0400\n"
-"PO-Revision-Date: 2014-07-15 00:02+0000\n"
-"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
-"Language-Team: Esperanto <eo@li.org>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-28 19:39-0800\n"
+"PO-Revision-Date: 2019-05-27 10:40+0000\n"
+"Last-Translator: Warut Bunprasert <warutbun92@gmail.com>, 2021\n"
+"Language-Team: Esperanto (https://www.transifex.com/bluesabreorg/teams/99550/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
-"X-Generator: Launchpad (build 18968)\n"
+"Language: eo\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../org.bluesabre.Mugshot.desktop.in.h:1
 msgid "About Me"
@@ -23,11 +28,11 @@ msgstr "Pri mi"
 
 #: ../org.bluesabre.Mugshot.desktop.in.h:2
 msgid "Configure your profile image and contact details"
-msgstr ""
+msgstr "Agordi viajn profilbildon kaj kontaktinformojn"
 
 #: ../data/ui/CameraMugshotDialog.ui.h:1
 msgid "Capture - Mugshot"
-msgstr ""
+msgstr "Kaptado - Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:1
 msgid "<b>Preview</b>"
@@ -35,27 +40,27 @@ msgstr "<b>Antaŭrigardo</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:2
 msgid "Center"
-msgstr ""
+msgstr "Centre"
 
 #: ../data/ui/MugshotWindow.ui.h:3
 msgid "Left"
-msgstr ""
+msgstr "Maldekstre"
 
 #: ../data/ui/MugshotWindow.ui.h:4
 msgid "Right"
-msgstr ""
+msgstr "Dekstre"
 
 #: ../data/ui/MugshotWindow.ui.h:5
 msgid "<b>Crop</b>"
-msgstr ""
+msgstr "<b>Pritondi</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:6
 msgid "Select from stock…"
-msgstr ""
+msgstr "Elekti el stoko..."
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
-msgstr ""
+msgstr "Foti per la kamerao"
 
 #: ../data/ui/MugshotWindow.ui.h:8
 msgid "Browse…"
@@ -63,31 +68,31 @@ msgstr "Foliumi…"
 
 #: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:567
 msgid "Mugshot"
-msgstr ""
+msgstr "Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:10
 msgid "<b>First Name</b>"
-msgstr ""
+msgstr "<b>Persona nomo</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:11
 msgid "<b>Last Name</b>"
-msgstr ""
+msgstr "<b>Familia nomo</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:12
 msgid "<b>Initials</b>"
-msgstr ""
+msgstr "<b>Komenclitero</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:13
 msgid "<b>Home Phone</b>"
-msgstr ""
+msgstr "<b>Hejma telefono</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:14
 msgid "<b>Email Address</b>"
-msgstr ""
+msgstr "<b>Retpoŝadreso</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:15
 msgid "<b>Office Phone</b>"
-msgstr ""
+msgstr "<b>Laboreja telefono</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:16
 msgid "<b>Fax</b>"
@@ -95,67 +100,69 @@ msgstr "<b>Faksilo</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:17
 msgid "Select a photo…"
-msgstr ""
+msgstr "Elekti foton..."
 
 #: ../mugshot/__init__.py:36
 msgid "Show debug messages (-vv debugs mugshot_lib also)"
-msgstr ""
+msgstr "Montri sencimigajn mesaĝojn (ankaŭ -vv debugs mugshot_lib)"
 
 #. Set the record button to retry, and disable it until the capture
 #. finishes.
 #: ../mugshot/CameraMugshotDialog.py:268
 msgid "Retry"
-msgstr ""
+msgstr "Reprovi"
 
-#: ../mugshot/MugshotWindow.py:344
+#: ../mugshot/MugshotWindow.py:343
 msgid "Authentication cancelled."
-msgstr ""
+msgstr "Nuligita aŭtentigo."
 
-#: ../mugshot/MugshotWindow.py:347
+#: ../mugshot/MugshotWindow.py:346
 msgid "Authentication failed."
-msgstr ""
+msgstr "Malsukcesa aŭtentigo."
 
-#: ../mugshot/MugshotWindow.py:350
+#: ../mugshot/MugshotWindow.py:349
 msgid "An error occurred when saving changes."
-msgstr ""
+msgstr "Okazas erare kiam konservi ŝanĝojn."
 
-#: ../mugshot/MugshotWindow.py:352
+#: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
-msgstr ""
+msgstr "Uzantinformoj ne estis ĝisdatigitaj."
+
+#: ../mugshot/MugshotWindow.py:453
+msgid "Update Pidgin buddy icon?"
+msgstr "Ĝisdatigi bildsimbolon Pidgin buddy?"
 
 #: ../mugshot/MugshotWindow.py:454
-msgid "Update Pidgin buddy icon?"
-msgstr ""
-
-#: ../mugshot/MugshotWindow.py:455
 msgid "Would you also like to update your Pidgin buddy icon?"
-msgstr ""
+msgstr "Ĉu vi ŝatus ĝisdatigi vian bildsimbolon Pidgin buddy?"
 
 #: ../mugshot/MugshotWindow.py:568
 msgid "Enter your password to change user details."
-msgstr ""
+msgstr "Enigi vian posvorton por ŝanĝi uzantinformojn."
 
 #: ../mugshot/MugshotWindow.py:570
 msgid ""
 "This is a security measure to prevent unwanted updates\n"
 "to your personal information."
 msgstr ""
+"Ĉi tiu sekurecmezuro preventas nebezonatajn ĝisdatigojn\n"
+"al via persona informo."
 
 #: ../mugshot/MugshotWindow.py:837
 msgid "Update LibreOffice user details?"
-msgstr ""
+msgstr "Ĝisdatigi uzantiformojn de LibreOffice?"
 
 #: ../mugshot/MugshotWindow.py:838
 msgid "Would you also like to update your user details in LibreOffice?"
-msgstr ""
+msgstr "Ĉu vi ŝatus ĝisdatigi viajn uzantinformojn en LibreOffice? "
 
 #: ../mugshot_lib/SudoDialog.py:131
 msgid "Password Required"
-msgstr ""
+msgstr "Deviga pasvorto"
 
 #: ../mugshot_lib/SudoDialog.py:168
 msgid "Incorrect password... try again."
-msgstr ""
+msgstr "Malĝusta pasvorto... provu denove."
 
 #: ../mugshot_lib/SudoDialog.py:178
 msgid "Password:"
@@ -164,17 +171,19 @@ msgstr "Pasvorto:"
 #. Buttons
 #: ../mugshot_lib/SudoDialog.py:189
 msgid "Cancel"
-msgstr ""
+msgstr "Nuligi"
 
 #: ../mugshot_lib/SudoDialog.py:192
 msgid "OK"
-msgstr ""
+msgstr "Bone"
 
 #: ../mugshot_lib/SudoDialog.py:213
 msgid ""
 "Enter your password to\n"
 "perform administrative tasks."
 msgstr ""
+"Enigi vian pasvorton por\n"
+" efektivigi administradajn traskojn."
 
 #: ../mugshot_lib/SudoDialog.py:215
 #, python-format
@@ -182,64 +191,94 @@ msgid ""
 "The application '%s' lets you\n"
 "modify essential parts of your system."
 msgstr ""
+"La aplikaĵo '%s' igi vin\n"
+" modifi esenajn partojn de via sistemo."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr ""
+msgstr "Malpeza uzantagordado"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:2
 msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
+"Mugshot ebligas al uzantoj facile ĝisdatigi personajn kontaktinformojn. Pere"
+" de Mugshot, uzantoj povas:"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
+"Agordu la kontan foton montratan ĉe ensaluto kaj laŭvole sinkronigu ĉi tiun "
+"foton kun ilia bildsimbolo Pidgin buddy"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
+"Agordi kontajn informojn konservitajn en /etc/passwd (uzebla per la permana "
+"komando) kaj laŭvole sinkronigi kun iliaj kontaktinformoj de LibreOffice"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot translokiĝis al GitHub! Ĉi tiu prizorgada eldono inkluzivas multajn "
+"tradukojn ĝisdatigajn."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
 msgid ""
 "This release includes a number of code quality improvements, bug fixes, and "
 "translations. Mugshot can now be built and run in a minimal chroot "
 "environment."
 msgstr ""
+"Ĉi tiu eldono inkluzivas kelkajn kvalitajn plibonigojn de kodo, korektojn de"
+" cimoj kaj tradukojn. Mugshot nun povas esti konstruita kaj funkciigita en "
+"minimuma interreta medio."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
 "This stable release adds support for the latest GTK and GStreamer "
 "technologies."
 msgstr ""
+"Ĉi tiu stabila eldono aldonas subtenon por la plej novaj teknologioj GTK kaj"
+" GStreamer."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
 msgstr ""
+"Ĉi tiu eldona versio riparas funkcion de dialogo de kamerao, kiu kun "
+"lastatempaj versioj de softvoroj."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
 msgid ""
 "This development release fixes a large number of bugs from previous "
 "releases. User properties that cannot be edited are now restricted to "
 "administrative users."
 msgstr ""
+"Ĉi tiu disvolva eldono riparas multajn cimojn de antaŭaj eldonoj. Uzantecoj "
+"ne redakteblaj nun estas limigitaj al administraj uzantoj."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
 msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
 msgstr ""
+"Ĉi tiu disvolva eldono riparas la dialogon de kamerao por uzi Cheese kaj "
+"Clutter por montri kaj foti."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
 msgstr ""
+"Ĉi tiu stabila eldono plibonigas funkcion de Mugshot por uzantoj de LDAP, "
+"kaj inkluzivas la plej novan SudoDialog, plibonigante la aspekton kaj "
+"uzeblon de la pasvorta dialogo."
