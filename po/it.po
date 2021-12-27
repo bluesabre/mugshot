@@ -1,21 +1,26 @@
-# Italian translation for mugshot
-# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
-# This file is distributed under the same license as the mugshot package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Sean Davis <sean@bluesabre.org>, 2019
+# albanobattistella <albano_battistella@hotmail.com>, 2021
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: mugshot\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2018-08-08 05:13-0400\n"
-"PO-Revision-Date: 2014-09-09 08:45+0000\n"
-"Last-Translator: Man from Mars <manfrommars@libero.it>\n"
-"Language-Team: Italian <it@li.org>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-28 19:39-0800\n"
+"PO-Revision-Date: 2019-05-27 10:40+0000\n"
+"Last-Translator: albanobattistella <albano_battistella@hotmail.com>, 2021\n"
+"Language-Team: Italian (https://www.transifex.com/bluesabreorg/teams/99550/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
-"X-Generator: Launchpad (build 18968)\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../org.bluesabre.Mugshot.desktop.in.h:1
 msgid "About Me"
@@ -107,27 +112,27 @@ msgstr "Mostra i messaggi di debug (-vv analizza anche mugshot_lib)"
 msgid "Retry"
 msgstr "Riprova"
 
-#: ../mugshot/MugshotWindow.py:344
+#: ../mugshot/MugshotWindow.py:343
 msgid "Authentication cancelled."
 msgstr "Autenticazione annullata."
 
-#: ../mugshot/MugshotWindow.py:347
+#: ../mugshot/MugshotWindow.py:346
 msgid "Authentication failed."
 msgstr "Autenticazione fallita."
 
-#: ../mugshot/MugshotWindow.py:350
+#: ../mugshot/MugshotWindow.py:349
 msgid "An error occurred when saving changes."
 msgstr "Si è verificato un errore nel salvataggio delle modifiche."
 
-#: ../mugshot/MugshotWindow.py:352
+#: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
 msgstr "I dettagli dell'utente non sono stati aggiornati."
 
-#: ../mugshot/MugshotWindow.py:454
+#: ../mugshot/MugshotWindow.py:453
 msgid "Update Pidgin buddy icon?"
 msgstr "Aggiornare l'avatar di Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:455
+#: ../mugshot/MugshotWindow.py:454
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Vuoi aggiornare anche l'avatar di Pidgin?"
 
@@ -220,37 +225,58 @@ msgstr ""
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:5
 msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot è stato spostato su GitHub! Questa versione di manutenzione include "
+"numerosi aggiornamenti di traduzione."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+msgid ""
 "This release includes a number of code quality improvements, bug fixes, and "
 "translations. Mugshot can now be built and run in a minimal chroot "
 "environment."
 msgstr ""
+"Questa versione include una serie di miglioramenti della qualità del codice,"
+" correzioni di bug e traduzioni. Mugshot ora può essere creata ed eseguita "
+"in un ambiente chroot minimo.."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
 "This stable release adds support for the latest GTK and GStreamer "
 "technologies."
 msgstr ""
+"Questa versione stabile aggiunge il supporto per le ultime tecnologie GTK e "
+"GStreamer."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
 msgstr ""
+"Questa versione di sviluppo ripristina la funzionalità di dialogo della "
+"fotocamera con le versioni software recenti."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
 msgid ""
 "This development release fixes a large number of bugs from previous "
 "releases. User properties that cannot be edited are now restricted to "
 "administrative users."
 msgstr ""
+"Questa versione di sviluppo risolve un gran numero di bug delle versioni "
+"precedenti. Le proprietà utente che non possono essere modificate sono ora "
+"limitate agli utenti amministratori."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
 msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
 msgstr ""
+"Questa versione di sviluppo aggiorna la finestra di dialogo della fotocamera"
+" per utilizzare Cheese e Clutter per visualizzare e acquisire il feed della "
+"fotocamera."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
