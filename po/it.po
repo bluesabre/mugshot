@@ -59,7 +59,7 @@ msgstr "Seleziona tra le immagini stock…"
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
-msgstr "Cattura dalla webcam…."
+msgstr "Cattura dalla webcam…"
 
 #: ../data/ui/MugshotWindow.ui.h:8
 msgid "Browse…"
