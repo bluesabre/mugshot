@@ -1,21 +1,26 @@
-# Russian translation for mugshot
-# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
-# This file is distributed under the same license as the mugshot package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Sean Davis <sean@bluesabre.org>, 2019
+# Sergey A., 2022
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: mugshot\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2018-08-08 05:13-0400\n"
-"PO-Revision-Date: 2015-08-18 12:53+0000\n"
-"Last-Translator: Yanpas <yanp.bugz@gmail.com>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-28 19:39-0800\n"
+"PO-Revision-Date: 2019-05-27 10:40+0000\n"
+"Last-Translator: Sergey A., 2022\n"
+"Language-Team: Russian (https://www.transifex.com/bluesabreorg/teams/99550/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
-"X-Generator: Launchpad (build 18968)\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: ../org.bluesabre.Mugshot.desktop.in.h:1
 msgid "About Me"
@@ -107,27 +112,27 @@ msgstr "Показывать сообщения отладки (-vv покаже
 msgid "Retry"
 msgstr "Повторить"
 
-#: ../mugshot/MugshotWindow.py:344
+#: ../mugshot/MugshotWindow.py:343
 msgid "Authentication cancelled."
 msgstr "Аутентификация отменена."
 
-#: ../mugshot/MugshotWindow.py:347
+#: ../mugshot/MugshotWindow.py:346
 msgid "Authentication failed."
 msgstr "Сбой аутентификации."
 
-#: ../mugshot/MugshotWindow.py:350
+#: ../mugshot/MugshotWindow.py:349
 msgid "An error occurred when saving changes."
 msgstr "Возникла ошибка при сохранении изменений."
 
-#: ../mugshot/MugshotWindow.py:352
+#: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
 msgstr "Данные пользователя не были обновлены."
 
-#: ../mugshot/MugshotWindow.py:454
+#: ../mugshot/MugshotWindow.py:453
 msgid "Update Pidgin buddy icon?"
 msgstr "Обновить аватар в Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:455
+#: ../mugshot/MugshotWindow.py:454
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Обновить также ваш аватар в Pidgin?"
 
@@ -191,15 +196,15 @@ msgstr ""
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr "Ресусрсоэффективная (Lightweight) пользовательская конфигурация"
+msgstr "Ресусрсоэффективная (Lightweight) пользовательская конфигурация."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:2
 msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
-"Mugshot позволяет пользователям легко обновлять личную контактную информацию "
-". С Mugshot , пользователи могут:"
+"Mugshot позволяет пользователям легко обновлять личную контактную информацию"
+" . С Mugshot , пользователи могут:"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:3
 msgid ""
@@ -215,42 +220,63 @@ msgid ""
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
 "Установить детали профиля, хранимые в /etc/passwd (удобно в использовании с "
-"командой finger), и опционально синхронизировать эту контактную информацию с "
-"Libreoffice."
+"командой finger), и опционально синхронизировать эту контактную информацию с"
+" Libreoffice."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot переехал на GitHub! Этот отладочный выпуск включает многочисленные "
+"обновления перевода."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
 msgid ""
 "This release includes a number of code quality improvements, bug fixes, and "
 "translations. Mugshot can now be built and run in a minimal chroot "
 "environment."
 msgstr ""
+"Этот выпуск включает ряд улучшений качества кода, исправления ошибок и "
+"переводы. Теперь Mugshot можно собрать и запустить в минимальной среде "
+"chroot."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
 "This stable release adds support for the latest GTK and GStreamer "
 "technologies."
 msgstr ""
+"В этом стабильном выпуске добавлена поддержка новейших технологий GTK и "
+"GStreamer."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
 msgstr ""
+"Этот выпуск восстанавливает функциональность диалогового окна камеры, "
+"которая была в последних версиях программного обеспечения."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
 msgid ""
 "This development release fixes a large number of bugs from previous "
 "releases. User properties that cannot be edited are now restricted to "
 "administrative users."
 msgstr ""
+"В этом выпуске исправлено большое количество ошибок из предыдущих выпусков. "
+"Свойства пользователя, которые нельзя редактировать, теперь доступны только "
+"пользователям с правами администратора."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
 msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
 msgstr ""
+"В этом выпуске обновлено диалоговое окно камеры, чтобы можно было "
+"использовать Cheese и Clutter для отображения и захвата изображения с "
+"камеры."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
