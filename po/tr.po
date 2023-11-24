@@ -5,16 +5,17 @@
 # 
 # Translators:
 # Butterfly <gokhanlnx@gmail.com>, 2020
+# Sabri Ünal <libreajans@gmail.com>, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-28 14:46-0400\n"
+"POT-Creation-Date: 2020-12-28 19:39-0800\n"
 "PO-Revision-Date: 2019-05-27 10:40+0000\n"
-"Last-Translator: Butterfly <gokhanlnx@gmail.com>, 2020\n"
-"Language-Team: Turkish (https://www.transifex.com/bluesabreorg/teams/99550/tr/)\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2023\n"
+"Language-Team: Turkish (https://app.transifex.com/bluesabreorg/teams/99550/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,15 +72,15 @@ msgstr "Mugshot"
 
 #: ../data/ui/MugshotWindow.ui.h:10
 msgid "<b>First Name</b>"
-msgstr "<b>İlk İsim</b>"
+msgstr "<b>Ad</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:11
 msgid "<b>Last Name</b>"
-msgstr "<b>Soy Adı</b>"
+msgstr "<b>Soyadı</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:12
 msgid "<b>Initials</b>"
-msgstr "<b>Baş harf</b>"
+msgstr "<b>Baş Harfler</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:13
 msgid "<b>Home Phone</b>"
@@ -95,7 +96,7 @@ msgstr "<b>Ofis Telefonu</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:16
 msgid "<b>Fax</b>"
-msgstr "<b>Fax</b>"
+msgstr "<b>Faks</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:17
 msgid "Select a photo…"
@@ -113,27 +114,27 @@ msgstr ""
 msgid "Retry"
 msgstr "Tekrar dene"
 
-#: ../mugshot/MugshotWindow.py:344
+#: ../mugshot/MugshotWindow.py:343
 msgid "Authentication cancelled."
 msgstr "Kimlik doğrulama iptal edildi."
 
-#: ../mugshot/MugshotWindow.py:347
+#: ../mugshot/MugshotWindow.py:346
 msgid "Authentication failed."
 msgstr "Kimlik doğrulama başarısız oldu."
 
-#: ../mugshot/MugshotWindow.py:350
+#: ../mugshot/MugshotWindow.py:349
 msgid "An error occurred when saving changes."
 msgstr "Değişiklikler kaydedilirken bir hata oluştu."
 
-#: ../mugshot/MugshotWindow.py:352
+#: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
 msgstr "Kullanıcı ayrıntıları güncellenmedi."
 
-#: ../mugshot/MugshotWindow.py:454
+#: ../mugshot/MugshotWindow.py:453
 msgid "Update Pidgin buddy icon?"
 msgstr "Pidgin arkadaş simgesini güncelle?"
 
-#: ../mugshot/MugshotWindow.py:455
+#: ../mugshot/MugshotWindow.py:454
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Pidgin arkadaş simgesini de güncellemek istiyor musunuz?"
 
@@ -164,7 +165,7 @@ msgstr "Parola Gerekiyor"
 
 #: ../mugshot_lib/SudoDialog.py:168
 msgid "Incorrect password... try again."
-msgstr "Hatalı parola... yeniden deneyin."
+msgstr "Hatalı parola... Yeniden deneyin."
 
 #: ../mugshot_lib/SudoDialog.py:178
 msgid "Password:"
@@ -177,7 +178,7 @@ msgstr "İptal"
 
 #: ../mugshot_lib/SudoDialog.py:192
 msgid "OK"
-msgstr "TAMAM"
+msgstr "Tamam"
 
 #: ../mugshot_lib/SudoDialog.py:213
 msgid ""
@@ -185,7 +186,7 @@ msgid ""
 "perform administrative tasks."
 msgstr ""
 "Yönetici görevlerini uygulamak için\n"
-"şifrenizi giriniz."
+"parolanızı giriniz."
 
 #: ../mugshot_lib/SudoDialog.py:215
 #, python-format
@@ -282,5 +283,5 @@ msgid ""
 "the password dialog."
 msgstr ""
 "Bu kararlı sürüm LDAP kullanıcıları için Mugshot işlevini iyileştirir ve en "
-"son SudoDialog'u içerir. Ayrıca şifre iletişim kutusunun görünümünü ve "
+"son SudoDialog'u içerir. Ayrıca parola iletişim kutusunun görünümünü ve "
 "kullanılabilirliğini iyileştirilmiştir."
