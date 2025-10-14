@@ -1,0 +1,284 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Sean Davis <sean@bluesabre.org>, 2019
+# Warut Bunprasert <warut.b@disroot.org>, 2025
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-28 19:39-0800\n"
+"PO-Revision-Date: 2025-10-13 10:40+0000\n"
+"Last-Translator: Warut Bunprasert <warut.b@disroot.org>, 2021\n"
+"Language-Team: Thai\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../org.bluesabre.Mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "เกี่ยวกับฉัน"
+
+#: ../org.bluesabre.Mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "กำหนดค่ารูปโปรไฟล์และรายละเอียดการติดต่อของคุณ"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "จับภาพ - Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>ดูตัวอย่าง</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "ตรงกลาง"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "ซ้าย"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "ขวา"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>ครอบตัด</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select from stock…"
+msgstr "เลือกจากสต็อก..."
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Capture from camera…"
+msgstr "จับภาพจากกล้อง..."
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Browse…"
+msgstr "ค้นหา..."
+
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:567
+msgid "Mugshot"
+msgstr "Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "<b>First Name</b>"
+msgstr "<b>ชื่อ</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>Last Name</b>"
+msgstr "<b>นามสกุล</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Initials</b>"
+msgstr "<b>ชื่อย่อ</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Home Phone</b>"
+msgstr "<b>โทรศัพท์บ้าน</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Email Address</b>"
+msgstr "<b>ที่อยู่อีเมล</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Office Phone</b>"
+msgstr "<b>โทรศัพท์สำนักงาน</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Fax</b>"
+msgstr "<b>แฟกซ์</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "Select a photo…"
+msgstr "เลือกรูปภาพ..."
+
+#: ../mugshot/__init__.py:36
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr "แสดงข้อความดีบัก (-vv debugs mugshot_lib ด้วย)"
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:268
+msgid "Retry"
+msgstr "ลองอีกครั้ง"
+
+#: ../mugshot/MugshotWindow.py:343
+msgid "Authentication cancelled."
+msgstr "การตรวจสอบสิทธิ์ถูกยกเลิก"
+
+#: ../mugshot/MugshotWindow.py:346
+msgid "Authentication failed."
+msgstr "การตรวจสอบสิทธิ์ล้มเหลว"
+
+#: ../mugshot/MugshotWindow.py:349
+msgid "An error occurred when saving changes."
+msgstr "เกิดข้อผิดพลาดขณะบันทึกการเปลี่ยนแปลง"
+
+#: ../mugshot/MugshotWindow.py:351
+msgid "User details were not updated."
+msgstr "รายละเอียดผู้ใช้ไม่ได้รับการอัพเดต"
+
+#: ../mugshot/MugshotWindow.py:453
+msgid "Update Pidgin buddy icon?"
+msgstr "อัปเดตไอคอนเพื่อนใน Pidgin หรือไม่"
+
+#: ../mugshot/MugshotWindow.py:454
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr "คุณต้องการอัปเดตไอคอนเพื่อนใน Pidgin ของคุณด้วยหรือไม่"
+
+#: ../mugshot/MugshotWindow.py:568
+msgid "Enter your password to change user details."
+msgstr "ป้อนรหัสผ่านของคุณเพื่อเปลี่ยนรายละเอียดผู้ใช้"
+
+#: ../mugshot/MugshotWindow.py:570
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+"นี่เป็นมาตรการรักษาความปลอดภัยเพื่อป้องกันการอัปเดต\n"
+"ข้อมูลส่วนบุคคลของคุณที่ไม่ต้องการ"
+
+#: ../mugshot/MugshotWindow.py:837
+msgid "Update LibreOffice user details?"
+msgstr "อัปเดตรายละเอียดผู้ใช้ LibreOffice หรือไม่"
+
+#: ../mugshot/MugshotWindow.py:838
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr "คุณต้องการอัปเดตรายละเอียดผู้ใช้ของคุณใน LibreOffice ด้วยหรือไม่"
+
+#: ../mugshot_lib/SudoDialog.py:131
+msgid "Password Required"
+msgstr "ต้องใช้รหัสผ่าน"
+
+#: ../mugshot_lib/SudoDialog.py:168
+msgid "Incorrect password... try again."
+msgstr "รหัสผ่านไม่ถูกต้อง... ลองอีกครั้ง"
+
+#: ../mugshot_lib/SudoDialog.py:178
+msgid "Password:"
+msgstr "รหัสผ่าน:"
+
+#. Buttons
+#: ../mugshot_lib/SudoDialog.py:189
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: ../mugshot_lib/SudoDialog.py:192
+msgid "OK"
+msgstr "ตกลง"
+
+#: ../mugshot_lib/SudoDialog.py:213
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+"ป้อนรหัสผ่านของคุณเพื่อ\n"
+"ดำเนินการงานดูแลระบบ"
+
+#: ../mugshot_lib/SudoDialog.py:215
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+"โปรแกรม '%s' ช่วยให้คุณ\n"
+"สามารถแก้ไขส่วนสำคัญของระบบของคุณได้"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:1
+msgid "Lightweight user configuration"
+msgstr "ตัวกำหนดค่าผู้ใช้ที่มีน้ำหนักเบา"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:2
+msgid ""
+"Mugshot enables users to easily update personal contact information. With "
+"Mugshot, users are able to:"
+msgstr ""
+"Mugshot ช่วยให้ผู้ใช้สามารถอัปเดตข้อมูลติดต่อส่วนบุคคลได้อย่างง่ายดาย และด้วย "
+"Mugshot ผู้ใช้สามารถ:"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:3
+msgid ""
+"Set the account photo displayed at login and optionally synchronize this "
+"photo with their Pidgin buddy icon"
+msgstr ""
+"ตั้งค่ารูปภาพบัญชีที่แสดงเมื่อเข้าสู่ระบบ และซิงโครไนซ์รูปภาพนี้ได้ตามต้องการ"
+"รูปภาพพร้อมไอคอนเพื่อนใน Pidgin ของพวกเขา"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:4
+msgid ""
+"Set account details stored in /etc/passwd (usable with the finger command) "
+"and optionally synchronize with their LibreOffice contact information"
+msgstr ""
+"ตั้งค่ารายละเอียดบัญชีที่เก็บไว้ใน /etc/passwd (ใช้งานได้ด้วยคำสั่ง finger)"
+"และซิงโครไนซ์กับข้อมูลติดต่อของ LibreOffice ได้ตามที่ต้องการ"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot ได้ย้ายไปที่ GitHub แล้ว! เวอร์ชันบำรุงรักษานี้ประกอบด้วย "
+"การอัปเดตการแปลจำนวนมาก"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+msgid ""
+"This release includes a number of code quality improvements, bug fixes, and "
+"translations. Mugshot can now be built and run in a minimal chroot "
+"environment."
+msgstr ""
+"เวอร์ชันนี้ประกอบด้วยการปรับปรุงคุณภาพโค้ด การแก้ไขข้อบกพร่อง แ"
+" ละการแปลต่างๆ มากมาย ขณะนี้สามารถสร้างและรัน Mugshot "
+"ในสภาพแวดล้อม chroot ขั้นต่ำได้แล้ว"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+msgid ""
+"This stable release adds support for the latest GTK and GStreamer "
+"technologies."
+msgstr ""
+"เวอร์ชันเสถียรนี้เพิ่มการรองรับ GTK และ GStreamer "
+"รุ่นล่าสุด"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+msgid ""
+"This development release restores camera dialog functionality that with "
+"recent software versions."
+msgstr ""
+"รุ่นพัฒนานี้จะนำฟังก์ชันการสนทนาผ่านกล้องกลับคืนมาเหมือนกับ"
+"ซอฟต์แวร์เวอร์ชันใหม่ล่าสุด"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+msgid ""
+"This development release fixes a large number of bugs from previous "
+"releases. User properties that cannot be edited are now restricted to "
+"administrative users."
+msgstr ""
+"รุ่นพัฒนานี้แก้ไขข้อบกพร่องจำนวนมากจากรุ่นก่อนหน้า"
+" คุณสมบัติผู้ใช้ที่ไม่สามารถแก้ไขได้จะถูกจำกัดไว้เฉพาะ"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+msgid ""
+"This development release upgrades the camera dialog to use Cheese and "
+"Clutter to display and capture the camera feed."
+msgstr ""
+"การเปิดตัวการพัฒนาครั้งนี้ได้อัปเกรดกล่องโต้ตอบกล้องให้ใช้ Cheese "
+"และ Clutter เพื่อแสดงและบันทึกฟีดกล้อง"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
+msgid ""
+"This stable release improves Mugshot functionality for LDAP users, and "
+"includes the latest SudoDialog, improving the appearance and usability of "
+"the password dialog."
+msgstr ""
+"เวอร์ชันที่เสถียรนี้ปรับปรุงฟังก์ชันการทำงานของ Mugshot สำหรับผู้ใช้ LDAP "
+"และรวม SudoDialog เวอร์ชันล่าสุด โดยมีการปรับปรุงรูปลักษณ์"
+"และการใช้งานของกล่องโต้ตอบรหัสผ่าน"
