@@ -1,0 +1,284 @@
+# Occitan translation file.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Quentin PAGÈS, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-28 19:39-0800\n"
+"PO-Revision-Date: 2025-10-29 11:42+0100\n"
+"Last-Translator: Quentin PAGÈS\n"
+"Language-Team: \n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: ../org.bluesabre.Mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "A prepaus de ieu"
+
+#: ../org.bluesabre.Mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "Configurar las informacions de contacte e la fòto de vòstre perfil"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "Captura - Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>Apercebut</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "Centre"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "Esquèrra"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "Drecha"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>Rosegar</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select from stock…"
+msgstr "Seleccionar de l’inventari…"
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Capture from camera…"
+msgstr "Captar de la camèra…"
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Browse…"
+msgstr "Percórrer…"
+
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:567
+msgid "Mugshot"
+msgstr "Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "<b>First Name</b>"
+msgstr "<b>Prenom</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>Last Name</b>"
+msgstr "<b>Nom d’ostal</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Initials</b>"
+msgstr "<b>Inicialas</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Home Phone</b>"
+msgstr "<b>Telefòn fix</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Email Address</b>"
+msgstr "<br>Adreça electronica</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Office Phone</b>"
+msgstr "<b>Telefòn burèu</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Fax</b>"
+msgstr "<b>Fax</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "Select a photo…"
+msgstr "Seleccionar una fòto…"
+
+#: ../mugshot/__init__.py:36
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr "Afichar los messatges de desbugatge (-vv debugs mugshot_lib also)"
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:268
+msgid "Retry"
+msgstr "Tornar ensajar"
+
+#: ../mugshot/MugshotWindow.py:343
+msgid "Authentication cancelled."
+msgstr "Autentificacion anullada."
+
+#: ../mugshot/MugshotWindow.py:346
+msgid "Authentication failed."
+msgstr "L'autentificacion a fracassat."
+
+#: ../mugshot/MugshotWindow.py:349
+msgid "An error occurred when saving changes."
+msgstr "Problèma pendent l'enregistrament de las modificacions."
+
+#: ../mugshot/MugshotWindow.py:351
+msgid "User details were not updated."
+msgstr "Los detalhs de l’utilizaires son pas estats actualizats."
+
+#: ../mugshot/MugshotWindow.py:453
+msgid "Update Pidgin buddy icon?"
+msgstr "Metre a jorn l’avatar de Pidgin ?"
+
+#: ../mugshot/MugshotWindow.py:454
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr "Volètz tanben metre a jorn vòstre avatar de Pidgin ?"
+
+#: ../mugshot/MugshotWindow.py:568
+msgid "Enter your password to change user details."
+msgstr "Picatz vòstre senhal per modificar los detalhs de l’utilizaire."
+
+#: ../mugshot/MugshotWindow.py:570
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+"Aquò es una mesura de seguretat per empachar las mesas a jorn non "
+"desiradas\n"
+"de vòstras informacions personalas."
+
+#: ../mugshot/MugshotWindow.py:837
+msgid "Update LibreOffice user details?"
+msgstr "Metre a jorn los detalhs utilizaire de LibreOffice ?"
+
+#: ../mugshot/MugshotWindow.py:838
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr ""
+"Volètz tanben metre a jorn vòstres detalhs d’utilizaire din LibreOffice ?"
+
+#: ../mugshot_lib/SudoDialog.py:131
+msgid "Password Required"
+msgstr "Senhal requerit"
+
+#: ../mugshot_lib/SudoDialog.py:168
+msgid "Incorrect password... try again."
+msgstr "Senhal incorrècte... ensajatz tornarmai"
+
+#: ../mugshot_lib/SudoDialog.py:178
+msgid "Password:"
+msgstr "Senhal :"
+
+#. Buttons
+#: ../mugshot_lib/SudoDialog.py:189
+msgid "Cancel"
+msgstr "Anullar"
+
+#: ../mugshot_lib/SudoDialog.py:192
+msgid "OK"
+msgstr "Validar"
+
+#: ../mugshot_lib/SudoDialog.py:213
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+"Picatz lo senhal per\n"
+"realizar de prètzfaches d'administracion."
+
+#: ../mugshot_lib/SudoDialog.py:215
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+"L'aplicacion « %s » vos permet de\n"
+"modificar de parts essencialas de vòstre sistèma."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:1
+msgid "Lightweight user configuration"
+msgstr "Configuracion utilizaire leugièra"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:2
+msgid ""
+"Mugshot enables users to easily update personal contact information. With "
+"Mugshot, users are able to:"
+msgstr ""
+"Mugshot permet als utilizaires de metre a jorn aisidament lors informacions "
+"de contacte personalas. Amb Mugshot, los utilizaires pòdon :"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:3
+msgid ""
+"Set the account photo displayed at login and optionally synchronize this "
+"photo with their Pidgin buddy icon"
+msgstr ""
+"Definir la fòto del compte afichada a la connexion e sincronizar "
+"opcionalament aquesta fòto amb son avatar dins Pidgin"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:4
+msgid ""
+"Set account details stored in /etc/passwd (usable with the finger command) "
+"and optionally synchronize with their LibreOffice contact information"
+msgstr ""
+"Definir los detalhs del compte gardats dins /etc/passwd (utilizables amb la "
+"comanda finger) e opcionalament los sincronizar amb lors informacions de "
+"contacte de LibreOffice"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot es ara sus GitHub ! Aquesta version de mantenença inclutz de "
+"nombrosas mesas a jorn de traduccions."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+msgid ""
+"This release includes a number of code quality improvements, bug fixes, and "
+"translations. Mugshot can now be built and run in a minimal chroot "
+"environment."
+msgstr ""
+"Aquesta version inclutz un certan nombre de melhoraments de la qualitat del "
+"còdi, de correccions d’anomalias e de traduccions. Mugshot pòt ara èsser "
+"compilat e executat dins un environament chroot minimal."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+msgid ""
+"This stable release adds support for the latest GTK and GStreamer "
+"technologies."
+msgstr ""
+"Aquesta version establa apond la presa en carga de las darrièras "
+"tecnologias GTK e GStreamer."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+msgid ""
+"This development release restores camera dialog functionality that with "
+"recent software versions."
+msgstr ""
+"Aquesta version de desvolopament restablís la foncionalitat de la fenèstra "
+"de dialòg de la camèra que amb las versions recentas del logicial."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+msgid ""
+"This development release fixes a large number of bugs from previous "
+"releases. User properties that cannot be edited are now restricted to "
+"administrative users."
+msgstr ""
+"Aquesta version de desvolopament corregís un grand nombre d’anomalias de "
+"las versions precedentas. Las proprietats d'utilizaire que se pòdon pas "
+"modificar son ara reservadas als utilizaires administrators."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+msgid ""
+"This development release upgrades the camera dialog to use Cheese and "
+"Clutter to display and capture the camera feed."
+msgstr ""
+"Aquesta version de desvolopament melhora la bóstia de dialòg de la camèra "
+"per utilizar Cheese e Clutter per afichar e capturar lo flux de la camèra."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
+msgid ""
+"This stable release improves Mugshot functionality for LDAP users, and "
+"includes the latest SudoDialog, improving the appearance and usability of "
+"the password dialog."
+msgstr ""
+"Aquesta version establa melhora la foncionalitat de Mugshot pels "
+"utilizaires LDAP, e inclutz lo darrièr SudoDialog, en melhorant l'aparéncia "
+"e l'utilizabilitat de la bóstia de dialòg del senhal."
