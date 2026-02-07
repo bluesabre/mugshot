@@ -1,0 +1,280 @@
+# Georgian translation for mugshot.
+# Copyright (C) 2026 mugshot authors.
+# This file is distributed under the same license as the mugshot package.
+# Ekaterine Papava <papava.e@gtu.ge>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mugshot\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-28 19:39-0800\n"
+"PO-Revision-Date: 2026-02-02 14:58+0100\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
+"Language-Team: Georgian <(nothing)>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: ../org.bluesabre.Mugshot.desktop.in.h:1
+msgid "About Me"
+msgstr "ჩემს შესახებ"
+
+#: ../org.bluesabre.Mugshot.desktop.in.h:2
+msgid "Configure your profile image and contact details"
+msgstr "მოირგეთ თქვენი პროფილის სურათი და კონტაქტის დეტალები"
+
+#: ../data/ui/CameraMugshotDialog.ui.h:1
+msgid "Capture - Mugshot"
+msgstr "გადაღება - Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:1
+msgid "<b>Preview</b>"
+msgstr "<b>ნიმუში</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:2
+msgid "Center"
+msgstr "ცენტრი"
+
+#: ../data/ui/MugshotWindow.ui.h:3
+msgid "Left"
+msgstr "მარცხენა"
+
+#: ../data/ui/MugshotWindow.ui.h:4
+msgid "Right"
+msgstr "მარჯვენა"
+
+#: ../data/ui/MugshotWindow.ui.h:5
+msgid "<b>Crop</b>"
+msgstr "<b>ამოჭრა</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:6
+msgid "Select from stock…"
+msgstr "მოყოლილებიდან არჩევა…"
+
+#: ../data/ui/MugshotWindow.ui.h:7
+msgid "Capture from camera…"
+msgstr "კამერიდან გადაღება…"
+
+#: ../data/ui/MugshotWindow.ui.h:8
+msgid "Browse…"
+msgstr "მოძიება…"
+
+#: ../data/ui/MugshotWindow.ui.h:9 ../mugshot/MugshotWindow.py:567
+msgid "Mugshot"
+msgstr "Mugshot"
+
+#: ../data/ui/MugshotWindow.ui.h:10
+msgid "<b>First Name</b>"
+msgstr "<b>სახელი</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:11
+msgid "<b>Last Name</b>"
+msgstr "<b>გვარი</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:12
+msgid "<b>Initials</b>"
+msgstr "<b>ინიციალები</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:13
+msgid "<b>Home Phone</b>"
+msgstr "<b>სახლის ტელეფონი</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:14
+msgid "<b>Email Address</b>"
+msgstr "<b>ელფოსტის მისამართი</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:15
+msgid "<b>Office Phone</b>"
+msgstr "<b>სამსახურის ტელეფონი</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:16
+msgid "<b>Fax</b>"
+msgstr "<b>ფაქსი</b>"
+
+#: ../data/ui/MugshotWindow.ui.h:17
+msgid "Select a photo…"
+msgstr "აირჩიეთ სურათი…"
+
+#: ../mugshot/__init__.py:36
+msgid "Show debug messages (-vv debugs mugshot_lib also)"
+msgstr "გამართვის შეტყობინებების ჩვენება (-vv ასევე გამართვს mugshot_lib-ს)"
+
+#. Set the record button to retry, and disable it until the capture
+#. finishes.
+#: ../mugshot/CameraMugshotDialog.py:268
+msgid "Retry"
+msgstr "თავიდან ცდა"
+
+#: ../mugshot/MugshotWindow.py:343
+msgid "Authentication cancelled."
+msgstr "ავთენტიკაცია გაუქმდა."
+
+#: ../mugshot/MugshotWindow.py:346
+msgid "Authentication failed."
+msgstr "ავთენტიკაცია წარუმატებელია."
+
+#: ../mugshot/MugshotWindow.py:349
+msgid "An error occurred when saving changes."
+msgstr "შეცდომა ცვლილებების შენახვისას."
+
+#: ../mugshot/MugshotWindow.py:351
+msgid "User details were not updated."
+msgstr "მომხმარებლის დეტალები არ განახლებულა."
+
+#: ../mugshot/MugshotWindow.py:453
+msgid "Update Pidgin buddy icon?"
+msgstr "განახლდეს Pidgin-ის მეგობრის ხატულა?"
+
+#: ../mugshot/MugshotWindow.py:454
+msgid "Would you also like to update your Pidgin buddy icon?"
+msgstr "გნებავთ ასევე განახლდეს თქვენი Pidgin-ის მეგობრის ხატულა?"
+
+#: ../mugshot/MugshotWindow.py:568
+msgid "Enter your password to change user details."
+msgstr "მომხმარებლის დეტალების შესაცვლელად შეიყვანეთ თქვენი პაროლი."
+
+#: ../mugshot/MugshotWindow.py:570
+msgid ""
+"This is a security measure to prevent unwanted updates\n"
+"to your personal information."
+msgstr ""
+"ეს უსაფრთხოების ზომაა თქვენი პირადი\n"
+"ინფორმაციის არასასურველი განახლებების თავიდან ასაცილებლად."
+
+#: ../mugshot/MugshotWindow.py:837
+msgid "Update LibreOffice user details?"
+msgstr "განახლდეს LibreOffice-ის მომხმარებლის დეტალები?"
+
+#: ../mugshot/MugshotWindow.py:838
+msgid "Would you also like to update your user details in LibreOffice?"
+msgstr "გნებავთ ასევე განახლდეს თქვენი მომხმარებლის დეტალები LibreOffice-ში?"
+
+#: ../mugshot_lib/SudoDialog.py:131
+msgid "Password Required"
+msgstr "საჭიროა პაროლი"
+
+#: ../mugshot_lib/SudoDialog.py:168
+msgid "Incorrect password... try again."
+msgstr "არასწორი პაროლი... თავიდან სცადეთ."
+
+#: ../mugshot_lib/SudoDialog.py:178
+msgid "Password:"
+msgstr "პაროლი:"
+
+#. Buttons
+#: ../mugshot_lib/SudoDialog.py:189
+msgid "Cancel"
+msgstr "გაუქმება"
+
+#: ../mugshot_lib/SudoDialog.py:192
+msgid "OK"
+msgstr "დიახ"
+
+#: ../mugshot_lib/SudoDialog.py:213
+msgid ""
+"Enter your password to\n"
+"perform administrative tasks."
+msgstr ""
+"შეიყვანეთ თქვენი პაროლი\n"
+"ადმინისტრაციული ამოცანების შესასრულებლად."
+
+#: ../mugshot_lib/SudoDialog.py:215
+#, python-format
+msgid ""
+"The application '%s' lets you\n"
+"modify essential parts of your system."
+msgstr ""
+"აპლიკაცია '%s' საშუალებას გაძლევთ,\n"
+"თქვენი სისტემის ძირითადი ნაწილები შეცვალოთ."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:1
+msgid "Lightweight user configuration"
+msgstr "მსუბუქი მომხმარებლის მორგება"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:2
+msgid ""
+"Mugshot enables users to easily update personal contact information. With "
+"Mugshot, users are able to:"
+msgstr ""
+"Mugshot საშუალებას აძლევს მომხმარებლებს, ადვილად განაახლონ პირადი "
+"ინფორმაცია. Mugshot-თან ერთად მომხმარებლებს შეუძლიათ:"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:3
+msgid ""
+"Set the account photo displayed at login and optionally synchronize this "
+"photo with their Pidgin buddy icon"
+msgstr ""
+"შესვლისას ნაჩვენები ანგარიშის სურათი დაყენება და სურვილის შემთხვევაში ამ "
+"სურათის Pidgin-ის მეგობრის ხატულასთან სინქრონიზაცია"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:4
+msgid ""
+"Set account details stored in /etc/passwd (usable with the finger command) "
+"and optionally synchronize with their LibreOffice contact information"
+msgstr ""
+"დააყენონ ანგარიშის დეტალები, რომლებიც /etc/passwd-ში ინახება (გამოიყენება "
+"ბრძანებასთან finger ერთად) და სურვილის შემთხვევაში LibreOffice-ის კონტაქტის "
+"ინფორმაციასთან სინქრონიზაცია"
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot გადავიდა GitHub-ზე! ეს სატესტო რელიზი ბევრი თარგმანის განახლებას "
+"შეიცავს."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+msgid ""
+"This release includes a number of code quality improvements, bug fixes, and "
+"translations. Mugshot can now be built and run in a minimal chroot "
+"environment."
+msgstr ""
+"ეს გამოცემა შეიცავს მრავალ კოდის განახლებას, შეცდომების გასწორებას და "
+"თარგმანებს. Mugshot-ის აგება ახლა მინიმალურ chroot გარემოში შეგიძლიათ."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+msgid ""
+"This stable release adds support for the latest GTK and GStreamer "
+"technologies."
+msgstr ""
+"სტაბილური გამოცემა უახლესი GTK და GStreamer-ის ტექნოლოგიების მხარდაჭერას "
+"ამატებს."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+msgid ""
+"This development release restores camera dialog functionality that with "
+"recent software versions."
+msgstr ""
+"სატესტო გამოცემა აღადგენს კამერის დიალოგის ფუნქციონალს უახლესი პროგრამის "
+"ვერსიებთან ერთად."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+msgid ""
+"This development release fixes a large number of bugs from previous "
+"releases. User properties that cannot be edited are now restricted to "
+"administrative users."
+msgstr ""
+"ეს სატესტო ვერსია ასწორებს წინა ვერსიების უამრავ შეცდომას. მომხმარებლის "
+"თვისებები, რომელთა ჩასწორებაც შეუძლებელია, ახლა მხოლოდ ადმინისტრატორის "
+"მომხმარებლებისთვისაა ხელმისაწვდომი."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+msgid ""
+"This development release upgrades the camera dialog to use Cheese and "
+"Clutter to display and capture the camera feed."
+msgstr ""
+"ეს სატესტო ვერსია ანახლებს კამერის დიალოგს, რომ გამოიყენოს Cheese და "
+"Clutter კამერის ლენტის საჩვენებლად და გადასაღებად."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
+msgid ""
+"This stable release improves Mugshot functionality for LDAP users, and "
+"includes the latest SudoDialog, improving the appearance and usability of "
+"the password dialog."
+msgstr ""
+"ეს სტაბილური ვერსია აუმჯობესებს Mugshot-ის ფუნქციონალურობას LDAP "
+"მომხმარებლებისთვის და მოიცავს SudoDialog-ის უახლეს ვერსიას, რაც აუმჯობესებს "
+"პაროლის დიალოგის გარეგნობას და გამოყენებადობას."
