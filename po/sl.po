@@ -1,21 +1,26 @@
-# Slovenian translation for mugshot
-# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
-# This file is distributed under the same license as the mugshot package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Sean Davis <sean@bluesabre.org>, 2019
+# Dejweed, 2026
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: mugshot\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2018-08-08 05:13-0400\n"
-"PO-Revision-Date: 2015-08-19 14:47+0000\n"
-"Last-Translator: Dražen Matešić <Unknown>\n"
-"Language-Team: Slovenian <sl@li.org>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-28 19:39-0800\n"
+"PO-Revision-Date: 2019-05-27 10:40+0000\n"
+"Last-Translator: Dejweed, 2026\n"
+"Language-Team: Slovenian (https://app.transifex.com/bluesabreorg/teams/99550/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2019-05-27 11:00+0000\n"
-"X-Generator: Launchpad (build 18968)\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #: ../org.bluesabre.Mugshot.desktop.in.h:1
 msgid "About Me"
@@ -51,7 +56,7 @@ msgstr "<b>Obrez</b>"
 
 #: ../data/ui/MugshotWindow.ui.h:6
 msgid "Select from stock…"
-msgstr ""
+msgstr "Izberi iz zbirke …"
 
 #: ../data/ui/MugshotWindow.ui.h:7
 msgid "Capture from camera…"
@@ -107,27 +112,27 @@ msgstr "Pokaži sporočila razhroščevanja (-vv razhrošča tudi mugshot_lib)"
 msgid "Retry"
 msgstr "Poskusi znova"
 
-#: ../mugshot/MugshotWindow.py:344
+#: ../mugshot/MugshotWindow.py:343
 msgid "Authentication cancelled."
 msgstr "Overitev preklicana."
 
-#: ../mugshot/MugshotWindow.py:347
+#: ../mugshot/MugshotWindow.py:346
 msgid "Authentication failed."
-msgstr "Overitev  spodletela."
+msgstr "Overitev spodletela."
 
-#: ../mugshot/MugshotWindow.py:350
+#: ../mugshot/MugshotWindow.py:349
 msgid "An error occurred when saving changes."
-msgstr "Napaka se je zgodila ob shranjevanju sprememb."
+msgstr "Ob shranjevanju sprememb se je zgodila napaka."
 
-#: ../mugshot/MugshotWindow.py:352
+#: ../mugshot/MugshotWindow.py:351
 msgid "User details were not updated."
-msgstr "Podrobnosti uporabnika niso bili posodobljeni."
+msgstr "Podrobnosti uporabnika niso bile posodobljene."
 
-#: ../mugshot/MugshotWindow.py:454
+#: ../mugshot/MugshotWindow.py:453
 msgid "Update Pidgin buddy icon?"
 msgstr "Posodobim ikono prijatelja Pidgin?"
 
-#: ../mugshot/MugshotWindow.py:455
+#: ../mugshot/MugshotWindow.py:454
 msgid "Would you also like to update your Pidgin buddy icon?"
 msgstr "Ali želite posodobiti tudi svojo ikono prijatelja Pidgin?"
 
@@ -157,7 +162,7 @@ msgstr "Zahtevano je geslo"
 
 #: ../mugshot_lib/SudoDialog.py:168
 msgid "Incorrect password... try again."
-msgstr "Napačno geslo ... Poskusite znova."
+msgstr "Napačno geslo... Poskusite znova."
 
 #: ../mugshot_lib/SudoDialog.py:178
 msgid "Password:"
@@ -191,61 +196,91 @@ msgstr ""
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:1
 msgid "Lightweight user configuration"
-msgstr ""
+msgstr "Enostavna nastavitev uporabnikov."
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:2
 msgid ""
 "Mugshot enables users to easily update personal contact information. With "
 "Mugshot, users are able to:"
 msgstr ""
+"Mugshot omogoča uporabnikom enostavno posodabljanje osebnih kontaktnih "
+"podatkov. Z Mugshotom lahko uporabniki:"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:3
 msgid ""
 "Set the account photo displayed at login and optionally synchronize this "
 "photo with their Pidgin buddy icon"
 msgstr ""
+"Nastavijo fotografijo računa, ki se prikaže ob prijavi, in po želji to "
+"fotografijo sinhronizirajo s programom Pidgin"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:4
 msgid ""
 "Set account details stored in /etc/passwd (usable with the finger command) "
 "and optionally synchronize with their LibreOffice contact information"
 msgstr ""
+"Nastavijo podatke o računu, shranjene v datoteki /etc/passwd (ki jih je "
+"mogoče uporabiti z ukazom finger), ter po želji sinhronizirajo te podatke s "
+"svojimi kontaktnimi podatki v LibreOffice"
 
 #: ../data/metainfo/mugshot.appdata.xml.in.h:5
+msgid ""
+"Mugshot has moved to GitHub! This maintenance release includes numerous "
+"translation updates."
+msgstr ""
+"Mugshot se je preselil na GitHub! Ta vzdrževalna različica vključuje "
+"številne posodobitve prevodov."
+
+#: ../data/metainfo/mugshot.appdata.xml.in.h:6
 msgid ""
 "This release includes a number of code quality improvements, bug fixes, and "
 "translations. Mugshot can now be built and run in a minimal chroot "
 "environment."
 msgstr ""
+"Ta izdaja vključuje številne izboljšave kakovosti kode, popravke napak in "
+"prevode. Mugshot je zdaj mogoče zgraditi in zagnati v minimalnem okolju "
+"chroot."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:6
+#: ../data/metainfo/mugshot.appdata.xml.in.h:7
 msgid ""
 "This stable release adds support for the latest GTK and GStreamer "
 "technologies."
 msgstr ""
+"Ta stabilna različica dodaja podporo za najnovejše tehnologije GTK in "
+"GStreamer."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:7
+#: ../data/metainfo/mugshot.appdata.xml.in.h:8
 msgid ""
 "This development release restores camera dialog functionality that with "
 "recent software versions."
 msgstr ""
+"Ta razvojna različica vrača funkcionalnost pogovornega okna kamere, ki je "
+"bila v zadnjih različicah programske opreme izgubljena."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:8
+#: ../data/metainfo/mugshot.appdata.xml.in.h:9
 msgid ""
 "This development release fixes a large number of bugs from previous "
 "releases. User properties that cannot be edited are now restricted to "
 "administrative users."
 msgstr ""
+"Ta razvojna različica odpravlja številne napake iz prejšnjih različic. "
+"Lastnosti uporabnikov, ki jih ni mogoče urejati, so zdaj omejene na "
+"skrbniške uporabnike."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:9
+#: ../data/metainfo/mugshot.appdata.xml.in.h:10
 msgid ""
 "This development release upgrades the camera dialog to use Cheese and "
 "Clutter to display and capture the camera feed."
 msgstr ""
+"Ta razvojna različica nadgrajuje dialog kamere, tako da za prikaz in zajem "
+"slike s kamere uporablja programe Cheese in Clutter."
 
-#: ../data/metainfo/mugshot.appdata.xml.in.h:10
+#: ../data/metainfo/mugshot.appdata.xml.in.h:11
 msgid ""
 "This stable release improves Mugshot functionality for LDAP users, and "
 "includes the latest SudoDialog, improving the appearance and usability of "
 "the password dialog."
 msgstr ""
+"Ta stabilna različica izboljšuje delovanje programa Mugshot za uporabnike "
+"LDAP in vključuje najnovejšo različico SudoDialog, ki izboljšuje videz in "
+"uporabnost okna za vnos gesla."
