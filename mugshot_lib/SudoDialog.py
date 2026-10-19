@@ -51,7 +51,7 @@ def check_dependencies(commands=[]):
     # Check for LANG requirements
     child = None
     try:
-        child = env_spawn('sudo', ['-v'], 1)
+        child = env_spawn('sudo', ['-n', '-v'], 1)
         if child.expect([".*ssword.*", "Sorry",
                          pexpect.EOF,
                          pexpect.TIMEOUT]) == 3:
@@ -64,7 +64,7 @@ def check_dependencies(commands=[]):
         return False
 
     # Check for sudo rights
-    child = env_spawn('sudo', ['-v'], 1)
+    child = env_spawn('sudo', ['-n', '-v'], 1)
     try:
         index = child.expect([".*ssword.*", "Sorry",
                               pexpect.EOF, pexpect.TIMEOUT])
