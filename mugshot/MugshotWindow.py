@@ -220,7 +220,8 @@ class MugshotWindow(Window):
         # Users without sudo rights cannot change their name.
         if not self.accounts_service.available():
             self.set_name_editable(SudoDialog.check_dependencies(['chfn']))
-        self.set_phone_editable(SudoDialog.check_dependencies(['chfn']))
+        # Phone numbers are changed with chfn and the user's own password.
+        self.set_phone_editable(which('chfn') is not None)
 
         # Populate all of the widgets.
         self.init_user_details()
